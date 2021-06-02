@@ -20,18 +20,18 @@ function runGame(playerChoice) {
     document.getElementById('choice').value = "";
 
     if(playerChoice === "rock") {
-        displayRock();
+        document.getElementById('choice').textContent = "Rock";
     } else if(playerChoice === "paper") {
-        displayPaper();
+        document.getElementById('choice').textContent = "Paper";
     } else if(playerChoice === "scissors") {
-        displayScissors();
+        document.getElementById('choice').textContent = "Scissors";
     } else if(playerChoice === "lizard") {
-        displayLizard();
+        document.getElementById('choice').textContent = "Lizard";
     } else if(playerChoice === "spock") {
-        displaySpock();
+        document.getElementById('choice').textContent = "Spock";;
     } else {
-        alert(`Unknown game type: ${gameType}`);
-        throw `Unknown game type: ${gameType}. Aborting!`;
+        alert(`Unknown game type: ${playerChoice}`);
+        throw `Unknown game type: ${playerChoice}. Aborting!`;
     }
 }
 
@@ -73,22 +73,6 @@ function calculateWinner() {
         increaseDefeat();
     }
 
-}
-
-function displayRock() {
-    document.getElementById('choice').textContent = "Rock";
-}
-function displayPaper() {
-    document.getElementById('choice').textContent = "Paper";
-}
-function displayScissors() {
-    document.getElementById('choice').textContent = "Scissors";
-}
-function displayLizard() {
-    document.getElementById('choice').textContent = "Lizard";
-}
-function displaySpock() {
-    document.getElementById('choice').textContent = "Spock";
 }
 
 function displayComputerChoice() {
