@@ -139,22 +139,29 @@ function calculateWinner(compResult) {
         nextOpponent();
     }
 
-    if(document.getElementById('result-area').textContent === `${compResult} beats ${playerChoice} - You lose!`) {
+    if(document.getElementById('outcome').textContent === `${compResult} beats ${playerChoice} - You lose!`) {
         decreaseScore();
     }
 
 }
 
 function decreaseScore() {
-    
+    let oldScore = parseInt(document.getElementById('chances').innerText);
+    document.getElementById('chances').innerText = --oldScore;
+    if(oldScore===0) {
+        gameOver();
+    }
 }
 
 function gameOver() {
-    
+    document.write("<h1>Game Over!</h1>");
+    document.write("<p>Better luck next time.</p>");
+    document.write("<button id='restart-button'>Restart</button>");
+    document.getElementById('restart-button').addEventListener('click', restart);
 }
 
 function restart() {
-    
+    location.reload();
 }
 
 function nextOpponent() {
