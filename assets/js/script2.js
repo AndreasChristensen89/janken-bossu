@@ -57,6 +57,11 @@ function choice(playerChoice) {
     let goArea = document.getElementById("go-button-area");
     let button = document.getElementById("go-button");
 
+    
+    if(document.getElementById('result-area').innerHTML!==null) {
+        document.getElementById('result-area').innerHTML = ``;
+    }
+    
     document.getElementById('comp-choice').textContent = "";
     document.getElementById('outcome').textContent = "";
 
@@ -135,18 +140,19 @@ function restart() {
 function nextOpponent() {
     let opponents = ["Daiki", "Salary Man", "The Manager", "Yakuza Henchman", "Biggu Bossu"];
     let attempts = [5, 4, 3, 2, 1];
-    // document.getElementById('opponent').innerText = "Daiki";
     let curOpponent = document.getElementById('opponent').innerText;
-    console.log(curOpponent);
 
     for (let i = 0; i < opponents.length; i++) {
         if (curOpponent === opponents[4]) {
             beatGame();
+            break;
         } else if (curOpponent === opponents[i]) {
             document.getElementById('opponent').textContent = opponents[i + 1];
             document.getElementById('attempts').textContent = attempts[i + 1];
+            document.getElementById('result-area').innerHTML = `Nicely done, you beat ${curOpponent}. Gear up for the next oppenent, the ${opponents[i + 1]}, your attempts will be replenished but you will start with one less"`;
         }
     }
+    
 }
 
 function beatGame() {
