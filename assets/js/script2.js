@@ -84,12 +84,13 @@ function start() {
 function choice(playerChoice) {
     document.getElementById('player-choice').value = "";
     document.getElementById('player-choice').innerHTML = playerChoice;
-    var buttonCheck = document.getElementById("game-area").contains(button);
+    let gameArea = document.getElementById("game-area");
+    let button = document.getElementById("go-button");
     
-    if(!buttonCheck) {
+    if(!gameArea.contains(button)) {
     let goButton = document.createElement('button');
-    goButton.innerHTML = "Go";
-    goButton.setAttribute("class", "button");
+    goButton.innerHTML = `Go`;
+    goButton.setAttribute("id", "go-button");
     document.getElementById('game-area').appendChild(goButton);
     goButton.addEventListener('click', generateComputerChoice);
     }
