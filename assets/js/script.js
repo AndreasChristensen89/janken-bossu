@@ -3,15 +3,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for(let button of buttons) {
         button.addEventListener("click", function() {
-            if(this.getAttribute("data-type") === "play") {
+            if(this.getAttribute("data-type") === "play" && document.getElementById('chances').textContent!=="0") {
                 displayComputerChoice();
-            } else {
+            } 
+            else if(this.getAttribute("data-type") === "start") {
+                restart();
+            }
+            else {
                 let playerChoice = this.getAttribute("data-type");
                 runGame(playerChoice);
             }
             })
     }
 })
+
+function restart() {
+    document.getElementById('chances').textContent = "5";
+    document.getElementById('opponent').textContent = "Daiki";
+}
 
 /**
  * When one of the buttons are selected, this function will display the player choice on the page
@@ -45,8 +54,12 @@ function calculateWinner() {
     let lizard = ["Scissors", "Rock"];
     let spock = ["Paper", "Lizard"];
 
-    if (player===computer) {
-        document.getElementById('outcome').textContent = "Draw!";
+    if(player===undefined) {
+        alert(`Please select a hand`);
+        throw `Hand not picked: ${playerChoice}. Aborting!`;
+    }
+    else if (player===computer) {
+        document.getElementById('outcome').textContent = "Draw! No winner!";
     } 
     else if ( player==="Rock" && (computer===rock[0] || computer===rock[1]) ) {
         document.getElementById('outcome').textContent = `${computer} beats ${player} - You lose!`;
@@ -65,12 +78,11 @@ function calculateWinner() {
     } 
     else {
         document.getElementById('outcome').textContent = `${player} beats ${computer} - You win!`;
+        nextOpponent();
     }
 
-    if(document.getElementById('outcome').textContent === `${player} beats ${computer} - You win!`) {
-        increaseScore();
-    } else if (document.getElementById('outcome').textContent === `${computer} beats ${player} - You lose!`) {
-        increaseDefeat();
+    if(document.getElementById('outcome').textContent === `${computer} beats ${player} - You lose!`) {
+        decreaseChances();
     }
 
 }
@@ -83,13 +95,21 @@ function displayComputerChoice() {
     calculateWinner();
 }
 
-function increaseScore() {
+function nextOpponent() {
+    let opponents = ["Daiki", "Salary Man", "The Manager", "Yakuza Henchman", "Biggu Bossu"];
     let oldScore = parseInt(document.getElementById('score').innerText);
     document.getElementById('score').innerText = ++oldScore;
 }
 
-function increaseDefeat() {
-    let oldScore = parseInt(document.getElementById('incorrect').innerText);
-    document.getElementById('incorrect').innerText = ++oldScore;
+function decreaseChances() {
+    let oldScore = parseInt(document.getElementById('chances').innerText);
+    document.getElementById('chances').innerText = --oldScore;
+    if(oldScore===0) {
+        gameOver();
+    }
+}
+
+function gameOver() {
+    document.getElementById('outcome').innerText = "Game over! Press the Start / Restart button to try again"
 }
 

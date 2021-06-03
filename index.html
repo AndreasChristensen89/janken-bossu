@@ -11,13 +11,15 @@
 </head>
 
 <body>
-
+    <button data-type="start" class="start">Start / Reset</button>
     <div class="game-area">
         <button data-type="rock" class="button">Rock</button>
         <button data-type="paper" class="button">Paper</button>
         <button data-type="scissors" class="button">Scissors</button>
         <button data-type="lizard" class="button">Lizard</button>
         <button data-type="spock" class="button">Spock</button>
+        <p>Opponent: <span id="opponent"></span></p>
+        <p>Chances left: <span id="chances">0</span></p>
         <p>Your choice: <span id="choice"></span></p>
         
     </div>
@@ -29,12 +31,6 @@
     <span id="explanation"></span>
     
     <p>Outcome: <span id="outcome"></span></p>
-    
-
-    <div class="score-area">
-    <p class="scores">Your Score: <span id="score">0</span></p>
-    <p class="scores">Computer Score: <span id="incorrect">0</span></p>
-    </div>
 
     <button data-type="play-again" class="button">Play Again</button>
 
