@@ -74,7 +74,7 @@ function start() {
         buttons[i].innerHTML = innerHtml[i];
         document.getElementById('button-area').appendChild(buttons[i]);
         buttons[i].addEventListener('click', function() {
-            let playerChoice = this.getAttribute("data-type");
+            let playerChoice = this.getAttribute("data-type").charAt(0).toUpperCase() + this.getAttribute("data-type").slice(1);
             choice(playerChoice);
         } );
     }
@@ -83,25 +83,66 @@ function start() {
 
 function choice(playerChoice) {
     document.getElementById('player-choice').value = "";
-    document.getElementById('player-choice').innerHTML = playerChoice;
-    let gameArea = document.getElementById("game-area");
+    document.getElementById('player-choice').innerHTML = `Your choice: <p id="player-value">${playerChoice}</p>`;
+    let goArea = document.getElementById("go-button-area");
     let button = document.getElementById("go-button");
     
-    if(!gameArea.contains(button)) {
+    if(!goArea.contains(button)) {
     let goButton = document.createElement('button');
     goButton.innerHTML = `Go`;
     goButton.setAttribute("id", "go-button");
-    document.getElementById('game-area').appendChild(goButton);
+    document.getElementById('go-button-area').appendChild(goButton);
     goButton.addEventListener('click', generateComputerChoice);
     }
 }
 
 function generateComputerChoice() {
-    
+    let computerOptions = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+    let randomNumber = Math.floor(Math.random() * 5);
+    let compResult = computerOptions[randomNumber];
+
+    document.getElementById('comp-choice').value = "";
+    document.getElementById('comp-choice').innerHTML = `Computer picked: ${compResult}`;
+
+    calculateWinner(compResult);
 }
 
-function calculateWinner() {
-    
+function calculateWinner(compResult) {
+    let playerChoice = document.getElementById('player-value').textContent;
+
+    let rock = ["Spock", "Paper"];
+    let paper = ["Scissors", "Lizard"];
+    let scissors = ["Rock", "Spock"];
+    let lizard = ["Scissors", "Rock"];
+    let spock = ["Paper", "Lizard"];
+
+    if(playerChoice===compResult) {
+        document.getElementById('outcome').textContent = "Draw! No winner!";
+    } 
+    else if ( playerChoice==="Rock" && (compResult===rock[0] || compResult===rock[1]) ) {
+        document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
+    } 
+    else if( playerChoice==="Paper" && (compResult===paper[0] || compResult===paper[1]) ) {
+        document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
+    } 
+    else if( playerChoice==="Scissors" && (compResult===scissors[0] || compResult===scissors[1]) ) {
+        document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
+    } 
+    else if( playerChoice==="Lizard" && (compResult===lizard[0] || compResult===lizard[1]) ) {
+        document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
+    } 
+    else if( playerChoice==="Spock" && (compResult===spock[0] || compResult===spock[1]) ) {
+        document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
+    } 
+    else {
+        document.getElementById('outcome').textContent = `${playerChoice} beats ${compResult} - You win!`;
+        nextOpponent();
+    }
+
+    if(document.getElementById('result-area').textContent === `${compResult} beats ${playerChoice} - You lose!`) {
+        decreaseScore();
+    }
+
 }
 
 function decreaseScore() {

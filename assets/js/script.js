@@ -44,7 +44,7 @@ function runGame(playerChoice) {
     }
 }
 
-function calculateWinner() {
+function calculatesWinner() {
     let player = document.getElementById('choice').textContent;
     let computer = document.getElementById('computerChoice').textContent;
 
@@ -92,7 +92,7 @@ function displayComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 5);
     let result = computerChoices[randomNumber];
     document.getElementById('computerChoice').textContent = result;
-    calculateWinner();
+    calculatesWinner();
 }
 
 function nextOpponent() {
