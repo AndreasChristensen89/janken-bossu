@@ -27,8 +27,7 @@ function play() {
 }
 
 function start() {
-    document.body.style.backgroundImage = "none";
-    // document.body.style.backgroundImage = `url('../images/biggu-bossu.jpg')`;
+    document.body.style.backgroundImage = "url(assets/images/intern.jpg)";
 
     
     let rock = document.createElement('button');
@@ -167,7 +166,7 @@ function nextOpponent() {
     document.getElementById('player-choice').innerText = "";
     document.getElementById('outcome').innerText = "";
 
-    let backgrounds = ["../images/intern.jpg", "../images/salary-man.jpg", "../images/manager.jpg", "../images/yakuza-henchman.jpg", "../images/biggu-bossu.jpg"];
+    let backgrounds = ["url(assets/images/intern.jpg)", "url(assets/images/salary-man.jpg)", "url(assets/images/manager.jpg)", "url(assets/images/yakuza-henchman.jpg)", "url(assets/images/biggu-bossu.jpg)"];
     let opponents = ["Intern", "Salary Man", "Manager", "Yakuza Henchman", "Biggu Bossu"];
     let attempts = [5, 4, 3, 2, 1];
     let currentOpponent = document.getElementById('opponent').innerText;
@@ -179,10 +178,7 @@ function nextOpponent() {
         } else if (currentOpponent === opponents[i]) {
             document.getElementById('opponent').textContent = opponents[i + 1];
             document.getElementById('attempts').textContent = attempts[i + 1];
-            var newBg = backgrounds[i]+1;
-            let body = document.getElementById('lol');
-            body.style.background = 'url(' + newBg + ')';
-            
+            document.body.style.backgroundImage = backgrounds[i + 1];
         }
     }
     
