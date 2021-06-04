@@ -10,7 +10,9 @@
 body {
     font-family: Lato, sans-serif;
     font-weight: 300;
-    background: url(../images/main-background.jpg) no-repeat center center;
+    background-image: url(../images/main-background.jpg);
+    background-repeat: no-repeat;
+    background-position-y: 70%;
     background-size: cover;
     height: 500px;
 }

@@ -27,9 +27,7 @@ function play() {
 }
 
 function start() {
-    let body = document.getElementById('lol');
-    document.body.style.background = "url(.../images/intern.jpg) no-repeat center center";
-    // body.style.background = "url(.../images/intern.jpg) no-repeat center center";
+    document.body.style.backgroundImage = "url('../images/biggu-bossu.jpg')";
 
     
     let rock = document.createElement('button');
