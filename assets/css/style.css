@@ -10,17 +10,56 @@
 body {
     font-family: Lato, sans-serif;
     font-weight: 300;
-    background-color: #EAE7DC;
+    background: url(../images/main-background.jpg) no-repeat center center;
+    background-size: cover;
+    height: 500px;
+}
+
+#main-intro {
+    height: 200px;
+    margin: 150px auto 30px;
+    width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 30pt;
+    background-color: rgba(46, 104, 180);
+    border-radius: 20px;
+}
+
+h2 {
+    margin: 30px;
 }
 
 /* ====================== Buttons ====================== */
 
+#button-area {
+    text-align: center;
+}
+
 #play-button {
     text-align: center;
     margin: 0 auto;
-    border: 2px, solid, black;
+    font-size: 30pt;
+    background-color: rgba(37, 104, 180);
+    border-radius: 20px;
+    width: 100px;
 }
 
+#start-button {
+    color: blue;
+    width: 150px;
+    margin: 50px auto;
+}
+
+.button {
+    margin: 50px 30px;
+    font-size: 18pt;
+    border: 2px solid black;
+    border-radius: 10%;
+}
 
 /* ====================== Footer ====================== */
 
