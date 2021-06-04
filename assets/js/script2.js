@@ -99,10 +99,10 @@ function calculateWinner(compResult) {
 
     for(let i = 0; i<failEvents.length; i++) {
         if(playerChoice === compResult) {
-            document.getElementById('outcome').textContent = "Draw! No winner!";
+            document.getElementById('outcome').textContent = "Draw! No winner! Try again";
         } else if(playerChoice===failEvents[i].value) {
             if(compResult===failEvents[i].failOne || compResult===failEvents[i].failTwo) {
-                document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
+                document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose! Try again!`;
                 decreaseScore();
             } else {
                 let currentOpponent = document.getElementById('opponent').innerText;
@@ -160,6 +160,7 @@ function nextOpponent() {
     document.getElementById('next-button').remove();
     document.getElementById('result-area').innerText = "";
     document.getElementById('comp-choice').innerText = "";
+    document.getElementById('player-choice').innerText = "";
     document.getElementById('outcome').innerText = "";
 
 
