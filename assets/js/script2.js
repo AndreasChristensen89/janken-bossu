@@ -27,7 +27,8 @@ function play() {
 }
 
 function start() {
-    document.body.style.backgroundImage = "url('../images/biggu-bossu.jpg')";
+    document.body.style.backgroundImage = "none";
+    // document.body.style.backgroundImage = `url('../images/biggu-bossu.jpg')`;
 
     
     let rock = document.createElement('button');
