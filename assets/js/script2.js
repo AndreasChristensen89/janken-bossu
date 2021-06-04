@@ -97,21 +97,18 @@ function calculateWinner(compResult) {
         { "value": "Spock", "failOne": "Paper", "failTwo": "Lizard" },
     ];
 
-    let lose = false;
-
     for(let i = 0; i<failEvents.length; i++) {
-        if(playerChoice===failEvents[i] && (compResult===failEvents[i].failOne || compResult===failEvents[i].failTwo)) {
-            document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
-            lose=true;
-            decreaseScore();
-        } else if(playerChoice === compResult) {
+        if(playerChoice === compResult) {
             document.getElementById('outcome').textContent = "Draw! No winner!";
-        }
-        }
-
-    let currentOpponent = document.getElementById('opponent').innerText;
-    if(lose===false) {
-    beatOpponent(currentOpponent);
+        } else if(playerChoice===failEvents[i].value) {
+            if(compResult===failEvents[i].failOne || compResult===failEvents[i].failTwo) {
+                document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
+                decreaseScore();
+            } else {
+                let currentOpponent = document.getElementById('opponent').innerText;
+                beatOpponent(currentOpponent);
+            }
+        }  
     }
 }
 
