@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function play() {
 
     let newSpan = document.createElement('p');
-    newSpan.innerHTML = `Opponent: <span id="opponent">Daiki</span>`;
+    newSpan.innerHTML = `Opponent: <span id="opponent">Intern</span>`;
 
     let newSpanTwo = document.createElement('p');
     newSpanTwo.innerHTML = `Attempts: <span id="attempts">5</span>`;
@@ -89,40 +89,30 @@ function generateComputerChoice() {
 function calculateWinner(compResult) {
     let playerChoice = document.getElementById('player-value').textContent;
 
-    let rock = ["Spock", "Paper"];
-    let paper = ["Scissors", "Lizard"];
-    let scissors = ["Rock", "Spock"];
-    let lizard = ["Scissors", "Rock"];
-    let spock = ["Paper", "Lizard"];
+    let failEvents = [ 
+        { "value": "Rock", "failOne": "Spock", "failTwo": "Paper" },
+        { "value": "Paper", "failOne": "Scissors", "failTwo": "Lizard" },
+        { "value": "Scissors", "failOne": "Rock", "failTwo": "Spock" },
+        { "value": "Lizard", "failOne": "Scissors", "failTwo": "Rock" },
+        { "value": "Spock", "failOne": "Paper", "failTwo": "Lizard" },
+    ];
 
-    if (playerChoice === compResult) {
-        document.getElementById('outcome').textContent = "Draw! No winner!";
-    } 
-    else if (playerChoice === "Rock" && rock.includes(compResult)) {
-        document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
-    } 
-    else if (playerChoice === "Paper" && paper.includes(compResult)) {
-        document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
-    } 
-    else if (playerChoice === "Scissors" && scissors.includes(compResult)) {
-        document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
-    } 
-    else if (playerChoice === "Lizard" && lizard.includes(compResult)) {
-        document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
-    } 
-    else if (playerChoice === "Spock" && spock.includes(compResult)) {
-        document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
-    } 
-    else {
-        document.getElementById('outcome').textContent = `${playerChoice} beats ${compResult} - You win!`;
-        let currentOpponent = document.getElementById('opponent').innerText;
-        beatOpponent(currentOpponent);
+    let lose = false;
+
+    for(let i = 0; i<failEvents.length; i++) {
+        if(playerChoice===failEvents[i] && (compResult===failEvents[i].failOne || compResult===failEvents[i].failTwo)) {
+            document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose!`;
+            lose=true;
+            decreaseScore();
+        } else if(playerChoice === compResult) {
+            document.getElementById('outcome').textContent = "Draw! No winner!";
+        }
+        }
+
+    let currentOpponent = document.getElementById('opponent').innerText;
+    if(lose===false) {
+    beatOpponent(currentOpponent);
     }
-
-    if (document.getElementById('outcome').textContent === `${compResult} beats ${playerChoice} - You lose!`) {
-        decreaseScore();
-    }
-
 }
 
 function decreaseScore() {
@@ -149,18 +139,24 @@ function beatOpponent(currentOpponent) {
         beatGame();
     }
 
-    let opponents = ["Daiki", "Salary Man", "The Manager", "Yakuza Henchman", "Biggu Bossu"];
+    let opponents = ["Intern", "Salary Man", "Manager", "Yakuza Henchman", "Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
 
-    document.getElementById('player-value').textContent = "";
-    document.getElementById('player-choice').textContent = "";
-    document.getElementById('result-area').innerHTML = `Nicely done, you beat ${currentOpponent}. Gear up for the next oppenent, the ${opponents[nextIndex+1]}! You will start with one less attempt. Good luck!`;
+    document.getElementById('player-value').value = "";
+    document.getElementById('player-choice').value = "";
+    document.getElementById('result-area').innerHTML = `Nicely done, you beat the ${currentOpponent}. Gear up for the next oppenent, the ${opponents[nextIndex+1]}! You will start with one less attempt. Good luck!`;
         
     let nextButton = document.createElement('button');
     nextButton.innerHTML = `Next Opponent`;
     nextButton.setAttribute("id", "next-button");
     document.getElementById('result-area').appendChild(nextButton);
     nextButton.addEventListener('click', nextOpponent);
+
+    let numOfButtons = document.getElementsByClassName('button');
+    
+    for(let i = 0; i < numOfButtons.length; i++) {
+        numOfButtons[i].disabled = true;
+    }
 }
 
 function nextOpponent() {
@@ -170,7 +166,7 @@ function nextOpponent() {
     document.getElementById('outcome').innerText = "";
 
 
-    let opponents = ["Daiki", "Salary Man", "The Manager", "Yakuza Henchman", "Biggu Bossu"];
+    let opponents = ["Intern", "Salary Man", "Manager", "Yakuza Henchman", "Biggu Bossu"];
     let attempts = [5, 4, 3, 2, 1];
     let currentOpponent = document.getElementById('opponent').innerText;
 
@@ -184,7 +180,12 @@ function nextOpponent() {
             
         }
     }
-
+    
+    let numOfButtons = document.getElementsByClassName('button');
+    
+    for(let i = 0; i < numOfButtons.length; i++) {
+        numOfButtons[i].disabled = false;
+    }
 }
 
 function beatGame() {
