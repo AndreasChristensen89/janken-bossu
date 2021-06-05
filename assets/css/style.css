@@ -10,9 +10,11 @@
 body {
     font-family: Lato, sans-serif;
     font-weight: 300;
-    background-image: url(../images/main-background.jpg);
+    background-color: rgb(77, 126, 148);
+    background-image: url(../images/background.webp);
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position-y: 70%;
+    background-position-y: 90%;
     background-size: cover;
     height: 500px;
 }
@@ -41,6 +43,13 @@ h2 {
     text-align: center;
 }
 
+#button-area p {
+    font-size: 40pt;
+    width: 400px;
+    margin: 0 auto;
+    font-weight: 900;
+}
+
 #play-button {
     text-align: center;
     margin: 0 auto;
@@ -51,9 +60,18 @@ h2 {
 }
 
 #start-button {
-    color: blue;
+    color: #36364e;
     width: 150px;
     margin: 50px auto;
+    border-radius: 20%;
+    font-size: 30pt;
+}
+
+#intro-text p {
+    font-size: 18pt;
+    line-height: 40px;
+    background: white;
+    border-radius: 10%;
 }
 
 .button {
@@ -61,6 +79,47 @@ h2 {
     font-size: 18pt;
     border: 2px solid black;
     border-radius: 10%;
+}
+
+#game-area {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#player-choice {
+    font-size: 28pt;
+    background: rgb(124 120 148);
+    border-radius: 10%;
+}
+
+#player-value {
+    font-weight: 800;
+}
+
+#go-button {
+    font-size: 30pt;
+    background: white;
+    width: 100px;
+    border-radius: 20%;
+}
+
+#comp-choice {
+    font-size: 24pt;
+    background: white;
+    font-weight: 900;
+}
+
+#outcome {
+    font-size: 30pt;
+    background: white;
+    margin-top: 30px;
+}
+
+#result-area {
+    text-align: center;
+    font-size: 22pt;
+    padding-top: 20px;
+    font-weight: bold;
 }
 
 /* ====================== Footer ====================== */

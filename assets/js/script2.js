@@ -4,12 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function play() {
-
-    let newSpan = document.createElement('p');
-    newSpan.innerHTML = `Opponent: <span id="opponent">Intern</span>`;
-
-    let newSpanTwo = document.createElement('p');
-    newSpanTwo.innerHTML = `Attempts: <span id="attempts">5</span>`;
+    let introText = document.createElement('div');
+    introText.innerHTML = `<p>For reach opponent you will have a limited numbers of attempts. <br>You only need to beat the opponent once to advance to the next level.</p>`
+    introText.setAttribute("id", "intro-text");
 
     let startButton = document.createElement('button');
     startButton.innerHTML = `Start`;
@@ -19,17 +16,25 @@ function play() {
     let playButton = document.getElementById('play-button');
 
     playButton.remove();
-    document.getElementById('button-area').appendChild(newSpan);
-    document.getElementById('button-area').appendChild(newSpanTwo);
+    document.getElementById('button-area').appendChild(introText);
     document.getElementById('button-area').appendChild(startButton);
-
     document.getElementById('start-button').addEventListener('click', start);
 }
 
 function start() {
-    document.body.style.backgroundImage = "url(assets/images/intern.jpg)";
+    document.body.style.backgroundImage = "url(assets/images/intern.webp)";
+    document.getElementById('main-intro').remove();
+    document.getElementById('intro-text').remove();
 
-    
+    let newSpan = document.createElement('p');
+    newSpan.innerHTML = `Opponent: <span id="opponent">Intern</span>`;
+
+    let newSpanTwo = document.createElement('p');
+    newSpanTwo.innerHTML = `Attempts: <span id="attempts">5</span>`;
+
+    document.getElementById('button-area').appendChild(newSpan);
+    document.getElementById('button-area').appendChild(newSpanTwo);
+
     let rock = document.createElement('button');
     let paper = document.createElement('button');
     let scissors = document.createElement('button');
@@ -92,26 +97,45 @@ function generateComputerChoice() {
 function calculateWinner(compResult) {
     let playerChoice = document.getElementById('player-value').textContent;
 
-    let failEvents = [ 
-        { "value": "Rock", "failOne": "Spock", "failTwo": "Paper" },
-        { "value": "Paper", "failOne": "Scissors", "failTwo": "Lizard" },
-        { "value": "Scissors", "failOne": "Rock", "failTwo": "Spock" },
-        { "value": "Lizard", "failOne": "Scissors", "failTwo": "Rock" },
-        { "value": "Spock", "failOne": "Paper", "failTwo": "Lizard" },
+    let failEvents = [{
+            "value": "Rock",
+            "failOne": "Spock",
+            "failTwo": "Paper"
+        },
+        {
+            "value": "Paper",
+            "failOne": "Scissors",
+            "failTwo": "Lizard"
+        },
+        {
+            "value": "Scissors",
+            "failOne": "Rock",
+            "failTwo": "Spock"
+        },
+        {
+            "value": "Lizard",
+            "failOne": "Scissors",
+            "failTwo": "Rock"
+        },
+        {
+            "value": "Spock",
+            "failOne": "Paper",
+            "failTwo": "Lizard"
+        },
     ];
 
-    for(let i = 0; i<failEvents.length; i++) {
-        if(playerChoice === compResult) {
+    for (let i = 0; i < failEvents.length; i++) {
+        if (playerChoice === compResult) {
             document.getElementById('outcome').textContent = "Draw! No winner! Try again";
-        } else if(playerChoice===failEvents[i].value) {
-            if(compResult===failEvents[i].failOne || compResult===failEvents[i].failTwo) {
+        } else if (playerChoice === failEvents[i].value) {
+            if (compResult === failEvents[i].failOne || compResult === failEvents[i].failTwo) {
                 document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose! Try again!`;
                 decreaseScore();
             } else {
                 let currentOpponent = document.getElementById('opponent').innerText;
                 beatOpponent(currentOpponent);
             }
-        }  
+        }
     }
 }
 
@@ -135,7 +159,7 @@ function restart() {
 }
 
 function beatOpponent(currentOpponent) {
-    if(currentOpponent==="Biggu Bossu") {
+    if (currentOpponent === "Biggu Bossu") {
         beatGame();
     }
 
@@ -144,8 +168,8 @@ function beatOpponent(currentOpponent) {
 
     document.getElementById('player-value').value = "";
     document.getElementById('player-choice').value = "";
-    document.getElementById('result-area').innerHTML = `Nicely done, you beat the ${currentOpponent}. Gear up for the next oppenent, the ${opponents[nextIndex+1]}! You will start with one less attempt. Good luck!`;
-        
+    document.getElementById('result-area').innerHTML = `Nicely done, you beat the ${currentOpponent}.<br> Gear up for the next oppenent, the ${opponents[nextIndex+1]}!<br> You will start with one less attempt. Good luck!<br>`;
+
     let nextButton = document.createElement('button');
     nextButton.innerHTML = `Next Opponent`;
     nextButton.setAttribute("id", "next-button");
@@ -153,8 +177,8 @@ function beatOpponent(currentOpponent) {
     nextButton.addEventListener('click', nextOpponent);
 
     let numOfButtons = document.getElementsByClassName('button');
-    
-    for(let i = 0; i < numOfButtons.length; i++) {
+
+    for (let i = 0; i < numOfButtons.length; i++) {
         numOfButtons[i].disabled = true;
     }
 }
@@ -166,7 +190,7 @@ function nextOpponent() {
     document.getElementById('player-choice').innerText = "";
     document.getElementById('outcome').innerText = "";
 
-    let backgrounds = ["url(assets/images/intern.jpg)", "url(assets/images/salary-man.jpg)", "url(assets/images/manager.jpg)", "url(assets/images/yakuza-henchman.jpg)", "url(assets/images/biggu-bossu.jpg)"];
+    let backgrounds = ["url(assets/images/intern.webp)", "url(assets/images/salaryman.webp)", "url(assets/images/manager.webp)", "url(assets/images/yakuza_henchman.webp)", "url(assets/images/biggu-bossu.webp)"];
     let opponents = ["Intern", "Salary Man", "Manager", "Yakuza Henchman", "Biggu Bossu"];
     let attempts = [5, 4, 3, 2, 1];
     let currentOpponent = document.getElementById('opponent').innerText;
@@ -181,10 +205,10 @@ function nextOpponent() {
             document.body.style.backgroundImage = backgrounds[i + 1];
         }
     }
-    
+
     let numOfButtons = document.getElementsByClassName('button');
-    
-    for(let i = 0; i < numOfButtons.length; i++) {
+
+    for (let i = 0; i < numOfButtons.length; i++) {
         numOfButtons[i].disabled = false;
     }
 }
