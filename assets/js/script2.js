@@ -26,11 +26,13 @@ function start() {
     document.getElementById('main-intro').remove();
     document.getElementById('intro-text').remove();
 
-    let newSpan = document.createElement('p');
-    newSpan.innerHTML = `Opponent:<br> The <span id="opponent">Intern</span>`;
+    let newSpan = document.createElement('span');
+    newSpan.innerHTML = `The Intern`;
+    newSpan.setAttribute("id", "opponent");
 
-    let newSpanTwo = document.createElement('p');
-    newSpanTwo.innerHTML = `Attempts: <span id="attempts">5</span>`;
+    let newSpanTwo = document.createElement('span');
+    newSpanTwo.innerHTML = `100`;
+    newSpanTwo.setAttribute("id", "health");
 
     document.getElementById('button-area').appendChild(newSpan);
     document.getElementById('button-area').appendChild(newSpanTwo);
@@ -128,23 +130,53 @@ function calculateWinner(compResult) {
         if (playerChoice === compResult) {
             document.getElementById('outcome').textContent = "Draw! No winner! Try again";
         } else if (playerChoice === failEvents[i].value) {
+            let currentOpponent = document.getElementById('opponent').innerText;
             if (compResult === failEvents[i].failOne || compResult === failEvents[i].failTwo) {
                 document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose! Try again!`;
-                decreaseScore();
+                decreaseScore(currentOpponent);
             } else {
-                let currentOpponent = document.getElementById('opponent').innerText;
                 beatOpponent(currentOpponent);
             }
         }
     }
 }
 
-function decreaseScore() {
-    let oldScore = parseInt(document.getElementById('attempts').innerText);
-    document.getElementById('attempts').innerText = --oldScore;
-    if (oldScore === 0) {
-        gameOver();
-    }
+function decreaseScore(currentOpponent) {
+        let damage = [{
+            "value": "The Intern",
+            "points": 20
+        },
+        {
+            "value": "The Salary Man",
+            "points": 25
+        },
+        {
+            "value": "The Manager",
+            "points": 33
+        },
+        {
+            "value": "The Yakuza Henchman",
+            "points": 50
+        },
+        {
+            "value": "The Biggu Bossu",
+            "points": 100
+        }
+    ];
+    
+    
+    let health = parseInt(document.getElementById('health').innerText);
+
+        for(let i = 0; i < damage.length; i++) {
+            if(currentOpponent === damage[i].value) {
+                newScore = health-damage[i].points;
+                document.getElementById('health').innerHTML = newScore;
+                if (newScore < 20) {
+                    gameOver();
+                    }    
+                }
+            }
+    
 }
 
 function gameOver() {
@@ -159,11 +191,11 @@ function restart() {
 }
 
 function beatOpponent(currentOpponent) {
-    if (currentOpponent === "Biggu Bossu") {
+    if (currentOpponent === "The Biggu Bossu") {
         beatGame();
     }
 
-    let opponents = ["Intern", "Salary Man", "Manager", "Yakuza Henchman", "Biggu Bossu"];
+    let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
 
     document.getElementById('player-value').value = "";
@@ -173,7 +205,7 @@ function beatOpponent(currentOpponent) {
     let nextButton = document.createElement('button');
     nextButton.innerHTML = `Next Opponent`;
     nextButton.setAttribute("id", "next-button");
-    document.getElementById('player-value').appendChild(nextButton);
+    document.getElementById('result-area').appendChild(nextButton);
     nextButton.addEventListener('click', nextOpponent);
 
     let numOfButtons = document.getElementsByClassName('button');
@@ -191,8 +223,8 @@ function nextOpponent() {
     document.getElementById('outcome').innerText = "";
 
     let backgrounds = ["url(assets/images/intern.webp)", "url(assets/images/salaryman.webp)", "url(assets/images/manager.webp)", "url(assets/images/yakuza_henchman.webp)", "url(assets/images/biggu-bossu.webp)"];
-    let opponents = ["Intern", "Salary Man", "Manager", "Yakuza Henchman", "Biggu Bossu"];
-    let attempts = [5, 4, 3, 2, 1];
+    let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
+    // let attempts = [5, 4, 3, 2, 1];
     let currentOpponent = document.getElementById('opponent').innerText;
 
     for (let i = 0; i < opponents.length; i++) {
@@ -201,7 +233,7 @@ function nextOpponent() {
             break;
         } else if (currentOpponent === opponents[i]) {
             document.getElementById('opponent').textContent = opponents[i + 1];
-            document.getElementById('attempts').textContent = attempts[i + 1];
+            document.getElementById('health').textContent = 100;
             document.body.style.backgroundImage = backgrounds[i + 1];
         }
     }
