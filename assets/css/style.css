@@ -16,8 +16,13 @@ body {
     background-repeat: no-repeat;
     background-position-y: 90%;
     background-size: cover;
-    height: 500px;
+    overflow: hidden;
+    height: auto;
 }
+
+/* #background {
+    background: url(../images/background.webp) no-repeat center center;
+} */
 
 #main-intro {
     height: 200px;
@@ -113,6 +118,11 @@ h2 {
     font-size: 30pt;
     background: white;
     margin-top: 30px;
+}
+
+#next-button {
+    float: right;
+    margin-right: 300px;
 }
 
 #result-area {

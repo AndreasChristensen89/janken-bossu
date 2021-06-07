@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function play() {
     let introText = document.createElement('div');
-    introText.innerHTML = `<p>For reach opponent you will have a limited numbers of attempts. <br>You only need to beat the opponent once to advance to the next level.</p>`
+    introText.innerHTML = `<p>For each opponent you will have a limited numbers of attempts. <br>You only need to beat the opponent once to advance to the next level.</p>`
     introText.setAttribute("id", "intro-text");
 
     let startButton = document.createElement('button');
@@ -27,7 +27,7 @@ function start() {
     document.getElementById('intro-text').remove();
 
     let newSpan = document.createElement('p');
-    newSpan.innerHTML = `Opponent: <span id="opponent">Intern</span>`;
+    newSpan.innerHTML = `Opponent:<br> The <span id="opponent">Intern</span>`;
 
     let newSpanTwo = document.createElement('p');
     newSpanTwo.innerHTML = `Attempts: <span id="attempts">5</span>`;
@@ -173,7 +173,7 @@ function beatOpponent(currentOpponent) {
     let nextButton = document.createElement('button');
     nextButton.innerHTML = `Next Opponent`;
     nextButton.setAttribute("id", "next-button");
-    document.getElementById('result-area').appendChild(nextButton);
+    document.getElementById('player-value').appendChild(nextButton);
     nextButton.addEventListener('click', nextOpponent);
 
     let numOfButtons = document.getElementsByClassName('button');
