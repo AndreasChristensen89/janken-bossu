@@ -134,15 +134,29 @@ function calculateWinner(compResult) {
             if (compResult === failEvents[i].failOne || compResult === failEvents[i].failTwo) {
                 document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose! Try again!`;
                 decreaseScore(currentOpponent);
+                document.getElementById("health").animate([{
+                        color: "black"
+                    },
+                    {
+                        color: 'red'
+                    },
+                    {
+                        color: 'black'
+                    }
+                ], {
+                    duration: 500,
+                    iterations: 1
+                });
             } else {
                 beatOpponent(currentOpponent);
             }
         }
     }
+
 }
 
 function decreaseScore(currentOpponent) {
-        let damage = [{
+    let damage = [{
             "value": "The Intern",
             "points": 20
         },
@@ -163,19 +177,19 @@ function decreaseScore(currentOpponent) {
             "points": 100
         }
     ];
-    
-    
+
+
     let health = parseInt(document.getElementById('health').innerText);
 
-        for(let i = 0; i < damage.length; i++) {
-            if(currentOpponent === damage[i].value) {
-                newScore = health-damage[i].points;
-                document.getElementById('health').innerHTML = newScore;
-                if (newScore < 20) {
-                    gameOver();
-                    }    
-                }
+    for (let i = 0; i < damage.length; i++) {
+        if (currentOpponent === damage[i].value) {
+            newScore = health - damage[i].points;
+            document.getElementById('health').innerHTML = newScore;
+            if (newScore < 20) {
+                gameOver();
             }
+        }
+    }
 }
 
 function gameOver() {
@@ -195,7 +209,7 @@ function beatOpponent(currentOpponent) {
     // for(let i = 4; i >= 0; i--) {
     //     buttons[i].remove();
     // }
-    
+
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
 
@@ -214,7 +228,7 @@ function beatOpponent(currentOpponent) {
     for (let i = 0; i < numOfButtons.length; i++) {
         numOfButtons[i].disabled = true;
     }
-    
+
     if (currentOpponent === "The Biggu Bossu") {
         beatGame();
     }
