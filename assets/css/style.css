@@ -22,7 +22,7 @@ body {
 
 #main-intro {
     height: 200px;
-    margin: 150px auto 30px;
+    margin: 150px auto 0;
     width: 600px;
     text-align: center;
 }
@@ -111,6 +111,17 @@ h2 {
     background: white;
     width: 100px;
     border-radius: 20%;
+}
+
+#health {
+    display: block;
+    font-size: 30pt;
+    background: black;
+    width: 200px;
+    margin: 50px auto 0;
+    color: white;
+    border-radius: 50%;
+    font-weight: 900;
 }
 
 #comp-choice {

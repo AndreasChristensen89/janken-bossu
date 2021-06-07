@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function play() {
     let introText = document.createElement('div');
-    introText.innerHTML = `<p>For each opponent you will have a limited numbers of attempts. <br>You only need to beat the opponent once to advance to the next level.</p>`
+    introText.innerHTML = `<p>Opponents will get stronger for each round, so watch your health bar. <br>You only need to beat each opponent once to advance to the next level.</p>`
     introText.setAttribute("id", "intro-text");
 
     let startButton = document.createElement('button');
@@ -63,7 +63,7 @@ function start() {
 
 function choice(playerChoice) {
     document.getElementById('player-choice').value = "";
-    document.getElementById('player-choice').innerHTML = `Your choice: <p id="player-value">${playerChoice}</p>`;
+    document.getElementById('player-choice').innerHTML = `<p id="player-value">${playerChoice}</p>`;
     let goArea = document.getElementById("go-button-area");
     let button = document.getElementById("go-button");
 
@@ -176,7 +176,6 @@ function decreaseScore(currentOpponent) {
                     }    
                 }
             }
-    
 }
 
 function gameOver() {
@@ -191,16 +190,18 @@ function restart() {
 }
 
 function beatOpponent(currentOpponent) {
-    if (currentOpponent === "The Biggu Bossu") {
-        beatGame();
-    }
 
+    // let buttons = document.getElementsByClassName('button');
+    // for(let i = 4; i >= 0; i--) {
+    //     buttons[i].remove();
+    // }
+    
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
 
     document.getElementById('player-value').value = "";
     document.getElementById('player-choice').value = "";
-    document.getElementById('result-area').innerHTML = `Nicely done, you beat the ${currentOpponent}.<br> Gear up for the next oppenent, the ${opponents[nextIndex+1]}!<br> You will start with one less attempt. Good luck!<br>`;
+    document.getElementById('result-area').innerHTML = `Nicely done, you beat the ${currentOpponent}.<br> Gear up for the next oppenent, ${opponents[nextIndex+1]}!<br>Good luck!<br>`;
 
     let nextButton = document.createElement('button');
     nextButton.innerHTML = `Next Opponent`;
@@ -213,6 +214,10 @@ function beatOpponent(currentOpponent) {
     for (let i = 0; i < numOfButtons.length; i++) {
         numOfButtons[i].disabled = true;
     }
+    
+    if (currentOpponent === "The Biggu Bossu") {
+        beatGame();
+    }
 }
 
 function nextOpponent() {
@@ -224,7 +229,6 @@ function nextOpponent() {
 
     let backgrounds = ["url(assets/images/intern.webp)", "url(assets/images/salaryman.webp)", "url(assets/images/manager.webp)", "url(assets/images/yakuza_henchman.webp)", "url(assets/images/biggu-bossu.webp)"];
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
-    // let attempts = [5, 4, 3, 2, 1];
     let currentOpponent = document.getElementById('opponent').innerText;
 
     for (let i = 0; i < opponents.length; i++) {
