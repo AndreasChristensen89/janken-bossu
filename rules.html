@@ -6,17 +6,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="rock paper scissor lizard spock">
     <meta name="description" content="An expanded game of rock paper scissor with an element of chance">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Rock Paper Scissor Lizard Spock</title>
 </head>
 
-<body>
-        <div class="how-to-play">
-        <p>How to play:<br> "Scissors decapitate Lizard, Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons
-            Spock, Spock smashes Scissors, Scissors decapitates Lizard, Lizard eats Paper, Paper disproves Spock, Spock
-            vaporizes Rock, Rock crushes Scissors."</p>
+<body id="body-rules">
+    <!-- ======================== hamburger nav bar ======================   -->
+    <button class="ham">
+        <!-- X and menu icon SVGs from material icons https://material.io/resources/icons/ -->
+        <span class="menuIcon material-icons">
+            menu
+        </span>
+        <span class="xIcon material-icons">
+            close
+        </span>
+    </button>
+    <ul class="menu">
+        <li><a class="menuLink" href="index.html">Home</a></li>
+        <li><a class="menuLink" href="rules.html">Rules</a></li>
+        <li><a class="menuLink" href="#">Contact</a></li>
+    </ul>
+
+    <!-- ====================== game area =============================== -->
+    <div id="rules-intro">
+        <h1>How to play</h1>
+        <p>Rock Paper Scissors Lizard Spock is an extended form of Rock Paper Scissors which retains the core concept
+            but adds two new choices for players.</p>
     </div>
-    <script src="assets/js/script2.js"></script>
+
+    <div id="how-to-play">
+        <h2>What beats what?</h2>
+        <div class="rule-div">
+            <h3>Rock</h3>
+            <p>... crushes lizard</p>
+            <p>... crushes scissors</p>
+        </div>
+        <div class="rule-div">
+            <h3>Paper</h3>
+            <p>... covers Rock</p>
+            <p>... disproves Spock</p>
+        </div>
+        <div class="rule-div">
+            <h3>Scissors</h3>
+            <p>... decapitates Lizard</p>
+            <p>... cuts Paper</p>
+        </div>
+        <div class="rule-div">
+            <h3>Lizard</h3>
+            <p>... poisons Spock</p>
+            <p>... Lizard eats Paper</p>
+        </div>
+        <div class="rule-div">
+            <h3>Spock</h3>
+            <p>... smashes Scissors</p>
+            <p>... Lizard vaporizes Rock</p>
+        </div>
+
+        <h2>Setting of the game</h2>
+        <p>In Japan, Rock Paper Scissors, or <em>Janken</em> as it is known, is a very common game used almost daily to
+            make various decisions. It is used by kids and adults alike in the kindergarten, in the school yard, and
+            even in the work place. Japanese culture teaches people that "The nails that sticks up get hammered down",
+            which is another way of saying that people should not be too different, nor insistent on having things their
+            own way. As a result, this can make it akward and stressful to suggest something as simple as where to eat, who
+            picks up the check at restaurants, and who gets the last slice of cake. At a young age, Japanese kids are
+            taught to resolve sibling quarrels with a game of Janken. The main idea is that it's a game that comes as
+            close as possible to pure chance, and that it alleviates the pressure of decision making and leaves no
+            guilty part to blame.</p>
+            <!-- <img src="assets/images/settling.webp" alt="Two cartoons characters finishing a game a Janken, one of them is flustered as he just lost"> -->
+        <p>In the setting of this game the expanded Janken has become so integrated in modern Japanese life that promotions at work
+            are settled by this very game. You start at the very bottom of a large cooperation and will have to Janken your way to
+            the top of the hierarchy. Each opponent will get increasingly strong, meaning that a loss will result in
+            increasingly more hit-damage. Defeat all opponents without plummeting to 0 health and you will take over as the bigg boss.</p>
+
+
+        <!-- <footer>
+        <div id="left-footer">
+            <ul>
+                <li>
+                    <a href="https://facebook.com" aria-label="Visit our Facebook page (opens in a new tab)"
+                        target="_blank" rel="noopener"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="https://youtube.com" aria-label="Visit our Youtube channel (opens in a new tab)"
+                        target="_blank" rel="noopener"><i class="fab fa-youtube-square" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="https://twitter.com" aria-label="Visit our twitter page (opens in a new tab)"
+                        target="_blank" rel="noopener"><i class="fab fa-twitter-square" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="https://instagram.com" aria-label="Visit our instagram page (opens in a new tab)"
+                        target="_blank" rel="noopener"><i class="fab fa-instagram-square" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div id="right-footer">
+            <h3>Game by Dre&#169;</h3>
+        </div>
+
+    </footer> -->
+
+        <!-- ====================== font awesome script for icons ====================== -->
+        <script src="https://kit.fontawesome.com/51b9956ef3.js" crossorigin="anonymous"></script>
+
+        <script src="assets/js/script2.js"></script>
 </body>
 
 </html>

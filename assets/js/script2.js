@@ -307,10 +307,42 @@ function nextOpponent() {
 function beatGame() {
     document.getElementById('button-area').innerHTML = ``;
     document.getElementById('game-area').innerHTML = ``;
+    document.getElementById('result-area').innerHTML = ``;
+
+    let win = document.createElement('h1');
+    win.innerHTML = `Congratulations!`;
+    win.setAttribute("id", "win-message");
+    document.getElementById('button-area').appendChild(win);
+
+    let winText = document.createElement('h2');
+    winText.innerHTML = `You managed to rise through the coorporate ladder to claim your place on top`;
+    winText.setAttribute("id", "win-text");
+    document.getElementById('game-area').appendChild(winText);
     
-    // document.write("<h1>Congratulation!</h1>");
-    // document.write("<h2>You managed to beat the entire bunch!</h2>");
-    // document.write("<h2>Try again and see if you can get a clean run!</h2>");
-    // document.write("<button id='restart-button'>Restart</button>");
-    // document.getElementById('restart-button').addEventListener('click', restart);
+    let winTextTwo = document.createElement('p');
+    winTextTwo.innerHTML = `Try again and see if you can get a clean run!`;
+    winTextTwo.setAttribute("id", "win-text-two");
+    document.getElementById('game-area').appendChild(winTextTwo);
+
+    let restartButton = document.createElement('button');
+    restartButton.innerHTML = `Try Again`;
+    restartButton.setAttribute("id", "restart-button");
+    document.getElementById('game-area').appendChild(restartButton);
+    restartButton.addEventListener('click', restart);
+
+    document.body.style.backgroundImage = `url(assets/images/background.webp)`;
+
+    document.getElementById("win-message").animate([{
+                        background: "blue"
+                    },
+                    {
+                        color: 'white'
+                    },
+                    {
+                        color: 'blue'
+                    }
+                ], {
+                    duration: 500,
+                    iterations: Infinity
+                });
 }
