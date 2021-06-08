@@ -207,6 +207,32 @@ h2 {
     font-weight: bold;
 }
 
+#overMessage {
+    margin: 200px auto 100px;
+    width: 400px;
+    font-size: 40pt;
+    font-weight: 900;
+}
+
+#restart-button {
+    background: black;
+    color: white;
+    width: 200px;
+    font-size: 30pt;
+    border-radius: 10%;
+}
+
+#gameover-text {
+    margin: 50px auto;
+    font-size: 26pt;
+    width: 600px;
+    font-weight: 600;
+    color: white;
+    background-color: #962e2e;
+    border-radius: 10%;
+    padding: 20px;
+}
+
 /* ====================== Footer ====================== */
 
 footer {

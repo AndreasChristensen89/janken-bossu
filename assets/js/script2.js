@@ -223,10 +223,26 @@ function decreaseScore(currentOpponent) {
 }
 
 function gameOver() {
-    document.write("<h1>Game Over!</h1>");
-    document.write("<p>Better luck next time.</p>");
-    document.write("<button id='restart-button'>Restart</button>");
-    document.getElementById('restart-button').addEventListener('click', restart);
+    document.getElementById('button-area').innerHTML = ``;
+    document.getElementById('game-area').innerHTML = ``;
+
+    let lost = document.createElement('h1');
+    lost.innerHTML = `Game Over!`;
+    lost.setAttribute("id", "overMessage");
+    document.getElementById('button-area').appendChild(lost);
+
+    let lostMessage = document.createElement('p');
+    lostMessage.innerHTML = `Looks like the odds were against you. Have another go and see if you can reach the top of the coorporate ladder!`;
+    lostMessage.setAttribute("id", "gameover-text");
+    document.getElementById('button-area').appendChild(lostMessage);
+    
+    let restartButton = document.createElement('button');
+    restartButton.innerHTML = `Try Again`;
+    restartButton.setAttribute("id", "restart-button");
+    document.getElementById('game-area').appendChild(restartButton);
+    restartButton.addEventListener('click', restart);
+
+
 }
 
 function restart() {
@@ -234,11 +250,6 @@ function restart() {
 }
 
 function beatOpponent(currentOpponent) {
-
-    // let buttons = document.getElementsByClassName('button');
-    // for(let i = 4; i >= 0; i--) {
-    //     buttons[i].remove();
-    // }
 
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
@@ -294,9 +305,12 @@ function nextOpponent() {
 }
 
 function beatGame() {
-    document.write("<h1>Congratulation!</h1>");
-    document.write("<h2>You managed to beat the entire bunch!</h2>");
-    document.write("<h2>Try again and see if you can get a clean run!</h2>");
-    document.write("<button id='restart-button'>Restart</button>");
-    document.getElementById('restart-button').addEventListener('click', restart);
+    document.getElementById('button-area').innerHTML = ``;
+    document.getElementById('game-area').innerHTML = ``;
+    
+    // document.write("<h1>Congratulation!</h1>");
+    // document.write("<h2>You managed to beat the entire bunch!</h2>");
+    // document.write("<h2>Try again and see if you can get a clean run!</h2>");
+    // document.write("<button id='restart-button'>Restart</button>");
+    // document.getElementById('restart-button').addEventListener('click', restart);
 }
