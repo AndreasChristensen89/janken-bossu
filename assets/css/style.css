@@ -224,6 +224,14 @@ h2 {
     border-radius: 50%;
 }
 
+#result-area p {
+    margin: 30px;
+    box-shadow: black 0px 1px 20px 0px;
+    background: #3da6a3;
+    height: 200px;
+    line-height: 65px;
+}
+
 #overMessage {
     margin: 200px auto 100px;
     width: 400px;

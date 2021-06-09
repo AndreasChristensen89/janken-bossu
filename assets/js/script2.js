@@ -12,23 +12,23 @@ var menuIcon = document.querySelector(".menuIcon")
 ham.addEventListener("click", toggleMenu)
 
 function toggleMenu() {
-  if (menu.classList.contains("showMenu")) {
-    menu.classList.remove("showMenu");
-    xIcon.style.display = "none";
-    menuIcon.style.display = "block";
-  } else {
-    menu.classList.add("showMenu");
-    xIcon.style.display = "block";
-    menuIcon.style.display = "none";
-  }
+    if (menu.classList.contains("showMenu")) {
+        menu.classList.remove("showMenu");
+        xIcon.style.display = "none";
+        menuIcon.style.display = "block";
+    } else {
+        menu.classList.add("showMenu");
+        xIcon.style.display = "block";
+        menuIcon.style.display = "none";
+    }
 }
 
 var menuLinks = document.querySelectorAll(".menuLink")
 
 menuLinks.forEach(
-  function (menuLink) {
-    menuLink.addEventListener("click", toggleMenu)
-  }
+    function (menuLink) {
+        menuLink.addEventListener("click", toggleMenu)
+    }
 )
 
 // ==================================== game area ====================================
@@ -103,9 +103,9 @@ function choice(playerChoice) {
     let button = document.getElementById("go-button");
 
 
-    if (document.getElementById('result-area').innerHTML !== null) {
-        document.getElementById('result-area').innerHTML = ``;
-    }
+    // if (document.getElementById('result-area').innerHTML !== null) {
+    //     document.getElementById('result-area').innerHTML = ``;
+    // }
 
     document.getElementById('comp-choice').textContent = "";
     document.getElementById('outcome').textContent = "";
@@ -125,8 +125,16 @@ function generateComputerChoice() {
     let compResult = computerOptions[randomNumber];
 
     document.getElementById('go-button').remove();
-    document.getElementById('comp-choice').value = "";
-    document.getElementById('comp-choice').innerHTML = `Computer picked: ${compResult}`;
+    document.getElementById('comp-choice').innerHTML = `Computer picked:`;
+
+    let compChoice = document.createElement('div');
+    compChoice.style.backgroundImage = `url(assets/images/${compResult.toLowerCase()}.webp)`;
+    compChoice.style.height = '110px';
+    compChoice.style.width = '110px';
+    compChoice.style.backgroundSize = "contain";
+    compChoice.style.backgroundRepeat = "no-repeat";
+    compChoice.style.margin = "34px auto";
+    document.getElementById('comp-choice').appendChild(compChoice);
 
     calculateWinner(compResult);
 }
@@ -183,7 +191,7 @@ function calculateWinner(compResult) {
                     iterations: 1
                 });
             } else {
-                beatOpponent(currentOpponent);
+                beatOpponent(currentOpponent, playerChoice);
             }
         }
     }
@@ -240,7 +248,7 @@ function gameOver() {
     lostMessage.innerHTML = `Looks like the odds were against you. Have another go and see if you can reach the top of the coorporate ladder!`;
     lostMessage.setAttribute("id", "gameover-text");
     document.getElementById('button-area').appendChild(lostMessage);
-    
+
     let restartButton = document.createElement('button');
     restartButton.innerHTML = `Try Again`;
     restartButton.setAttribute("id", "restart-button");
@@ -254,14 +262,14 @@ function restart() {
     location.reload();
 }
 
-function beatOpponent(currentOpponent) {
+function beatOpponent(currentOpponent, playerChoice) {
 
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
 
     document.getElementById('player-value').value = "";
     document.getElementById('player-choice').value = "";
-    document.getElementById('result-area').innerHTML = `Nicely done, you beat the ${currentOpponent}.<br> Gear up for the next oppenent, ${opponents[nextIndex+1]}!<br>Good luck!<br>`;
+    document.getElementById('result-area').innerHTML = `<p>Nicely done, you beat ${currentOpponent}.<br> Gear up for the next oppenent, ${opponents[nextIndex+1]}!<br>Good luck!</p>`;
 
     let nextButton = document.createElement('button');
     nextButton.innerHTML = `Next Opponent`;
@@ -269,17 +277,18 @@ function beatOpponent(currentOpponent) {
     document.getElementById('result-area').appendChild(nextButton);
     nextButton.addEventListener('click', nextOpponent);
 
-    let resultArea = document.getElementById('result-area');
-    resultArea.style.background = "white";
-
-    let numOfButtons = document.getElementsByClassName('button');
-
-    for (let i = 0; i < numOfButtons.length; i++) {
-        numOfButtons[i].disabled = true;
-    }
+    displayWinner();
 
     if (currentOpponent === "The Biggu Bossu") {
         beatGame();
+    }
+}
+
+function displayWinner() {
+    let numOfButtons = document.getElementsByClassName('button');
+
+    for (let i = numOfButtons.length - 1; i >= 0; i--) {
+        numOfButtons[i].remove();
     }
 }
 
@@ -328,7 +337,7 @@ function beatGame() {
     winText.innerHTML = `You managed to rise through the coorporate ladder to claim your place on top`;
     winText.setAttribute("id", "win-text");
     document.getElementById('game-area').appendChild(winText);
-    
+
     let winTextTwo = document.createElement('p');
     winTextTwo.innerHTML = `Try again and see if you can get a clean run!`;
     winTextTwo.setAttribute("id", "win-text-two");
@@ -343,16 +352,16 @@ function beatGame() {
     document.body.style.backgroundImage = `url(assets/images/background.webp)`;
 
     document.getElementById("win-message").animate([{
-                        background: "blue"
-                    },
-                    {
-                        color: 'white'
-                    },
-                    {
-                        color: 'blue'
-                    }
-                ], {
-                    duration: 500,
-                    iterations: Infinity
-                });
+            background: "blue"
+        },
+        {
+            color: 'white'
+        },
+        {
+            color: 'blue'
+        }
+    ], {
+        duration: 500,
+        iterations: Infinity
+    });
 }
