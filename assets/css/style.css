@@ -149,10 +149,14 @@ h2 {
 }
 
 .button {
-    margin: 50px 30px;
+    margin: 50px 33px;
     font-size: 18pt;
-    border: 2px solid black;
+    height: 111px;
+    width: 118px;
     border-radius: 10%;
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
     cursor: pointer;
 }
 

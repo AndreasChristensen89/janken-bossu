@@ -80,12 +80,13 @@ function start() {
     let startButton = document.getElementById('start-button');
 
     let buttons = [rock, paper, scissors, lizard, spock];
-    let innerHtml = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+    let dataType = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+    let buttonPics = ["url(assets/images/rock.webp)", "url(assets/images/paper.webp)", "url(assets/images/scissors.webp)", "url(assets/images/lizard.webp)", "url(assets/images/spock.webp)"];
 
     for (let i = 0; i < buttons.length; i++) {
-        buttons[i].setAttribute("data-type", innerHtml[i].toLowerCase());
+        buttons[i].setAttribute("data-type", dataType[i].toLowerCase());
         buttons[i].setAttribute("class", "button");
-        buttons[i].innerHTML = innerHtml[i];
+        buttons[i].style.backgroundImage = `${buttonPics[i]}`;
         document.getElementById('button-area').appendChild(buttons[i]);
         buttons[i].addEventListener('click', function () {
             let playerChoice = this.getAttribute("data-type").charAt(0).toUpperCase() + this.getAttribute("data-type").slice(1);
