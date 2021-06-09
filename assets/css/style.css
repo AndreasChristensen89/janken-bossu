@@ -95,7 +95,7 @@ h2 {
     margin: 30px;
 }
 
-/* ====================== Buttons ====================== */
+/* ====================== game ====================== */
 
 #button-area {
     text-align: center;
@@ -210,6 +210,9 @@ h2 {
     font-size: 22pt;
     padding-top: 20px;
     font-weight: bold;
+    width: 800px;
+    margin: 0 auto;
+    border-radius: 50%;
 }
 
 #overMessage {

@@ -264,6 +264,9 @@ function beatOpponent(currentOpponent) {
     document.getElementById('result-area').appendChild(nextButton);
     nextButton.addEventListener('click', nextOpponent);
 
+    let resultArea = document.getElementById('result-area');
+    resultArea.style.background = "white";
+
     let numOfButtons = document.getElementsByClassName('button');
 
     for (let i = 0; i < numOfButtons.length; i++) {
@@ -281,6 +284,8 @@ function nextOpponent() {
     document.getElementById('comp-choice').innerText = "";
     document.getElementById('player-choice').innerText = "";
     document.getElementById('outcome').innerText = "";
+    let resultArea = document.getElementById('result-area');
+    resultArea.style.background = "none";
 
     let backgrounds = ["url(assets/images/intern.webp)", "url(assets/images/salaryman.webp)", "url(assets/images/manager.webp)", "url(assets/images/yakuza_henchman.webp)", "url(assets/images/biggu-bossu.webp)"];
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
