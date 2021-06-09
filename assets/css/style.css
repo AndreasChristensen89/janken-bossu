@@ -106,9 +106,10 @@ h2 {
     margin: 0 auto;
     font-weight: 900;
     color: white;
-    background: #466da1;
+    background: #77acb2;
     width: 600px;
     margin-top: 20px;
+    box-shadow: black 0px 1px 20px 0px;
     height: 100px;
     border-radius: 50%;
     display: block;
@@ -126,21 +127,25 @@ h2 {
 }
 
 #start-button {
-    color: #36364e;
-    width: 150px;
+    color: white;
+    width: 176px;
     margin: 50px auto;
-    border-radius: 20%;
-    font-size: 30pt;
+    background: #24742f;
+    font-weight: 900;
+    font-size: 24pt;
     cursor: pointer;
+    box-shadow: black 0px 1px 20px 0px;
 }
 
 #intro-text p {
-    font-size: 18pt;
-    line-height: 40px;
-    background: white;
+    font-size: 24pt;
+    line-height: 65px;
+    background: #58a8c3;
     border-radius: 10%;
-    width: 400px;
+    width: 700px;
+    color: white;
     margin: 0 auto;
+    box-shadow: black 0px 1px 20px 0px;
 }
 
 .button {
@@ -259,41 +264,6 @@ h2 {
     margin: 30px auto;
     font-size: 30pt;
     font-weight: 700;
-}
-
-/* ====================== Footer ====================== */
-
-footer {
-    height: 75px;
-    text-align: center;
-    background-color: rgb(177, 142, 96);
-    color: #EEE2DC;
-    line-height: 75px;
-}
-
-#left-footer {
-    float: left;
-    width: 66%;
-}
-
-#left-footer li {
-    display: inline;
-    padding: 10% 10% 0 10%;
-}
-
-#left-footer i {
-    font-size: 180%;
-}
-
-#right-footer {
-    float: right;
-    width: 33%;
-}
-
-#left-footer i:hover {
-transition: all 0.3s ease 0s;
-transform: scale(1.2);
-box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* ================================== rules ========================================= */

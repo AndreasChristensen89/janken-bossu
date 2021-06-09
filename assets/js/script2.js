@@ -39,7 +39,7 @@ function play() {
     introText.setAttribute("id", "intro-text");
 
     let startButton = document.createElement('button');
-    startButton.innerHTML = `Start`;
+    startButton.innerHTML = `START`;
     startButton.setAttribute("id", "start-button");
     startButton.setAttribute("data-type", "start");
 
@@ -49,6 +49,10 @@ function play() {
     document.getElementById('button-area').appendChild(introText);
     document.getElementById('button-area').appendChild(startButton);
     document.getElementById('start-button').addEventListener('click', start);
+
+    let mainIntro = document.getElementById('main-intro');
+    mainIntro.innerHTML = ``;
+    mainIntro.style.height = "unset";
 }
 
 function start() {
