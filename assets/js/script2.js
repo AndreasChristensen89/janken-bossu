@@ -97,7 +97,6 @@ function start() {
 }
 
 function choice(playerChoice) {
-    document.getElementById('player-choice').value = "";
     document.getElementById('player-choice').innerHTML = `<p id="player-value">${playerChoice}</p>`;
     let goArea = document.getElementById("go-button-area");
     let button = document.getElementById("go-button");
@@ -134,6 +133,7 @@ function generateComputerChoice() {
     compChoice.style.backgroundSize = "contain";
     compChoice.style.backgroundRepeat = "no-repeat";
     compChoice.style.margin = "34px auto";
+    compChoice.setAttribute("id", "comp-lose");
     document.getElementById('comp-choice').appendChild(compChoice);
 
     calculateWinner(compResult);
@@ -188,7 +188,7 @@ function calculateWinner(compResult) {
                     }
                 ], {
                     duration: 500,
-                    iterations: 1
+                    iterations: 2
                 });
             } else {
                 beatOpponent(currentOpponent, playerChoice);
@@ -263,6 +263,23 @@ function restart() {
 }
 
 function beatOpponent(currentOpponent, playerChoice) {
+    let compChoice = document.getElementById('comp-lose');
+    compChoice.style.float = "right";
+    compChoice.style.width = "200px";
+    compChoice.style.margin = "0 600px 0 0";
+    compChoice.style.paddingRight = "0px";
+    compChoice.style.marginRight = "600px";
+    
+    let playerPick = document.createElement('div');
+    playerPick.style.backgroundImage = `url(assets/images/${playerChoice.toLowerCase()}.webp)`;
+    playerPick.style.height = '110px';
+    playerPick.style.backgroundSize = "contain";
+    playerPick.style.backgroundRepeat = "no-repeat";
+    playerPick.style.marginLeft = "700px";
+    playerPick.style.float = "left";
+    playerPick.style.paddingLeft ="100px";
+    let target = document.getElementById('comp-lose');
+    target.parentNode.insertBefore(playerPick, target);
 
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
@@ -271,6 +288,8 @@ function beatOpponent(currentOpponent, playerChoice) {
     document.getElementById('player-choice').value = "";
     document.getElementById('result-area').innerHTML = `<p>Nicely done, you beat ${currentOpponent}.<br> Gear up for the next oppenent, ${opponents[nextIndex+1]}!<br>Good luck!</p>`;
 
+    
+    
     let nextButton = document.createElement('button');
     nextButton.innerHTML = `Next Opponent`;
     nextButton.setAttribute("id", "next-button");
