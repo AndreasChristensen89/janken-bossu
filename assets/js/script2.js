@@ -71,28 +71,28 @@ function start() {
     document.getElementById('button-area').appendChild(newDiv);
     document.getElementById('button-area').appendChild(newDivTwo);
 
-        let rock = document.createElement('button');
-        let paper = document.createElement('button');
-        let scissors = document.createElement('button');
-        let lizard = document.createElement('button');
-        let spock = document.createElement('button');
+    let rock = document.createElement('button');
+    let paper = document.createElement('button');
+    let scissors = document.createElement('button');
+    let lizard = document.createElement('button');
+    let spock = document.createElement('button');
 
-        let startButton = document.getElementById('start-button');
+    let startButton = document.getElementById('start-button');
 
-        let buttons = [rock, paper, scissors, lizard, spock];
-        let dataType = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
-        let buttonPics = ["url(assets/images/rock.webp)", "url(assets/images/paper.webp)", "url(assets/images/scissors.webp)", "url(assets/images/lizard.webp)", "url(assets/images/spock.webp)"];
+    let buttons = [rock, paper, scissors, lizard, spock];
+    let dataType = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+    let buttonPics = ["url(assets/images/rock.webp)", "url(assets/images/paper.webp)", "url(assets/images/scissors.webp)", "url(assets/images/lizard.webp)", "url(assets/images/spock.webp)"];
 
-        for (let i = 0; i < buttons.length; i++) {
-            buttons[i].setAttribute("data-type", dataType[i].toLowerCase());
-            buttons[i].setAttribute("class", "button");
-            buttons[i].style.backgroundImage = `${buttonPics[i]}`;
-            document.getElementById('button-area').appendChild(buttons[i]);
-            buttons[i].addEventListener('click', function () {
-                let playerChoice = this.getAttribute("data-type").charAt(0).toUpperCase() + this.getAttribute("data-type").slice(1);
-                choice(playerChoice);
-            });
-        }
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].setAttribute("data-type", dataType[i].toLowerCase());
+        buttons[i].setAttribute("class", "button");
+        buttons[i].style.backgroundImage = `${buttonPics[i]}`;
+        document.getElementById('button-area').appendChild(buttons[i]);
+        buttons[i].addEventListener('click', function () {
+            let playerChoice = this.getAttribute("data-type").charAt(0).toUpperCase() + this.getAttribute("data-type").slice(1);
+            choice(playerChoice);
+        });
+    }
     startButton.remove();
 }
 
@@ -177,19 +177,22 @@ function calculateWinner(compResult) {
             if (compResult === failEvents[i].failOne || compResult === failEvents[i].failTwo) {
                 document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose! Try again!`;
                 decreaseScore(currentOpponent);
-                document.getElementById("health").animate([{
-                        color: "black"
-                    },
-                    {
-                        color: 'red'
-                    },
-                    {
-                        color: 'black'
-                    }
-                ], {
-                    duration: 500,
-                    iterations: 2
-                });
+                if (document.getElementById('health')!==null) {
+                    document.getElementById("health").animate([{
+                            color: "black"
+                        },
+                        {
+                            color: 'red'
+                        },
+                        {
+                            color: 'black'
+                        }
+                    ], {
+                        duration: 500,
+                        iterations: 2
+                    });
+                }
+
             } else {
                 beatOpponent(currentOpponent, playerChoice);
             }
@@ -228,7 +231,13 @@ function decreaseScore(currentOpponent) {
         if (currentOpponent === damage[i].value) {
             newScore = health - damage[i].points;
             document.getElementById('health').innerHTML = newScore;
-            if (newScore < 20) {
+            if (newScore < 75 && newScore >= 50) {
+                document.getElementById('health').style.backgroundColor = "#ea8426"; // #ea8426 orange
+            } else if (newScore < 50 && newScore >= 25) {
+                document.getElementById('health').style.backgroundColor = "#c7be33"; // #c7be33 yellow
+            } else if (newScore < 25 && newScore >= 20) {
+                document.getElementById('health').style.backgroundColor = "#d01414"; // #d01414 red
+            } else if (newScore < 20) {
                 gameOver();
             }
         }
@@ -268,7 +277,7 @@ function beatOpponent(currentOpponent, playerChoice) {
     compChoice.style.width = "30%";
     compChoice.style.margin = "0";
     compChoice.style.padding = "0px";
-    
+
     let playerPick = document.createElement('div');
     playerPick.style.backgroundImage = `url(assets/images/${playerChoice.toLowerCase()}.webp)`;
     playerPick.style.height = '70px';
@@ -276,7 +285,7 @@ function beatOpponent(currentOpponent, playerChoice) {
     playerPick.style.backgroundRepeat = "no-repeat";
     playerPick.style.marginLeft = "32%";
     playerPick.style.float = "left";
-    playerPick.style.width ="30%";
+    playerPick.style.width = "30%";
     playerPick.setAttribute("id", "player-pick");
     let target = document.getElementById('comp-lose');
     target.parentNode.insertBefore(playerPick, target);
@@ -288,8 +297,8 @@ function beatOpponent(currentOpponent, playerChoice) {
     document.getElementById('player-choice').value = "";
     document.getElementById('result-area').innerHTML = `<p>Nicely done, you beat ${currentOpponent}.<br> Gear up for the next oppenent, ${opponents[nextIndex+1]}!<br>Good luck!</p>`;
 
-    
-    
+
+
     let nextButton = document.createElement('button');
     nextButton.innerHTML = `Next Opponent`;
     nextButton.setAttribute("id", "next-button");
@@ -355,8 +364,9 @@ function nextOpponent() {
         buttons[i].addEventListener('click', function () {
             let playerChoice = this.getAttribute("data-type").charAt(0).toUpperCase() + this.getAttribute("data-type").slice(1);
             choice(playerChoice);
-            });
-        }
+        });
+    }
+    document.getElementById('health').style.backgroundColor = "#079607";
 }
 
 function beatGame() {

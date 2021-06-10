@@ -170,11 +170,6 @@ h2 {
     text-align: center;
 }
 
-/* #player-choice {
-    font-size: 28pt;
-    border-radius: 10%;
-} */
-
 #player-value {
     font-weight: 800;
     font-weight: 800;
@@ -198,7 +193,7 @@ h2 {
 #health {
     display: block;
     font-size: 30pt;
-    background: black;
+    background: #079607;
     width: 200px;
     margin: 50px auto 0;
     color: white;
