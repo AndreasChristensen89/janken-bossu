@@ -60,39 +60,39 @@ function start() {
     document.getElementById('main-intro').remove();
     document.getElementById('intro-text').remove();
 
-    let newSpan = document.createElement('span');
-    newSpan.innerHTML = `The Intern`;
-    newSpan.setAttribute("id", "opponent");
+    let newDiv = document.createElement('div');
+    newDiv.innerHTML = `The Intern`;
+    newDiv.setAttribute("id", "opponent");
 
-    let newSpanTwo = document.createElement('span');
-    newSpanTwo.innerHTML = `100`;
-    newSpanTwo.setAttribute("id", "health");
+    let newDivTwo = document.createElement('div');
+    newDivTwo.innerHTML = `100`;
+    newDivTwo.setAttribute("id", "health");
 
-    document.getElementById('button-area').appendChild(newSpan);
-    document.getElementById('button-area').appendChild(newSpanTwo);
+    document.getElementById('button-area').appendChild(newDiv);
+    document.getElementById('button-area').appendChild(newDivTwo);
 
-    let rock = document.createElement('button');
-    let paper = document.createElement('button');
-    let scissors = document.createElement('button');
-    let lizard = document.createElement('button');
-    let spock = document.createElement('button');
+        let rock = document.createElement('button');
+        let paper = document.createElement('button');
+        let scissors = document.createElement('button');
+        let lizard = document.createElement('button');
+        let spock = document.createElement('button');
 
-    let startButton = document.getElementById('start-button');
+        let startButton = document.getElementById('start-button');
 
-    let buttons = [rock, paper, scissors, lizard, spock];
-    let dataType = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
-    let buttonPics = ["url(assets/images/rock.webp)", "url(assets/images/paper.webp)", "url(assets/images/scissors.webp)", "url(assets/images/lizard.webp)", "url(assets/images/spock.webp)"];
+        let buttons = [rock, paper, scissors, lizard, spock];
+        let dataType = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+        let buttonPics = ["url(assets/images/rock.webp)", "url(assets/images/paper.webp)", "url(assets/images/scissors.webp)", "url(assets/images/lizard.webp)", "url(assets/images/spock.webp)"];
 
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].setAttribute("data-type", dataType[i].toLowerCase());
-        buttons[i].setAttribute("class", "button");
-        buttons[i].style.backgroundImage = `${buttonPics[i]}`;
-        document.getElementById('button-area').appendChild(buttons[i]);
-        buttons[i].addEventListener('click', function () {
-            let playerChoice = this.getAttribute("data-type").charAt(0).toUpperCase() + this.getAttribute("data-type").slice(1);
-            choice(playerChoice);
-        });
-    }
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].setAttribute("data-type", dataType[i].toLowerCase());
+            buttons[i].setAttribute("class", "button");
+            buttons[i].style.backgroundImage = `${buttonPics[i]}`;
+            document.getElementById('button-area').appendChild(buttons[i]);
+            buttons[i].addEventListener('click', function () {
+                let playerChoice = this.getAttribute("data-type").charAt(0).toUpperCase() + this.getAttribute("data-type").slice(1);
+                choice(playerChoice);
+            });
+        }
     startButton.remove();
 }
 
@@ -124,15 +124,15 @@ function generateComputerChoice() {
     let compResult = computerOptions[randomNumber];
 
     document.getElementById('go-button').remove();
-    document.getElementById('comp-choice').innerHTML = `Computer picked:`;
+    // document.getElementById('comp-choice').innerHTML = `Computer picked:`;
 
     let compChoice = document.createElement('div');
     compChoice.style.backgroundImage = `url(assets/images/${compResult.toLowerCase()}.webp)`;
-    compChoice.style.height = '110px';
+    compChoice.style.height = '70px';
     compChoice.style.width = '110px';
     compChoice.style.backgroundSize = "contain";
     compChoice.style.backgroundRepeat = "no-repeat";
-    compChoice.style.margin = "34px auto";
+    compChoice.style.margin = "0 auto";
     compChoice.setAttribute("id", "comp-lose");
     document.getElementById('comp-choice').appendChild(compChoice);
 
@@ -264,27 +264,27 @@ function restart() {
 
 function beatOpponent(currentOpponent, playerChoice) {
     let compChoice = document.getElementById('comp-lose');
-    compChoice.style.float = "right";
-    compChoice.style.width = "200px";
-    compChoice.style.margin = "0 600px 0 0";
-    compChoice.style.paddingRight = "0px";
-    compChoice.style.marginRight = "600px";
+    compChoice.style.float = "left";
+    compChoice.style.width = "30%";
+    compChoice.style.margin = "0";
+    compChoice.style.padding = "0px";
     
     let playerPick = document.createElement('div');
     playerPick.style.backgroundImage = `url(assets/images/${playerChoice.toLowerCase()}.webp)`;
-    playerPick.style.height = '110px';
+    playerPick.style.height = '70px';
     playerPick.style.backgroundSize = "contain";
     playerPick.style.backgroundRepeat = "no-repeat";
-    playerPick.style.marginLeft = "700px";
+    playerPick.style.marginLeft = "32%";
     playerPick.style.float = "left";
-    playerPick.style.paddingLeft ="100px";
+    playerPick.style.width ="30%";
+    playerPick.setAttribute("id", "player-pick");
     let target = document.getElementById('comp-lose');
     target.parentNode.insertBefore(playerPick, target);
 
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
 
-    document.getElementById('player-value').value = "";
+    document.getElementById('player-value').remove();
     document.getElementById('player-choice').value = "";
     document.getElementById('result-area').innerHTML = `<p>Nicely done, you beat ${currentOpponent}.<br> Gear up for the next oppenent, ${opponents[nextIndex+1]}!<br>Good luck!</p>`;
 
@@ -335,11 +335,28 @@ function nextOpponent() {
         }
     }
 
-    let numOfButtons = document.getElementsByClassName('button');
+    let rock = document.createElement('button');
+    let paper = document.createElement('button');
+    let scissors = document.createElement('button');
+    let lizard = document.createElement('button');
+    let spock = document.createElement('button');
 
-    for (let i = 0; i < numOfButtons.length; i++) {
-        numOfButtons[i].disabled = false;
-    }
+    let startButton = document.getElementById('start-button');
+
+    let buttons = [rock, paper, scissors, lizard, spock];
+    let dataType = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+    let buttonPics = ["url(assets/images/rock.webp)", "url(assets/images/paper.webp)", "url(assets/images/scissors.webp)", "url(assets/images/lizard.webp)", "url(assets/images/spock.webp)"];
+
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].setAttribute("data-type", dataType[i].toLowerCase());
+        buttons[i].setAttribute("class", "button");
+        buttons[i].style.backgroundImage = `${buttonPics[i]}`;
+        document.getElementById('button-area').appendChild(buttons[i]);
+        buttons[i].addEventListener('click', function () {
+            let playerChoice = this.getAttribute("data-type").charAt(0).toUpperCase() + this.getAttribute("data-type").slice(1);
+            choice(playerChoice);
+            });
+        }
 }
 
 function beatGame() {

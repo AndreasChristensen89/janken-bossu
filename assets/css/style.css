@@ -115,10 +115,9 @@ h2 {
     width: 600px;
     margin-top: 20px;
     box-shadow: black 0px 1px 20px 0px;
-    height: 100px;
+    height: 75px;
     border-radius: 50%;
     display: block;
-    padding-top: 20px;
 }
 
 #play-button {
@@ -157,7 +156,7 @@ h2 {
 .button {
     margin: 50px 33px;
     font-size: 18pt;
-    height: 111px;
+    height: 70px;
     width: 118px;
     border-radius: 10%;
     background-size: contain;
@@ -171,14 +170,21 @@ h2 {
     text-align: center;
 }
 
-#player-choice {
+/* #player-choice {
     font-size: 28pt;
-    background: rgb(124 120 148);
     border-radius: 10%;
-}
+} */
 
 #player-value {
     font-weight: 800;
+    font-weight: 800;
+    font-size: 30pt;
+    background: #5f5c5c;
+    color: white;
+    width: 200px;
+    border-radius: 10%;
+    margin: 0 auto;
+    box-shadow: black 0px 1px 20px 0px;
 }
 
 #go-button {
@@ -202,22 +208,29 @@ h2 {
 
 #comp-choice {
     font-size: 24pt;
-    background: white;
     font-weight: 900;
+    
 }
 
 #outcome {
     font-size: 30pt;
-    background: white;
-    margin-top: 30px;
+    background: #5f5c5c;
+    margin: 30px auto;
+    width: 550px;
+    font-weight: 900;
+    color: white;
+    box-shadow: black 0px 1px 20px 0px;
+    border-radius: 10%;
 }
 
 #next-button {
-    font-size: 20pt;
+    font-size: 28pt;
     margin-top: 30px;
     border-radius: 20px;
-    width: 200px;
+    width: 310px;
     cursor: pointer;
+    color: white;
+    background: #2f6447;
 }
 
 #result-area {
@@ -234,8 +247,8 @@ h2 {
     margin: 30px;
     box-shadow: black 0px 1px 20px 0px;
     background: #3da6a3;
-    height: 200px;
-    line-height: 65px;
+    height: 180px;
+    line-height: 60px;
 }
 
 #overMessage {
@@ -282,6 +295,25 @@ h2 {
     margin: 30px auto;
     font-size: 30pt;
     font-weight: 700;
+}
+
+/* animation for winning hand */
+
+#player-pick {
+    animation-name: hand-grow;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes hand-grow {
+    from {
+        transform: scale(1.0);
+    }
+
+    to {
+        transform: scale(1.3);
+    }
 }
 
 /* ================================== rules ========================================= */
