@@ -86,13 +86,18 @@ li {
 
 h1 {
     font-weight: bold;
-    font-size: 30pt;
-    background-color: rgba(46, 104, 180);
+    font-size: 60pt;
+    background-color: rgb(164 31 87);
     border-radius: 20px;
+    color: white;
 }
 
 h2 {
-    margin: 30px;
+    margin: 70px;
+    box-shadow: black 0px 1px 20px 0px;
+    font-size: 30pt;
+    background: #6f9fc3;
+    width: 500px;
 }
 
 /* ====================== game ====================== */
@@ -118,11 +123,12 @@ h2 {
 
 #play-button {
     text-align: center;
-    margin: 0 auto;
-    font-size: 30pt;
-    background-color: rgba(37, 104, 180);
+    margin: 150px auto;
+    font-size: 60pt;
+    background-color: rgb(19 154 60);
     border-radius: 20px;
-    width: 100px;
+    width: 211px;
+    box-shadow: black 0px 1px 20px 0px;
     cursor: pointer;
 }
 
