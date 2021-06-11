@@ -56,7 +56,7 @@ function play() {
 }
 
 function start() {
-    document.body.style.backgroundImage = "url(assets/images/intern.webp)";
+    // document.body.style.backgroundImage = "url(assets/images/intern.webp)";
     document.getElementById('main-intro').remove();
     document.getElementById('intro-text').remove();
 
@@ -94,6 +94,11 @@ function start() {
         });
     }
     startButton.remove();
+
+    let OpponentPic = document.createElement('div');
+    OpponentPic.setAttribute("id", "opponent-pic");
+    let target = document.getElementById('player-choice');
+    target.parentNode.insertBefore(OpponentPic, target);
 }
 
 function choice(playerChoice) {
@@ -297,8 +302,6 @@ function beatOpponent(currentOpponent, playerChoice) {
     document.getElementById('player-choice').value = "";
     document.getElementById('result-area').innerHTML = `<p>Nicely done, you beat ${currentOpponent}.<br> Gear up for the next oppenent, ${opponents[nextIndex+1]}!<br>Good luck!</p>`;
 
-
-
     let nextButton = document.createElement('button');
     nextButton.innerHTML = `Next Opponent`;
     nextButton.setAttribute("id", "next-button");
@@ -329,9 +332,16 @@ function nextOpponent() {
     let resultArea = document.getElementById('result-area');
     resultArea.style.background = "none";
 
-    let backgrounds = ["url(assets/images/intern.webp)", "url(assets/images/salaryman.webp)", "url(assets/images/manager.webp)", "url(assets/images/yakuza_henchman.webp)", "url(assets/images/biggu-bossu.webp)"];
+    let backgrounds = ["url(assets/images/intern-div.webp)", "url(assets/images/salaryman-div.webp)", "url(assets/images/manager-div.webp)", "url(assets/images/yakuza-div.webp)", "url(assets/images/biggu-bossu-div.webp)"];
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let currentOpponent = document.getElementById('opponent').innerText;
+
+    if(currentOpponent===opponents[3]) {
+        document.getElementById('opponent-pic').style.height = "500px";
+        document.getElementById('opponent-pic').style.width = "500px";
+        document.getElementById('opponent-pic').style.right = "20px";
+        document.getElementById('opponent-pic').style.top = "200px";
+    }
 
     for (let i = 0; i < opponents.length; i++) {
         if (currentOpponent === opponents[4]) {
@@ -340,7 +350,7 @@ function nextOpponent() {
         } else if (currentOpponent === opponents[i]) {
             document.getElementById('opponent').textContent = opponents[i + 1];
             document.getElementById('health').textContent = 100;
-            document.body.style.backgroundImage = backgrounds[i + 1];
+            document.getElementById('opponent-pic').style.backgroundImage = backgrounds[i + 1];
         }
     }
 

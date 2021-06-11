@@ -106,6 +106,18 @@ h2 {
     text-align: center;
 }
 
+#opponent-pic {
+    background-image: url(../images/intern-div.webp);
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 300px;
+    background-size: contain;
+    float: right;
+    position: absolute;
+    right: 100px;
+    top: 364px;
+}
+
 #opponent, #attempts {
     font-size: 40pt;
     margin: 0 auto;
