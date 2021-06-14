@@ -116,6 +116,7 @@ h2 {
     position: absolute;
     right: 100px;
     top: 364px;
+    z-index: -1;
 }
 
 #opponent, #attempts {
@@ -141,6 +142,11 @@ h2 {
     width: 211px;
     box-shadow: black 0px 1px 20px 0px;
     cursor: pointer;
+
+    animation-name: elemenet-move;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
 
 #start-button {
@@ -175,19 +181,22 @@ h2 {
     background-color: transparent;
     background-repeat: no-repeat;
     cursor: pointer;
+    z-index: 99;
 }
 
 #head-restart {
     position: fixed;
-    z-index: -1;
-    top: 5rem;
-    left: 1rem;
+    top: 1rem;
+    right: 1rem;
     width: 3rem;
     height: 3rem;
     border: black solid 1px;
     background: white;
     cursor: pointer;
     border-radius: 50%;
+    color: white;
+    background: #989191;
+    font-size: 18pt;
 }
 
 #game-area {
@@ -315,18 +324,20 @@ h2 {
     margin: 30px auto;
     font-size: 30pt;
     font-weight: 700;
+    background: #7e7ec1;
+    width: 787px;
 }
 
 /* animation for winning hand */
 
 #player-pick {
-    animation-name: hand-grow;
+    animation-name: elemenet-move;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
 }
 
-@keyframes hand-grow {
+@keyframes elemenet-move {
     from {
         transform: scale(1.0);
     }

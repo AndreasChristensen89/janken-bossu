@@ -101,9 +101,9 @@ function start() {
 
     let HeadRestartButton = document.createElement('button');
     HeadRestartButton.setAttribute("id", "head-restart");
-    HeadRestartButton.innerHTML = `Restart`;
-    HeadRestartButton.addEventListener('click', start);
-    let targetTwo = document.getElementById('health');
+    HeadRestartButton.innerHTML = `<i class="fas fa-sync-alt"></i>`;
+    HeadRestartButton.addEventListener('click', restart);
+    let targetTwo = document.getElementById('opponent');
     targetTwo.parentNode.insertBefore(HeadRestartButton, targetTwo);
 }
 
