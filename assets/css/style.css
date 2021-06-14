@@ -177,6 +177,19 @@ h2 {
     cursor: pointer;
 }
 
+#head-restart {
+    position: fixed;
+    z-index: -1;
+    top: 5rem;
+    left: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border: black solid 1px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
 #game-area {
     margin: 0 auto;
     text-align: center;

@@ -56,7 +56,6 @@ function play() {
 }
 
 function start() {
-    // document.body.style.backgroundImage = "url(assets/images/intern.webp)";
     document.getElementById('main-intro').remove();
     document.getElementById('intro-text').remove();
 
@@ -78,6 +77,7 @@ function start() {
     let spock = document.createElement('button');
 
     let startButton = document.getElementById('start-button');
+    startButton.remove();
 
     let buttons = [rock, paper, scissors, lizard, spock];
     let dataType = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
@@ -93,12 +93,18 @@ function start() {
             choice(playerChoice);
         });
     }
-    startButton.remove();
 
     let OpponentPic = document.createElement('div');
     OpponentPic.setAttribute("id", "opponent-pic");
     let target = document.getElementById('player-choice');
     target.parentNode.insertBefore(OpponentPic, target);
+
+    let HeadRestartButton = document.createElement('button');
+    HeadRestartButton.setAttribute("id", "head-restart");
+    HeadRestartButton.innerHTML = `Restart`;
+    HeadRestartButton.addEventListener('click', start);
+    let targetTwo = document.getElementById('health');
+    targetTwo.parentNode.insertBefore(HeadRestartButton, targetTwo);
 }
 
 function choice(playerChoice) {
