@@ -350,13 +350,9 @@ h2 {
 /* ================================== rules ========================================= */
 
 #body-rules {
-    background: rgba(37, 104, 180);
-    background-attachment: none;
-    background-repeat: none;
-    background-position-y: unset;
-    background-size: unset;
-    overflow: none;
+    overflow: unset;
     height: unset;
+    color: white;
 }
 
 #rules-intro {
@@ -365,22 +361,40 @@ h2 {
 
 #rules-intro h1 {
     margin: 50px auto;
-    width: 400px;
+    width: 500px;
+    box-shadow: black 0px 1px 20px 0px;
 }
 
 #rules-intro p {
-
+    font-size: 24pt;
+    margin: 0 25%;
 }
 
 #how-to-play {
     text-align: center;
+    height: 350px;
+}
+
+#how-to-play h2 {
+    margin: 70px auto 20px;
 }
 
 .rule-div {
     float: left;
     width: 20%;
-    text-align: center;
     margin: 20px 0 30px;
+    height: 220px;
+    padding: 2% 0;
+    border-radius: 10%;
+    background-color: rgb(41, 107, 107, 90%);
+}
+
+.rule-div h3 {
+    font-size: 30pt;
+}
+
+.rule-div p {
+    font-size: 16pt;
 }
 
 #how-to-play p {
@@ -393,6 +407,28 @@ h2 {
     height: 300px;
 }
 
-#how-to-play h2 {
+#game-setting {
+    text-align: center;
+    margin-top: 100px;
+    height: 800px;
+}
 
+#game-setting h2 {
+    margin: 30px auto;
+    width: 500px;
+}
+
+#game-setting p {
+    margin: 30px 10%;
+    font-size: 23pt;
+    background-color: rgb(41, 107, 107, 90%);
+    padding: 3%;
+    border-radius: 10%;
+}
+
+/* ================================== contact ========================================= */
+
+#body-contact {
+    background-image: url(../images/contact.webp);
+    background-repeat: no-repeat;
 }
