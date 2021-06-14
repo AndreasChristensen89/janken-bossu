@@ -35,7 +35,7 @@ menuLinks.forEach(
 
 function play() {
     let introText = document.createElement('div');
-    introText.innerHTML = `<p>Opponents will get stronger for each round, so watch your health bar. <br>You only need to beat each opponent once to advance to the next level.</p>`
+    introText.innerHTML = `<p>To play simply pick a hand and press the GO button.<br> Opponents' hit-power will increase for each round, so watch your health bar. <br>You only need to beat each opponent once to advance to the next level.</p>`
     introText.setAttribute("id", "intro-text");
 
     let startButton = document.createElement('button');
@@ -188,7 +188,7 @@ function calculateWinner(compResult) {
             if (compResult === failEvents[i].failOne || compResult === failEvents[i].failTwo) {
                 document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose! Try again!`;
                 decreaseScore(currentOpponent);
-                if (document.getElementById('health')!==null) {
+                if (document.getElementById('health') !== null) {
                     document.getElementById("health").animate([{
                             color: "black"
                         },
@@ -261,7 +261,7 @@ function gameOver() {
 
     let lost = document.createElement('h1');
     lost.innerHTML = `Game Over!`;
-    lost.setAttribute("id", "overMessage");
+    lost.setAttribute("id", "over-message");
     document.getElementById('button-area').appendChild(lost);
 
     let lostMessage = document.createElement('p');
@@ -342,7 +342,7 @@ function nextOpponent() {
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let currentOpponent = document.getElementById('opponent').innerText;
 
-    if(currentOpponent===opponents[3]) {
+    if (currentOpponent === opponents[3]) {
         document.getElementById('opponent-pic').style.height = "500px";
         document.getElementById('opponent-pic').style.width = "500px";
         document.getElementById('opponent-pic').style.right = "20px";

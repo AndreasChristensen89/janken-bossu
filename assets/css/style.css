@@ -23,56 +23,56 @@ body {
 /* ======================= nav bar ============================================== */
 
 .ham {
-  position: fixed;
-  z-index: 100;
-  top: 1rem;
-  left: 1rem;
-  width: 3rem;
-  height: 3rem;
-  border: black solid 1px;
-  background: white;
-  cursor: pointer;
-  border-radius: 50%;
+    position: fixed;
+    z-index: 100;
+    top: 1rem;
+    left: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border: black solid 1px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 .xIcon {
-  display: none;
+    display: none;
 }
 
 .menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 10%;
-  height: 100vh;
-  background: rgb(27, 88, 168);
-  color: white;
-  transform: translateY(-100%);
-  transition: transform 0.2s;
-  list-style: none;
-  padding-top: 4rem;
-  padding-left: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 10%;
+    height: 100vh;
+    background: rgb(111, 159, 195, 0.8);
+    color: white;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    list-style: none;
+    padding-top: 4rem;
+    padding-left: 1rem;
 }
 
 .showMenu {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 li {
-  padding: 1rem 0;
+    padding: 1rem 0;
 }
 
 .menuLink {
-  display: inline;
-  font-size: 2rem;
-  color: white;
-  text-decoration: none;
+    display: inline;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
 }
 
 .menuLink:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* =================================== game area ================================================== */
@@ -119,7 +119,8 @@ h2 {
     z-index: -1;
 }
 
-#opponent, #attempts {
+#opponent,
+#attempts {
     font-size: 40pt;
     margin: 0 auto;
     font-weight: 900;
@@ -238,7 +239,7 @@ h2 {
 #comp-choice {
     font-size: 24pt;
     font-weight: 900;
-    
+
 }
 
 #outcome {
@@ -288,12 +289,19 @@ h2 {
 }
 
 #restart-button {
-    background: black;
+    background: #3a9432;
     color: white;
-    width: 200px;
+    width: 150px;
+    height: 150px;
     font-size: 30pt;
-    border-radius: 10%;
+    border-radius: 50%;
     cursor: pointer;
+    box-shadow: black 0px 1px 20px 0px;
+}
+
+#over-message {
+    background: black;
+    box-shadow: black 0px 1px 20px 0px;
 }
 
 #gameover-text {
@@ -302,7 +310,7 @@ h2 {
     width: 600px;
     font-weight: 600;
     color: white;
-    background-color: #962e2e;
+    background-color: #808385;
     border-radius: 10%;
     padding: 20px;
 }
@@ -428,7 +436,76 @@ h2 {
 
 /* ================================== contact ========================================= */
 
-#body-contact {
-    background-image: url(../images/contact.webp);
-    background-repeat: no-repeat;
+#form-section {
+    text-align: center;
+}
+
+#form-section h2 {
+    margin: 70px auto 50px;
+    width: 280px;
+}
+
+form {
+    font-size: 12pt;
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+
+#form-div-back h2 {
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+
+#form-div-front {
+    background-color: rgb(120 178 180);
+    border-radius: 10%;
+    width: 400px;
+    margin: 0 auto;
+    box-shadow: black 0px 1px 20px 0px;
+}
+
+
+.contactus-form {
+    padding: 30px;
+}
+
+
+.label {
+    margin: 0px;
+    width: 100%;
+    float: left;
+    font-size: 14pt;
+}
+
+
+#fname,
+#lname,
+#email,
+#message {
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 20px;
+    width: 75%;
+    padding: 2px 0px 0px 10px;
+    margin: 10px 10%;
+}
+
+.formbutton {
+    border-radius: 10px;
+    padding: 15px 32px 15px 32px;
+    font-size: 100%;
+    background-color: #137932;
+    color: #fafafa;
+    cursor: pointer;
+    font-size: 14pt;
+}
+
+
+.formbutton:hover {
+    background-color: #fafafa;
+    color: #836225;
 }
