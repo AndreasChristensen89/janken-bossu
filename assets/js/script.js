@@ -224,13 +224,13 @@ function calculateWinner(compResult) {
                         transform: 'scale(0.2)'
                     },
                     {
-                        transform: 'scale(1.2)'
+                        transform: 'scale(10.0)'
                     },
                     {
-                        transform: 'scale(1.0)'
+                        transform: 'scale(5.0)'
                     },
                     {
-                        transform: 'scale(1.2)'
+                        transform: 'scale(2.5)'
                     },
                                         {
                         transform: 'scale(1.0)'
@@ -256,7 +256,7 @@ function calculateWinner(compResult) {
                             transform: 'scale(1.0)'
                         }
                     ], {
-                        delay: 1500,
+                        delay: 2500,
                         duration: 1000,
                         iterations: 3
                     });
@@ -272,7 +272,7 @@ function calculateWinner(compResult) {
                             backgroundColor: 'black'
                         }
                     ], {
-                        delay: 1000,
+                        delay: 1500,
                         duration: 500,
                         iterations: 3
                     });
