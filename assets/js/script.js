@@ -201,7 +201,7 @@ function calculateWinner(compResult) {
         } else if (playerChoice === failEvents[i].value) {
             let currentOpponent = document.getElementById('opponent').innerText;
             if (compResult === failEvents[i].failOne || compResult === failEvents[i].failTwo) {
-                let tryAgain = [ 
+                let tryAgain = [
                     "Don't worry, you're not dead yet. Try again",
                     "Ouch! Have another go",
                     "It's not over yet! Pick another hand and try again.",
@@ -211,15 +211,57 @@ function calculateWinner(compResult) {
                     "A tiny bit of HP drop is nothing to worry about. Try again!"
                 ];
                 let randomNum = Math.floor(Math.random() * 5);
-
                 let loseMessage = document.createElement('p');
                 loseMessage.innerText = `${tryAgain[randomNum]}`;
                 loseMessage.setAttribute("id", "lose-message");
                 let target = document.getElementById('comp-lose');
                 target.parentNode.insertBefore(loseMessage, target);
-                // document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose! Try again!`;
                 decreaseScore(currentOpponent);
+                
                 if (document.getElementById('health') !== null) {
+                    let compHand = document.getElementById('comp-lose');
+                    compHand.animate([{
+                        transform: 'scale(0.2)'
+                    },
+                    {
+                        transform: 'scale(1.2)'
+                    },
+                    {
+                        transform: 'scale(1.0)'
+                    },
+                    {
+                        transform: 'scale(1.2)'
+                    },
+                                        {
+                        transform: 'scale(1.0)'
+                    },
+                    
+                    ], {
+                        duration: 1500,
+                        iterations: 1
+                    });
+                    
+                    var buttons = document.querySelectorAll('.button');
+
+                    for (let i = 0; i < buttons.length; i++) {
+                        let button = buttons[i];
+
+                        button.animate([{
+                            transform: 'scale(1.0)'
+                        },
+                        {
+                            transform: 'scale(1.2)'
+                        },
+                        {
+                            transform: 'scale(1.0)'
+                        }
+                    ], {
+                        delay: 1500,
+                        duration: 1000,
+                        iterations: 3
+                    });
+                }
+
                     document.getElementById("health").animate([{
                             backgroundColor: 'black'
                         },
@@ -230,6 +272,7 @@ function calculateWinner(compResult) {
                             backgroundColor: 'black'
                         }
                     ], {
+                        delay: 1000,
                         duration: 500,
                         iterations: 3
                     });
@@ -314,7 +357,7 @@ function restart() {
 }
 
 function beatOpponent(currentOpponent, playerChoice) {
-    
+
     let styleComp = {
         "float": "left",
         "width": "30%",
@@ -350,7 +393,9 @@ function beatOpponent(currentOpponent, playerChoice) {
     nextButton.innerHTML = `Next Opponent`;
     nextButton.setAttribute("id", "next-button");
     document.getElementById('result-area').appendChild(nextButton);
-    nextButton.addEventListener('click', nextOpponent);
+    nextButton.addEventListener('click', nextOpponent, function() {
+        button.pause();
+    });
 
     displayWinner();
 
