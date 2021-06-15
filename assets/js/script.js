@@ -80,7 +80,7 @@ function start() {
     startButton.remove();
 
     let buttons = [rock, paper, scissors, lizard, spock];
-    let dataType = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+    let dataType = ["rock", "paper", "scissors", "lizard", "spock"];
     let buttonPics = ["url(assets/images/rock.webp)", "url(assets/images/paper.webp)", "url(assets/images/scissors.webp)", "url(assets/images/lizard.webp)", "url(assets/images/spock.webp)"];
 
     for (let i = 0; i < buttons.length; i++) {
@@ -89,7 +89,15 @@ function start() {
         buttons[i].style.backgroundImage = `${buttonPics[i]}`;
         document.getElementById('button-area').appendChild(buttons[i]);
         buttons[i].addEventListener('click', function () {
-            let playerChoice = this.getAttribute("data-type").charAt(0).toUpperCase() + this.getAttribute("data-type").slice(1);
+            // let playerChoice = this.getAttribute("data-type").charAt(0).toUpperCase() + this.getAttribute("data-type").slice(1);
+            // choice(playerChoice);
+
+            // let playerChoice = this.id;
+            // let clone = playerChoice.cloneNode(true);
+            // clone.id = 'clone';
+            // playerChoice.after(clone);
+
+            let playerChoice = this.getAttribute("data-type");
             choice(playerChoice);
         });
     }
@@ -108,14 +116,19 @@ function start() {
 }
 
 function choice(playerChoice) {
-    document.getElementById('player-choice').innerHTML = `<p id="player-value">${playerChoice}</p>`;
+    let chosenPic = document.getElementById('player-choice');
+    let chosenPicStyles = {
+        "background-image": `url(assets/images/${playerChoice}.webp)`,
+        "height": "100px",
+        "width": "100px",
+        "margin": "0px auto",
+        "background-size": "contain",
+        "background-repeat": "no-repeat"
+    };
+    Object.assign(chosenPic.style, chosenPicStyles);
+    chosenPic.setAttribute("data-type", `${playerChoice}`)
     let goArea = document.getElementById("go-button-area");
     let button = document.getElementById("go-button");
-
-
-    // if (document.getElementById('result-area').innerHTML !== null) {
-    //     document.getElementById('result-area').innerHTML = ``;
-    // }
 
     document.getElementById('comp-choice').textContent = "";
     document.getElementById('outcome').textContent = "";
@@ -132,18 +145,21 @@ function choice(playerChoice) {
 function generateComputerChoice() {
     let computerOptions = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
     let randomNumber = Math.floor(Math.random() * 5);
-    let compResult = computerOptions[randomNumber];
+    let compResult = computerOptions[randomNumber].toLowerCase();
 
     document.getElementById('go-button').remove();
-    // document.getElementById('comp-choice').innerHTML = `Computer picked:`;
+    // document.getElementById('comp-choice').innerHTML = `versus`;
 
     let compChoice = document.createElement('div');
-    compChoice.style.backgroundImage = `url(assets/images/${compResult.toLowerCase()}.webp)`;
-    compChoice.style.height = '70px';
-    compChoice.style.width = '110px';
-    compChoice.style.backgroundSize = "contain";
-    compChoice.style.backgroundRepeat = "no-repeat";
-    compChoice.style.margin = "0 auto";
+    let compChoiceStyle = {
+        "background-image": `url(assets/images/${compResult}.webp)`,
+        "height": "100px",
+        "width": "100px",
+        "background-size": "contain",
+        "background-repeat": "no-repeat",
+        "margin": "0 auto",
+    };
+    Object.assign(compChoice.style, compChoiceStyle);
     compChoice.setAttribute("id", "comp-lose");
     document.getElementById('comp-choice').appendChild(compChoice);
 
@@ -151,32 +167,31 @@ function generateComputerChoice() {
 }
 
 function calculateWinner(compResult) {
-    let playerChoice = document.getElementById('player-value').textContent;
-
+    let playerChoice = document.getElementById('player-choice').getAttribute("data-type");
     let failEvents = [{
-            "value": "Rock",
-            "failOne": "Spock",
-            "failTwo": "Paper"
+            "value": "rock",
+            "failOne": "ppock",
+            "failTwo": "paper"
         },
         {
-            "value": "Paper",
-            "failOne": "Scissors",
-            "failTwo": "Lizard"
+            "value": "paper",
+            "failOne": "scissors",
+            "failTwo": "lizard"
         },
         {
-            "value": "Scissors",
-            "failOne": "Rock",
-            "failTwo": "Spock"
+            "value": "scissors",
+            "failOne": "rock",
+            "failTwo": "spock"
         },
         {
-            "value": "Lizard",
-            "failOne": "Scissors",
-            "failTwo": "Rock"
+            "value": "lizard",
+            "failOne": "scissors",
+            "failTwo": "rock"
         },
         {
-            "value": "Spock",
-            "failOne": "Paper",
-            "failTwo": "Lizard"
+            "value": "spock",
+            "failOne": "paper",
+            "failTwo": "lizard"
         },
     ];
 
@@ -283,20 +298,27 @@ function restart() {
 }
 
 function beatOpponent(currentOpponent, playerChoice) {
+    
+    let styleComp = {
+        "float": "left",
+        "width": "30%",
+        "margin": "0",
+        "padding": "0"
+    };
     let compChoice = document.getElementById('comp-lose');
-    compChoice.style.float = "left";
-    compChoice.style.width = "30%";
-    compChoice.style.margin = "0";
-    compChoice.style.padding = "0px";
+    Object.assign(compChoice.style, styleComp);
 
+    let pickStyle = {
+        "background-image": `url(assets/images/${playerChoice.toLowerCase()}.webp)`,
+        "height": "70px",
+        "background-size": "contain",
+        "background-repeat": "no-repeat",
+        "margin-left": "32%",
+        "float": "left",
+        "width": "30%",
+    };
     let playerPick = document.createElement('div');
-    playerPick.style.backgroundImage = `url(assets/images/${playerChoice.toLowerCase()}.webp)`;
-    playerPick.style.height = '70px';
-    playerPick.style.backgroundSize = "contain";
-    playerPick.style.backgroundRepeat = "no-repeat";
-    playerPick.style.marginLeft = "32%";
-    playerPick.style.float = "left";
-    playerPick.style.width = "30%";
+    Object.assign(playerPick.style, pickStyle);
     playerPick.setAttribute("id", "player-pick");
     let target = document.getElementById('comp-lose');
     target.parentNode.insertBefore(playerPick, target);
@@ -304,8 +326,9 @@ function beatOpponent(currentOpponent, playerChoice) {
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
 
-    document.getElementById('player-value').remove();
-    document.getElementById('player-choice').value = "";
+    document.getElementById('player-choice').style.removeProperty("width");
+    document.getElementById('player-choice').style.removeProperty("height");
+    // document.getElementById('comp-choice').innerText = "";
     document.getElementById('result-area').innerHTML = `<p>Nicely done, you beat ${currentOpponent}.<br> Gear up for the next oppenent, ${opponents[nextIndex+1]}!<br>Good luck!</p>`;
 
     let nextButton = document.createElement('button');
@@ -333,7 +356,6 @@ function nextOpponent() {
     document.getElementById('next-button').remove();
     document.getElementById('result-area').innerText = "";
     document.getElementById('comp-choice').innerText = "";
-    document.getElementById('player-choice').innerText = "";
     document.getElementById('outcome').innerText = "";
     let resultArea = document.getElementById('result-area');
     resultArea.style.background = "none";
@@ -369,16 +391,16 @@ function nextOpponent() {
     let startButton = document.getElementById('start-button');
 
     let buttons = [rock, paper, scissors, lizard, spock];
-    let dataType = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+    let dataType = ["rock", "paper", "scissors", "lizard", "spock"];
     let buttonPics = ["url(assets/images/rock.webp)", "url(assets/images/paper.webp)", "url(assets/images/scissors.webp)", "url(assets/images/lizard.webp)", "url(assets/images/spock.webp)"];
 
     for (let i = 0; i < buttons.length; i++) {
-        buttons[i].setAttribute("data-type", dataType[i].toLowerCase());
+        buttons[i].setAttribute("data-type", dataType[i]);
         buttons[i].setAttribute("class", "button");
         buttons[i].style.backgroundImage = `${buttonPics[i]}`;
         document.getElementById('button-area').appendChild(buttons[i]);
         buttons[i].addEventListener('click', function () {
-            let playerChoice = this.getAttribute("data-type").charAt(0).toUpperCase() + this.getAttribute("data-type").slice(1);
+            let playerChoice = this.getAttribute("data-type");
             choice(playerChoice);
         });
     }
