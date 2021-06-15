@@ -201,21 +201,37 @@ function calculateWinner(compResult) {
         } else if (playerChoice === failEvents[i].value) {
             let currentOpponent = document.getElementById('opponent').innerText;
             if (compResult === failEvents[i].failOne || compResult === failEvents[i].failTwo) {
-                document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose! Try again!`;
+                let tryAgain = [ 
+                    "Don't worry, you're not dead yet. Try again",
+                    "Ouch! Have another go",
+                    "It's not over yet! Pick another hand and try again.",
+                    "Looks like he got lucky. Try again",
+                    "You'll get him in the next try. Go go go!",
+                    "Your HP is dropping. Nothing to worry about. Try again!",
+                    "A tiny bit of HP drop is nothing to worry about. Try again!"
+                ];
+                let randomNum = Math.floor(Math.random() * 5);
+
+                let loseMessage = document.createElement('p');
+                loseMessage.innerText = `${tryAgain[randomNum]}`;
+                loseMessage.setAttribute("id", "lose-message");
+                let target = document.getElementById('comp-lose');
+                target.parentNode.insertBefore(loseMessage, target);
+                // document.getElementById('outcome').textContent = `${compResult} beats ${playerChoice} - You lose! Try again!`;
                 decreaseScore(currentOpponent);
                 if (document.getElementById('health') !== null) {
                     document.getElementById("health").animate([{
-                            color: "black"
+                            backgroundColor: 'black'
                         },
                         {
-                            color: 'red'
+                            backgroundColor: 'red'
                         },
                         {
-                            color: 'black'
+                            backgroundColor: 'black'
                         }
                     ], {
                         duration: 500,
-                        iterations: 2
+                        iterations: 3
                     });
                 }
 
@@ -328,7 +344,6 @@ function beatOpponent(currentOpponent, playerChoice) {
 
     document.getElementById('player-choice').style.removeProperty("width");
     document.getElementById('player-choice').style.removeProperty("height");
-    // document.getElementById('comp-choice').innerText = "";
     document.getElementById('result-area').innerHTML = `<p>Nicely done, you beat ${currentOpponent}.<br> Gear up for the next oppenent, ${opponents[nextIndex+1]}!<br>Good luck!</p>`;
 
     let nextButton = document.createElement('button');
