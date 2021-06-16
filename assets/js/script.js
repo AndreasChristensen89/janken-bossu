@@ -156,7 +156,6 @@ function generateComputerChoice() {
         "width": "100px",
         "background-size": "contain",
         "background-repeat": "no-repeat",
-        "margin": "0 auto",
     };
     Object.assign(compChoice.style, compChoiceStyle);
     compChoice.setAttribute("id", "comp-lose");
@@ -196,7 +195,7 @@ function calculateWinner(compResult) {
 
     for (let i = 0; i < failEvents.length; i++) {
         if (playerChoice === compResult) {
-            document.getElementById('outcome').textContent = "Draw! No winner! Try again";
+            document.getElementById('outcome').textContent = "Draw! Try again";
         } else if (playerChoice === failEvents[i].value) {
             let currentOpponent = document.getElementById('opponent').innerText;
             if (compResult === failEvents[i].failOne || compResult === failEvents[i].failTwo) {
@@ -361,7 +360,8 @@ function beatOpponent(currentOpponent, playerChoice) {
         "float": "left",
         "width": "30%",
         "margin": "0",
-        "padding": "0"
+        "padding": "0",
+        "position": "unset"
     };
     let compChoice = document.getElementById('comp-lose');
     Object.assign(compChoice.style, styleComp);
