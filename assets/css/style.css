@@ -114,7 +114,7 @@ h2 {
     background-size: contain;
     float: right;
     position: absolute;
-    right: 100px;
+    right: -20px;
     top: 60%;
     z-index: -1;
 }
@@ -188,8 +188,8 @@ h2 {
 }
 
 .button:hover {
-transform: scale(1.2);
-transition: all 0.3s ease 0s;
+    transform: scale(1.2);
+    transition: all 0.3s ease 0s;
 }
 
 #head-restart {
@@ -260,8 +260,8 @@ transition: all 0.3s ease 0s;
 #outcome {
     font-size: 30pt;
     background: #5f5c5c;
-    margin: 30px auto;
-    width: 550px;
+    margin: 0px auto;
+    width: 305px;
     font-weight: 900;
     color: white;
     box-shadow: black 0px 1px 20px 0px;
@@ -275,7 +275,8 @@ transition: all 0.3s ease 0s;
     width: 310px;
     cursor: pointer;
     color: white;
-    background: #2f6447;
+    background: #3a9432;
+    box-shadow: black 0px 1px 20px 0px;
 }
 
 #result-area {
@@ -285,15 +286,16 @@ transition: all 0.3s ease 0s;
     font-weight: bold;
     width: 800px;
     margin: 70px auto;
-    border-radius: 50%;
 }
 
 #result-area p {
-    margin: 30px;
+    margin: 30px auto;
     box-shadow: black 0px 1px 20px 0px;
     background: #3da6a3;
     height: 180px;
     line-height: 60px;
+    width: 426px;
+    border-radius: 10%;
 }
 
 #overMessage {
@@ -356,6 +358,10 @@ transition: all 0.3s ease 0s;
     font-size: 18pt;
     width: 330px;
     margin: 0 auto 25px;
+    background-color: #505050;
+    border-radius: 10%;
+    padding: 10px;
+    color: white;
 
     animation-name: try-again;
     animation-duration: 3s;
@@ -371,6 +377,7 @@ transition: all 0.3s ease 0s;
     to {
         transform: scale(10.0);
     }
+
     to {
         transform: scale(1.0);
     }
@@ -379,6 +386,9 @@ transition: all 0.3s ease 0s;
 /* animation for winning hand */
 
 #player-pick {
+    margin-left: 37%;
+    width: 20%;
+
     animation-name: elemenet-move;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
@@ -552,9 +562,9 @@ form {
 
 /* to fit the characters with the window */
 
-@media screen and (max-height: 775px) {
+@media screen and (max-height: 790px) {
     #opponent-pic {
-        top: 47%;
+        top: 50%;
     }
 }
 
@@ -596,4 +606,47 @@ form {
         position: absolute;
         top: 400px;
     }
+
+    #lose-message {
+        font-size: 18pt;
+        width: 250px;
+        margin: 0px 39%;
+        position: absolute;
+        top: 548px;
+    }
+
+    #outcome {
+        margin: 0px 37%;
+        position: absolute;
+        top: 540px;
+    }
 }
+
+@media screen and (max-width: 950px) {
+    #outcome {
+        margin: 0px 28%;
+    }
+
+    #comp-lose {
+        margin: 0 35%;
+    }
+
+    #player-choice {
+        margin: 0 35%;
+    }
+
+    #go-button {
+        margin: 0 -16%;
+    }
+
+    #lose-message {
+        margin: 0 27%;
+    }
+
+    #opponent-pic {
+        right: -90px;
+        top: 65%;
+    }
+}
+
+@media screen and (max-width: 800px) {}

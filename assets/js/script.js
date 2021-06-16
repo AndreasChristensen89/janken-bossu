@@ -196,6 +196,51 @@ function calculateWinner(compResult) {
     for (let i = 0; i < failEvents.length; i++) {
         if (playerChoice === compResult) {
             document.getElementById('outcome').textContent = "Draw! Try again";
+            document.getElementById('player-choice').animate([{
+                    transform: 'translateY(0px)'
+                },
+                {
+                    transform: 'translateY(25px)'
+                },
+                {
+                    transform: 'translateY(0px)'
+                }
+            ], {
+                duration: 500,
+                iterations: 3
+            });
+            document.getElementById('comp-lose').animate([{
+                    transform: 'translateY(0px)'
+                },
+                {
+                    transform: 'translateY(-25px)'
+                },
+                {
+                    transform: 'translateY(0px)'
+                }
+            ], {
+                duration: 500,
+                iterations: 3
+            });
+            let buttons = document.querySelectorAll('.button');
+            for (let i = 0; i < buttons.length; i++) {
+                let button = buttons[i];
+
+                button.animate([{
+                        transform: 'scale(1.0)'
+                    },
+                    {
+                        transform: 'scale(1.2)'
+                    },
+                    {
+                        transform: 'scale(1.0)'
+                    }
+                ], {
+                    delay: 1500,
+                    duration: 1000,
+                    iterations: 3
+                });
+            }
         } else if (playerChoice === failEvents[i].value) {
             let currentOpponent = document.getElementById('opponent').innerText;
             if (compResult === failEvents[i].failOne || compResult === failEvents[i].failTwo) {
@@ -215,50 +260,50 @@ function calculateWinner(compResult) {
                 let target = document.getElementById('comp-lose');
                 target.parentNode.insertBefore(loseMessage, target);
                 decreaseScore(currentOpponent);
-                
+
                 if (document.getElementById('health') !== null) {
                     let compHand = document.getElementById('comp-lose');
                     compHand.animate([{
-                        transform: 'scale(0.2)'
-                    },
-                    {
-                        transform: 'scale(10.0)'
-                    },
-                    {
-                        transform: 'scale(5.0)'
-                    },
-                    {
-                        transform: 'scale(2.5)'
-                    },
-                                        {
-                        transform: 'scale(1.0)'
-                    },
-                    
+                            transform: 'translateY(-100px)'
+
+                        },
+                        {
+                            transform: 'scale(5.0)'
+
+                        },
+                        {
+                            transform: 'scale(1.0)'
+
+                        },
+                        {
+                            transform: 'translateY(0px)'
+                        },
+
                     ], {
                         duration: 1500,
                         iterations: 1
                     });
-                    
+
                     var buttons = document.querySelectorAll('.button');
 
                     for (let i = 0; i < buttons.length; i++) {
                         let button = buttons[i];
 
                         button.animate([{
-                            transform: 'scale(1.0)'
-                        },
-                        {
-                            transform: 'scale(1.2)'
-                        },
-                        {
-                            transform: 'scale(1.0)'
-                        }
-                    ], {
-                        delay: 2500,
-                        duration: 1000,
-                        iterations: 3
-                    });
-                }
+                                transform: 'scale(1.0)'
+                            },
+                            {
+                                transform: 'scale(1.2)'
+                            },
+                            {
+                                transform: 'scale(1.0)'
+                            }
+                        ], {
+                            delay: 2500,
+                            duration: 1000,
+                            iterations: 3
+                        });
+                    }
 
                     document.getElementById("health").animate([{
                             backgroundColor: 'black'
@@ -371,9 +416,7 @@ function beatOpponent(currentOpponent, playerChoice) {
         "height": "70px",
         "background-size": "contain",
         "background-repeat": "no-repeat",
-        "margin-left": "32%",
         "float": "left",
-        "width": "30%",
     };
     let playerPick = document.createElement('div');
     Object.assign(playerPick.style, pickStyle);
@@ -386,13 +429,13 @@ function beatOpponent(currentOpponent, playerChoice) {
 
     document.getElementById('player-choice').style.removeProperty("width");
     document.getElementById('player-choice').style.removeProperty("height");
-    document.getElementById('result-area').innerHTML = `<p>Nicely done, you beat ${currentOpponent}.<br> Gear up for the next oppenent, ${opponents[nextIndex+1]}!<br>Good luck!</p>`;
+    document.getElementById('result-area').innerHTML = `<p>Nice, you beat ${currentOpponent}.<br> Gear up for the next oppenent,<br> ${opponents[nextIndex+1]}!</p>`;
 
     let nextButton = document.createElement('button');
     nextButton.innerHTML = `Next Opponent`;
     nextButton.setAttribute("id", "next-button");
     document.getElementById('result-area').appendChild(nextButton);
-    nextButton.addEventListener('click', nextOpponent, function() {
+    nextButton.addEventListener('click', nextOpponent, function () {
         button.pause();
     });
 
