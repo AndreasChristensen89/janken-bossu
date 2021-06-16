@@ -121,7 +121,6 @@ function choice(playerChoice) {
         "background-image": `url(assets/images/${playerChoice}.webp)`,
         "height": "100px",
         "width": "100px",
-        "margin": "0px auto",
         "background-size": "contain",
         "background-repeat": "no-repeat"
     };
