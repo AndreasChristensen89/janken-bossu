@@ -429,7 +429,7 @@ function beatOpponent(currentOpponent, playerChoice) {
 
     document.getElementById('player-choice').style.removeProperty("width");
     document.getElementById('player-choice').style.removeProperty("height");
-    document.getElementById('result-area').innerHTML = `<p>Nice, you beat ${currentOpponent}.<br> Gear up for the next oppenent,<br> ${opponents[nextIndex+1]}!</p>`;
+    document.getElementById('result-area').innerHTML = `<p>You beat ${currentOpponent}.<br> Gear up for the next opponent,<br> ${opponents[nextIndex+1]}!</p>`;
 
     let nextButton = document.createElement('button');
     nextButton.innerHTML = `Next Opponent`;
@@ -444,6 +444,17 @@ function beatOpponent(currentOpponent, playerChoice) {
     if (currentOpponent === "The Biggu Bossu") {
         beatGame();
     }
+
+    document.getElementById('opponent-pic').animate([{
+                    transform: 'translateX(0px)'
+                },
+                {
+                    transform: 'translateX(1000px)'
+                },
+            ], {
+                duration: 1500,
+                iterations: 1
+            });
 }
 
 function displayWinner() {
