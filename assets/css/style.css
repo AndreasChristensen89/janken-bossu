@@ -698,8 +698,14 @@ form {
 
 @media (max-height: 700px) and (max-width: 1200px) {
     .button {
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 70px;
+        margin: 18px 12%;
+    }
+
+    #health {
+        right: -10px;
+        left: unset;
     }
 
     #go-button {
@@ -717,6 +723,10 @@ form {
     #player-choice {
         top: 220px;
         margin: 0 47%;
+    }
+
+    #player-pick {
+        
     }
 
     #comp-lose {
