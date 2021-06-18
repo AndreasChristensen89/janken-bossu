@@ -84,7 +84,7 @@ li {
 h1 {
     font-weight: bold;
     font-size: 60pt;
-    background-color: rgb(154 26 26);
+    background-color: rgb(74 145 89);
     border-radius: 20px;
     color: white;
     margin: 30px auto;
@@ -321,6 +321,21 @@ h2 {
 #over-message {
     background: black;
     box-shadow: black 0px 1px 20px 0px;
+    
+    animation-name: game-over;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+
+@keyframes game-over {
+    from {
+        transform: scale(2.0);
+    }
+
+    to {
+        transform: scale(1.0);
+    }
 }
 
 #gameover-text {
@@ -697,15 +712,14 @@ form {
 
 
 @media (max-height: 700px) and (max-width: 1200px) {
+    .menuLink {
+        font-size: 17pt;
+    }
+    
     .button {
         height: 70px;
         width: 70px;
         margin: 18px 12%;
-    }
-
-    #health {
-        right: -10px;
-        left: unset;
     }
 
     #go-button {
@@ -743,6 +757,34 @@ form {
         height: 130px;
         line-height: 44px;
         width: 410px;
+    }
+
+    #biggu-bossu {
+        top: 32%;
+    }
+
+    #over-message {
+        top: 200px;
+        margin: 50px auto 0;
+    }
+
+    #win-message {
+        margin: 100px auto 50px;
+    }
+
+    #win-text {
+        font-size: 20pt;
+        margin: 30px auto;
+        width: 550px;
+        color: white;
+        border-radius: 10%;
+    }
+
+    #restart-button {
+        width: 100px;
+        height: 100px;
+        font-size: 20pt;
+        box-shadow: black 0px 1px 20px 0px;
     }
 }
 

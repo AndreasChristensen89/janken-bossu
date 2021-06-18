@@ -432,18 +432,9 @@ function beatOpponent(currentOpponent, playerChoice) {
 
     if (currentOpponent === "The Biggu Bossu") {
         beatGame();
-    }
-}
-
-function displayWinner() {
-    let numOfButtons = document.getElementsByClassName('button');
-
-    for (let i = numOfButtons.length - 1; i >= 0; i--) {
-        numOfButtons[i].remove();
-    }
-
-    let compLeave = document.getElementById('opponent-pic');
-    compLeave.animate([{
+    } else {
+        let compLeave = document.getElementById('opponent-pic');
+        compLeave.animate([{
             transform: 'translateY(0px)'
 
         },
@@ -457,6 +448,16 @@ function displayWinner() {
         iterations: 1,
         fill: "forwards"
     });
+    }
+}
+
+function displayWinner() {
+    let numOfButtons = document.getElementsByClassName('button');
+
+    for (let i = numOfButtons.length - 1; i >= 0; i--) {
+        numOfButtons[i].remove();
+    }
+
 }
 
 function nextOpponent() {
@@ -537,7 +538,7 @@ function beatGame() {
     document.getElementById('result-area').innerHTML = ``;
 
     let win = document.createElement('h1');
-    win.innerHTML = `Congratulations!`;
+    win.innerHTML = `You Win!`;
     win.setAttribute("id", "win-message");
     document.getElementById('button-area').appendChild(win);
 
@@ -546,10 +547,10 @@ function beatGame() {
     winText.setAttribute("id", "win-text");
     document.getElementById('game-area').appendChild(winText);
 
-    let winTextTwo = document.createElement('p');
-    winTextTwo.innerHTML = `Try again and see if you can get a clean run!`;
-    winTextTwo.setAttribute("id", "win-text-two");
-    document.getElementById('game-area').appendChild(winTextTwo);
+    // let winTextTwo = document.createElement('p');
+    // winTextTwo.innerHTML = `Try again and see if you can get a clean run!`;
+    // winTextTwo.setAttribute("id", "win-text-two");
+    // document.getElementById('game-area').appendChild(winTextTwo);
 
     let restartButton = document.createElement('button');
     restartButton.innerHTML = `Try Again`;
@@ -560,16 +561,14 @@ function beatGame() {
     document.body.style.backgroundImage = `url(assets/images/background.webp)`;
 
     document.getElementById("win-message").animate([{
-            background: "blue"
+            transform: "scale(1.0)"
         },
         {
-            color: 'white'
-        },
-        {
-            color: 'blue'
+            transform: "scale(1.2)"
         }
     ], {
-        duration: 500,
-        iterations: Infinity
+        duration: 800,
+        iterations: Infinity,
+        direction: "alternate-reverse"
     });
 }
