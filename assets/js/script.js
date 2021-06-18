@@ -441,6 +441,22 @@ function displayWinner() {
     for (let i = numOfButtons.length - 1; i >= 0; i--) {
         numOfButtons[i].remove();
     }
+
+    let compLeave = document.getElementById('opponent-pic');
+    compLeave.animate([{
+            transform: 'translateY(0px)'
+
+        },
+        {
+            transform: 'translateY(500px)'
+
+        }
+
+    ], {
+        duration: 800,
+        iterations: 1,
+        fill: "forwards"
+    });
 }
 
 function nextOpponent() {
@@ -477,8 +493,6 @@ function nextOpponent() {
     let lizard = document.createElement('button');
     let spock = document.createElement('button');
 
-    let startButton = document.getElementById('start-button');
-
     let buttons = [rock, paper, scissors, lizard, spock];
     let dataType = ["rock", "paper", "scissors", "lizard", "spock"];
     let buttonPics = ["url(assets/images/rock.webp)", "url(assets/images/paper.webp)", "url(assets/images/scissors.webp)", "url(assets/images/lizard.webp)", "url(assets/images/spock.webp)"];
@@ -495,8 +509,13 @@ function nextOpponent() {
     }
     document.getElementById('health').style.backgroundColor = "#079607";
 
-    let compPic = document.getElementById('opponent-pic');
-    compPic.animate([{
+    let compCome;
+    if(document.getElementById('opponent-pic') != null) {
+        compCome = document.getElementById('opponent-pic');
+    } else {
+        compCome = document.getElementById('biggu-bossu');
+    }
+    compCome.animate([{
             transform: 'translateY(500px)'
 
         },
@@ -507,7 +526,8 @@ function nextOpponent() {
 
     ], {
         duration: 800,
-        iterations: 1
+        iterations: 1,
+        fill: "forwards"
     });
 }
 
