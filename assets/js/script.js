@@ -306,7 +306,6 @@ function calculateWinner(compResult) {
                             backgroundColor: 'black'
                         }
                     ], {
-                        delay: 1500,
                         duration: 500,
                         iterations: 3
                     });

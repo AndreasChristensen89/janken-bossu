@@ -658,7 +658,7 @@ form {
     #lose-message {
         position: absolute;
         margin: 0 35%;
-        top: 500px;
+        top: 74%;
     }
 
     #go-button {
@@ -670,7 +670,7 @@ form {
     #outcome {
         position: absolute;
         margin: 0 38%;
-        top: 510px;
+        top: 76%;;
     }
 
     #health {
