@@ -355,6 +355,18 @@ h2 {
     width: 787px;
 }
 
+#biggu-bossu {
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 400px;
+    background-size: contain;
+    float: right;
+    position: absolute;
+    right: -20px;
+    top: 30%;
+    z-index: -1;
+}
+
 /* animation for losing hand */
 #lose-message {
     font-size: 18pt;
@@ -630,23 +642,86 @@ form {
     }
 }
 
+@media (max-height: 700px) and (max-width: 1500px) {
+    #comp-lose {
+        position: absolute;
+        top: 55%;
+        margin: 0px 55%;
+    }
+
+    #player-choice {
+        margin: 0 36%;
+        position: absolute;
+        top: 55%;
+    }
+
+    #lose-message {
+        position: absolute;
+        margin: 0 35%;
+        top: 500px;
+    }
+
+    #go-button {
+        position: absolute;
+        margin: 0 0%;
+        top: 63%;
+    }
+
+    #outcome {
+        position: absolute;
+        margin: 0 38%;
+        top: 510px;
+    }
+
+    #health {
+        position: absolute;
+        width: 125px;
+        margin: 0 10%;
+        top: 35px;
+        left: 25px;
+    }
+
+    #opponent-pic {
+        top: 45%;
+    }
+
+    #result-area p {
+        line-height: 50px;
+        height: 155px;
+    }
+
+    #next-button {
+        margin-top: 15px;
+    }
+}
+
+
 @media (max-height: 700px) and (max-width: 1200px) {
     .button {
         height: 50px;
         width: 50px;
     }
 
+    #go-button {
+        margin: 0px -5%;
+        position: absolute;
+        top: 360px;
+    }
+
     #lose-message {
-        top: 370px;
+        top: 340px;
         margin: 0 37%;
+        width: 300px;
     }
 
     #player-choice {
         top: 220px;
+        margin: 0 47%;
     }
 
     #comp-lose {
         top: 440px;
+        margin: 0 47%;
     }
 
     #opponent-pic {
@@ -686,10 +761,6 @@ form {
         margin: 0 27%;
     }
 
-    /* #opponent-pic {
-        right: -30px;
-        top: 60%;
-    } */
 }
 
-@media screen and (max-width: 800px) {}
+/* @media screen and (max-width: 800px) {} */

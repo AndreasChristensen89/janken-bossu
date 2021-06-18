@@ -89,14 +89,6 @@ function start() {
         buttons[i].style.backgroundImage = `${buttonPics[i]}`;
         document.getElementById('button-area').appendChild(buttons[i]);
         buttons[i].addEventListener('click', function () {
-            // let playerChoice = this.getAttribute("data-type").charAt(0).toUpperCase() + this.getAttribute("data-type").slice(1);
-            // choice(playerChoice);
-
-            // let playerChoice = this.id;
-            // let clone = playerChoice.cloneNode(true);
-            // clone.id = 'clone';
-            // playerChoice.after(clone);
-
             let playerChoice = this.getAttribute("data-type");
             choice(playerChoice);
         });
@@ -147,7 +139,6 @@ function generateComputerChoice() {
     let compResult = computerOptions[randomNumber].toLowerCase();
 
     document.getElementById('go-button').remove();
-    // document.getElementById('comp-choice').innerHTML = `versus`;
 
     let compChoice = document.createElement('div');
     let compChoiceStyle = {
@@ -168,7 +159,7 @@ function calculateWinner(compResult) {
     let playerChoice = document.getElementById('player-choice').getAttribute("data-type");
     let failEvents = [{
             "value": "rock",
-            "failOne": "ppock",
+            "failOne": "spock",
             "failTwo": "paper"
         },
         {
@@ -435,26 +426,13 @@ function beatOpponent(currentOpponent, playerChoice) {
     nextButton.innerHTML = `Next Opponent`;
     nextButton.setAttribute("id", "next-button");
     document.getElementById('result-area').appendChild(nextButton);
-    nextButton.addEventListener('click', nextOpponent, function () {
-        button.pause();
-    });
+    nextButton.addEventListener('click', nextOpponent);
 
     displayWinner();
 
     if (currentOpponent === "The Biggu Bossu") {
         beatGame();
     }
-
-    document.getElementById('opponent-pic').animate([{
-                    transform: 'translateX(0px)'
-                },
-                {
-                    transform: 'translateX(1000px)'
-                },
-            ], {
-                duration: 1500,
-                iterations: 1
-            });
 }
 
 function displayWinner() {
@@ -470,21 +448,19 @@ function nextOpponent() {
     document.getElementById('result-area').innerText = "";
     document.getElementById('comp-choice').innerText = "";
     document.getElementById('outcome').innerText = "";
-    let resultArea = document.getElementById('result-area');
-    resultArea.style.background = "none";
 
     let backgrounds = ["url(assets/images/intern-div.webp)", "url(assets/images/salaryman-div.webp)", "url(assets/images/manager-div.webp)", "url(assets/images/yakuza-div.webp)", "url(assets/images/biggu-bossu-div.webp)"];
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let currentOpponent = document.getElementById('opponent').innerText;
 
     if (currentOpponent === opponents[3]) {
-        document.getElementById('opponent-pic').style.height = "500px";
-        document.getElementById('opponent-pic').style.width = "500px";
-        document.getElementById('opponent-pic').style.right = "20px";
-        document.getElementById('opponent-pic').style.top = "200px";
+        document.getElementById('opponent-pic').setAttribute("id", "biggu-bossu");
+        document.getElementById('biggu-bossu').style.backgroundImage = backgrounds[4];
+        document.getElementById('opponent').textContent = opponents[4];
+        document.getElementById('health').textContent = 100;
     }
 
-    for (let i = 0; i < opponents.length; i++) {
+    for (let i = 0; i < 3; i++) {
         if (currentOpponent === opponents[4]) {
             beatGame();
             break;
@@ -518,6 +494,21 @@ function nextOpponent() {
         });
     }
     document.getElementById('health').style.backgroundColor = "#079607";
+
+    let compPic = document.getElementById('opponent-pic');
+    compPic.animate([{
+            transform: 'translateY(500px)'
+
+        },
+        {
+            transform: 'translateY(0px)'
+
+        }
+
+    ], {
+        duration: 800,
+        iterations: 1
+    });
 }
 
 function beatGame() {
