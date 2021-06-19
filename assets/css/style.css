@@ -130,7 +130,6 @@ h2 {
     margin-top: 20px;
     box-shadow: black 0px 1px 20px 0px;
     height: 75px;
-    border-radius: 50%;
     display: block;
 }
 
@@ -330,7 +329,7 @@ h2 {
 
 @keyframes game-over {
     from {
-        transform: scale(2.0);
+        transform: scale(1.7);
     }
 
     to {
@@ -591,7 +590,7 @@ form {
 
 /* to fit the characters with the window */
 
-@media (max-height: 1500px) {
+/* @media (max-height: 1500px) {
     #opponent-pic {
         top: 65%;
     }
@@ -607,7 +606,7 @@ form {
     #opponent-pic {
         top: 45%;
     }
-}
+} */
 
 /* To fit bossu */
 @media (max-width: 1500px) {
@@ -657,7 +656,78 @@ form {
     }
 }
 
-@media (max-height: 700px) and (max-width: 1500px) {
+@media (max-height: 1400px) and (max-width: 1200px) {
+    .button {
+        margin: 60px 12%;
+        height: 105px;
+    }
+    
+    #opponent-pic {
+        height: 450px;
+        width: 270px;
+        top: 58%;
+    }
+
+    body {
+        background-position-x: 22%;
+    }
+
+    #biggu-bossu {
+        height: 500px;
+        width: 475px;
+        top: 54%;
+    }
+}
+
+@media (max-height: 1100px) and (max-width: 1200px) {
+    #opponent-pic {
+        height: 400px;
+        width: 275px;
+        top: 52%;
+    }
+
+    .button {
+        margin: 30px 12%;
+        height: 90px;
+    }
+
+    #biggu-bossu {
+        top: 45%;
+    }
+}
+
+@media (max-height: 900px) and (max-width: 1200px) {
+    #biggu-bossu {
+        top: 33%;
+    }
+
+    #go-button {
+        margin: 0px -8%;
+    }
+
+    #player-choice {
+        margin: 0px 41%;
+    }
+
+    #opponent-pic {
+        height: 350px;
+        width: 350px;
+        top: 50%;
+    }
+
+    .button {
+        margin: 20px 12%;
+        display: block;
+        height: 80px;
+    }
+
+    #biggu-bossu {
+        top: 40%;
+        width: 430px;
+    }
+}
+
+@media (max-height: 700px) and (max-width: 3000px) {
     #comp-lose {
         position: absolute;
         top: 55%;
@@ -672,7 +742,7 @@ form {
 
     #lose-message {
         position: absolute;
-        margin: 0 35%;
+        margin: 0 39%;
         top: 74%;
     }
 
@@ -708,8 +778,16 @@ form {
     #next-button {
         margin-top: 15px;
     }
+
+    #biggu-bossu {
+        top: 40%;
+        width: 352px;
+    }        
 }
 
+@media (max-height: 900px) and (max-width: 1200px) {
+
+}
 
 @media (max-height: 700px) and (max-width: 1200px) {
     .menuLink {
@@ -730,7 +808,7 @@ form {
 
     #lose-message {
         top: 340px;
-        margin: 0 37%;
+        margin: 0 39%;
         width: 300px;
     }
 
@@ -744,8 +822,17 @@ form {
         margin: 0 47%;
     }
 
+    #opponent {
+        font-size: 25pt;
+        width: 350px;
+        padding: 10px;
+        height: 60px;
+    }
+
     #opponent-pic {
         top: 45%;
+        height: 300px;
+        width: 300px;
     }
 
     #outcome {
@@ -785,6 +872,11 @@ form {
         height: 100px;
         font-size: 20pt;
         box-shadow: black 0px 1px 20px 0px;
+    }
+
+    #health {
+        left: 9px;
+        width: 95px;
     }
 }
 
