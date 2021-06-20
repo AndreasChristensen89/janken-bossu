@@ -388,6 +388,9 @@ function restart() {
 
 function beatOpponent(currentOpponent, playerChoice) {
 
+    document.getElementById('player-choice').style.height = "0";
+    document.getElementById('player-choice').style.width = "0";
+    
     let styleComp = {
         "float": "left",
         "width": "10%",
