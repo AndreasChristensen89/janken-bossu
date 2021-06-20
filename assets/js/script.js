@@ -111,8 +111,6 @@ function choice(playerChoice) {
     let chosenPic = document.getElementById('player-choice');
     let chosenPicStyles = {
         "background-image": `url(assets/images/${playerChoice}.webp)`,
-        "height": "100px",
-        "width": "100px",
         "background-size": "contain",
         "background-repeat": "no-repeat"
     };
@@ -143,8 +141,6 @@ function generateComputerChoice() {
     let compChoice = document.createElement('div');
     let compChoiceStyle = {
         "background-image": `url(assets/images/${compResult}.webp)`,
-        "height": "100px",
-        "width": "100px",
         "background-size": "contain",
         "background-repeat": "no-repeat",
     };
@@ -394,10 +390,10 @@ function beatOpponent(currentOpponent, playerChoice) {
 
     let styleComp = {
         "float": "left",
-        "width": "30%",
-        "margin": "0",
+        "width": "10%",
         "padding": "0",
-        "position": "unset"
+        "top": "21%",
+        "margin": "0 57%"
     };
     let compChoice = document.getElementById('comp-lose');
     Object.assign(compChoice.style, styleComp);
@@ -418,8 +414,8 @@ function beatOpponent(currentOpponent, playerChoice) {
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
 
-    document.getElementById('player-choice').style.removeProperty("width");
-    document.getElementById('player-choice').style.removeProperty("height");
+    // document.getElementById('player-choice').style.removeProperty("width");
+    // document.getElementById('player-choice').style.removeProperty("height");
     document.getElementById('result-area').innerHTML = `<p>You beat ${currentOpponent}.<br> Gear up for the next opponent,<br> ${opponents[nextIndex+1]}!</p>`;
 
     let nextButton = document.createElement('button');
