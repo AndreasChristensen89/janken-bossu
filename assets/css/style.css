@@ -775,7 +775,7 @@ form {
 
 @media (max-height: 1400px) and (max-width: 1200px) {
     .menu {
-        width: 12%;
+        width: 30%;
     }
     
     .button {
@@ -883,7 +883,13 @@ form {
     }
 
     #result-area p {
-        margin: 140px auto 30px;
+        margin: 89px 18% 30px;
+        font-size: 24pt;
+    }
+
+    #next-button {
+        top: 76%;
+        margin: 0 -16%;
     }
 }
 
