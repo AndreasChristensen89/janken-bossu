@@ -464,7 +464,6 @@ function displayWinner() {
 
 function nextOpponent() { 
     document.getElementById('player-choice').style = ``;
-    // document.getElementById('player-choice').style.width = ``;
     document.getElementById('player-pick').remove();
     document.getElementById('comp-lose').remove();
     document.getElementById('next-button').remove();
