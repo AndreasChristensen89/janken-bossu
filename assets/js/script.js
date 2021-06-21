@@ -112,7 +112,9 @@ function choice(playerChoice) {
     let chosenPicStyles = {
         "background-image": `url(assets/images/${playerChoice}.webp)`,
         "background-size": "contain",
-        "background-repeat": "no-repeat"
+        "background-repeat": "no-repeat",
+        "height": "150px",
+        "width": "150px"
     };
     Object.assign(chosenPic.style, chosenPicStyles);
     chosenPic.setAttribute("data-type", `${playerChoice}`)
@@ -393,9 +395,7 @@ function beatOpponent(currentOpponent, playerChoice) {
     
     let styleComp = {
         "float": "left",
-        "width": "10%",
-        "padding": "0",
-        "top": "21%",
+        "top": "23%",
         "margin": "0 57%"
     };
     let compChoice = document.getElementById('comp-lose');
@@ -403,7 +403,6 @@ function beatOpponent(currentOpponent, playerChoice) {
 
     let pickStyle = {
         "background-image": `url(assets/images/${playerChoice.toLowerCase()}.webp)`,
-        "height": "70px",
         "background-size": "contain",
         "background-repeat": "no-repeat",
         "float": "left",
@@ -417,8 +416,6 @@ function beatOpponent(currentOpponent, playerChoice) {
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
 
-    // document.getElementById('player-choice').style.removeProperty("width");
-    // document.getElementById('player-choice').style.removeProperty("height");
     document.getElementById('result-area').innerHTML = `<p>You beat ${currentOpponent}.<br> Gear up for the next opponent,<br> ${opponents[nextIndex+1]}!</p>`;
 
     let nextButton = document.createElement('button');
@@ -459,7 +456,7 @@ function displayWinner() {
 
 }
 
-function nextOpponent() {
+function nextOpponent() { 
     document.getElementById('next-button').remove();
     document.getElementById('result-area').innerText = "";
     document.getElementById('comp-choice').innerText = "";
