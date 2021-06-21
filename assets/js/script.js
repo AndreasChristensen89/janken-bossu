@@ -113,8 +113,6 @@ function choice(playerChoice) {
         "background-image": `url(assets/images/${playerChoice}.webp)`,
         "background-size": "contain",
         "background-repeat": "no-repeat",
-        "height": "150px",
-        "width": "150px"
     };
     Object.assign(chosenPic.style, chosenPicStyles);
     chosenPic.setAttribute("data-type", `${playerChoice}`)
@@ -465,6 +463,8 @@ function displayWinner() {
 }
 
 function nextOpponent() { 
+    document.getElementById('player-choice').style = ``;
+    // document.getElementById('player-choice').style.width = ``;
     document.getElementById('player-pick').remove();
     document.getElementById('comp-lose').remove();
     document.getElementById('next-button').remove();

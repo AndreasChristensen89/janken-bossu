@@ -830,7 +830,27 @@ form {
     }
 
     #player-choice {
-        margin: 0px 41%;
+        margin: 0px 45%;
+        height: 100px;
+        width: 100px;
+    }
+
+    #comp-hand {
+        margin: 0px 45%;
+        height: 100px;
+        width: 100px;
+    }
+
+    #player-pick {
+        height: 100px;
+        width: 100px;
+        top: 36%;
+    }
+
+    #comp-lose {
+        height: 100px;
+        width: 100px;
+        top: 36%;
     }
 
     #opponent-pic {
@@ -848,6 +868,15 @@ form {
     #biggu-bossu {
         top: 40%;
         width: 430px;
+    }
+    
+    #result-area p {
+        margin: 90px auto 30px auto;
+    }
+
+    #intro-text p {
+        width: 60%;
+        line-height: 66px;
     }
 }
 
