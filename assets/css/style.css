@@ -132,12 +132,12 @@ h2 {
 
 #opponent,
 #attempts {
-    font-size: 75pt;
+    font-size: 50pt;
     margin: 0 auto;
     font-weight: 900;
     color: white;
     background: #77acb2;
-    width: 1000px;
+    width: 50%;
     margin-top: 31px;
     box-shadow: black 0px 1px 20px 0px;
     display: block;
@@ -221,6 +221,7 @@ h2 {
 }
 
 #player-choice {
+    position: absolute;
     margin: 0 auto;
     height: 175px;
     width: 150px;
@@ -295,6 +296,7 @@ h2 {
     color: white;
     box-shadow: black 0px 1px 20px 0px;
     border-radius: 10%;
+    position: absolute;
 }
 
 #next-button {
@@ -708,7 +710,66 @@ form {
     #opponent-pic {
         height: 500px;
         width: 310px;
-        top: 57%;
+        top: 64%;
+    }
+
+    #player-choice {
+        margin: 0 44%;
+        top: 30%;
+    }
+
+    #go-button {
+        margin: 0px -6%;
+        top: 44%;
+    }
+
+    #intro-text p {
+        font-size: 30pt;
+        width: 60%;
+    }
+
+    .menu {
+        width: 30%
+    }
+
+    #lose-message {
+        top: 43%;
+        margin: 0px 35%;
+    }
+
+    #comp-hand {
+        top: 53%;
+    }
+
+    #outcome {
+        margin: 0px 36%;
+        top: 47%;
+    }
+
+    #player-pick {
+        margin: 0px 24%;
+        top: 28%;
+    }
+
+    #comp-lose {
+        margin: 0 50% 0 59%;
+        top: 28%;
+    }
+
+    #result-area p {
+        margin: 0px 20% 0px 19%;
+    }
+
+    #next-button {
+        top: 69%;
+        margin: 0 -16%;
+    }
+
+    #biggu-bossu {
+        top: 63%;
+        right: 0px;
+        background-size: contain;
+        width: 600px;
     }
 }
 

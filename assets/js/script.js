@@ -437,11 +437,11 @@ function beatOpponent(currentOpponent, playerChoice) {
     } else {
         let compLeave = document.getElementById('opponent-pic');
         compLeave.animate([{
-            transform: 'translateY(0px)'
+            transform: 'scale(1.0)'
 
         },
         {
-            transform: 'translateY(500px)'
+            transform: 'scale(0.0)'
 
         }
 
