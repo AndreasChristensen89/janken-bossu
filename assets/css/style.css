@@ -252,9 +252,17 @@ h2 {
     font-weight: 900;
 }
 
-#comp-lose {
+#comp-hand {
     margin: 0 auto;
     position: unset;
+}
+
+#comp-lose {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    top: 50%;
+    margin: 0 40%;
 }
 
 #outcome {
@@ -635,7 +643,7 @@ form {
         top: 410px;
     }
 
-    #comp-lose {
+    #comp-hand {
         margin: 0 46%;
         position: absolute;
         top: 400px;
@@ -686,7 +694,7 @@ form {
     #player-choice {
         position: absolute;
         top: 34%;
-        margin: 0px 47%;
+        margin: 0px 42%;
         width: 150px;
         height: 150px;
     }
@@ -696,6 +704,7 @@ form {
         width: 150px;
         position: absolute;
         margin-left: 31%;
+        top: 30%;
     }
 
     #go-button {
@@ -725,6 +734,7 @@ form {
         font-size: 38pt;
         line-height: 80px;
         margin: 60px auto 30px;
+        width: 70%;
     }
 
     #start-button {
@@ -737,25 +747,30 @@ form {
         font-size: 60pt;
     }
 
-    #comp-lose {
+    #comp-hand {
         position: absolute;
         top: 60%;
-        margin: 0px 47%;
+        margin: 0px 42%;
         width: 150px;
         height: 150px;
+    }
+
+    #comp-lose {
+        top: 30%;
+        margin: 0 55%;
     }
 
     #lose-message {
         top: 50%;
         position: absolute;
-        margin: 0px 37%;
+        margin: 0px 32%;
         font-size: 25pt;
     }
 
     #outcome {
         position: absolute;
         top: 50%;
-        margin: 0px 40%;
+        margin: 0px 38%;
     }
 
     #result-area p {
@@ -777,6 +792,31 @@ form {
 
     #biggu-bossu {
         top: 45%;
+    }
+
+    #lose-message {
+        top: 51%;
+        font-size: 21pt;
+    }
+
+    #comp-hand {
+        top: 64%;
+    }
+
+    #intro-text p {
+        font-size: 22pt;
+        line-height: 80px;
+        margin: 70px auto 30px;
+        width: 65%;
+    }
+
+    #start-button {
+        font-size: 40pt;
+        width: 240px;
+    }
+
+    #outcome {
+        top: 54%;
     }
 }
 
@@ -857,7 +897,7 @@ form {
 }
 
 @media (max-height: 700px) and (max-width: 3000px) {
-    #comp-lose {
+    #comp-hand {
         position: absolute;
         top: 55%;
         margin: 0px 55%;
@@ -942,7 +982,7 @@ form {
         margin: 0 47%;
     }
 
-    #comp-lose {
+    #comp-hand {
         top: 440px;
         margin: 0 47%;
     }
@@ -1010,7 +1050,7 @@ form {
         margin: 0px 28%;
     }
 
-    #comp-lose {
+    #comp-hand {
         margin: 0 35%;
     }
 

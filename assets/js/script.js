@@ -147,7 +147,7 @@ function generateComputerChoice() {
         "background-repeat": "no-repeat",
     };
     Object.assign(compChoice.style, compChoiceStyle);
-    compChoice.setAttribute("id", "comp-lose");
+    compChoice.setAttribute("id", "comp-hand");
     document.getElementById('comp-choice').appendChild(compChoice);
 
     calculateWinner(compResult);
@@ -198,7 +198,7 @@ function calculateWinner(compResult) {
                 duration: 500,
                 iterations: 3
             });
-            document.getElementById('comp-lose').animate([{
+            document.getElementById('comp-hand').animate([{
                     transform: 'translateY(0px)'
                 },
                 {
@@ -246,12 +246,12 @@ function calculateWinner(compResult) {
                 let loseMessage = document.createElement('p');
                 loseMessage.innerText = `${tryAgain[randomNum]}`;
                 loseMessage.setAttribute("id", "lose-message");
-                let target = document.getElementById('comp-lose');
+                let target = document.getElementById('comp-hand');
                 target.parentNode.insertBefore(loseMessage, target);
                 decreaseScore(currentOpponent);
 
                 if (document.getElementById('health') !== null) {
-                    let compHand = document.getElementById('comp-lose');
+                    let compHand = document.getElementById('comp-hand');
                     compHand.animate([{
                             transform: 'translateY(-100px)'
 
@@ -389,29 +389,37 @@ function restart() {
 }
 
 function beatOpponent(currentOpponent, playerChoice) {
-
     document.getElementById('player-choice').style.height = "0";
     document.getElementById('player-choice').style.width = "0";
     
-    let styleComp = {
-        "float": "left",
-        "top": "23%",
-        "margin": "0 57%"
-    };
-    let compChoice = document.getElementById('comp-lose');
-    Object.assign(compChoice.style, styleComp);
+    let backgroudImg = document.getElementById('comp-hand').style.backgroundImage;
+    document.getElementById('comp-hand').remove()
 
+    let compLose = document.createElement('div');
+    compLose.style.backgroundImage = backgroudImg;
+    compLose.setAttribute("id", "comp-lose");
+    let compStyle = {
+        "background-image": `${backgroudImg}`,
+        "background-size": "contain",
+        "background-repeat": "no-repeat",
+        "position": "absolute",
+    };
+    Object.assign(compLose.style, compStyle);
+
+
+    let playerPick = document.createElement('div');
+    playerPick.setAttribute("id", "player-pick");
     let pickStyle = {
         "background-image": `url(assets/images/${playerChoice.toLowerCase()}.webp)`,
         "background-size": "contain",
         "background-repeat": "no-repeat",
         "float": "left",
     };
-    let playerPick = document.createElement('div');
     Object.assign(playerPick.style, pickStyle);
-    playerPick.setAttribute("id", "player-pick");
-    let target = document.getElementById('comp-lose');
+
+    let target = document.getElementById('outcome');
     target.parentNode.insertBefore(playerPick, target);
+    target.parentNode.insertBefore(compLose, target);
 
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
@@ -457,6 +465,8 @@ function displayWinner() {
 }
 
 function nextOpponent() { 
+    document.getElementById('player-pick').remove();
+    document.getElementById('comp-lose').remove();
     document.getElementById('next-button').remove();
     document.getElementById('result-area').innerText = "";
     document.getElementById('comp-choice').innerText = "";
