@@ -698,6 +698,20 @@ form {
     }
 } */
 
+@media (max-height: 1800px) and (max-width: 1200px) {
+    .button {
+        margin: 70px 12%;
+        height: 120px;
+        display: block;
+    }
+
+    #opponent-pic {
+        height: 500px;
+        width: 310px;
+        top: 57%;
+    }
+}
+
 @media (max-height: 1400px) and (max-width: 1200px) {
     .menu {
         width: 12%;
@@ -705,7 +719,7 @@ form {
     
     .button {
         margin: 60px 12%;
-        height: 105px;
+        height: 95px;
         display: block;
     }
     
