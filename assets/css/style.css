@@ -45,7 +45,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    width: 13%;
+    width: 22%;
     height: 100vh;
     background: rgb(111, 159, 195, 0.8);
     color: white;
@@ -66,7 +66,7 @@ li {
 
 .menuLink {
     display: inline;
-    font-size: 4rem;
+    font-size: 3rem;
     color: white;
     text-decoration: none;
 }
@@ -331,15 +331,8 @@ h2 {
     color: white;
     position: absolute;
     top: 42%;
-    font-size: 37pt;
+    font-size: 35pt;
     padding: 20px;
-}
-
-#overMessage {
-    margin: 200px auto 100px;
-    width: 400px;
-    font-size: 40pt;
-    font-weight: 900;
 }
 
 #restart-button {
@@ -360,18 +353,18 @@ h2 {
     width: 650px;
     
     animation-name: game-over;
-    animation-duration: 2.5s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
 
 @keyframes game-over {
     from {
-        transform: scale(1.7);
+        transform: scale(1.0);
     }
 
     to {
-        transform: scale(1.0);
+        transform: scale(1.1);
     }
 }
 
@@ -728,17 +721,15 @@ form {
         width: 60%;
     }
 
-    .menu {
-        width: 30%
-    }
-
     #lose-message {
         top: 43%;
         margin: 0px 35%;
+        font-size: 20pt;
     }
 
     #comp-hand {
         top: 53%;
+        margin: 0px 42%;
     }
 
     #outcome {
@@ -758,6 +749,7 @@ form {
 
     #result-area p {
         margin: 0px 20% 0px 19%;
+        font-size: 28pt;
     }
 
     #next-button {
@@ -771,12 +763,13 @@ form {
         background-size: contain;
         width: 600px;
     }
+
+    #over-message {
+        margin-top: 100px;
+    }
 }
 
 @media (max-height: 1400px) and (max-width: 1200px) {
-    .menu {
-        width: 30%;
-    }
     
     .button {
         margin: 60px 12%;
@@ -813,12 +806,12 @@ form {
         width: 150px;
         position: absolute;
         margin-left: 31%;
-        top: 30%;
+        top: 33%;
     }
 
     #go-button {
         position: absolute;
-        margin: 0 -5%;
+        margin: 0 -10%;
         top: 52%;
         width: 150px;
         height: 70px;
@@ -840,7 +833,7 @@ form {
     }
 
     #intro-text p {
-        font-size: 38pt;
+        font-size: 32pt;
         line-height: 80px;
         margin: 60px auto 30px;
         width: 70%;
@@ -853,19 +846,19 @@ form {
     }
 
     #health {
-        font-size: 60pt;
+        font-size: 50pt;
     }
 
     #comp-hand {
         position: absolute;
         top: 60%;
-        margin: 0px 42%;
+        margin: 0px 40%;
         width: 150px;
         height: 150px;
     }
 
     #comp-lose {
-        top: 30%;
+        top: 33%;
         margin: 0 55%;
     }
 
@@ -891,6 +884,10 @@ form {
         top: 76%;
         margin: 0 -16%;
     }
+
+    #over-message {
+        padding: 30px;
+    }
 }
 
 @media (max-height: 1100px) and (max-width: 1200px) {
@@ -911,7 +908,7 @@ form {
 
     #lose-message {
         top: 51%;
-        font-size: 21pt;
+        font-size: 20pt;
     }
 
     #comp-hand {
@@ -932,10 +929,69 @@ form {
 
     #outcome {
         top: 54%;
+        font-size: 24pt;
+        width: 225px;
+    }
+
+    #player-pick {
+        height: 100px;
+        width: 100px;
+    }
+
+    #comp-lose {
+        height: 100px;
+        width: 100px;
+    }
+
+    #result-area p {
+        margin: 50px 18% 30px;
+        line-height: 50pt;
+    }
+
+    #next-button {
+        padding: 10px;
+        font-size: 25pt;
+    }
+
+    #health {
+        font-size: 30pt;
+        width: 140px;
+    }
+
+    #over-message {
+        font-size: 60pt;
+    }
+
+    #gameover-text {
+        font-size: 25pt;
+        padding: 30px;
+    }
+
+    #restart-button {
+        width: 150px;
+        height: 150px;
+        font-size: 27pt;
+    }
+
+    #win-message {
+        margin: 100px auto 100px;
+    }
+
+    #win-text {
+        font-size: 30pt;
     }
 }
 
 @media (max-height: 900px) and (max-width: 1200px) {
+    #play-button {
+        font-size: 45pt;
+    }
+
+    #main-intro h1 {
+        margin: 50px auto;
+        font-size: 60pt;
+    }
+    
     h1 {
         margin: 80px auto 45px;
         width: 400px;
@@ -957,6 +1013,8 @@ form {
 
     #go-button {
         margin: 0px -8%;
+        height: 60px;
+        width: 110px;
     }
 
     #player-choice {
@@ -974,13 +1032,13 @@ form {
     #player-pick {
         height: 100px;
         width: 100px;
-        top: 36%;
+        top: 250px;
     }
 
     #comp-lose {
         height: 100px;
         width: 100px;
-        top: 36%;
+        top: 250px;
     }
 
     #opponent-pic {
@@ -993,7 +1051,7 @@ form {
     .button {
         margin: 20px 12%;
         display: block;
-        height: 80px;
+        height: 70px;
     }
 
     #biggu-bossu {
@@ -1002,122 +1060,151 @@ form {
     }
     
     #result-area p {
-        margin: 45px auto 10px;
+        margin: 0 18% 30px;
+        font-size: 20pt;
+        top: 400px;
+        line-height: 30pt;
     }
 
     #intro-text p {
         width: 60%;
-        line-height: 66px;
-    }
-}
-
-@media (max-height: 750px) and (max-width: 1200px) {
-}
-
-/* max phone height */
-@media (max-height: 850px) and (max-width: 500px) {
-    .menu {
-        width: 14%;
-    }
-    
-    h1 {
-        margin: 45px auto;
-        width: 275px;
-    }
-
-    h2 {
-        width: 290px;
-        font-size: 22pt;
-    }
-
-    #play-button {
-        margin: 24px auto;
-    }
-
-    #intro-text p {
-
-    }
-
-    #start-button {
-
-    }
-    
-    .button {
-
-    }
-
-    #opponent-pic {
-
-    }
-
-    #health {
-
-    }
-
-    #opponent {
-
-    }
-}
-
-@media (max-height: 700px) and (max-width: 3000px) {
-    #comp-hand {
-        position: absolute;
-        top: 55%;
-        margin: 0px 55%;
-    }
-
-    #player-choice {
-        margin: 0 36%;
-        position: absolute;
-        top: 55%;
-    }
-
-    #lose-message {
-        position: absolute;
-        margin: 0 39%;
-        top: 74%;
-    }
-
-    #go-button {
-        position: absolute;
-        margin: 0 0%;
-        top: 63%;
-    }
-
-    #outcome {
-        position: absolute;
-        margin: 0 38%;
-        top: 76%;;
-    }
-
-    #health {
-        position: absolute;
-        width: 125px;
-        margin: 0 10%;
-        top: 35px;
-        left: 25px;
-    }
-
-    #opponent-pic {
-        top: 45%;
-    }
-
-    #result-area p {
         line-height: 50px;
-        height: 155px;
+    }
+
+    #health {
+        font-size: 30pt;
     }
 
     #next-button {
-        margin-top: 15px;
+        top: 600px;
+    }
+
+    #opponent {
+        font-size: 30pt;
+    }
+
+    #over-message {
+        font-size: 40pt;
+        width: 400px;
+    }
+
+    #gameover-text {
+        width: 480px;
+        line-height: 32pt;
+        font-size: 20pt;
+    }
+
+    #restart-button {
+        width: 100px;
+        height: 100px;
+        font-size: 21pt;
+    }
+
+    #win-message {
+        font-size: 50pt;
+    }
+}
+
+@media (max-height: 700px) and (max-width: 1200px) {
+    #comp-hand {
+        top: 450px;
+    }
+
+    #player-choice {
+        top: 200px;
+    }
+
+    #lose-message {
+        font-size: 15pt;
+        top: 360px;
+    }
+
+    #go-button {
+        margin: 0 -6%;
+        top: 330px;
+        font-size: 28pt;
+        width: 100px;
+        height: 50px;
+    }
+
+    #outcome {
+        top: 350px;
+    }
+
+    #health {
+        margin-top: 30px;
+    }
+
+    #opponent-pic {
+        top: 38%;
+    }
+
+    #result-area p {
+        line-height: 30px;
+        top: 290px;
+        width: unset;
+        font-size: 19pt;
+        margin: 20px 25% 0 27%;
+    }
+
+    #next-button {
+        top: 485px;
+        margin: 0 0% 0 -18%;
     }
 
     #biggu-bossu {
         top: 40%;
         width: 352px;
-    }        
+    }
+
+    .button {
+        height: 55px;
+        width: 55px;
+    }
+
+    #intro-text p {
+        width: 60%;
+        line-height: 45px;
+        padding: 2%;
+    }
+
+    #comp-lose {
+        margin: 0 62%;
+        top: 200px;
+        height: 75px;
+        width: 75px;
+    }
+
+    #player-pick {
+        height: 75px;
+        width: 75px;
+        top: 200px;
+    }
+
+    #over-message {
+        font-size: 35pt;
+        margin-top: 50px;
+    }
+    
+    #gameover-text {
+        padding: 20px;
+        line-height: 32pt;
+        margin: 40px auto;
+    }
+
+    #win-message {
+        margin: 100px auto 50px;
+        width: 450px;
+    }
+
+    #win-text {
+        font-size: 20pt;
+    }
 }
 
-@media (max-height: 700px) and (max-width: 1200px) {
+
+
+/* @media (max-height: 700px) and (max-width: 1200px) {
     .menuLink {
         font-size: 17pt;
     }
@@ -1206,27 +1293,4 @@ form {
         left: 9px;
         width: 95px;
     }
-}
-
-/* @media (max-width: 950px) {
-    #outcome {
-        margin: 0px 28%;
-    }
-
-    #comp-hand {
-        margin: 0 35%;
-    }
-
-    #player-choice {
-        margin: 0 35%;
-    }
-
-    #go-button {
-        margin: 0 -16%;
-    }
-
-    #lose-message {
-        margin: 0 27%;
-    }
-
 } */

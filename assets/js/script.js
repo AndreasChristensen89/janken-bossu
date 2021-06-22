@@ -522,7 +522,7 @@ function nextOpponent() {
         compCome = document.getElementById('biggu-bossu');
     }
     compCome.animate([{
-            transform: 'translateY(500px)'
+            transform: 'translateY(300px)'
 
         },
         {
