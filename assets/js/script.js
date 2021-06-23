@@ -232,13 +232,13 @@ function calculateWinner(compResult) {
             let currentOpponent = document.getElementById('opponent').innerText;
             if (compResult === failEvents[i].failOne || compResult === failEvents[i].failTwo) {
                 let tryAgain = [
-                    "Don't worry, you're not dead yet. Try again",
+                    "Your luck didn't cut it. Try again",
                     "Ouch! Have another go",
-                    "It's not over yet! Pick another hand and try again.",
+                    "It's not over yet! Try again.",
                     "Looks like he got lucky. Try again",
-                    "You'll get him in the next try. Go go go!",
-                    "Your HP is dropping. Nothing to worry about. Try again!",
-                    "A tiny bit of HP drop is nothing to worry about. Try again!"
+                    "You'll get him in the next try!",
+                    "Nothing to worry about. Have another go!",
+                    "Nothing but a scratch. Try again!"
                 ];
                 let randomNum = Math.floor(Math.random() * 5);
                 let loseMessage = document.createElement('p');
@@ -389,6 +389,8 @@ function restart() {
 function beatOpponent(currentOpponent, playerChoice) {
     document.getElementById('player-choice').style.height = "0";
     document.getElementById('player-choice').style.width = "0";
+    document.getElementById('player-choice').style.margin = "0";
+    document.getElementById('outcome').style.margin = "0";
     
     let backgroudImg = document.getElementById('comp-hand').style.backgroundImage;
     document.getElementById('comp-hand').remove()
@@ -400,7 +402,6 @@ function beatOpponent(currentOpponent, playerChoice) {
         "background-image": `${backgroudImg}`,
         "background-size": "contain",
         "background-repeat": "no-repeat",
-        "position": "absolute",
     };
     Object.assign(compLose.style, compStyle);
 
@@ -411,7 +412,6 @@ function beatOpponent(currentOpponent, playerChoice) {
         "background-image": `url(assets/images/${playerChoice.toLowerCase()}.webp)`,
         "background-size": "contain",
         "background-repeat": "no-repeat",
-        "float": "left",
     };
     Object.assign(playerPick.style, pickStyle);
 
@@ -464,6 +464,7 @@ function displayWinner() {
 
 function nextOpponent() { 
     document.getElementById('player-choice').style = ``;
+    document.getElementById('outcome').style = ``;
     document.getElementById('player-pick').remove();
     document.getElementById('comp-lose').remove();
     document.getElementById('next-button').remove();
@@ -522,11 +523,11 @@ function nextOpponent() {
         compCome = document.getElementById('biggu-bossu');
     }
     compCome.animate([{
-            transform: 'translateY(300px)'
+            transform: 'scale(0.0)'
 
         },
         {
-            transform: 'translateY(0px)'
+            transform: 'scale(1.0)'
 
         }
 
