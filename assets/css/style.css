@@ -132,7 +132,7 @@ h2 {
 
 #opponent,
 #attempts {
-    font-size: 50pt;
+    font-size: 40pt;
     margin: 0 auto;
     font-weight: 900;
     color: white;
@@ -319,7 +319,7 @@ h2 {
     font-size: 35pt;
     margin: 0 20%;
     border-radius: 20px;
-    width: 310px;
+    width: 50%;
     cursor: pointer;
     color: white;
     background: #3a9432;
@@ -342,7 +342,7 @@ h2 {
     box-shadow: black 0px 1px 20px 0px;
     background: #3da6a3;
     line-height: 70px;
-    width: 500px;
+    width: 60%;
     border-radius: 10%;
     color: white;
     position: absolute;
@@ -717,9 +717,9 @@ form {
 
 @media (max-height: 1800px) and (max-width: 1200px) {
     .button {
-        margin: 70px 12%;
-        height: 120px;
-        display: block;
+        margin: 44px 0 0 23px;
+        height: 100px;
+        width: 17%;
     }
 
     #opponent-pic {
@@ -729,13 +729,15 @@ form {
     }
 
     #player-choice {
-        margin: 0 44%;
-        top: 30%;
+        margin: 100px auto 50px;
+        top: unset;
+        position: unset;
     }
 
     #go-button {
-        margin: 0px -6%;
-        top: 44%;
+        margin: 0 auto;
+        top: unset;
+        position: unset;
     }
 
     #intro-text p {
@@ -744,39 +746,53 @@ form {
     }
 
     #lose-message {
-        top: 43%;
-        margin: 0px 35%;
+        top: unset;
+        margin: 0 auto 75px;
         font-size: 20pt;
+        position: unset;
     }
 
     #comp-hand {
-        top: 53%;
-        margin: 0px 42%;
+        top: unset;
+        margin: 0 auto;
+        position: unset;
     }
 
     #outcome {
-        margin: 0px 36%;
-        top: 47%;
+        margin: 50px auto 0;
+        top: unset;
+        position: unset;
     }
 
     #player-pick {
-        margin: 0px 24%;
-        top: 28%;
+        margin: 75px 30px;
+        top: unset;
+        position: unset;
+        height: 175px;
+        width: 175px;
+        display: inline-block;
     }
 
     #comp-lose {
-        margin: 0 50% 0 59%;
-        top: 28%;
+        margin: 75px 30px;
+        top: unset;
+        position: unset;
+        height: 175px;
+        width: 175px;
+        display: inline-block;
     }
 
     #result-area p {
-        margin: 0px 20% 0px 19%;
+        margin: 0 auto;
+        position: unset;
         font-size: 28pt;
+        top: unset;
     }
 
     #next-button {
-        top: 69%;
-        margin: 0 -16%;
+        top: unset;
+        margin: 89px auto;
+        position: unset;
     }
 
     #biggu-bossu {
@@ -794,9 +810,10 @@ form {
 @media (max-height: 1400px) and (max-width: 1200px) {
 
     .button {
-        margin: 60px 12%;
-        height: 95px;
-        display: block;
+        margin: 44px 0 0 23px;
+        height: 70px;
+        display: unset;
+        width: 17%;
     }
 
     #opponent-pic {
@@ -816,9 +833,9 @@ form {
     }
 
     #player-choice {
-        position: absolute;
-        top: 34%;
-        margin: 0px 42%;
+        position: unset;
+        top: unset;
+        margin: 75px auto 50px;
         width: 150px;
         height: 150px;
     }
@@ -826,15 +843,13 @@ form {
     #player-pick {
         height: 150px;
         width: 150px;
-        position: absolute;
-        margin-left: 31%;
-        top: unset;
+        margin: 25px auto;
     }
 
     #go-button {
-        position: absolute;
-        margin: 0 -10%;
-        top: 52%;
+        position: unset;
+        margin: 0 auto;
+        top: unset;
         width: 150px;
         height: 70px;
         font-size: 38pt;
@@ -872,16 +887,26 @@ form {
     }
 
     #comp-hand {
-        position: absolute;
-        top: 60%;
-        margin: 0px 40%;
+        position: unset;
+        top: unset;
+        margin: 0 auto 50px;
         width: 150px;
         height: 150px;
     }
 
+    #result-area {
+        margin: 0px auto;
+    }
+
+    #result-area p {
+        font-size: 24pt;
+        height: 200px;
+    }
+
     #comp-lose {
-        top: 33%;
-        margin: 0 55%;
+        height: 150px;
+        width: 150px;
+        margin: 25px auto;
     }
 
     #lose-message {
@@ -892,19 +917,9 @@ form {
     }
 
     #outcome {
-        position: absolute;
-        top: 50%;
-        margin: 0px 38%;
-    }
-
-    #result-area p {
-        margin: 89px 18% 30px;
-        font-size: 24pt;
-    }
-
-    #next-button {
-        top: 76%;
-        margin: 0 -16%;
+        position: unset;
+        top: unset;
+        margin: 0 auto;
     }
 
     #over-message {
@@ -1318,15 +1333,17 @@ form {
 
     #result-area p {
         margin: 0 auto;
-        font-size: 24pt;
+        font-size: 20pt;
         width: 90%;
         position: unset;
+        line-height: 35pt;
     }
 
     #next-button {
         top: unset;
         margin: 70px auto 0;
         position: unset;
+        font-size: 28pt;
     }
 
     #win-message {
