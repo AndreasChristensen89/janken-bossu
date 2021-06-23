@@ -437,11 +437,11 @@ function beatOpponent(currentOpponent, playerChoice) {
     } else {
         let compLeave = document.getElementById('opponent-pic');
         compLeave.animate([{
-            transform: 'scale(1.0)'
+            opacity: '1.0'
 
         },
         {
-            transform: 'scale(0.0)'
+            opacity: '0.0'
 
         }
 
@@ -523,11 +523,11 @@ function nextOpponent() {
         compCome = document.getElementById('biggu-bossu');
     }
     compCome.animate([{
-            transform: 'scale(0.0)'
+            opacity: '0.0'
 
         },
         {
-            transform: 'scale(1.0)'
+            opacity: '1.0'
 
         }
 

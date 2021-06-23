@@ -828,7 +828,7 @@ form {
         width: 150px;
         position: absolute;
         margin-left: 31%;
-        top: 33%;
+        top: unset;
     }
 
     #go-button {
