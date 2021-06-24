@@ -819,7 +819,7 @@ form {
     #opponent-pic {
         height: 450px;
         width: 270px;
-        top: 58%;
+        top: 54%;
     }
 
     body {
@@ -835,15 +835,15 @@ form {
     #player-choice {
         position: unset;
         top: unset;
-        margin: 75px auto 50px;
+        margin: 100px auto 25px;
         width: 150px;
         height: 150px;
-    }
+}
 
     #player-pick {
         height: 150px;
         width: 150px;
-        margin: 25px auto;
+        margin: 25px 50px;
     }
 
     #go-button {
@@ -889,7 +889,7 @@ form {
     #comp-hand {
         position: unset;
         top: unset;
-        margin: 0 auto 50px;
+        margin: 50px auto;
         width: 150px;
         height: 150px;
     }
@@ -906,13 +906,13 @@ form {
     #comp-lose {
         height: 150px;
         width: 150px;
-        margin: 25px auto;
+        margin: 25px 50px;
     }
 
     #lose-message {
-        top: 50%;
-        position: absolute;
-        margin: 0px 32%;
+        top: unset;
+        position: unset;
+        margin: 0px auto;
         font-size: 25pt;
     }
 
@@ -934,22 +934,18 @@ form {
         top: 52%;
     }
 
-    .button {
-        margin: 30px 12%;
-        height: 90px;
-    }
-
     #biggu-bossu {
         top: 45%;
     }
 
     #lose-message {
-        top: 51%;
         font-size: 20pt;
     }
 
     #comp-hand {
-        top: 64%;
+        margin: 25px auto;
+        width: 125px;
+        height: 125px;
     }
 
     #intro-text p {
@@ -975,14 +971,21 @@ form {
         width: 100px;
     }
 
+    #player-choice {
+        margin: 75px auto 25px;
+        width: 125px;
+        height: 125px;
+    }
+
     #comp-lose {
         height: 100px;
         width: 100px;
     }
 
     #result-area p {
-        margin: 50px 18% 30px;
-        line-height: 50pt;
+        margin: 0 auto;
+        line-height: 40pt;
+        height: unset;
     }
 
     #next-button {
@@ -1055,40 +1058,31 @@ form {
     }
 
     #player-choice {
-        margin: 0px 45%;
         height: 100px;
         width: 100px;
+        margin: 50px auto 0px;
     }
 
     #comp-hand {
-        margin: 0px 45%;
         height: 100px;
         width: 100px;
     }
 
     #player-pick {
-        height: 100px;
-        width: 100px;
-        top: 250px;
+        height: 75px;
+        width: 75px;
     }
 
     #comp-lose {
-        height: 100px;
-        width: 100px;
-        top: 250px;
+        height: 75x;
+        width: 75px;
     }
 
     #opponent-pic {
-        height: 350px;
-        width: 350px;
-        top: 50%;
+       height: 300px;
+        width: 300px;
+        top: 54%;
         right: -20px;
-    }
-
-    .button {
-        margin: 20px 12%;
-        display: block;
-        height: 70px;
     }
 
     #biggu-bossu {
@@ -1097,9 +1091,7 @@ form {
     }
 
     #result-area p {
-        margin: 0 18% 30px;
         font-size: 20pt;
-        top: 400px;
         line-height: 30pt;
     }
 
@@ -1113,7 +1105,8 @@ form {
     }
 
     #next-button {
-        top: 600px;
+        margin: 50px auto;
+        font-size: 20pt;
     }
 
     #opponent {
@@ -1144,16 +1137,15 @@ form {
 
 @media (max-height: 700px) and (max-width: 1200px) {
     #comp-hand {
-        top: 450px;
+        margin: 10px auto 0px;
     }
 
     #player-choice {
-        top: 200px;
+        margin: 0 auto;
     }
 
     #lose-message {
         font-size: 15pt;
-        top: 360px;
     }
 
     #go-button {
@@ -1173,20 +1165,16 @@ form {
     }
 
     #opponent-pic {
-        top: 38%;
+        top: 45%;
     }
 
     #result-area p {
         line-height: 30px;
-        top: 290px;
-        width: unset;
         font-size: 19pt;
-        margin: 20px 25% 0 27%;
     }
 
     #next-button {
-        top: 485px;
-        margin: 0 0% 0 -18%;
+        margin: 25px auto;
     }
 
     #biggu-bossu {
@@ -1197,6 +1185,7 @@ form {
     .button {
         height: 55px;
         width: 55px;
+        margin: 50px 50px 20px 50px;
     }
 
     #intro-text p {
@@ -1206,8 +1195,6 @@ form {
     }
 
     #comp-lose {
-        margin: 0 62%;
-        top: 200px;
         height: 75px;
         width: 75px;
     }
@@ -1215,7 +1202,6 @@ form {
     #player-pick {
         height: 75px;
         width: 75px;
-        top: 200px;
     }
 
     #over-message {
@@ -1237,6 +1223,11 @@ form {
     #win-text {
         font-size: 20pt;
     }
+}
+
+/* Where the background pic stops adjusting */
+@media (max-height: 600px) and (max-width: 1200px) {
+
 }
 
 /* This height because the game needs to fit on the screen without scrolling, and screens are generally not that high compared to the width */
@@ -1390,93 +1381,8 @@ form {
     }
 }
 
-/* @media (max-height: 700px) and (max-width: 1200px) {
-    .menuLink {
-        font-size: 17pt;
-    }
-    
-    .button {
-        height: 70px;
-        width: 70px;
-        margin: 18px 12%;
-    }
-
-    #go-button {
-        margin: 0px -5%;
-        position: absolute;
-        top: 360px;
-    }
-
-    #lose-message {
-        top: 340px;
-        margin: 0 39%;
-        width: 300px;
-    }
-
-    #player-choice {
-        top: 220px;
-        margin: 0 47%;
-    }
-
-    #comp-hand {
-        top: 440px;
-        margin: 0 47%;
-    }
-
-    #opponent {
-        font-size: 25pt;
-        width: 350px;
-        padding: 10px;
-        height: 60px;
-    }
-
+@media (max-height: 1300px) and (max-width: 600px) {
     #opponent-pic {
-        top: 45%;
-        height: 300px;
-        width: 300px;
+        width: 290px;
     }
-
-    #outcome {
-        top: 360px;
-    }
-
-    #result-area p {
-        margin: 10px auto 0;
-        height: 130px;
-        line-height: 44px;
-        width: 410px;
-    }
-
-    #biggu-bossu {
-        top: 32%;
-    }
-
-    #over-message {
-        top: 200px;
-        margin: 50px auto 0;
-    }
-
-    #win-message {
-        margin: 100px auto 50px;
-    }
-
-    #win-text {
-        font-size: 20pt;
-        margin: 30px auto;
-        width: 550px;
-        color: white;
-        border-radius: 10%;
-    }
-
-    #restart-button {
-        width: 100px;
-        height: 100px;
-        font-size: 20pt;
-        box-shadow: black 0px 1px 20px 0px;
-    }
-
-    #health {
-        left: 9px;
-        width: 95px;
-    }
-} */
+}
