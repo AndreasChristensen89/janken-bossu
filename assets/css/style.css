@@ -1251,6 +1251,123 @@ form {
 
 /* Where the background pic stops adjusting */
 @media (max-height: 550px) and (max-width: 1200px) {
+    body {
+        background-position-y: 90%;
+    }
+
+    #main-intro h1 {
+        margin: 50px auto;
+        font-size: 30pt;
+        width: 300px;
+    }
+
+    #main-intro h2 {
+        width: 300px;
+        font-size: 18pt;
+    }
+
+    #play-button {
+        font-size: 30pt;
+        margin: 10px auto;
+    }
+
+    #intro-text p {
+        width: 400px;
+        line-height: 30px;
+        font-size: 14pt;
+        margin: 30px auto 0px;
+    }
+
+    #start-button {
+        font-size: 24pt;
+        width: 200px;
+    }
+
+    #opponent {
+        font-size: 22pt;
+        margin: 20px auto 0px;
+    }
+
+    #health {
+        margin-top: 22px;
+        font-size: 17pt;
+        width: 100px;
+    }
+
+    #opponent-pic {
+        top: 47%;
+        height: 225px;
+        width: 225px;
+    }
+
+    .button {
+        height: 40px;
+        width: 40px;
+        margin: 20px 50px 20px 50px;
+    }
+
+    #player-choice {
+        height: 60px;
+        width: 60px;
+    }
+
+    #comp-hand {
+        height: 60px;
+        width: 60px;
+        margin-top: 20px;
+    }
+
+    #outcome {
+        font-size: 14pt;
+        width: 180px;
+    }
+
+    #player-pick {
+        height: 50px;
+        width: 50px;
+    }
+
+    #comp-lose {
+        height: 50px;
+        width: 50px;
+    }
+
+    #result-area p {
+        line-height: 24px;
+        font-size: 14pt;
+    }
+
+    #next-button {
+        font-size: 14pt;
+    }
+
+    #over-message {
+        font-size: 20pt;
+        padding: 20px;
+    }
+
+    #gameover-text {
+        padding: 20px;
+        line-height: 30pt;
+        margin: 0px auto 15px;
+        width: 400px;
+        font-size: 12pt;
+    }
+
+    #restart-button {
+        width: 75px;
+        height: 75px;
+        font-size: 15pt;
+    }
+
+    #biggu-bossu {
+        top: 42%;
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-height: 420px) and (max-width: 1200px) {
 
 }
 
