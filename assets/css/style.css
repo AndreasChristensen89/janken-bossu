@@ -1610,6 +1610,10 @@ form {
         width: 300px;
     }
 
+    #opponent-pic {
+        top: 55%;
+    }
+
     #result-area {
         width: 60%;
     }
@@ -1741,6 +1745,10 @@ form {
         width: 250px;
     }
 
+    #opponent-pic {
+        top: 51%
+    }
+
     #biggu-bossu {
         top: 49%;
         width: 400px;
@@ -1750,6 +1758,7 @@ form {
 @media (max-height: 900px) and (max-width: 800px) {
     #opponent-pic {
         width: 250px;
+        top: 54%;
     }
 
     #intro-text p {
@@ -1840,6 +1849,10 @@ form {
     .button {
         margin: 30px auto 0px 17px;
         height: 50px;
+    }
+
+    #opponent-pic {
+        top: 52%;
     }
 
     #player-choice {
@@ -1937,6 +1950,11 @@ form {
         margin: 20px auto 0px;
     }
 
+    #opponent-pic {
+        top: 53%;
+        height: 190px;
+    }
+
     .button {
         margin: 30px auto 0px 17px;
     }
@@ -2029,8 +2047,8 @@ form {
     }
 
     #opponent-pic {
-        height: 175px;
-        top: 47%;
+        height: 120px;
+        top: 59%;
     }
 
     #player-pick {
