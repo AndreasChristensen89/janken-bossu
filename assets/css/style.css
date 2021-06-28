@@ -101,7 +101,7 @@ h1 {
     font-size: 10vw;
     background: #455d66;
     border-radius: 20px;
-    color: white;
+    color: #c7ebf2;
     margin: 145px auto 100px;
     width: 60%;
     box-shadow: black 0px 1px 20px 0px;
@@ -109,10 +109,10 @@ h1 {
 
 h2 {
     margin: 30px auto;
-    box-shadow: black 0px 1px 20px 0px;
     font-size: 3vw;
     background: #6f9fc3;
     width: 50%;
+    color: white;
 }
 
 /* ====================== game ====================== */
@@ -131,7 +131,7 @@ h2 {
     position: absolute;
     right: 0px;
     top: 53%;
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 #opponent,
@@ -226,7 +226,6 @@ h2 {
     margin: 100px auto 0px;
     height: 175px;
     width: 150px;
-    cursor: pointer;
     z-index: 99;
 }
 
@@ -500,10 +499,11 @@ h2 {
 #rules-intro p {
     font-size: 24pt;
     margin: 30px auto;
-    background: #7e8380;
+    background: #68acb9;
     width: 60%;
     padding: 20px;
     border-radius: 10%;
+    opacity: 0.9;
 }
 
 #how-to-play {
@@ -513,17 +513,20 @@ h2 {
 
 #how-to-play h2 {
     margin: 70px auto 20px;
-    background: #659da9;
+    background: #3a9432;
+    box-shadow: black 0px 1px 20px 0px;
 }
 
 .rule-div {
-    float: left;
-    width: 20%;
-    margin: 20px 0 30px;
+    width: 17%;
+    margin: 20px 14px 30px;
     height: 220px;
     padding: 2% 0;
     border-radius: 10%;
-    background-color: #455d66;
+    background-color: #69acb9;
+    opacity: 0.9;
+    display: inline-block;
+    box-shadow: black 0px 1px 5px 0px;
 }
 
 .rule-div h3 {
@@ -549,15 +552,17 @@ h2 {
 #game-setting h2 {
     margin: 30px auto;
     width: 500px;
-    background: #659da9;
+    background: #3a9432;
+    box-shadow: black 0px 1px 20px 0px;
 }
 
 #game-setting p {
     margin: 30px 10%;
     font-size: 23pt;
-    background-color: #455d66;
+    background-color: #68acb9;
     padding: 3%;
     border-radius: 10%;
+    opacity: 0.9;
 }
 
 /* ================================== contact ========================================= */
@@ -639,7 +644,7 @@ form {
 }
 
 /* ======================================= media queries ============================================================= */
-@media (max-height: 1800px) and (max-width: 1800px) {
+@media (max-height: 1800px) and (max-width: 1700px) {
     #main-intro h1 {
         font-size: 8vw;
     }
@@ -659,6 +664,20 @@ form {
 
     #intro-text p {
         width: 60vw;
+    }
+}
+
+@media (max-height: 1300px) and (max-width: 1700px) {
+    #opponent-pic {
+        top: 50%;
+        height: 450px;
+    }
+}
+
+@media (max-height: 950px) and (max-width: 1700px) {
+    #opponent-pic {
+        top: 48%;
+        height: 350px;
     }
 }
 
