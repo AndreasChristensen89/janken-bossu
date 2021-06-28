@@ -165,7 +165,7 @@ function generateComputerChoice() {
         "background-image": `url(assets/images/${compResult}.webp)`,
         "background-size": "contain",
         "background-repeat": "no-repeat",
-    };
+    };g
     Object.assign(compChoice.style, compChoiceStyle);
 
     calculateWinner(compResult);
@@ -307,7 +307,7 @@ function animateButtons() {
 }
 
 /**
- * Adds draw animation to both hands.
+ * Adds draw animation to both hands. Takes id and pixes(move y-direction) parameters.
  */
 function animateDraw(id, pixels) {
     document.getElementById(id).animate([{
@@ -486,7 +486,7 @@ function nextOpponent() {
     document.getElementById('outcome').innerText = "";
 
     let currentOpponent = document.getElementById('opponent').innerText;
-
+    
     if (currentOpponent === opponents[3]) {
         document.getElementById('opponent-pic').setAttribute("id", "biggu-bossu");
         document.getElementById('biggu-bossu').style.backgroundImage = backgrounds[4];
