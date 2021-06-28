@@ -49,19 +49,6 @@ function createElement(type, id, append, html) {
     newElement.innerHTML = `${html}`;
 }
 
-
-/**
- * Removes all class="buttons" on the screen.
- * Takes no parameters
- */
-function removeButtons() {
-    let numOfButtons = document.getElementsByClassName('button');
-
-    for (let i = numOfButtons.length - 1; i >= 0; i--) {
-        numOfButtons[i].remove();
-    }
-}
-
 /**
  * Removes elements from start screen. Adds intro-text and start button
  */
@@ -471,6 +458,18 @@ function beatOpponent(currentOpponent, playerChoice) {
         });
     }
 }
+
+/**
+ * Removes all class="buttons" on the screen.
+ */
+function removeButtons() {
+    let numOfButtons = document.getElementsByClassName('button');
+
+    for (let i = numOfButtons.length - 1; i >= 0; i--) {
+        numOfButtons[i].remove();
+    }
+}
+
 
 /**
  * Removes all content from beatOpponent screen. Inserts all content from game, health bar is set to full and color=green, current opponent is checked and
