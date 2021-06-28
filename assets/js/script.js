@@ -37,8 +37,9 @@ var dataType = ["rock", "paper", "scissors", "lizard", "spock"];
 var buttonPics = ["url(assets/images/rock.webp)", "url(assets/images/paper.webp)", "url(assets/images/scissors.webp)", "url(assets/images/lizard.webp)", "url(assets/images/spock.webp)"];
 var opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
 var backgrounds = ["url(assets/images/intern-div.webp)", "url(assets/images/salaryman-div.webp)", "url(assets/images/manager-div.webp)", "url(assets/images/yakuza-div.webp)", "url(assets/images/biggu-bossu-div.webp)"];
+
 /**
- * Used to shorten down the code when creating elements.
+ * Creates element with id and inserts it. InnerHTML is optional.
  * Takes four parameters; type of element, id name, the id of element to appendChild, and innerHTML
  */
 function createElement(type, id, append, html) {
@@ -48,9 +49,71 @@ function createElement(type, id, append, html) {
     newElement.innerHTML = `${html}`;
 }
 
+
 /**
- * Creates and inserts the five hand-buttons for playing
- * No parameters needed
+ * Removes all class="buttons" on the screen.
+ * Takes no parameters
+ */
+function removeButtons() {
+    let numOfButtons = document.getElementsByClassName('button');
+
+    for (let i = numOfButtons.length - 1; i >= 0; i--) {
+        numOfButtons[i].remove();
+    }
+}
+
+/**
+ * Removes elements from start screen. Adds intro-text and start button
+ */
+function play() {
+    createElement("div", "intro-text", "button-area", "<p>To play simply pick a hand and press the GO button.<br> Opponents' hit-power will increase for each round, so watch your health bar. <br>You only need to beat each opponent once to advance to the next level.</p>")
+
+    createElement("button", "start-button", "button-area", "START");
+    document.getElementById("start-button").setAttribute("data-type", "start");
+    document.getElementById('start-button').addEventListener('click', start);
+
+    document.getElementById('play-button').remove();
+
+    let mainIntro = document.getElementById('main-intro');
+    mainIntro.innerHTML = ``;
+    mainIntro.style.height = "unset";
+}
+
+/**
+ * Removes elements from pre-play screen. Adds hand-buttons, opponent picture+title, health bar, and restart button
+ */
+function start() {
+    document.getElementById('start-button').remove();
+    document.getElementById('main-intro').remove();
+    document.getElementById('intro-text').remove();
+
+    createElement("div", "opponent", "button-area", "The Intern");
+
+    createElement("div", "health", "button-area", "100");
+
+    addButtons();
+
+    createElementTarget("div", "opponent-pic", "player-choice");
+
+    createElementTarget("button", "head-restart", "opponent");
+    document.getElementById('head-restart').innerHTML = `<i class="fas fa-sync-alt"></i>`;
+    document.getElementById('head-restart').addEventListener('click', restart);
+}
+
+/**
+ * Creates element with id and inserts it before another element.
+ * Takes three parameters; type of element, id name, and id of target to insertBefore
+ */
+function createElementTarget(type, id, target) {
+    let newElement = document.createElement(`${type}`);
+    newElement.setAttribute("id", `${id}`);
+    let targetInsert = document.getElementById(`${target}`);
+    targetInsert.parentNode.insertBefore(newElement, targetInsert);
+}
+
+/**
+ * Creates and inserts the five hand-buttons for playing. Adds background pics to each from buttonPics[i] array.
+ * Adds eventlisteners to activate choice(), passes data-type from element as parameter
  */
 function addButtons() {
     let rock = document.createElement('button');
@@ -73,54 +136,9 @@ function addButtons() {
     }
 }
 
-function removeButtons() {
-    let numOfButtons = document.getElementsByClassName('button');
-
-    for (let i = numOfButtons.length - 1; i >= 0; i--) {
-        numOfButtons[i].remove();
-    }
-
-}
-
-function play() {
-    createElement("div", "intro-text", "button-area", "<p>To play simply pick a hand and press the GO button.<br> Opponents' hit-power will increase for each round, so watch your health bar. <br>You only need to beat each opponent once to advance to the next level.</p>")
-
-    createElement("button", "start-button", "button-area", "START");
-    document.getElementById("start-button").setAttribute("data-type", "start");
-    document.getElementById('start-button').addEventListener('click', start);
-
-    let playButton = document.getElementById('play-button');
-    playButton.remove();
-
-    let mainIntro = document.getElementById('main-intro');
-    mainIntro.innerHTML = ``;
-    mainIntro.style.height = "unset";
-}
-
-function start() {
-    document.getElementById('start-button').remove();
-    document.getElementById('main-intro').remove();
-    document.getElementById('intro-text').remove();
-
-    createElement("div", "opponent", "button-area", "The Intern");
-
-    createElement("div", "health", "button-area", "100");
-
-    addButtons();
-
-    let OpponentPic = document.createElement('div');
-    OpponentPic.setAttribute("id", "opponent-pic");
-    let target = document.getElementById('player-choice');
-    target.parentNode.insertBefore(OpponentPic, target);
-
-    let HeadRestartButton = document.createElement('button');
-    HeadRestartButton.setAttribute("id", "head-restart");
-    HeadRestartButton.innerHTML = `<i class="fas fa-sync-alt"></i>`;
-    HeadRestartButton.addEventListener('click', restart);
-    let targetTwo = document.getElementById('opponent');
-    targetTwo.parentNode.insertBefore(HeadRestartButton, targetTwo);
-}
-
+/**
+ * Inserts picture of chosen hand via parameter. Checks for lack of go-button to clear content from a draw/loss.
+ */
 function choice(playerChoice) {
     let chosenPic = document.getElementById('player-choice');
     let chosenPicStyles = {
@@ -130,11 +148,12 @@ function choice(playerChoice) {
     };
     Object.assign(chosenPic.style, chosenPicStyles);
     chosenPic.setAttribute("data-type", `${playerChoice}`)
-    let goArea = document.getElementById("go-button-area");
-    let button = document.getElementById("go-button");
 
     document.getElementById('comp-choice').textContent = "";
     document.getElementById('outcome').textContent = "";
+
+    let goArea = document.getElementById("go-button-area");
+    let button = document.getElementById("go-button");
 
     if (!goArea.contains(button)) {
         createElement("button", "go-button", "go-button-area", "Go");
@@ -142,6 +161,10 @@ function choice(playerChoice) {
     }
 }
 
+/**
+ * Uses a random number to generate a computer-choice from array -> value is used to generate background picture, basic style is given to picture.
+ * Calls calculateWinner()
+ */
 function generateComputerChoice() {
 
     let randomNumber = Math.floor(Math.random() * 5);
@@ -161,6 +184,12 @@ function generateComputerChoice() {
     calculateWinner(compResult);
 }
 
+/**
+ * Uses array with fail-values for each hand to test player-choice. 
+ * Draw adds animation to both hands + adds message.
+ * Loss animates computer hand and healthbar (if > 0) + adds message + calls decreaseScore().
+ * Win calls beatOpponent()
+ */
 function calculateWinner(compResult) {
     let playerChoice = document.getElementById('player-choice').getAttribute("data-type");
     let failEvents = [{
@@ -193,55 +222,15 @@ function calculateWinner(compResult) {
     for (let i = 0; i < failEvents.length; i++) {
         if (playerChoice === compResult) {
             document.getElementById('outcome').textContent = "Draw! Try again";
-            document.getElementById('player-choice').animate([{
-                    transform: 'translateY(0px)'
-                },
-                {
-                    transform: 'translateY(25px)'
-                },
-                {
-                    transform: 'translateY(0px)'
-                }
-            ], {
-                duration: 500,
-                iterations: 2
-            });
-            document.getElementById('comp-hand').animate([{
-                    transform: 'translateY(0px)'
-                },
-                {
-                    transform: 'translateY(-25px)'
-                },
-                {
-                    transform: 'translateY(0px)'
-                }
-            ], {
-                duration: 500,
-                iterations: 2
-            });
-            let buttons = document.querySelectorAll('.button');
-            for (let i = 0; i < buttons.length; i++) {
-                let button = buttons[i];
 
-                button.animate([{
-                        transform: 'scale(1.0)'
-                    },
-                    {
-                        transform: 'scale(1.2)'
-                    },
-                    {
-                        transform: 'scale(1.0)'
-                    }
-                ], {
-                    delay: 1500,
-                    duration: 1000,
-                    iterations: 2
-                });
-            }
+            animateDraw("player-choice", "25px");
+            animateDraw("comp-hand", "-25px");
+            animateButtons();
+
         } else if (playerChoice === failEvents[i].value) {
             let currentOpponent = document.getElementById('opponent').innerText;
             if (compResult === failEvents[i].failOne || compResult === failEvents[i].failTwo) {
-                let tryAgain = [
+                let tryAgainMessages = [
                     "Your luck didn't cut it. Try again",
                     "Ouch! Have another go",
                     "It's not over yet! Try again.",
@@ -252,7 +241,7 @@ function calculateWinner(compResult) {
                 ];
                 let randomNum = Math.floor(Math.random() * 5);
                 let loseMessage = document.createElement('p');
-                loseMessage.innerText = `${tryAgain[randomNum]}`;
+                loseMessage.innerText = `${tryAgainMessages[randomNum]}`;
                 loseMessage.setAttribute("id", "lose-message");
                 let target = document.getElementById('comp-hand');
                 target.parentNode.insertBefore(loseMessage, target);
@@ -280,27 +269,7 @@ function calculateWinner(compResult) {
                         duration: 1500,
                         iterations: 1
                     });
-
-                    var buttons = document.querySelectorAll('.button');
-
-                    for (let i = 0; i < buttons.length; i++) {
-                        let button = buttons[i];
-
-                        button.animate([{
-                                transform: 'scale(1.0)'
-                            },
-                            {
-                                transform: 'scale(1.2)'
-                            },
-                            {
-                                transform: 'scale(1.0)'
-                            }
-                        ], {
-                            delay: 2500,
-                            duration: 1000,
-                            iterations: 2
-                        });
-                    }
+                    animateButtons();
 
                     document.getElementById("health").animate([{
                             backgroundColor: 'black'
@@ -325,6 +294,55 @@ function calculateWinner(compResult) {
     }
 }
 
+/**
+ * Adds scale up - scale down animation to buttons to hint players to click them again.
+ */
+function animateButtons() {
+    let buttons = document.querySelectorAll('.button');
+    for (let i = 0; i < buttons.length; i++) {
+        let button = buttons[i];
+
+        button.animate([{
+                transform: 'scale(1.0)'
+            },
+            {
+                transform: 'scale(1.2)'
+            },
+            {
+                transform: 'scale(1.0)'
+            }
+        ], {
+            delay: 2500,
+            duration: 1000,
+            iterations: 2
+        });
+    }
+}
+
+/**
+ * Adds draw animation to both hands.
+ */
+function animateDraw(id, pixels) {
+    document.getElementById(id).animate([{
+            transform: 'translateY(0px)'
+        },
+        {
+            transform: `translateY(${pixels})`
+        },
+        {
+            transform: 'translateY(0px)'
+        }
+    ], {
+        duration: 500,
+        iterations: 2
+    });
+}
+
+/**
+ * Uses array with objects of opponents+their damage values.
+ * Current opponent is checked to calculate how much health is decreased. Color is changed according to value after decrease.
+ * If value>20 (min damage) gameOver() is called
+ */
 function decreaseScore(currentOpponent) {
     let damage = [{
             "value": "The Intern",
@@ -356,11 +374,11 @@ function decreaseScore(currentOpponent) {
             newScore = health - damage[i].points;
             document.getElementById('health').innerHTML = newScore;
             if (newScore < 75 && newScore >= 50) {
-                document.getElementById('health').style.backgroundColor = "#ea8426"; // #ea8426 orange
+                document.getElementById('health').style.backgroundColor = "#ea8426"; //orange
             } else if (newScore < 50 && newScore >= 25) {
-                document.getElementById('health').style.backgroundColor = "#c7be33"; // #c7be33 yellow
+                document.getElementById('health').style.backgroundColor = "#c7be33"; //yellow
             } else if (newScore < 25 && newScore >= 20) {
-                document.getElementById('health').style.backgroundColor = "#d01414"; // #d01414 red
+                document.getElementById('health').style.backgroundColor = "#d01414"; //red
             } else if (newScore < 20) {
                 gameOver();
             }
@@ -368,6 +386,10 @@ function decreaseScore(currentOpponent) {
     }
 }
 
+/**
+ * Button and game areas content are removed to clear screen of game.
+ * Gameover text and restart button are inserted. Button calls restart()
+ */
 function gameOver() {
     document.getElementById('button-area').innerHTML = ``;
     document.getElementById('game-area').innerHTML = ``;
@@ -380,11 +402,19 @@ function gameOver() {
 
     document.getElementById("restart-button").addEventListener('click', restart);
 }
-
+/**
+ * Reloads page
+ */
 function restart() {
     location.reload();
 }
 
+/**
+ * Player choice style values are set to 0 to ease other styling + opponent is animated to dissapear. Game content is removed. Computer and player choice pictures are 
+ * copied to new elements with loss animation. Text is generated, using current opponent and playerchoice, to highlight defeated opponent 
+ * and fetch name of the next. Next button is added, calls nextOpponent().
+ * If current opponent is last boss beatGame() is called.
+ */
 function beatOpponent(currentOpponent, playerChoice) {
     document.getElementById('player-choice').style.height = "0";
     document.getElementById('player-choice').style.width = "0";
@@ -394,29 +424,23 @@ function beatOpponent(currentOpponent, playerChoice) {
     let backgroudImg = document.getElementById('comp-hand').style.backgroundImage;
     document.getElementById('comp-hand').remove()
 
-    let compLose = document.createElement('div');
-    compLose.style.backgroundImage = backgroudImg;
-    compLose.setAttribute("id", "comp-lose");
+    createElementTarget("div", "player-pick", "outcome");
+    let playerPick = document.getElementById('player-pick');
+    let pickStyle = {
+        "background-image": `url(assets/images/${playerChoice}.webp)`,
+        "background-size": "contain",
+        "background-repeat": "no-repeat",
+    };
+    Object.assign(playerPick.style, pickStyle);
+
+    createElementTarget("div", "comp-lose", "outcome");
+    let compLose = document.getElementById('comp-lose');
     let compStyle = {
         "background-image": `${backgroudImg}`,
         "background-size": "contain",
         "background-repeat": "no-repeat",
     };
     Object.assign(compLose.style, compStyle);
-
-
-    let playerPick = document.createElement('div');
-    playerPick.setAttribute("id", "player-pick");
-    let pickStyle = {
-        "background-image": `url(assets/images/${playerChoice.toLowerCase()}.webp)`,
-        "background-size": "contain",
-        "background-repeat": "no-repeat",
-    };
-    Object.assign(playerPick.style, pickStyle);
-
-    let target = document.getElementById('outcome');
-    target.parentNode.insertBefore(playerPick, target);
-    target.parentNode.insertBefore(compLose, target);
 
     let nextIndex = opponents.indexOf(currentOpponent);
 
@@ -448,6 +472,10 @@ function beatOpponent(currentOpponent, playerChoice) {
     }
 }
 
+/**
+ * Removes all content from beatOpponent screen. Inserts all content from game, health bar is set to full and color=green, current opponent is checked and
+ * updated accordingly (normal or boss) + animated to appear
+ */
 function nextOpponent() {
     document.getElementById('player-choice').style = ``;
     document.getElementById('outcome').style = ``;
@@ -468,10 +496,7 @@ function nextOpponent() {
     }
 
     for (let i = 0; i < 3; i++) {
-        if (currentOpponent === opponents[4]) {
-            beatGame();
-            break;
-        } else if (currentOpponent === opponents[i]) {
+        if (currentOpponent === opponents[i]) {
             document.getElementById('opponent').textContent = opponents[i + 1];
             document.getElementById('health').textContent = 100;
             document.getElementById('opponent-pic').style.backgroundImage = backgrounds[i + 1];
@@ -504,6 +529,9 @@ function nextOpponent() {
     });
 }
 
+/**
+ * Removes all content from game. Inserts animated winning text and adds restart buttons that calls restart().
+ */
 function beatGame() {
     document.getElementById('button-area').innerHTML = ``;
     document.getElementById('game-area').innerHTML = ``;
