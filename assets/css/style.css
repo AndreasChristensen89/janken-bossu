@@ -27,8 +27,8 @@ body {
     z-index: 100;
     top: 1rem;
     left: 1rem;
-    width: 3rem;
-    height: 3rem;
+    width: 4vw;
+    height: 4vw;
     border: black solid 1px;
     background: white;
     cursor: pointer;
@@ -75,6 +75,10 @@ li {
     text-decoration: underline;
 }
 
+.material-icons {
+    font-size: 3vw;
+}
+
 /* =================================== game area ================================================== */
 
 #main-intro {
@@ -94,21 +98,21 @@ h1 {
 
 #main-intro h1 {
     font-weight: bold;
-    font-size: 75pt;
+    font-size: 10vw;
     background: #455d66;
     border-radius: 20px;
     color: white;
     margin: 145px auto 100px;
-    width: 522px;
+    width: 60%;
     box-shadow: black 0px 1px 20px 0px;
 }
 
 h2 {
     margin: 30px auto;
     box-shadow: black 0px 1px 20px 0px;
-    font-size: 31pt;
+    font-size: 3vw;
     background: #6f9fc3;
-    width: 510px;
+    width: 50%;
 }
 
 /* ====================== game ====================== */
@@ -121,7 +125,7 @@ h2 {
     background-image: url(../images/intern-div.webp);
     background-repeat: no-repeat;
     height: 600px;
-    width: 600px;
+    width: 450px;
     background-size: contain;
     float: right;
     position: absolute;
@@ -144,12 +148,10 @@ h2 {
 }
 
 #play-button {
-    text-align: center;
-    margin: 50px auto;
-    font-size: 60pt;
+    margin: 15% auto;
+    font-size: 5vw;
     background-color: rgb(19 154 60);
     border-radius: 20px;
-    width: 211px;
     box-shadow: black 0px 1px 20px 0px;
     cursor: pointer;
     color: white;
@@ -187,7 +189,7 @@ h2 {
 .button {
     margin: 75px 33px;
     height: 150px;
-    width: 175px;
+    width: 150px;
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -221,13 +223,9 @@ h2 {
 }
 
 #player-choice {
-    position: absolute;
-    margin: 0 auto;
+    margin: 100px auto 0px;
     height: 175px;
     width: 150px;
-    background-size: contain;
-    background-color: transparent;
-    background-repeat: no-repeat;
     cursor: pointer;
     z-index: 99;
 }
@@ -250,9 +248,7 @@ h2 {
     width: 145px;
     border-radius: 20%;
     cursor: pointer;
-    top: 58%;
-    position: absolute;
-    margin: 0px -4%;
+    margin: 50px auto 0px;
 }
 
 #health {
@@ -273,18 +269,16 @@ h2 {
 }
 
 #comp-hand {
-    margin: 0px 46%;
-    position: absolute;
-    height: 150px;
+    margin: 50px auto 0px;
+    height: 175px;
     width: 150px;
-    top: 70%;
 }
 
 #comp-lose {
     height: 150px;
     width: 150px;
-    top: 24%;
-    margin: 0 57%;
+    margin: 25px 57px;
+    display: inline-block;
 
     animation-name: element-opacity;
     animation-duration: 0.5s;
@@ -306,13 +300,12 @@ h2 {
 #outcome {
     font-size: 30pt;
     background: #5f5c5c;
-    margin: 0px auto;
+    margin: 30px auto 0px;
     width: 305px;
     font-weight: 900;
     color: white;
     box-shadow: black 0px 1px 20px 0px;
     border-radius: 10%;
-    position: absolute;
 }
 
 #next-button {
@@ -433,14 +426,12 @@ h2 {
 /* animation for losing hand */
 #lose-message {
     font-size: 28pt;
-    width: 370px;
-    margin: 0 41%;
+    width: 450px;
+    margin: 0 auto;
     background-color: #505050;
     border-radius: 10%;
     padding: 10px;
     color: white;
-    position: absolute;
-    top: 58%;
 
     animation-name: try-again;
     animation-duration: 3s;
@@ -465,11 +456,10 @@ h2 {
 /* animation for winning hand */
 
 #player-pick {
-    margin: 0px 34%;
+    margin: 25px 50px;
     height: 150px;
     width: 150px;
-    position: absolute;
-    top: 24%;
+    display: inline-block;
 
     animation-name: elemenet-move;
     animation-duration: 0.5s;
@@ -648,73 +638,29 @@ form {
     color: #836225;
 }
 
-/* to fit the characters with the window */
+/* ======================================= media queries ============================================================= */
+@media (max-height: 1800px) and (max-width: 1800px) {
+    #main-intro h1 {
+        font-size: 8vw;
+    }
 
-/* @media (max-height: 1500px) {
-    #opponent-pic {
-        top: 65%;
+    h2 {
+        font-size: 3vw;
+    }
+
+    #play-button {
+        width: 13%;
+        font-size: 4vw;
+    }
+
+    .menuLink {
+        font-size: 4rem;
+    }
+
+    #intro-text p {
+        width: 60vw;
     }
 }
-
-@media (max-height: 950px) {
-    #opponent-pic {
-        top: 54%;
-    }
-}
-
-@media (max-height: 700px) {
-    #opponent-pic {
-        top: 45%;
-    }
-} */
-
-/* To fit bossu */
-/* @media (max-width: 1500px) {
-
-    .button {
-        margin: 50px 0;
-    }
-} */
-
-/* bossu fit */
-/* @media (max-width: 1200px) {
-    .button {
-        margin: 10px 12%;
-        display: block;
-    }
-
-    #player-choice {
-        top: 241px;
-        position: absolute;
-        margin: 0 46%;
-    }
-
-    #go-button {
-        margin: 0 -4%;
-        position: absolute;
-        top: 410px;
-    }
-
-    #comp-hand {
-        margin: 0 46%;
-        position: absolute;
-        top: 400px;
-    }
-
-    #lose-message {
-        font-size: 18pt;
-        width: 250px;
-        margin: 0px 39%;
-        position: absolute;
-        top: 548px;
-    }
-
-    #outcome {
-        margin: 0px 37%;
-        position: absolute;
-        top: 540px;
-    }
-} */
 
 @media (max-height: 1800px) and (max-width: 1200px) {
     .button {
@@ -2541,30 +2487,30 @@ form {
             font-size: 9pt;
         }
 
-    #next-button {
-        font-size: 10pt;
-        height: 25px;
-    }
+        #next-button {
+            font-size: 10pt;
+            height: 25px;
+        }
 
-    #biggu-bossu {
-        top: 47%;
-    }
+        #biggu-bossu {
+            top: 47%;
+        }
 
-    #over-message {
-        font-size: 14pt;
-    }
+        #over-message {
+            font-size: 14pt;
+        }
 
-    #gameover-text {
-        font-size: 10pt;
-        line-height: 16pt;
-        width: 50%;
-        margin: 30px auto 0px;
-    }
+        #gameover-text {
+            font-size: 10pt;
+            line-height: 16pt;
+            width: 50%;
+            margin: 30px auto 0px;
+        }
 
-    #restart-button {
-        width: 75px;
-        height: 75px;
-        font-size: 14pt;
+        #restart-button {
+            width: 75px;
+            height: 75px;
+            font-size: 14pt;
+        }
     }
-}
 }
