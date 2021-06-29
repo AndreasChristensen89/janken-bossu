@@ -644,6 +644,12 @@ form {
 
 /* ======================================= media queries ============================================================= */
 @media (max-height: 1800px) and (max-width: 1550px) {
+    .menu {
+        padding-top: 9rem;
+        width: 19%;
+        font-size: 5vw;
+    }
+
     #main-intro h1 {
         font-size: 8vw;
     }
@@ -870,6 +876,14 @@ form {
 }
 
 @media (max-height: 1800px) and (max-width: 1200px) {
+    .menu {
+        width: 21%;
+    }
+
+    .menuLink {
+        font-size: 3rem;
+    }
+
     .button {
         margin: 44px 0 0 23px;
         height: 100px;
@@ -958,6 +972,9 @@ form {
 
     #over-message {
         margin-top: 100px;
+        padding: 30px;
+        width: 40%;
+        font-size: 50pt;
     }
 
     #play-button {
@@ -1181,10 +1198,6 @@ form {
 }
 
 @media (max-height: 900px) and (max-width: 1200px) {
-    #play-button {
-        /* font-size: 45pt; */
-    }
-
     #main-intro h1 {
         margin: 50px auto;
         font-size: 60pt;
@@ -1530,10 +1543,6 @@ form {
 }
 
 @media (max-height: 420px) and (max-width: 1200px) {
-    .menu {
-        width: 14%;
-    }
-
     .menuLink {
         font-size: 2rem;
     }
@@ -1742,12 +1751,16 @@ form {
         background-position-x: 28%;
     }
 
+    .menu {
+        width: 21%;
+    }
+    
     .menuLink {
         font-size: 2rem;
     }
 
     #main-intro h1 {
-        font-size: 72pt;
+        font-size: 8vw;
         width: 70%;
     }
 
@@ -1862,7 +1875,7 @@ form {
     }
 
     #over-message {
-        font-size: 40pt;
+        font-size: 31pt;
         margin: 50px auto 20px;
         width: 60%;
     }
@@ -2293,8 +2306,16 @@ form {
     }
 
     .material-icons {
-    font-size: 22pt;
-}   
+        font-size: 22pt;
+    }
+
+    .menuLink {
+        font-size: 1rem;
+    }
+
+    .menu {
+        padding-top: 4rem;
+    }
 
     #main-intro h1 {
         font-size: 35pt;
@@ -2305,11 +2326,6 @@ form {
         width: 60%;
         font-size: 20pt;
         line-height: 30pt;
-    }
-
-    #play-button {
-        font-size: 30pt;
-        width: 50%;
     }
 
     #intro-text p {
