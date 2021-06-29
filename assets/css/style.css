@@ -27,8 +27,8 @@ body {
     z-index: 100;
     top: 1rem;
     left: 1rem;
-    width: 4vw;
-    height: 4vw;
+    width: 8vw;
+    height: 8vw;
     border: black solid 1px;
     background: white;
     cursor: pointer;
@@ -76,7 +76,7 @@ li {
 }
 
 .material-icons {
-    font-size: 3vw;
+    font-size: 6vw;
 }
 
 /* =================================== game area ================================================== */
@@ -959,6 +959,10 @@ form {
     #over-message {
         margin-top: 100px;
     }
+
+    #play-button {
+        font-size: 4vw;
+    }
 }
 
 @media (max-height: 1400px) and (max-width: 1200px) {
@@ -1178,7 +1182,7 @@ form {
 
 @media (max-height: 900px) and (max-width: 1200px) {
     #play-button {
-        font-size: 45pt;
+        /* font-size: 45pt; */
     }
 
     #main-intro h1 {
@@ -1887,10 +1891,6 @@ form {
         font-size: 17pt;
     }
 
-    #play-button {
-        font-size: 40pt;
-    }
-
     #intro-text p {
         font-size: 20pt;
     }
@@ -1920,6 +1920,10 @@ form {
         font-size: 18pt;
         line-height: 33pt;
         padding: 10px;
+    }
+
+    #play-button {
+        font-size: 4vw;
     }
 
     #start-button {
@@ -1993,7 +1997,7 @@ form {
     }
 
     #play-button {
-        font-size: 30pt;
+        font-size: 4vw;
     }
 
     #intro-text p {
@@ -2283,6 +2287,15 @@ form {
 }
 
 @media (max-height: 820px) and (max-width: 600px) {
+    .ham {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .material-icons {
+    font-size: 22pt;
+}   
+
     #main-intro h1 {
         font-size: 35pt;
         width: 60%;
