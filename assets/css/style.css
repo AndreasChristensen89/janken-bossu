@@ -183,7 +183,6 @@ h2 {
     color: white;
     margin: 60px auto 30px;
     padding: 45px;
-    box-shadow: black 0px 1px 20px 0px;
 }
 
 .button {
@@ -206,8 +205,8 @@ h2 {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     border: black solid 1px;
     background: white;
     cursor: pointer;
@@ -659,8 +658,8 @@ form {
     }
 
     #play-button {
-        width: 13%;
-        font-size: 4vw;
+        width: 20%;
+        font-size: 6vw;
     }
 
     .menuLink {
@@ -975,10 +974,6 @@ form {
         padding: 30px;
         width: 40%;
         font-size: 50pt;
-    }
-
-    #play-button {
-        font-size: 4vw;
     }
 }
 
@@ -1754,7 +1749,7 @@ form {
     .menu {
         width: 21%;
     }
-    
+
     .menuLink {
         font-size: 2rem;
     }
@@ -1935,10 +1930,6 @@ form {
         padding: 10px;
     }
 
-    #play-button {
-        font-size: 4vw;
-    }
-
     #start-button {
         font-size: 24pt;
         width: 200px;
@@ -2007,10 +1998,6 @@ form {
     #main-intro h2 {
         width: 50%;
         font-size: 24pt;
-    }
-
-    #play-button {
-        font-size: 4vw;
     }
 
     #intro-text p {
