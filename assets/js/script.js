@@ -143,7 +143,7 @@ function choice(playerChoice) {
     let button = document.getElementById("go-button");
 
     if (!goArea.contains(button)) {
-        createElement("button", "go-button", "go-button-area", "Go");
+        createElement("button", "go-button", "go-button-area", "GO");
         document.getElementById("go-button").addEventListener('click', generateComputerChoice);
     }
 }
