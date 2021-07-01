@@ -7,17 +7,20 @@
     border: none;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
 body {
     font-family: Lato, sans-serif;
     font-weight: 300;
     background-color: rgb(116 158 173);
-    background-image: url(../images/background.webp);
+    background-image: url(../images/background-new.webp);
     background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: 20%;
-    overflow: hidden;
-    height: auto;
+    background-repeat: repeat-x;
+    background-size: contain;
 }
 
 /* ======================= nav bar ============================================== */
@@ -98,20 +101,20 @@ h1 {
 
 #main-intro h1 {
     font-weight: bold;
-    font-size: 10vw;
+    font-size: 60pt;
     background: #455d66;
     border-radius: 20px;
     color: #c7ebf2;
-    margin: 145px auto 100px;
-    width: 60%;
+    margin: 125px auto 100px;
+    width: 600px;
     box-shadow: black 0px 1px 20px 0px;
 }
 
 h2 {
     margin: 30px auto;
-    font-size: 3vw;
+    font-size: 25pt;
     background: #6f9fc3;
-    width: 50%;
+    width: 550px;
     color: white;
 }
 
@@ -124,19 +127,18 @@ h2 {
 #opponent-pic {
     background-image: url(../images/intern-div.webp);
     background-repeat: no-repeat;
-    height: 600px;
-    width: 450px;
+    height: 45vh;
+    width: 17vw;
     background-size: contain;
     float: right;
     position: absolute;
-    right: 0px;
+    right: 25%;
     top: 53%;
-    /* z-index: -1; */
+    z-index: -1;
 }
 
-#opponent,
-#attempts {
-    font-size: 40pt;
+#opponent {
+    font-size: 5vw;
     margin: 0 auto;
     font-weight: 900;
     color: white;
@@ -148,8 +150,10 @@ h2 {
 }
 
 #play-button {
-    margin: 15% auto;
-    font-size: 5vw;
+    margin: 30px auto;
+    font-size: 30pt;
+    height: 50px;
+    width: 125px;
     background-color: rgb(19 154 60);
     border-radius: 20px;
     box-shadow: black 0px 1px 20px 0px;
@@ -164,31 +168,31 @@ h2 {
 
 #start-button {
     color: white;
-    width: 275px;
+    width: 24vw;
     margin: 40px auto;
     background-color: rgb(19 154 60);
     font-weight: 900;
-    font-size: 50pt;
+    font-size: 4vw;
     cursor: pointer;
     box-shadow: black 0px 1px 20px 0px;
     border-radius: 10%;
 }
 
 #intro-text p {
-    font-size: 35pt;
-    line-height: 100px;
+    font-size: 3vh;
+    line-height: 6vh;
+    width: 60vw;
     background: #58a8c3;
     border-radius: 10%;
-    width: 700px;
     color: white;
     margin: 60px auto 30px;
     padding: 45px;
 }
 
 .button {
-    margin: 75px 33px;
-    height: 150px;
-    width: 150px;
+    margin: 30px 33px 0;
+    height: 7vh;
+    width: 7vw;
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -222,9 +226,9 @@ h2 {
 }
 
 #player-choice {
-    margin: 100px auto 0px;
-    height: 175px;
-    width: 150px;
+    margin: 75px auto 0px;
+    height: 9vh;
+    width: 9vw;
     z-index: 99;
 }
 
@@ -241,9 +245,9 @@ h2 {
 }
 
 #go-button {
-    font-size: 50pt;
-    background: white;
-    width: 145px;
+    font-size: 3vw;
+    width: 7vw;
+    height: 7vh;
     border-radius: 20%;
     cursor: pointer;
     margin: 50px auto 0px;
@@ -254,10 +258,10 @@ h2 {
 
 #health {
     display: block;
-    font-size: 60pt;
+    font-size: 3vw;
     background: #079607;
-    width: 200px;
-    margin: 50px auto 0;
+    width: 10vw;
+    margin: 1% auto 0;
     color: white;
     border-radius: 50%;
     font-weight: 900;
@@ -270,14 +274,14 @@ h2 {
 
 #comp-hand {
     margin: 50px auto 0px;
-    height: 175px;
-    width: 150px;
+    height: 9vh;
+    width: 9vw;
 }
 
 #comp-lose {
-    height: 150px;
-    width: 150px;
-    margin: 25px 57px;
+    height: 10vh;
+    width: 10vw;
+    margin: 20px 50px;
     display: inline-block;
 
     animation-name: element-opacity;
@@ -309,8 +313,8 @@ h2 {
 }
 
 #next-button {
-    font-size: 35pt;
-    margin: 75px auto;
+    font-size: 4vh;
+    margin: 6% auto 0;
     border-radius: 20px;
     width: 50%;
     cursor: pointer;
@@ -325,27 +329,28 @@ h2 {
     padding-top: 20px;
     font-weight: bold;
     width: 800px;
-    margin: 70px auto;
+    margin: 1% auto 0;
 }
 
 #result-area p {
     margin: 0px auto;
     box-shadow: black 0px 1px 20px 0px;
     background: #3da6a3;
-    line-height: 70px;
+    line-height: 6vh;
     width: 80%;
+    height: 17vh;
     border-radius: 10%;
     color: white;
-    font-size: 35pt;
+    font-size: 4vh;
     padding: 20px;
 }
 
 #restart-button {
     background: #3a9432;
     color: white;
-    width: 200px;
-    height: 200px;
-    font-size: 40pt;
+    width: 175px;
+    height: 175px;
+    font-size: 28pt;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: black 0px 1px 20px 0px;
@@ -354,7 +359,7 @@ h2 {
 #over-message {
     background: black;
     box-shadow: black 0px 1px 20px 0px;
-    font-size: 87pt;
+    font-size: 10vh;
     width: 650px;
     margin: 50px auto;
 
@@ -375,14 +380,16 @@ h2 {
 }
 
 #gameover-text {
-    margin: 80px auto;
-    font-size: 34pt;
-    width: 600px;
+    margin: 80px auto 20px;
+    font-size: 4vh;
+    line-height: 4vw;
+    width: 40vw;
+    height: 21vh;
     font-weight: 600;
     color: white;
     background-color: #808385;
     border-radius: 10%;
-    padding: 70px
+    padding: 30px;
 }
 
 #win-message {
@@ -409,21 +416,19 @@ h2 {
 
 #biggu-bossu {
     background-repeat: no-repeat;
-    height: 700px;
-    width: 650px;
+    height: 50vh;
+    width: 40vw;
     background-size: contain;
-    float: right;
     position: absolute;
-    right: -20px;
-    top: 46%;
+    right: 0%;
+    top: 43%;
     z-index: -1;
-    overflow: hidden;
 }
 
 /* animation for losing hand */
 #lose-message {
-    font-size: 28pt;
-    width: 450px;
+    font-size: 4vh;
+    width: 35vw;
     margin: 0 auto;
     background-color: #505050;
     border-radius: 10%;
@@ -454,8 +459,8 @@ h2 {
 
 #player-pick {
     margin: 25px 50px;
-    height: 150px;
-    width: 150px;
+    height: 10vh;
+    width: 10vw;
     display: inline-block;
 
     animation-name: elemenet-move;
@@ -642,7 +647,11 @@ form {
 }
 
 /* ======================================= media queries ============================================================= */
-@media (max-height: 1800px) and (max-width: 1550px) {
+@media screen and (max-width: 800px) {
+
+}
+
+/* @media (max-height: 1800px) and (max-width: 1550px) {
     .menu {
         padding-top: 9rem;
         width: 19%;
@@ -668,10 +677,6 @@ form {
 
     #intro-text p {
         width: 60vw;
-    }
-
-    #opponent-pic {
-        top: 52%;
     }
 
     #biggu-bossu {
@@ -1413,10 +1418,10 @@ form {
         height: 100px;
         font-size: 15pt;
     }
-}
+} */
 
 /* Where the background pic stops adjusting */
-@media (max-height: 550px) and (max-width: 1200px) {
+/* @media (max-height: 550px) and (max-width: 1200px) {
     body {
         background-position-y: 90%;
     }
@@ -1582,12 +1587,6 @@ form {
         width: 150px;
     }
 
-    #opponent-pic {
-        top: 43%;
-        height: 175px;
-        width: 175px;
-    }
-
     #opponent {
         font-size: 16pt;
         margin: 20px auto 0px;
@@ -1738,10 +1737,10 @@ form {
         width: 70%;
         line-height: 20pt;
     }
-}
+} */
 
 /* This height because the game needs to fit on the screen without scrolling, and screens are generally not that high compared to the width */
-@media (max-height: 1300px) and (max-width: 800px) {
+/* @media (max-height: 1300px) and (max-width: 800px) {
     body {
         background-position-x: 28%;
     }
@@ -1774,10 +1773,6 @@ form {
         font-weight: 700;
         font-size: 40pt;
         width: 300px;
-    }
-
-    #opponent-pic {
-        top: 55%;
     }
 
     #result-area {
@@ -1908,9 +1903,6 @@ form {
         width: 250px;
     }
 
-    #opponent-pic {
-        top: 51%
-    }
 
     #biggu-bossu {
         top: 49%;
@@ -1919,10 +1911,6 @@ form {
 }
 
 @media (max-height: 900px) and (max-width: 800px) {
-    #opponent-pic {
-        width: 250px;
-        top: 54%;
-    }
 
     #intro-text p {
         font-size: 18pt;
@@ -2008,10 +1996,6 @@ form {
     .button {
         margin: 30px auto 0px 17px;
         height: 50px;
-    }
-
-    #opponent-pic {
-        top: 52%;
     }
 
     #player-choice {
@@ -2109,11 +2093,6 @@ form {
         margin: 20px auto 0px;
     }
 
-    #opponent-pic {
-        top: 53%;
-        height: 190px;
-    }
-
     .button {
         margin: 30px auto 0px 17px;
     }
@@ -2203,11 +2182,6 @@ form {
 
     #health {
         margin-top: 10px;
-    }
-
-    #opponent-pic {
-        height: 120px;
-        top: 59%;
     }
 
     #player-pick {
@@ -2331,11 +2305,6 @@ form {
         width: 50px;
         float: unset;
         display: block;
-    }
-
-    #opponent-pic {
-        width: 170px;
-        top: 59%;
     }
 
     #player-choice {
@@ -2480,12 +2449,6 @@ form {
             width: 40px;
         }
 
-        #opponent-pic {
-            top: 58%;
-            height: 200px;
-            width: 130px;
-        }
-
         #player-choice {
             top: 200px;
         }
@@ -2574,10 +2537,6 @@ form {
 
         .button {
             margin: 12px 0 0 20px;
-        }
-
-        #opponent-pic {
-            top: 52%;
         }
 
         #player-pick {
@@ -2679,11 +2638,6 @@ form {
             width: 41px;
         }
 
-        #opponent-pic {
-            height: 150px;
-            top: 54%;
-        }
-
         #lose-message {
             font-size: 7pt;
             width: 160px;
@@ -2736,4 +2690,4 @@ form {
             font-size: 14pt;
         }
     }
-}
+} */
