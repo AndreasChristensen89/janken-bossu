@@ -118,6 +118,10 @@ function choice(playerChoice) {
         createElement("button", "go-button", "go-button-area", "GO");
         document.getElementById("go-button").addEventListener('click', generateComputerChoice);
     }
+
+    if(chosenPic.style.animationName === `none`) {
+        chosenPic.style.animationName = `chosen-hand`;
+    }
 }
 
 /**
@@ -205,6 +209,8 @@ function calculateWinner(compResult) {
                 let target = document.getElementById('comp-hand');
                 target.parentNode.insertBefore(loseMessage, target);
                 decreaseScore(currentOpponent);
+
+                document.getElementById('player-choice').style.animationName = `none`;
 
                 if (document.getElementById('health') !== null) {
                     let compHand = document.getElementById('comp-hand');

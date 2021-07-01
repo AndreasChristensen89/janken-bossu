@@ -48,7 +48,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    width: 22%;
+    width: 20%;
     height: 100vh;
     background: rgb(111, 159, 195, 0.8);
     color: white;
@@ -57,6 +57,7 @@ body {
     list-style: none;
     padding-top: 6rem;
     padding-left: 1rem;
+    z-index: 1;
 }
 
 .showMenu {
@@ -198,26 +199,44 @@ h2 {
     background-repeat: no-repeat;
     cursor: pointer;
     z-index: 99;
+
+    /* animation-name: element-signal; */
+    animation-duration: 1.0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
 
+@keyframes element-signal {
+    from {
+        transform: scale(1.0);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+
 .button:hover {
-    transform: scale(1.2);
+    transform: scale(1.4);
     transition: all 0.3s ease 0s;
 }
+
+
 
 #head-restart {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    width: 5rem;
-    height: 5rem;
+    width: 5vw;
+    height: 5vw;
     border: black solid 1px;
     background: white;
     cursor: pointer;
     border-radius: 50%;
     color: white;
     background: #989191;
-    font-size: 25pt;
+    font-size: 3vw;
 }
 
 #game-area {
@@ -230,7 +249,23 @@ h2 {
     height: 9vh;
     width: 6vw;
     z-index: 99;
+
+    animation-name: chosen-hand;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
+
+@keyframes chosen-hand {
+    from {
+        transform: scale(1.0);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
 
 #player-value {
     font-weight: 800;

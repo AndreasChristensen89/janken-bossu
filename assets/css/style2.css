@@ -1,5 +1,7 @@
 /* used for the rule page to add scrolling */
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
 /* ======================= nav bar ============================================== */
 
 .ham {
@@ -25,7 +27,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    width: 22%;
+    width: 20%;
     height: 100vh;
     background: rgb(111, 159, 195, 0.8);
     color: white;
@@ -34,6 +36,7 @@
     list-style: none;
     padding-top: 6rem;
     padding-left: 1rem;
+    z-index: 1;
 }
 
 .showMenu {
@@ -95,13 +98,12 @@ body {
     background: #68acb9;
     width: 60%;
     padding: 20px;
-    border-radius: 10%;
     opacity: 0.9;
 }
 
 #how-to-play {
     text-align: center;
-    height: 350px;
+    height: 475px;
 }
 
 #how-to-play h2 {
@@ -113,23 +115,23 @@ body {
 }
 
 .rule-div {
-    width: 16%;
-    margin: 20px 10px 30px;
-    height: 20vh;
-    padding: 2% 0;
+    width: 18%;
+    margin: 50px 5px 20px;
+    height: 300px;
     border-radius: 10%;
     background-color: #69acb9;
     opacity: 0.9;
     display: inline-block;
     box-shadow: black 0px 1px 5px 0px;
+    z-index: -1;
 }
 
 .rule-div h3 {
-    font-size: 2vw;
+    font-size: 30pt;
 }
 
 .rule-div p {
-    font-size: 2vw;
+    font-size: 18pt;
     margin: 25px auto;
 }
 
@@ -140,8 +142,6 @@ body {
 
 #game-setting {
     text-align: center;
-    margin-top: 100px;
-    height: 800px;
 }
 
 #game-setting h2 {
