@@ -189,6 +189,7 @@ function calculateWinner(compResult) {
             animateDraw("player-choice", "25px");
             animateDraw("comp-hand", "-25px");
             animateButtons();
+            document.getElementById('player-choice').style.animationName = `none`;
 
         } else if (playerChoice === failEvents[i].value) {
             let currentOpponent = document.getElementById('opponent').innerText;

@@ -7,7 +7,8 @@
     border: none;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     overflow: hidden;
@@ -596,6 +597,145 @@ form {
 }
 
 /* ======================================= media queries ============================================================= */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
+    body {
+        background-position-y: 35%;
+    }
 
+    #win-message {
+        margin: 50px auto;
+        width: 400px;
+        font-size: 40pt;
+    }
+
+    #win-text {
+        font-size: 24pt;
+        line-height: 35pt;
+        margin: 20px auto 35px;
+        width: 400px;
+        height: 140px;
+    }
+
+    #restart-button {
+        width: 125px;
+        height: 125px;
+        font-size: 24pt;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #main-intro h1 {
+        margin: 125px auto 75px;
+        font-size: 45pt;
+        width: 400px;
+    }
+
+    h2 {
+        font-size: 25pt;
+        width: 350px;
+    }
+
+    body {
+        background-size: cover;
+        background-position-y: 107%;
+        background-position-x: 31%;
+    }
+
+    #opponent-pic {
+        top: 58%;
+        right: 5%;
+        height: 39vh;
+        width: 30vw;
+    }
+
+    .button {
+        height: 7vh;
+        width: 9vw;
+    }
+
+    #intro-text p {
+        font-size: 2vh;
+        line-height: 5vh;
+        width: 350px;
+    }
+
+    #player-choice {
+        height: 9vh;
+        width: 7vw;
+        margin: 50px auto 0px;
+    }
+
+    #go-button {
+        width: 60px;
+        height: 40px;
+        margin: 10px auto 0px;
+    }
+
+    #result-area {
+        width: unset;
+    }
+
+    #health {
+        margin: 10px auto 0;
+    }
+
+    #comp-lose {
+        height: 10vh;
+        width: 16vw;
+        margin: 20px auto 0px;
+    }
+
+    #comp-hand {
+        margin: 25px auto 0px;
+    }
+
+    #lose-message {
+        font-size: 3vh;
+    }
+
+    #player-pick {
+        margin: 0px 50px;
+        height: 10vh;
+        width: 10vw;
+    }
+
+    #result-area p {
+        margin: 0px auto;
+        line-height: 6vh;
+        width: 300px;
+        height: 19vh;
+        font-size: 15pt;
+    }
+
+    #next-button {
+        font-size: 3vh;
+        margin: 4% auto 0;
+        width: 24vh;
+    }
+
+    #outcome {
+        font-size: 4vh;
+        margin: 0px auto;
+        width: 28vh;
+    }
+
+    #over-message {
+        font-size: 6vw;
+        width: 350px;
+        margin: 50px auto;
+    }
+
+    #gameover-text {
+        margin: 20px auto 20px;
+        font-size: 12pt;
+        line-height: 22pt;
+        width: 300px;
+        height: 100px;
+    }
+
+    #restart-button {
+        width: 75px;
+        height: 75px;
+        font-size: 14pt;
+    }
 }
