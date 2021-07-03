@@ -160,3 +160,30 @@ body {
     border-radius: 10%;
     opacity: 0.9;
 }
+
+/* ============================ media queries ======================================= */
+
+
+/* ========================== rules pages 800 px ======================================== */
+@media screen and (max-width: 800px) {
+    .rule-div {
+        margin: 20px 2px;
+        height: 210px;
+    }
+    
+    .rule-div h3 {
+        font-size: 18pt;
+    }
+    
+    .rule-div p {
+        font-size: 14pt;
+    }
+
+    #how-to-play {
+        height: 300px;
+    }
+
+    #game-setting p {
+        font-size: 14pt;
+    }
+}
