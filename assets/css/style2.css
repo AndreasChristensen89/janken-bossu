@@ -103,7 +103,7 @@ body {
 
 #how-to-play {
     text-align: center;
-    height: 475px;
+    height: 525px;
 }
 
 #how-to-play h2 {
@@ -117,7 +117,7 @@ body {
 .rule-div {
     width: 18%;
     margin: 50px 5px 20px;
-    height: 300px;
+    height: 375px;
     border-radius: 10%;
     background-color: #69acb9;
     opacity: 0.9;
@@ -161,6 +161,56 @@ body {
     opacity: 0.9;
 }
 
+#show-rock {
+    background: url(../images/rock.webp);
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#show-paper {
+    background: url(../images/paper.webp);
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#show-scissors {
+    background: url(../images/scissors.webp);
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#show-lizard {
+    background: url(../images/lizard.webp);
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#show-spock {
+    background: url(../images/spock.webp);
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
 /* ============================ media queries ======================================= */
 
 
@@ -168,22 +218,96 @@ body {
 @media screen and (max-width: 800px) {
     .rule-div {
         margin: 20px 2px;
-        height: 210px;
+        height: 300px;
     }
-    
+
     .rule-div h3 {
         font-size: 18pt;
     }
-    
+
     .rule-div p {
         font-size: 14pt;
     }
 
     #how-to-play {
-        height: 300px;
+        height: 390px;
     }
 
     #game-setting p {
         font-size: 14pt;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #rules-intro h1 {
+        margin: 25px auto;
+        width: 50vw;
+        font-size: 8vw;
+    }
+
+    #rules-intro p {
+        font-size: 4vw;
+        margin: 30px auto;
+        width: 60vw;
+    }
+
+    #how-to-play {
+        height: 74vw;
+    }
+
+    #how-to-play h2 {
+        margin: 20px auto;
+        font-size: 5vw;
+        width: 45vw;
+    }
+
+    .rule-div {
+        margin: 20px 1px;
+        height: 54vw;
+        border-radius: 0%;
+    }
+
+    .rule-div h3 {
+        font-size: 4vw;
+    }
+
+    #show-rock {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    #show-paper {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    #show-scissors {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    #show-lizard {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    #show-spock {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    .rule-div p {
+        font-size: 3vw;
+    }
+
+    #game-setting h2 {
+        margin: 30px auto;
+        width: 45vw;
+        font-size: 5vw;
+    }
+
+    #game-setting p {
+        font-size: 4vw;
+        width: 70vw;
     }
 }
