@@ -24,66 +24,6 @@ body {
     background-size: contain;
 }
 
-/* ======================= nav bar ============================================== */
-
-.ham {
-    position: fixed;
-    z-index: 100;
-    top: 1rem;
-    left: 1rem;
-    width: 5vw;
-    height: 5vw;
-    border: black solid 1px;
-    background: white;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-.xIcon {
-    display: none;
-}
-
-.menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 12vw;
-    height: 100vh;
-    background: rgb(111, 159, 195, 0.8);
-    color: white;
-    transform: translateY(-100%);
-    transition: transform 0.2s;
-    list-style: none;
-    padding-top: 7vw;
-    padding-left: 1rem;
-    z-index: 1;
-}
-
-.showMenu {
-    transform: translateY(0);
-}
-
-li {
-    padding: 1rem 0;
-}
-
-.menuLink {
-    display: inline;
-    font-size: 3vw;
-    color: white;
-    text-decoration: none;
-}
-
-.menuLink:hover {
-    text-decoration: underline;
-}
-
-.material-icons {
-    font-size: 3vw;
-}
-
 /* =================================== game area ================================================== */
 
 #main-intro {
@@ -801,8 +741,8 @@ form {
     }
 
     #player-choice {
-        height: 9vh;
-        width: 14vh;
+        height: 7vh;
+        width: 8vh;
         margin: 0 auto;
         position: absolute;
         top: 25%;
@@ -909,5 +849,79 @@ form {
         width: 60px;
         height: 60px;
         font-size: 12pt;
+    }
+
+    /* ======================= rules 600px =========================== */
+
+    #rules-intro h1 {
+        margin: 25px auto;
+        width: 50vw;
+        font-size: 8vw;
+    }
+
+    #rules-intro p {
+        font-size: 4vw;
+        margin: 30px auto;
+        width: 60vw;
+    }
+
+    #how-to-play {
+        height: 74vw;
+    }
+
+    #how-to-play h2 {
+        margin: 20px auto;
+        font-size: 5vw;
+        width: 45vw;
+    }
+
+    .rule-div {
+        margin: 20px 1px;
+        height: 54vw;
+        border-radius: 0%;
+    }
+
+    .rule-div h3 {
+        font-size: 4vw;
+    }
+
+    #show-rock {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    #show-paper {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    #show-scissors {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    #show-lizard {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    #show-spock {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    .rule-div p {
+        font-size: 3vw;
+    }
+
+    #game-setting h2 {
+        margin: 30px auto;
+        width: 45vw;
+        font-size: 5vw;
+    }
+
+    #game-setting p {
+        font-size: 4vw;
+        width: 70vw;
     }
 }

@@ -2,66 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
-/* ======================= nav bar ============================================== */
-
-.ham {
-    position: fixed;
-    z-index: 100;
-    top: 1rem;
-    left: 1rem;
-    width: 5vw;
-    height: 5vw;
-    border: black solid 1px;
-    background: white;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-.xIcon {
-    display: none;
-}
-
-.menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 20%;
-    height: 100vh;
-    background: rgb(111, 159, 195, 0.8);
-    color: white;
-    transform: translateY(-100%);
-    transition: transform 0.2s;
-    list-style: none;
-    padding-top: 6rem;
-    padding-left: 1rem;
-    z-index: 1;
-}
-
-.showMenu {
-    transform: translateY(0);
-}
-
-li {
-    padding: 1rem 0;
-}
-
-.menuLink {
-    display: inline;
-    font-size: 3rem;
-    color: white;
-    text-decoration: none;
-}
-
-.menuLink:hover {
-    text-decoration: underline;
-}
-
-.material-icons {
-    font-size: 3vw;
-}
-
 /* ==================== body ============================== */
 
 body {
@@ -213,8 +153,6 @@ body {
 
 /* ============================ media queries ======================================= */
 
-
-/* ========================== rules pages 800 px ======================================== */
 @media screen and (max-width: 800px) {
     .rule-div {
         margin: 20px 2px;
@@ -239,6 +177,39 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+    #main-intro h1 {
+        margin: 50px auto;
+        font-size: 6vh;
+        width: 200px;
+    }
+
+    h2 {
+        font-size: 3vh;
+        width: 180px;
+        padding: 10px;
+    }
+
+    #play-button {
+        margin: 30px auto;
+        font-size: 3vh;
+        height: 4vh;
+        width: 100px;
+    }
+
+    #intro-text p {
+        font-size: 2vh;
+        line-height: 5vh;
+        width: 80%;
+        padding: 10px;
+    }
+
+    .button {
+        height: 7vh;
+        width: 14vw;
+        display: block;
+        margin: 8vh 20px;
+    }
+    
     #rules-intro h1 {
         margin: 25px auto;
         width: 50vw;

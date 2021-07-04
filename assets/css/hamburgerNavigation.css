@@ -1,0 +1,86 @@
+/* create in order to not have the styling twice for the two pages */
+
+.ham {
+    position: fixed;
+    z-index: 100;
+    top: 1rem;
+    left: 1rem;
+    width: 5vw;
+    height: 5vw;
+    border: black solid 1px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.xIcon {
+    display: none;
+}
+
+.menu {
+    position: fixed;
+    top: -15px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 12vw;
+    height: 100vh;
+    background: rgb(111, 159, 195, 0.8);
+    color: white;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    list-style: none;
+    padding-top: 7vw;
+    padding-left: 1rem;
+    z-index: 1;
+}
+
+.showMenu {
+    transform: translateY(0);
+}
+
+li {
+    padding: 1rem 0;
+}
+
+.menuLink {
+    display: inline;
+    font-size: 3vw;
+    color: white;
+    text-decoration: none;
+}
+
+.menuLink:hover {
+    text-decoration: underline;
+}
+
+.material-icons {
+    font-size: 3vw;
+}
+
+@media screen and (max-width: 600px) {
+    .ham {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .material-icons {
+        font-size: 5vw;
+    }
+
+    .menu {
+        width: 18vw;
+        padding-top: 12vw;
+        padding-left: 3vw;
+    }
+
+    .menuLink {
+        font-size: 5vw;
+    }
+
+    #main-intro h1 {
+        margin: 50px auto;
+        font-size: 6vh;
+        width: 200px;
+    }
+}
