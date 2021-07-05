@@ -18,7 +18,7 @@ body {
     font-family: Lato, sans-serif;
     font-weight: 300;
     background-color: rgb(116 158 173);
-    background-image: url(../images/back-new.webp);
+    background-image: url(../images/game-pictures/background-new.webp);
     background-attachment: fixed;
     background-repeat: repeat-x;
     background-size: contain;
@@ -66,7 +66,7 @@ h2 {
 }
 
 #opponent-pic {
-    background-image: url(../images/intern-div.webp);
+    background-image: url(../images/game-pictures/intern.webp);
     background-repeat: no-repeat;
     height: 45vh;
     width: 17vw;

@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
 // ==================================== game area ====================================
 
 var dataType = ["rock", "paper", "scissors", "lizard", "spock"];
-var buttonPics = ["url(assets/images/rock.webp)", "url(assets/images/paper.webp)", "url(assets/images/scissors.webp)", "url(assets/images/lizard.webp)", "url(assets/images/spock.webp)"];
+var buttonPics = ["url(assets/images/game-pictures/rock.webp)", "url(assets/images/game-pictures/paper.webp)", "url(assets/images/game-pictures/scissors.webp)", "url(assets/images/game-pictures/lizard.webp)", "url(assets/images/game-pictures/spock.webp)"];
 var opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
-var backgrounds = ["url(assets/images/intern-div.webp)", "url(assets/images/salaryman-div.webp)", "url(assets/images/manager-div.webp)", "url(assets/images/yakuza-div.webp)", "url(assets/images/biggu-bossu-div.webp)"];
+var backgrounds = ["url(assets/images/game-pictures/intern.webp)", "url(assets/images/game-pictures/salaryman.webp)", "url(assets/images/game-pictures/manager.webp)", "url(assets/images/game-pictures/yakuza.webp)", "url(assets/images/game-pictures/biggu-bossu.webp)"];
 
 /**
  * Creates element with id and inserts it. InnerHTML is optional.
@@ -101,7 +101,7 @@ function addButtons() {
 function choice(playerChoice) {
     let chosenPic = document.getElementById('player-choice');
     let chosenPicStyles = {
-        "background-image": `url(assets/images/${playerChoice}.webp)`,
+        "background-image": `url(assets/images/game-pictures/${playerChoice}.webp)`,
         "background-size": "contain",
         "background-repeat": "no-repeat",
     };
@@ -138,7 +138,7 @@ function generateComputerChoice() {
     createElement("div", "comp-hand", "comp-choice", "");
     let compChoice = document.getElementById('comp-hand');
     let compChoiceStyle = {
-        "background-image": `url(assets/images/${compResult}.webp)`,
+        "background-image": `url(assets/images/game-pictures/${compResult}.webp)`,
         "background-size": "contain",
         "background-repeat": "no-repeat",
     };
@@ -393,7 +393,7 @@ function beatOpponent(currentOpponent, playerChoice) {
     createElementTarget("div", "player-pick", "outcome");
     let playerPick = document.getElementById('player-pick');
     let pickStyle = {
-        "background-image": `url(assets/images/${playerChoice}.webp)`,
+        "background-image": `url(assets/images/game-pictures/${playerChoice}.webp)`,
         "background-size": "contain",
         "background-repeat": "no-repeat",
     };
@@ -522,7 +522,7 @@ function beatGame() {
     createElement("button", "restart-button", "game-area", "Try Again!");
     document.getElementById("restart-button").addEventListener('click', restart);
 
-    document.body.style.backgroundImage = `url(assets/images/background.webp)`;
+    document.body.style.backgroundImage = `url(assets/images/game-pictures/background-new.webp)`;
 
     document.getElementById("win-message").animate([{
             transform: "scale(1.0)"
