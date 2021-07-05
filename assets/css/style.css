@@ -739,6 +739,13 @@ form {
         padding: 10px;
     }
 
+    
+    #head-restart {
+        width: 8vw;
+        height: 8vw;
+        font-size: 4vw;
+    }
+
     .button {
         height: 7vh;
         width: 9vw;
