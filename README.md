@@ -26,13 +26,13 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
 ![Landing page](/assets/readme-pictures/hero-image-readme.PNG)
 
 * __Pre-start of game / Introduction__
-    * This section appears after clicking play. It has a text-box with a quick tutorial of how to play, and underneath is a green start button.
+    * This section appears after clicking play. It has a centered text-box with a quick tutorial of how to play, and underneath is a centered green start button.
     * The quick tutorial gives players the information they need to play the game. The start button is green and sticks out in order to invite users to click it to start the game.
 
 ![Call to action](/assets/readme-pictures/call-to-action-readme.PNG)
 
 * __Main game screen__
-    * 
+    * At the top of the screen the name of the current opponent is displayed as a title. Underneath is a green oval-shaped element with "100" written in it - this is the health meter. Underneath the health meter
     * 
 
 ![Meetup times](/assets/readme-pictures/meetup-places-readme.PNG)
