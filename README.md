@@ -32,40 +32,38 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
 ![Call to action](/assets/readme-pictures/call-to-action-readme.PNG)
 
 * __Main game screen__
-    * At the top of the screen the name of the current opponent is displayed as a title. Underneath is a green oval-shaped element with "100" written in it - this is the health meter. Underneath the health meter
-    * 
+    * At the top of the screen the name of the current opponent is displayed as a title. Underneath is a green oval-shaped element with "100" written in it - this is the health meter. Underneath the health meter are five buttons with pictures of the different choices players can make. Under the buttons is the opponent element with a picture of the current opponent - if this is the first opponent then the element is not animated, but if it is then the opponent is animated with an opacity going from 0.0 to 1.0 over a second. Everything is hand drawn and has a cartoony style. When a button is clicked the player choice appears in the middle of the screen, meaning that the picture of the button is copied to this new element, and a green "go" button is generated and appears under the player choice. Lastly, in the right corner is a restart button.
+    * The opponent title changes according to the opponent and tells the players who they are versing. The green health meter changes numbers and colors according to how much health is left (green, orange, yellow, and red). The color code helps players easily understand how close they are to a loss. The five buttons clearly show the hand signals that are attached to them and they scale up when a mouse hovers over them. When the player choice appears it is animated to scale up and down to signal to the player that this displayed hand is ready to be played. The opponent element is animated in order to draw attention to the new opponent.
 
 ![Meetup times](/assets/readme-pictures/meetup-places-readme.PNG)
 
 * __Loosing screen__
-    - 
-    - 
+    * When a loss is registered the computer choice is displayed in a new element. The hand is animated to scale up a lot, and then scales down to land underneath a newly generated grey text-box which gives players a short comment on the loss. The health bar is animated to blink red and black, and the health number drops while to color changes according to the value. After two seconds, the buttons slightly scale up and down two times.
+    * The computer winning hand is scaled up in order to give the player a sense of defeat. It also draws their attention to the hand that beat them. The comments in the text box are randomly picked and they are encouraging and energetic which signals to the players to have another go. The health bar blinks in order to signal that damage has been taken. Just after these animations the player might wonder what to do next, which is why the buttons scale up and down in order to signal the players to click them again.
 
 ![Footer](/assets/readme-pictures/footer-readme.PNG)
 
 * __Draw screen__
-    * 
-    * 
+    * When a draw is registered the computer choice is generated and inserted underneath the player choice. Underneath the computer choice a grey text-box is also generated with the message of "Draw! Try again". The computer choice and player choice elements are animated to bump against each other two times.
+    * The animation signals that the two hands are evenly matched. The message is short and clear, and should not easily be misunderstood.
 
 ![About us](/assets/readme-pictures/about-us-readme.PNG)
     
-* __Winning screen__
-    * 
-    * 
+* __Victory screen__
+    * All previous game elements are removed and the winning hand choice is shown in an animated element that scales up and down. To the right of the winning hand is the computer losing hand which is animated going back and forth from normal opacity to almost 0.0. Underneath is a text box with text that declares that you beat the current opponent, and tells you to get ready for the next opponent. Under the next box is a green "next opponent" button.
+    * The winning hand is animated to scale up and down to signal victory. The other opacity animation solidifies the sensation of victory. The winning message is short and clear, and the green button invites users to click on it.
 
 ![What we do - top](/assets/readme-pictures/whatwedo-top-readme.PNG)
 
-* __What we do - bottom__
-    * In three headings with text this section talks about what the activities are about. It's fun, anyone can join, and there are only a few
-    things to bring.
-    * It is valuable to the user to understand that the activities are not dangerous and can be done by everyone, and also the specifics of
-    what to bring.
+* __Game over screen__
+    * 
+    * 
 
 ![What we do - bottom](/assets/readme-pictures/whatwedo-bottom-readme.PNG)
 
-* __Contact__
-    * This is the contact form and it follows the style of the home page boxes. Along with the first name, last name, and email. The user can write a message, clear form, and submit. (*I was advised by my mentor to not include a submit button in the form with a method and action (method="post", action="https://formdump.codeinstitute.net/", type="submit"), and instead have the type="button"*)
-    * It is valuable to the user to be able to contact the group if they wish to become a member, ask questions, or any other requests/comments.
+* __Winning screen__
+    * 
+    * 
 
 ![Contact](/assets/readme-pictures/contact-readme.PNG)
 
@@ -85,48 +83,29 @@ Also, developer tools was used to manipulate CSS to see direct outcomes. All pag
 text, pictures, and boxes all adapt well to the breakpoints for different screens. 
 
 __Breakpoints are set to the following and are all tested to work:__
-* __1340px__
-   * This Breakpoint deals with the navigation bar and shrinks the text to avoid colission with the logo. 
-   * The meetup times on the home page are made smaller in order to maintain proper form. On the what we do page the text is also shrunk in order to avoid collission.
-   * Home page: Font sizes are changed in call to action(cta), side-margin, width, height, and padding are changed for meetup times divs, which bring them closer together. Background x-positions are changed for two meetup times divs.
-   * What we do page (wwd): Text padding changed, margins and widths are changed for divs
-* __950px__
-   * This breakpoint is generally for tablet screens and deals with a number of element collissions by changing the general design from horizontal to vertical.
-   * Breakpoint is chosen due to navigation bar space, along with lack of meetup times space.
-   * The navigation bar is pushed under the logo to make space for its size, but still floats to the right. Header is bigger, and logo has smaller font size.
-   * The cta divs are places vertically, instead of horinzontally, and the same is done to the meetup times divs. Cta scale change in the animation is reduced to avoid overlap.
-   * On the about us page all the elements are also put vertically. Before the image was in the center, but now it is placed under the two text areas. The button remains in the bottom.
-   * The vertical design is also used on the what we do page, and all text sections are now in a vertical line.
-   * The footer has a change in its spacing between the social media icons, and they are now much closer together, and the font-size of both sides. The widths of the left right footers are changed from 66%-33% to 50%-50%.
-   * Contact form's width is set to shrink/grow according to the screen size, text areas's width are smaller.
-* __550px__
-   * Breakpoint is chosen due to text being pushed together and needing more space on the About page and the What We Do page.
-   * The navigation bar now centers its elements.
-   * The logo font-size is lowered.
-   * The footer font-sizes are lowered for both sides.
-   * The about us page's height is increased, and padding and margin of the elements are changed to accomodate text pushed together.
-   * The what we do page's height is increased, and padding and margin of the elements are changed to accomodate text pushed together.
-   * Contact form's width is increased, but still adapts to screen size. Clear and sumbit buttons's widths are smaller.
-* __400px__
-   * Breakpoint is chosen due to navigation bar and logo space. Also, text and pictures need more space on About and What We Do pages.
-   * Logo now takes two lines, and header's height adapts and is now 150px instead of 110px.
-   * Navigation bar's font-size is down in order to fit one line.
-   * About us page's height is increased to fit elements pushed together. Margin is changed for elements on same page. Picture is shrunk.
-   * What we do page's height in increased. Margin is changed for elements on same page. Picture is shrunk.
-* __300px__
-   * This is to accomodate the smallest screen sizes down to the lowest on the Google Developer Tool list (280px). Navigation bar space needed.
-   * Navigation bar's font-size is lowered.
-   * The height of the what we do page is increased, and margin of the elements on the same page is changed.
+* __1100px__
+   *
+   *
+* __800px__
+   * 
+   * 
+* __600px__
+   *
+   * 
+* __320px__
+   * 
+   * 
+   * 
 
 
 ### Browser testing 
-* Test on Firefox was good, but Google fonts seems to not be able to load, so the backup font was displayed.
-* Microsoft Edge was without any issues.
+* Test on Firefox
+* Microsoft Edge
 * Media query tested on my own phone, Samsung Galaxy S9 using Chrome, no issues
-* Media query tested on my own tablet, Ipad pro 2018 using Safari, one issue with margins, now fixed.
-* General testing with my own laptop, Asus 13 inch using Chrome, no issues.
+* Media query tested on my own tablet, Ipad pro 2018 using Safari+Chrome
+* General testing with my own laptop, Asus 13 inch using Chrome
 
-All links were tested. The links connecting to external sources (social media) open in a new tab and those linking to external pages all work as intended. There are links on each site, except for the what we do page, but the user still has an easy to understand sticky nagivation bar. 
+All links were tested. The links connecting to external sources all work as intended. There are links on each site. 
 
 I believe the webpage is set up for the users to easily achieve their goal, which is to get general information about the group, who they are, 
 where and when they operate, a way to contact them with questions/requests for membership/general inquiries and comments.
