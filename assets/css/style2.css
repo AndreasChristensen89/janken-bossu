@@ -97,10 +97,11 @@ body {
     background-color: #68acb9;
     padding: 3%;
     border-radius: 10%;
+    box-shadow: black 0px 1px 5px 0px;
 }
 
 #show-rock {
-    background: url(../images/rock.webp);
+    background: url(../images/game-pictures/rock.webp);
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -110,7 +111,7 @@ body {
 }
 
 #show-paper {
-    background: url(../images/paper.webp);
+    background: url(../images/game-pictures/paper.webp);
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -120,7 +121,7 @@ body {
 }
 
 #show-scissors {
-    background: url(../images/scissors.webp);
+    background: url(../images/game-pictures/scissors.webp);
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -130,7 +131,7 @@ body {
 }
 
 #show-lizard {
-    background: url(../images/lizard.webp);
+    background: url(../images/game-pictures/lizard.webp);
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -140,7 +141,7 @@ body {
 }
 
 #show-spock {
-    background: url(../images/spock.webp);
+    background: url(../images/game-pictures/spock.webp);
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
