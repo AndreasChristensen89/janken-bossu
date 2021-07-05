@@ -39,6 +39,7 @@ h1 {
     margin: 30px auto;
     width: 522px;
     box-shadow: black 0px 1px 20px 0px;
+    padding: 10px;
 }
 
 #main-intro h1 {
@@ -59,8 +60,6 @@ h2 {
     width: 550px;
     color: white;
 }
-
-/* ====================== game ====================== */
 
 #button-area {
     text-align: center;
@@ -113,7 +112,7 @@ h2 {
     width: 24vw;
     margin: 40px auto;
     background-color: rgb(19 154 60);
-    font-weight: 900;
+    font-weight: 600;
     font-size: 3vw;
     cursor: pointer;
     box-shadow: black 0px 1px 20px 0px;
@@ -596,6 +595,13 @@ form {
         background-position-x: 31%;
     }
 
+    #start-button {
+        margin: 30px auto;
+        font-size: 3vh;
+        height: 4vh;
+        width: 13vh;
+    }
+
     #opponent-pic {
         top: 58%;
         right: 5%;
@@ -604,8 +610,9 @@ form {
     }
 
     .button {
-        height: 7vh;
-        width: 9vw;
+        height: 8vh;
+        width: 6vh;
+        margin: 8vh 20px 3vh;
     }
 
     #intro-text p {
@@ -615,15 +622,16 @@ form {
     }
 
     #player-choice {
-        height: 9vh;
-        width: 7vw;
-        margin: 50px auto 0px;
+        height: 10vh;
+        width: 8vh;
+        margin: 70px auto 50px;
     }
 
     #go-button {
-        width: 60px;
-        height: 40px;
-        margin: 10px auto 0px;
+        width: 10vh;
+        height: 5vh;
+        margin: 20px auto;
+        font-size: 3vh;
     }
 
     #result-area {
@@ -634,14 +642,10 @@ form {
         margin: 10px auto 0;
     }
 
-    #comp-lose {
-        height: 10vh;
-        width: 16vw;
-        margin: 20px auto 0px;
-    }
-
     #comp-hand {
-        margin: 25px auto 0px;
+        margin: 25px auto;
+        height: 10vh;
+        width: 8vh;
     }
 
     #lose-message {
@@ -649,9 +653,15 @@ form {
     }
 
     #player-pick {
-        margin: 0px 50px;
+        margin: 50px 40px 30px;
         height: 10vh;
-        width: 10vw;
+        width: 8vh;
+    }
+
+    #comp-lose {
+        height: 10vh;
+        width: 8vh;
+        margin: 50px 40px 30px;
     }
 
     #result-area p {
@@ -693,13 +703,20 @@ form {
         height: 75px;
         font-size: 14pt;
     }
+
+    #biggu-bossu {
+        height: 40vh;
+        width: 41vh;
+        position: absolute;
+        top: 58%;
+    }
 }
 
 @media screen and (max-width: 600px) {
     #main-intro h1 {
         margin: 50px auto;
         font-size: 6vh;
-        width: 200px;
+        width: 62vw;
     }
 
     h2 {
@@ -724,9 +741,8 @@ form {
 
     .button {
         height: 7vh;
-        width: 14vw;
-        display: block;
-        margin: 8vh 20px;
+        width: 9vw;
+        margin: 9vh 17px 3vh;
     }
 
     #opponent-pic {
@@ -738,82 +754,60 @@ form {
 
     #health {
         font-size: 14pt;
+        padding: 5px;
     }
 
     #player-choice {
-        height: 7vh;
-        width: 8vh;
-        margin: 0 auto;
-        position: absolute;
-        top: 25%;
-        left: 45%;
+        margin: 20px auto;
     }
 
     #go-button {
-        width: 60px;
-        height: 40px;
-        margin: 0 auto;
-        top: 40%;
-        position: absolute;
-        left: 45%;
+        width: 10vh;
+        height: 5vh;
+        margin: 20px auto;
+        font-size: 3vh;
     }
 
     #comp-hand {
-        margin: 0 auto;
-        position: absolute;
-        top: 50%;
-        left: 45%;
-        height: 9vh;
-        width: 14vh;
+        margin: 50px auto 30px;
     }
 
     #outcome {
         font-size: 3vh;
         margin: 0px auto;
         width: 200px;
-        position: absolute;
-        top: 65%;
-        left: 30vw;
     }
 
     #lose-message {
-        font-size: 3vh;
-        position: absolute;
-        top: 37%;
-        left: 33vw;
-        width: 180px;
+        font-size: 2vh;
+        width: 28vh;
+        margin: 10px auto 20px;
     }
 
     #result-area p {
-        margin: 0px auto;
-        line-height: 6vh;
+        margin: 20px auto 0px;
+        line-height: 5vh;
         width: 32vh;
-        height: 19vh;
+        height: 16vh;
         font-size: 2vh;
         padding: 10px;
     }
 
-    #player-pick {
-        margin: 0px 40px 0px 10px;
-        height: 10vh;
-        width: 10vw;
-    }
-
-    #comp-lose {
-        height: 10vh;
-        width: 10vw;
-        margin: 20px auto 0px;
+    #next-button {
+        font-size: 3vh;
+        margin: 20px auto 0;
+        width: 24vh;
     }
 
     #game-area {
-        height: 150px;
+        height: 16vh;
     }
 
     #biggu-bossu {
-        height: 39vh;
-        width: 61vw;
+        height: 35vh;
+        width: 37vh;
         position: absolute;
-        top: 61%;
+        top: 60%;
     }
 
     #over-message {
@@ -851,77 +845,4 @@ form {
         font-size: 12pt;
     }
 
-    /* ======================= rules 600px =========================== */
-
-    #rules-intro h1 {
-        margin: 25px auto;
-        width: 50vw;
-        font-size: 8vw;
-    }
-
-    #rules-intro p {
-        font-size: 4vw;
-        margin: 30px auto;
-        width: 60vw;
-    }
-
-    #how-to-play {
-        height: 74vw;
-    }
-
-    #how-to-play h2 {
-        margin: 20px auto;
-        font-size: 5vw;
-        width: 45vw;
-    }
-
-    .rule-div {
-        margin: 20px 1px;
-        height: 54vw;
-        border-radius: 0%;
-    }
-
-    .rule-div h3 {
-        font-size: 4vw;
-    }
-
-    #show-rock {
-        width: 7vw;
-        height: 7vw;
-    }
-
-    #show-paper {
-        width: 7vw;
-        height: 7vw;
-    }
-
-    #show-scissors {
-        width: 7vw;
-        height: 7vw;
-    }
-
-    #show-lizard {
-        width: 7vw;
-        height: 7vw;
-    }
-
-    #show-spock {
-        width: 7vw;
-        height: 7vw;
-    }
-
-    .rule-div p {
-        font-size: 3vw;
-    }
-
-    #game-setting h2 {
-        margin: 30px auto;
-        width: 45vw;
-        font-size: 5vw;
-    }
-
-    #game-setting p {
-        font-size: 4vw;
-        width: 70vw;
-    }
 }
