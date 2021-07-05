@@ -38,7 +38,7 @@ body {
     background: #68acb9;
     width: 60%;
     padding: 20px;
-    opacity: 0.9;
+    box-shadow: black 0px 1px 5px 0px;
 }
 
 #how-to-play {
@@ -60,7 +60,6 @@ body {
     height: 375px;
     border-radius: 10%;
     background-color: #69acb9;
-    opacity: 0.9;
     display: inline-block;
     box-shadow: black 0px 1px 5px 0px;
     z-index: -1;
@@ -98,7 +97,6 @@ body {
     background-color: #68acb9;
     padding: 3%;
     border-radius: 10%;
-    opacity: 0.9;
 }
 
 #show-rock {
@@ -177,6 +175,12 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+    #rules-intro h1 {
+        margin: 25px auto;
+        width: 50vw;
+        font-size: 8vw;
+    }
+
     #main-intro h1 {
         margin: 50px auto;
         font-size: 6vh;
@@ -209,7 +213,7 @@ body {
         display: block;
         margin: 8vh 20px;
     }
-    
+
     #rules-intro h1 {
         margin: 25px auto;
         width: 50vw;
@@ -217,68 +221,79 @@ body {
     }
 
     #rules-intro p {
-        font-size: 4vw;
+        font-size: 5vw;
         margin: 30px auto;
         width: 60vw;
     }
 
     #how-to-play {
-        height: 74vw;
+        height: unset;
     }
 
     #how-to-play h2 {
         margin: 20px auto;
-        font-size: 5vw;
-        width: 45vw;
+        font-size: 6vw;
+        width: 46vw;
     }
 
     .rule-div {
-        margin: 20px 1px;
-        height: 54vw;
-        border-radius: 0%;
+        margin: 10px auto;
+        height: 58vw;
+        width: 71%;
+        border-radius: 10%;
     }
 
     .rule-div h3 {
-        font-size: 4vw;
+        font-size: 8vw;
+        padding-top: 10px;
+        margin: 5px auto 10px;
     }
 
     #show-rock {
-        width: 7vw;
-        height: 7vw;
+        width: 14vw;
+        height: 14vw;
+        margin: 20px auto;
     }
 
     #show-paper {
-        width: 7vw;
-        height: 7vw;
+        width: 14vw;
+        height: 14vw;
+        margin: 20px auto;
     }
 
     #show-scissors {
-        width: 7vw;
-        height: 7vw;
+        width: 14vw;
+        height: 14vw;
+        margin: 20px auto;
     }
 
     #show-lizard {
-        width: 7vw;
-        height: 7vw;
+        width: 14vw;
+        height: 14vw;
+        margin: 20px auto;
     }
 
     #show-spock {
-        width: 7vw;
-        height: 7vw;
+        width: 14vw;
+        height: 14vw;
+        margin: 20px auto;
     }
 
     .rule-div p {
-        font-size: 3vw;
+        font-size: 5vw;
+        display: inline-block;
+        margin: 15px;
+        font-weight: 900;
     }
 
     #game-setting h2 {
         margin: 30px auto;
-        width: 45vw;
-        font-size: 5vw;
+        width: 51vw;
+        font-size: 6vw;
     }
 
     #game-setting p {
-        font-size: 4vw;
+        font-size: 6vw;
         width: 70vw;
     }
 }
