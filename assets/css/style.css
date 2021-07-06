@@ -311,23 +311,18 @@ h2 {
 
 #result-area {
     text-align: center;
-    font-size: 22pt;
-    padding-top: 20px;
     font-weight: bold;
-    width: 800px;
-    margin: 1% auto 0;
 }
 
 #result-area p {
-    margin: 0px auto;
+    margin: 30px auto;
     box-shadow: black 0px 1px 20px 0px;
     background: #3da6a3;
     line-height: 6vh;
-    width: 60vh;
-    height: 17vh;
+    width: 50vh;
     border-radius: 10%;
     color: white;
-    font-size: 4vh;
+    font-size: 3vh;
     padding: 10px;
 }
 

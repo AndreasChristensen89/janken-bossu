@@ -144,7 +144,8 @@ that everything worked fine and smoothly only to display something different the
 * Firefox did not show the Google font during testing.
 * Safari...
 * Markup validation service...
-* During first Jshint testing there were many warnings regarding "let" variables and template literals.
+* During first Jshint testing there were many warnings regarding template literals. This was unnecesarily used by me many times, and I corrected them; e.g. xx = `${variable}`; would be corrected to xx = variable;
+* The addButtons() function was given a warning on Jshint due to a function being declared in a variable
 
 
 ### Validator testing:
