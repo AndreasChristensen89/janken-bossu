@@ -202,10 +202,26 @@ Icons and script were taken from https://fontawesome.com/
 * Information should not be detailed but fast to read and understand, and straight to the point.
 
 ### Color Scheme 
-Colors are chosen to represent a bright cartoony world, 
-which hopefully leads users to envision being outside in nature.
-* Background color: **#EAE7DC**
-* Logo, titles, navbar elements, top of call-to-action divs, top of form: **#61892F**
+Colors are chosen to represent a bright cartoony world, which aims to give users a positive and light-hearted feeling.
+* Background color: **rgb(116 158 173)** - this is the same color as the background picture's floor, allowing for extensions of the picture.
+* Background picture:
+    * Main blue of window: rgb(114 217 237)
+    * Darkest building: rgb(113 175 188)
+    * Lighter building: rgb(129 193 206)
+    * Lightest building: rgb(146 212 225)
+    * Window bars: rgb(123 137 138)
+    * Bottom and top bars: rgb(84 76 73)
+    * Floor: rgb(116 158 173)
+    * Bonsai box: rgb(120 73 46)
+    * Bonsai box-lines: rgb(45 27 17)
+    * Bonsai bottom-pot: rgb(189 137 109)
+    * Bonsai top-pot: rgb(168 116 86)
+    * Bonsai top-pot-circle: rgb(147 91 59)
+    * Dirt: rgb(99 55 29)
+    * Tree: rgb(128 81 55)
+    * Leafs: rgb(58 148 50)
+
+* Green color of play button, start button, and try again button **#61892F**
 * Font of call-to-action divs: **rgb(211, 203, 161)**
 * Cover text hero-image, Call-to-action divs headings: **standard white**
 * Call-to-action icons: **standard green**

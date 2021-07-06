@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById("play-button").addEventListener('click', play);
-})
+});
 
 // ==================================== game area ====================================
 
@@ -25,7 +25,7 @@ function createElement(type, id, append, html) {
  * Removes elements from start screen. Adds intro-text and start button
  */
 function play() {
-    createElement("div", "intro-text", "button-area", "<p>To play simply pick a hand and press the GO button.<br> Opponents' hit-power will increase for each round, so watch your health bar. <br>You only need to beat each opponent once to advance to the next level.</p>")
+    createElement("div", "intro-text", "button-area", "<p>To play simply pick a hand and press the GO button.<br> Opponents' hit-power will increase for each round, so watch your health bar. <br>You only need to beat each opponent once to advance to the next level.</p>");
 
     createElement("button", "start-button", "button-area", "START");
     document.getElementById("start-button").setAttribute("data-type", "start");
@@ -106,7 +106,7 @@ function choice(playerChoice) {
         "background-repeat": "no-repeat",
     };
     Object.assign(chosenPic.style, chosenPicStyles);
-    chosenPic.setAttribute("data-type", `${playerChoice}`)
+    chosenPic.setAttribute("data-type", `${playerChoice}`);
 
     document.getElementById('comp-choice').textContent = "";
     document.getElementById('outcome').textContent = "";
