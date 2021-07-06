@@ -189,9 +189,9 @@ h2 {
 }
 
 #player-choice {
-    margin: 75px auto 20px;
-    height: 9vh;
-    width: 6vh;
+    margin: 75px auto 0px;
+    height: 10vh;
+    width: 8vh;
     z-index: 99;
 
     animation-name: chosen-hand;
@@ -232,6 +232,7 @@ h2 {
     box-shadow: black 0px 1px 20px 0px;
     color: white;
     background: #3a9432;
+    margin: 30px auto;
 }
 
 #health {
@@ -253,9 +254,9 @@ h2 {
 }
 
 #comp-hand {
-    margin: 50px auto 0px;
-    height: 9vh;
-    width: 6vw;
+    margin: 30px auto 0px;
+    height: 10vh;
+    width: 8vh;
 }
 
 #comp-lose {
@@ -567,11 +568,6 @@ form {
         width: 13vh;
     }
 
-    #comp-hand {
-        height: 9vh;
-        width: 6vh;
-    }
-
     #win-message {
         margin: 50px auto;
         width: 37vh;
@@ -640,12 +636,6 @@ form {
         line-height: 5vh;
     }
 
-    #player-choice {
-        height: 10vh;
-        width: 8vh;
-        margin: 70px auto 50px;
-    }
-
     #go-button {
         margin: 20px auto;
     }
@@ -656,12 +646,6 @@ form {
 
     #comp-hand {
         margin: 25px auto;
-        height: 10vh;
-        width: 8vh;
-    }
-
-    #lose-message {
-        font-size: 3vh;
     }
 
     #player-pick {

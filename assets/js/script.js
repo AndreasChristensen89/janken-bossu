@@ -186,8 +186,8 @@ function calculateWinner(compResult) {
         if (playerChoice === compResult) {
             document.getElementById('outcome').textContent = "Draw! Try again";
 
-            animateDraw("player-choice", "25px");
-            animateDraw("comp-hand", "-25px");
+            animateDraw("player-choice", "20px");
+            animateDraw("comp-hand", "-20px");
             animateButtons();
             document.getElementById('player-choice').style.animationName = `none`;
 
