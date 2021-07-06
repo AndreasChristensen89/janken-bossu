@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
  * Takes four parameters; type of element, id name, the id of element to appendChild, and innerHTML
  */
 function createElement(type, id, append, html) {
-    var newElement = document.createElement(type);
+    let newElement = document.createElement(type);
     newElement.setAttribute("id", id);
     document.getElementById(append).appendChild(newElement);
     newElement.innerHTML = html;
