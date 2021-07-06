@@ -144,11 +144,13 @@ that everything worked fine and smoothly only to display something different the
 * Firefox did not show the Google font during testing.
 * Safari...
 * Markup validation service...
+* During first Jshint testing there were many warnings regarding "let" variables and template literals.
 
 
 ### Validator testing:
 * W3 Markup Validation Service completed for all HTML pages with no errors.
 * Jigsaw test for CSS completed with no errors.
+* Jshint completed with many errors regarding "let" keywords only available in ES6
 
 ### Unfixed bugs:
 * Testing in Firefox went well with functionality, but the Google Font Lato was not loaded.
@@ -238,6 +240,7 @@ Sunny, bright and green pictures from parks were targeted to with the aim of thi
 ### Languages used
 * HTML
 * CSS
+* JavaScript
 * Markdown language for readme file
 
 ### Accesibility

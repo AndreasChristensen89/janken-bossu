@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
  * Takes four parameters; type of element, id name, the id of element to appendChild, and innerHTML
  */
 function createElement(type, id, append, html) {
-    let newElement = document.createElement(`${type}`);
-    newElement.setAttribute("id", `${id}`);
-    document.getElementById(`${append}`).appendChild(newElement);
-    newElement.innerHTML = `${html}`;
+    var newElement = document.createElement(type);
+    newElement.setAttribute("id", id);
+    document.getElementById(append).appendChild(newElement);
+    newElement.innerHTML = html;
 }
 
 /**
@@ -29,7 +29,7 @@ function play() {
     document.getElementById('play-button').remove();
 
     let mainIntro = document.getElementById('main-intro');
-    mainIntro.innerHTML = ``;
+    mainIntro.innerHTML = "unset";
     mainIntro.style.height = "unset";
 }
 
@@ -50,7 +50,7 @@ function start() {
     createElementTarget("div", "opponent-pic", "player-choice");
 
     createElementTarget("button", "head-restart", "opponent");
-    document.getElementById('head-restart').innerHTML = `<i class="fas fa-sync-alt"></i>`;
+    document.getElementById('head-restart').innerHTML = '<i class="fas fa-sync-alt"></i>';
     document.getElementById('head-restart').addEventListener('click', restart);
 }
 
@@ -59,9 +59,9 @@ function start() {
  * Takes three parameters; type of element, id name, and id of target to insertBefore
  */
 function createElementTarget(type, id, target) {
-    let newElement = document.createElement(`${type}`);
-    newElement.setAttribute("id", `${id}`);
-    let targetInsert = document.getElementById(`${target}`);
+    let newElement = document.createElement(type);
+    newElement.setAttribute("id", id);
+    let targetInsert = document.getElementById(target);
     targetInsert.parentNode.insertBefore(newElement, targetInsert);
 }
 
@@ -84,7 +84,7 @@ function addButtons() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].setAttribute("data-type", dataType[i]);
         buttons[i].setAttribute("class", "button");
-        buttons[i].style.backgroundImage = `${buttonPics[i]}`;
+        buttons[i].style.backgroundImage = buttonPics[i];
         document.getElementById('button-area').appendChild(buttons[i]);
         buttons[i].addEventListener('click', function () {
             let playerChoice = this.getAttribute("data-type");
@@ -99,12 +99,12 @@ function addButtons() {
 function choice(playerChoice) {
     let chosenPic = document.getElementById('player-choice');
     let chosenPicStyles = {
-        "background-image": `url(assets/images/game-pictures/${playerChoice}.webp)`,
+        "background-image": "url(assets/images/game-pictures/"+playerChoice+".webp)",
         "background-size": "contain",
         "background-repeat": "no-repeat",
     };
     Object.assign(chosenPic.style, chosenPicStyles);
-    chosenPic.setAttribute("data-type", `${playerChoice}`);
+    chosenPic.setAttribute("data-type", playerChoice);
 
     document.getElementById('comp-choice').textContent = "";
     document.getElementById('outcome').textContent = "";
@@ -117,8 +117,8 @@ function choice(playerChoice) {
         document.getElementById("go-button").addEventListener('click', generateComputerChoice);
     }
 
-    if(chosenPic.style.animationName === `none`) {
-        chosenPic.style.animationName = `chosen-hand`;
+    if(chosenPic.style.animationName === "none") {
+        chosenPic.style.animationName = "chosen-hand";
     }
 }
 
@@ -136,7 +136,7 @@ function generateComputerChoice() {
     createElement("div", "comp-hand", "comp-choice", "");
     let compChoice = document.getElementById('comp-hand');
     let compChoiceStyle = {
-        "background-image": `url(assets/images/game-pictures/${compResult}.webp)`,
+        "background-image": "url(assets/images/game-pictures/"+compResult+".webp)",
         "background-size": "contain",
         "background-repeat": "no-repeat",
     };
@@ -187,7 +187,7 @@ function calculateWinner(compResult) {
             animateDraw("player-choice", "20px");
             animateDraw("comp-hand", "-20px");
             animateButtons();
-            document.getElementById('player-choice').style.animationName = `none`;
+            document.getElementById('player-choice').style.animationName = "none";
 
         } else if (playerChoice === failEvents[i].value) {
             let currentOpponent = document.getElementById('opponent').innerText;
@@ -203,14 +203,14 @@ function calculateWinner(compResult) {
                 ];
                 let randomNum = Math.floor(Math.random() * 5);
                 let loseMessage = document.createElement('p');
-                loseMessage.innerText = `${tryAgainMessages[randomNum]}`;
+                loseMessage.innerText = tryAgainMessages[randomNum];
                 loseMessage.setAttribute("id", "lose-message");
                 let target = document.getElementById('comp-hand');
                 target.parentNode.insertBefore(loseMessage, target);
                 decreaseScore(currentOpponent);
 
                 if(document.getElementById('player-choice') !== null) {
-                    document.getElementById('player-choice').style.animationName = `none`;
+                    document.getElementById('player-choice').style.animationName = "none";
                 }
                 
 
@@ -294,7 +294,7 @@ function animateDraw(id, pixels) {
             transform: 'translateY(0px)'
         },
         {
-            transform: `translateY(${pixels})`
+            transform: "translateY("+pixels+")"
         },
         {
             transform: 'translateY(0px)'
@@ -358,8 +358,8 @@ function decreaseScore(currentOpponent) {
  * Gameover text and restart button are inserted. Button calls restart()
  */
 function gameOver() {
-    document.getElementById('button-area').innerHTML = ``;
-    document.getElementById('game-area').innerHTML = ``;
+    document.getElementById('button-area').innerHTML = "";
+    document.getElementById('game-area').innerHTML = "";
 
     createElement("h1", "over-message", "button-area", "Game Over!");
 
@@ -389,12 +389,12 @@ function beatOpponent(currentOpponent, playerChoice) {
     document.getElementById('outcome').style.margin = "0";
 
     let backgroudImg = document.getElementById('comp-hand').style.backgroundImage;
-    document.getElementById('comp-hand').remove()
+    document.getElementById('comp-hand').remove();
 
     createElementTarget("div", "player-pick", "outcome");
     let playerPick = document.getElementById('player-pick');
     let pickStyle = {
-        "background-image": `url(assets/images/game-pictures/${playerChoice}.webp)`,
+        "background-image": "url(assets/images/game-pictures/"+playerChoice+".webp)",
         "background-size": "contain",
         "background-repeat": "no-repeat",
     };
@@ -403,7 +403,7 @@ function beatOpponent(currentOpponent, playerChoice) {
     createElementTarget("div", "comp-lose", "outcome");
     let compLose = document.getElementById('comp-lose');
     let compStyle = {
-        "background-image": `${backgroudImg}`,
+        "background-image": backgroudImg,
         "background-size": "contain",
         "background-repeat": "no-repeat",
     };
@@ -412,7 +412,7 @@ function beatOpponent(currentOpponent, playerChoice) {
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
 
-    document.getElementById('result-area').innerHTML = `<p>You beat ${currentOpponent}.<br> Gear up for the next opponent,<br> ${opponents[nextIndex+1]}!</p>`;
+    document.getElementById('result-area').innerHTML = "<p>You beat "+currentOpponent+".<br> Gear up for the next opponent,<br> "+opponents[nextIndex+1]+"!</p>";
 
     createElement("button", "next-button", "result-area", "Next Opponent");
     document.getElementById("next-button").addEventListener('click', nextOpponent);
@@ -457,8 +457,8 @@ function removeButtons() {
  * updated accordingly (normal or boss) + animated to appear
  */
 function nextOpponent() {
-    document.getElementById('player-choice').style = ``;
-    document.getElementById('outcome').style = ``;
+    document.getElementById('player-choice').style = "";
+    document.getElementById('outcome').style = "";
     document.getElementById('player-pick').remove();
     document.getElementById('comp-lose').remove();
     document.getElementById('next-button').remove();
@@ -515,9 +515,9 @@ function nextOpponent() {
  * Removes all content from game. Inserts animated winning text and adds restart buttons that calls restart().
  */
 function beatGame() {
-    document.getElementById('button-area').innerHTML = ``;
-    document.getElementById('game-area').innerHTML = ``;
-    document.getElementById('result-area').innerHTML = ``;
+    document.getElementById('button-area').innerHTML = "";
+    document.getElementById('game-area').innerHTML = "";
+    document.getElementById('result-area').innerHTML = "";
 
     createElement("h1", "win-message", "button-area", "You Win!");
 
@@ -526,7 +526,7 @@ function beatGame() {
     createElement("button", "restart-button", "game-area", "Try Again!");
     document.getElementById("restart-button").addEventListener('click', restart);
 
-    document.body.style.backgroundImage = `url(assets/images/game-pictures/background-new.webp)`;
+    document.body.style.backgroundImage = "url(assets/images/game-pictures/background-new.webp)";
 
     document.getElementById("win-message").animate([{
             transform: "scale(1.0)"
