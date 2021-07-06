@@ -14,6 +14,10 @@ body {
     background-size: contain;
 }
 
+#active {
+    border-bottom: 2px solid white;
+}
+
 #body-rules {
     overflow: unset;
     height: unset;

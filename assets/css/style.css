@@ -24,6 +24,10 @@ body {
     background-size: contain;
 }
 
+#active {
+    border-bottom: 2px solid white;
+}
+
 /* =================================== game area ================================================== */
 
 #main-intro {
@@ -101,7 +105,7 @@ h2 {
     cursor: pointer;
     color: white;
 
-    animation-name: elemenet-move;
+    animation-name: element-move;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
@@ -296,6 +300,11 @@ h2 {
     color: white;
     background: #3a9432;
     box-shadow: black 0px 1px 20px 0px;
+
+    animation-name: element-move;
+    animation-duration: 1.0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
 
 #result-area {
@@ -441,13 +450,13 @@ h2 {
     width: 10vw;
     display: inline-block;
 
-    animation-name: elemenet-move;
+    animation-name: element-move;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
 }
 
-@keyframes elemenet-move {
+@keyframes element-move {
     from {
         transform: scale(1.0);
     }
