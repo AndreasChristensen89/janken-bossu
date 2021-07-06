@@ -17,19 +17,19 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
     Visually, it is identical on each page but with a bottom border under the current page. It is a hamburger-style bar, and appears and dissapears when clicking the round icon. It appears by sliding down from the top and covers a small chunk in the left side of the page and dissapears by sliding up.
     * This section allows the user to always be able to navigate to all parts of the website without going back to the home page, or scrolling to the top. The hamburger style allows the bar to be hidden in the top corner when not opened, thus creating more space for the game.
 
-![Nav Bar](/assets/readme-pictures/navbar-readme.PNG)
+![Nav Bar](/assets/images/readme-pictures/navigation-bar.webp)
 
 * __Landing page image / start page__
     * The landing page has a centered heading with the title of the game at the top. Underneath is a centered sub-heading which acts as the subtitle. Finally, underneath the subtitle is the play button which has an animation on it, which scales the size up and down. The background is a cartoony bright colored open office space with a bonsai tree (trees - depending on screen resolution) close to the window. The windows show buildings outside.
     * The titles and play button are shown to indicate that this is the start of the game. The play button animation is used to indicate that this button should be noticed and interacted with. The background is displayed to show the setting of the game,
 
-![Landing page](/assets/readme-pictures/hero-image-readme.PNG)
+![Landing page](/assets/images/readme-pictures/landing-page.webp)
 
 * __Introduction__
     * This section appears after clicking play. It has a centered text-box with a quick tutorial of how to play, and underneath is a centered green start button.
     * The quick tutorial gives players the information they need to play the game. The start button is green and sticks out in order to invite users to click it to start the game.
 
-![Introduction](/assets/readme-pictures/call-to-action-readme.PNG)
+![Introduction](/assets/images/readme-pictures/introduction.webp)
 
 * __Main game screen__
     * At the top of the screen the name of the current opponent is displayed as a title. 
@@ -40,7 +40,7 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
     * Lastly, in the right corner is a restart button.
     * The opponent title changes according to the opponent and tells the players who they are versing. The green health meter changes numbers and colors according to how much health is left (green, orange, yellow, and red). The color code helps players easily understand how close they are to a loss. The five buttons clearly show the hand signals that are attached to them and they scale up when a mouse hovers over them. The player choice animation signals to the player that this displayed hand is ready to be played. The opponent element is animated in order to draw attention to the new opponent.
 
-![Main game](/assets/readme-pictures/meetup-places-readme.PNG)
+![Main game](/assets/images/readme-pictures/main-game-screen.webp)
 
 * __Loosing screen__
     * When a loss is registered the computer choice is displayed in a new element. The hand is animated to scale up a lot, and then scales down to land underneath a newly generated grey text-box which gives players a short comment on the loss.
@@ -49,19 +49,19 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
     * After two seconds, the buttons slightly scale up and down two times.
     * The computer winning hand is scaled up in order to give the player a sense of defeat. It also draws their attention to the hand that beat them. The comments in the text box are randomly picked and they are encouraging and energetic which signals to the players to have another go. The health bar blinks in order to signal that damage has been taken. Just after these animations the player might wonder what to do next, which is why the buttons scale up and down in order to signal the player to click them again.
 
-![Loosing screen](/assets/readme-pictures/footer-readme.PNG)
+![Loosing screen](/assets/images/readme-pictures/losing-screen.webp)
 
 * __Draw screen__
     * When a draw is registered the computer choice is generated and inserted underneath the player choice. Underneath the computer choice a grey text-box is also generated with the message of "Draw! Try again". The computer choice and player choice elements are animated to bump against each other two times.
     * The animation signals that the two hands are evenly matched. The message is short and clear, and should not easily be misunderstood.
 
-![Draw screen](/assets/readme-pictures/about-us-readme.PNG)
+![Draw screen](/assets/images/readme-pictures/draw-screen.webp)
     
 * __Win screen__
     * All previous game elements are removed and the winning hand choice is shown in an animated element that scales up and down. To the right of the winning hand is the computer losing hand which is animated going back and forth from opacity 1.0 to 0.1. Underneath is a text box with text that declares that you beat the current opponent, and tells you to get ready for the next opponent. Under the next box is a green "next opponent" button, which is animated to scale up and down with a slower pace than the winning hand.
     * The winning hand is animated to scale up and down to signal victory. The other opacity animation solidifies the sensation of victory. The winning message is short and clear, and the green button signals users to click on it via the animation.
 
-![Win screen](/assets/readme-pictures/whatwedo-top-readme.PNG)
+![Win screen](/assets/images/readme-pictures/win-screen.webp)
 
 * __Game over screen__
     * All previous game elements are removed and a large black text box is inserted at the top center with the text "Game Over!". This box is animated to scale up and down.
@@ -69,19 +69,19 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
     * Underneath is a green round button with the text "Try again"
     * The black color of the game over text is a clear opposite to all previous colors, which are light a bright, which is meant to invoke a negative sensation. The animation is there in order to draw the player's eyes to it. The losing message from the grey box is not harsh but instead reminds the player that this is game of chance "Looks like the odds were against you". It also encourages players to try again. The "try again" button is large and clear, and the green color is meant to give a "go" feeling similar to the play button and and start button.                                                                                                                       
 
-![Game over screen](/assets/readme-pictures/whatwedo-bottom-readme.PNG)
+![Game over screen](/assets/images/readme-pictures/game-over-screen.webp)
 
 * __Victory screen__
     * 
     * 
 
-![Victory screen](/assets/readme-pictures/contact-readme.PNG)
+![Victory screen](/assets/images/readme-pictures/victory-screen.webp)
 
 * __Rules page__
     * 
     * 
 
-![Rules page](/assets/readme-pictures/contact-readme.PNG)
+![Rules page](/assets/images/readme-pictures/rules.webp)
 
 ### Future features to implement
 * I thought it would be helpful to add and shortly after remove a text-box when losing HP. It would show the damage taken.
