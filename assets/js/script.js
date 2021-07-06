@@ -5,11 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // ==================================== game area ====================================
 
-var dataType = ["rock", "paper", "scissors", "lizard", "spock"];
-var buttonPics = ["url(assets/images/game-pictures/rock.webp)", "url(assets/images/game-pictures/paper.webp)", "url(assets/images/game-pictures/scissors.webp)", "url(assets/images/game-pictures/lizard.webp)", "url(assets/images/game-pictures/spock.webp)"];
-var opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
-var backgrounds = ["url(assets/images/game-pictures/intern.webp)", "url(assets/images/game-pictures/salaryman.webp)", "url(assets/images/game-pictures/manager.webp)", "url(assets/images/game-pictures/yakuza.webp)", "url(assets/images/game-pictures/biggu-bossu.webp)"];
-
 /**
  * Creates element with id and inserts it. InnerHTML is optional.
  * Takes four parameters; type of element, id name, the id of element to appendChild, and innerHTML
@@ -82,6 +77,9 @@ function addButtons() {
     let spock = document.createElement('button');
 
     let buttons = [rock, paper, scissors, lizard, spock];
+    let dataType = ["rock", "paper", "scissors", "lizard", "spock"];
+    let buttonPics = ["url(assets/images/game-pictures/rock.webp)", "url(assets/images/game-pictures/paper.webp)", "url(assets/images/game-pictures/scissors.webp)", "url(assets/images/game-pictures/lizard.webp)", "url(assets/images/game-pictures/spock.webp)"];
+
 
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].setAttribute("data-type", dataType[i]);
@@ -129,7 +127,7 @@ function choice(playerChoice) {
  * Calls calculateWinner()
  */
 function generateComputerChoice() {
-
+    var dataType = ["rock", "paper", "scissors", "lizard", "spock"];
     let randomNumber = Math.floor(Math.random() * 5);
     let compResult = dataType[randomNumber];
 
@@ -411,6 +409,7 @@ function beatOpponent(currentOpponent, playerChoice) {
     };
     Object.assign(compLose.style, compStyle);
 
+    let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
 
     document.getElementById('result-area').innerHTML = `<p>You beat ${currentOpponent}.<br> Gear up for the next opponent,<br> ${opponents[nextIndex+1]}!</p>`;
@@ -467,8 +466,10 @@ function nextOpponent() {
     document.getElementById('comp-choice').innerText = "";
     document.getElementById('outcome').innerText = "";
 
-    let currentOpponent = document.getElementById('opponent').innerText;
+    var backgrounds = ["url(assets/images/game-pictures/intern.webp)", "url(assets/images/game-pictures/salaryman.webp)", "url(assets/images/game-pictures/manager.webp)", "url(assets/images/game-pictures/yakuza.webp)", "url(assets/images/game-pictures/biggu-bossu.webp)"];
 
+    let currentOpponent = document.getElementById('opponent').innerText;
+    let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     if (currentOpponent === opponents[3]) {
         document.getElementById('opponent-pic').setAttribute("id", "biggu-bossu");
         document.getElementById('biggu-bossu').style.backgroundImage = backgrounds[4];
