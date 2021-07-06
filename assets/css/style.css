@@ -52,7 +52,7 @@ h1 {
     background: #455d66;
     border-radius: 20px;
     color: #c7ebf2;
-    margin: 125px auto 100px;
+    margin: 50px auto 75px;
     width: 50vh;
     box-shadow: black 0px 1px 20px 0px;
 }
@@ -189,7 +189,7 @@ h2 {
 }
 
 #player-choice {
-    margin: 75px auto 0px;
+    margin: 60px auto 0px;
     height: 10vh;
     width: 8vh;
     z-index: 99;
@@ -261,7 +261,7 @@ h2 {
 
 #comp-lose {
     height: 10vh;
-    width: 10vw;
+    width: 10vh;
     margin: 20px 50px;
     display: inline-block;
 
@@ -283,10 +283,10 @@ h2 {
 
 
 #outcome {
-    font-size: 30pt;
+    font-size: 3vh;
     background: #5f5c5c;
     margin: 30px auto 0px;
-    width: 305px;
+    width: 23vh;
     font-weight: 900;
     color: white;
     box-shadow: black 0px 1px 20px 0px;
@@ -294,10 +294,10 @@ h2 {
 }
 
 #next-button {
-    font-size: 4vh;
-    margin: 6% auto 0;
+    font-size: 3vh;
+    margin: 20px auto 0;
     border-radius: 20px;
-    width: 50%;
+    width: 25vh;
     cursor: pointer;
     color: white;
     background: #3a9432;
@@ -323,12 +323,12 @@ h2 {
     box-shadow: black 0px 1px 20px 0px;
     background: #3da6a3;
     line-height: 6vh;
-    width: 80%;
+    width: 60vh;
     height: 17vh;
     border-radius: 10%;
     color: white;
     font-size: 4vh;
-    padding: 20px;
+    padding: 10px;
 }
 
 #restart-button {
@@ -418,7 +418,7 @@ h2 {
 #lose-message {
     font-size: 3vh;
     width: 40vh;
-    margin: 0 auto;
+    margin: 10px auto;
     background-color: #505050;
     border-radius: 10%;
     padding: 10px;
@@ -449,7 +449,7 @@ h2 {
 #player-pick {
     margin: 25px 50px;
     height: 10vh;
-    width: 10vw;
+    width: 10vh;
     display: inline-block;
 
     animation-name: element-move;
@@ -597,11 +597,6 @@ form {
     #intro-text p {
         font-size: 3vh;
     }
-
-    #outcome {
-        font-size: 3vh;
-        width: 26vh;
-    }
 }
 
 @media screen and (max-width: 800px) {
@@ -650,34 +645,20 @@ form {
 
     #player-pick {
         margin: 50px 40px 30px;
-        height: 10vh;
         width: 8vh;
     }
 
     #comp-lose {
-        height: 10vh;
         width: 8vh;
         margin: 50px 40px 30px;
     }
 
-    #result-area p {
-        margin: 0px auto;
-        line-height: 6vh;
-        width: 300px;
-        height: 19vh;
-        font-size: 15pt;
-    }
-
     #next-button {
-        font-size: 3vh;
-        margin: 4% auto 0;
-        width: 24vh;
+        margin: 10px auto 0;
     }
 
     #outcome {
-        font-size: 4vh;
         margin: 0px auto;
-        width: 28vh;
     }
 
     #over-message {
@@ -776,31 +757,22 @@ form {
         margin: 50px auto 30px;
     }
 
-    #outcome {
-        font-size: 3vh;
-        margin: 0px auto;
-        width: 200px;
-    }
-
     #lose-message {
         font-size: 2vh;
         width: 28vh;
-        margin: 10px auto 20px;
+        margin: 40px auto 0px;
     }
 
     #result-area p {
         margin: 20px auto 0px;
         line-height: 5vh;
         width: 32vh;
-        height: 16vh;
         font-size: 2vh;
         padding: 10px;
     }
 
     #next-button {
-        font-size: 3vh;
         margin: 20px auto 0;
-        width: 24vh;
     }
 
     #game-area {
