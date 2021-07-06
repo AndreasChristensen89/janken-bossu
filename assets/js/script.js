@@ -211,7 +211,10 @@ function calculateWinner(compResult) {
                 target.parentNode.insertBefore(loseMessage, target);
                 decreaseScore(currentOpponent);
 
-                document.getElementById('player-choice').style.animationName = `none`;
+                if(document.getElementById('player-choice') !== null) {
+                    document.getElementById('player-choice').style.animationName = `none`;
+                }
+                
 
                 if (document.getElementById('health') !== null) {
                     let compHand = document.getElementById('comp-hand');
