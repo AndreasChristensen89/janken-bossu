@@ -92,22 +92,25 @@ __Breakpoints are set to the following and are all tested to work:__
 * __1100px__
    * **Start screen:** All elements' styles change into responsive text-size, height, and width to accomodate tablets with flip options. Max height is 1800px before elements start to drift, which I estimate to work at this width.
    * **Introduction screen:** Font size of text box is lowered
-   * **Game screen:** 
+   * **Loosing screen** 
    * 
    * 
    * 
 * __800px__
    * **Start screen:** Background-size is changed from contain to cover in order to avoid picture strething with floor too long. X and Y coordinates are set differently to adapt to new setting
-   * **Introduction screen:** Font size and line-height of text box are lowered, start-button's margin slightly decreased.
-   * **Game screen:** Player choice is slightly scaled down, go button's height, width, font-size, and margins are lowered.
+   * **Introduction screen:** Font size and line-height of text box are lowered. Start-button's margin slightly decreased.
+   * **Game screen:** Player choice's height up, width down, margin down. Go button's height, width, font-size, and margins are lowered. Hand buttons' margin is lowered. Opponent-title's width and font-size are lowered. Go button's margin increased. Opponent-picture top% is increased, right% decreased, height lowered, width increased. Max height is 1152px.
+   * **Loosing screen** 
 * __600px__
    * **Start screen:** All elements' responsive values are changed. Max height is 1300px, which I estimate to work at this width.
    * **Introduction screen:** text box's padding and line-height lowered. Works until 1300px.
-   * **Game screen:** Buttons are slightly smaller, margins are changed. Player choice has 
+   * **Game screen:** Buttons' width are changed, margins are changed. Opponent-title's width and font-size are lowered. Restart button's height, width, and font-size have increased. Player choice's margin lowered. Opponent-picture's top% has increased, height is lowered, width has increased. Max height 720px
+   * **Loosing screen** 
 * __320px__
    * **Start screen:** Element's responsiveness work until 1200px which I estimate to work.
    * **Introduction screen:** Elements work until 1200px.
-   * **Game screen:** 
+   * **Game screen:** Buttons' height and width are lowered, margins are lowered. Opponent-title's width has been lowered. Opponent-picture's top% has increased. Max height is 720px.
+   * **Loosing screen** 
 
 
 ### Browser testing 

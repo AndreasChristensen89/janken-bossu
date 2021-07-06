@@ -191,7 +191,7 @@ h2 {
 #player-choice {
     margin: 75px auto 20px;
     height: 9vh;
-    width: 6vw;
+    width: 6vh;
     z-index: 99;
 
     animation-name: chosen-hand;
@@ -224,12 +224,11 @@ h2 {
 }
 
 #go-button {
-    font-size: 3vw;
-    width: 7vw;
-    height: 7vh;
+    font-size: 3vh;
+    width: 9vh;
+    height: 5vh;
     border-radius: 20%;
     cursor: pointer;
-    margin: 50px auto 0px;
     box-shadow: black 0px 1px 20px 0px;
     color: white;
     background: #3a9432;
@@ -237,13 +236,15 @@ h2 {
 
 #health {
     display: block;
-    font-size: 3vw;
+    font-size: 3vh;
     background: #079607;
-    width: 10vw;
-    margin: 1% auto 0;
+    width: 9vh;
+    height: 4vh;
+    margin: 10px auto 0;
     color: white;
     border-radius: 50%;
     font-weight: 900;
+    padding: 5px;
 }
 
 #comp-choice {
@@ -566,11 +567,6 @@ form {
         width: 13vh;
     }
 
-    #player-choice {
-        height: 9vh;
-        width: 6vh;
-    }
-
     #comp-hand {
         height: 9vh;
         width: 6vh;
@@ -602,13 +598,6 @@ form {
         font-size: 3vh;
     }
 
-    #go-button {
-        font-size: 3vh;
-        width: 9vh;
-        height: 6vh;
-        margin: 5px auto;
-    }
-
     #intro-text p {
         font-size: 3vh;
     }
@@ -630,6 +619,11 @@ form {
         margin: 30px auto;
     }
 
+    #opponent {
+        font-size: 4vh;
+        width: 43vh;
+    }
+
     #opponent-pic {
         top: 58%;
         right: 5%;
@@ -638,8 +632,6 @@ form {
     }
 
     .button {
-        height: 8vh;
-        width: 6vh;
         margin: 8vh 20px 3vh;
     }
 
@@ -655,18 +647,11 @@ form {
     }
 
     #go-button {
-        width: 10vh;
-        height: 5vh;
         margin: 20px auto;
-        font-size: 3vh;
     }
 
     #result-area {
         width: unset;
-    }
-
-    #health {
-        margin: 10px auto 0;
     }
 
     #comp-hand {
@@ -784,32 +769,23 @@ form {
     }
 
     .button {
-        height: 7vh;
         width: 9vw;
         margin: 9vh 17px 3vh;
     }
 
+    #opponent {
+        font-size: 3vh;
+        width: 33vh;
+    }
+
     #opponent-pic {
         top: 61%;
-        right: 5%;
         height: 36vh;
         width: 36vw;
     }
 
-    #health {
-        font-size: 14pt;
-        padding: 5px;
-    }
-
     #player-choice {
         margin: 20px auto;
-    }
-
-    #go-button {
-        width: 10vh;
-        height: 5vh;
-        margin: 20px auto;
-        font-size: 3vh;
     }
 
     #comp-hand {
@@ -897,6 +873,10 @@ form {
         height: 5vh;
         width: 5vh;
         margin: 9vh 10px 3vh;
+    }
+
+    #opponent {
+        width: 29vh;
     }
 
     #opponent-pic {
