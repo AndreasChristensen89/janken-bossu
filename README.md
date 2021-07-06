@@ -19,61 +19,63 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
 
 ![Nav Bar](/assets/readme-pictures/navbar-readme.PNG)
 
-* __Landing page image / game page__
+* __Landing page image / start page__
     * The landing page has a centered heading with the title of the game at the top. Underneath is a centered sub-heading which acts as the subtitle. Finally, underneath the subtitle is the play button which has an animation on it, which scales the size up and down. The background is a cartoony bright colored open office space with a bonsai tree (trees - depending on screen resolution) close to the window. The windows show buildings outside.
     * The titles and play button are shown to indicate that this is the start of the game. The play button animation is used to indicate that this button should be noticed and interacted with. The background is displayed to show the setting of the game,
 
 ![Landing page](/assets/readme-pictures/hero-image-readme.PNG)
 
-* __Pre-start of game / Introduction__
+* __Introduction__
     * This section appears after clicking play. It has a centered text-box with a quick tutorial of how to play, and underneath is a centered green start button.
     * The quick tutorial gives players the information they need to play the game. The start button is green and sticks out in order to invite users to click it to start the game.
 
-![Call to action](/assets/readme-pictures/call-to-action-readme.PNG)
+![Introduction](/assets/readme-pictures/call-to-action-readme.PNG)
 
 * __Main game screen__
     * At the top of the screen the name of the current opponent is displayed as a title. 
     * Underneath is a green oval-shaped element with "100" written in it - this is the health meter. 
     * Underneath the health meter are five buttons with pictures of the different choices players can make.
     * Under the buttons is the opponent element with a picture of the current opponent - if this is the first opponent then the element is not animated, but if it is then the opponent is animated with an opacity going from 0.0 to 1.0 over a second.
-    * Everything is hand drawn and has a cartoony style.
-    * When a button is clicked the player choice appears in the middle of the screen, meaning that the picture of the button is copied to this new element, and a green "go" button is generated and appears under the player choice.
+    * When a button is clicked the player choice appears in the middle of the screen, meaning that the picture of the button is copied to this new element. The new element is animate to scale up and down and a green "go" button is generated and appears under the player choice.
     * Lastly, in the right corner is a restart button.
-    * The opponent title changes according to the opponent and tells the players who they are versing. The green health meter changes numbers and colors according to how much health is left (green, orange, yellow, and red). The color code helps players easily understand how close they are to a loss. The five buttons clearly show the hand signals that are attached to them and they scale up when a mouse hovers over them. When the player choice appears it is animated to scale up and down to signal to the player that this displayed hand is ready to be played. The opponent element is animated in order to draw attention to the new opponent.
+    * The opponent title changes according to the opponent and tells the players who they are versing. The green health meter changes numbers and colors according to how much health is left (green, orange, yellow, and red). The color code helps players easily understand how close they are to a loss. The five buttons clearly show the hand signals that are attached to them and they scale up when a mouse hovers over them. The player choice animation signals to the player that this displayed hand is ready to be played. The opponent element is animated in order to draw attention to the new opponent.
 
-![Meetup times](/assets/readme-pictures/meetup-places-readme.PNG)
+![Main game](/assets/readme-pictures/meetup-places-readme.PNG)
 
 * __Loosing screen__
     * When a loss is registered the computer choice is displayed in a new element. The hand is animated to scale up a lot, and then scales down to land underneath a newly generated grey text-box which gives players a short comment on the loss.
+    * The player choice animation from before is set to stop.
     * The health bar is animated to blink red and black, and the health number drops while to color changes according to the value.
     * After two seconds, the buttons slightly scale up and down two times.
     * The computer winning hand is scaled up in order to give the player a sense of defeat. It also draws their attention to the hand that beat them. The comments in the text box are randomly picked and they are encouraging and energetic which signals to the players to have another go. The health bar blinks in order to signal that damage has been taken. Just after these animations the player might wonder what to do next, which is why the buttons scale up and down in order to signal the player to click them again.
 
-![Footer](/assets/readme-pictures/footer-readme.PNG)
+![Loosing screen](/assets/readme-pictures/footer-readme.PNG)
 
 * __Draw screen__
     * When a draw is registered the computer choice is generated and inserted underneath the player choice. Underneath the computer choice a grey text-box is also generated with the message of "Draw! Try again". The computer choice and player choice elements are animated to bump against each other two times.
     * The animation signals that the two hands are evenly matched. The message is short and clear, and should not easily be misunderstood.
 
-![About us](/assets/readme-pictures/about-us-readme.PNG)
+![Draw screen](/assets/readme-pictures/about-us-readme.PNG)
     
 * __Win screen__
-    * All previous game elements are removed and the winning hand choice is shown in an animated element that scales up and down. To the right of the winning hand is the computer losing hand which is animated going back and forth from opacity 1.0 to 0.1. Underneath is a text box with text that declares that you beat the current opponent, and tells you to get ready for the next opponent. Under the next box is a green "next opponent" button.
-    * The winning hand is animated to scale up and down to signal victory. The other opacity animation solidifies the sensation of victory. The winning message is short and clear, and the green button invites users to click on it.
+    * All previous game elements are removed and the winning hand choice is shown in an animated element that scales up and down. To the right of the winning hand is the computer losing hand which is animated going back and forth from opacity 1.0 to 0.1. Underneath is a text box with text that declares that you beat the current opponent, and tells you to get ready for the next opponent. Under the next box is a green "next opponent" button, which is animated to scale up and down with a slower pace than the winning hand.
+    * The winning hand is animated to scale up and down to signal victory. The other opacity animation solidifies the sensation of victory. The winning message is short and clear, and the green button signals users to click on it via the animation.
 
-![What we do - top](/assets/readme-pictures/whatwedo-top-readme.PNG)
+![Win screen](/assets/readme-pictures/whatwedo-top-readme.PNG)
 
 * __Game over screen__
-    * All previous game elements are removed
-    * 
+    * All previous game elements are removed and a large black text box is inserted at the top center with the text "Game Over!". This box is animated to scale up and down.
+    * Underneath is a centered grey text box with text that explains that the player lost and which also encourages players to try again.
+    * Underneath is a green round button with the text "Try again"
+    * The black color of the game over text is a clear opposite to all previous colors, which are light a bright, which is meant to invoke a negative sensation. The animation is there in order to draw the player's eyes to it. The losing message from the grey box is not harsh but instead reminds the player that this is game of chance "Looks like the odds were against you". It also encourages players to try again. The "try again" button is large and clear, and the green color is meant to give a "go" feeling similar to the play button and and start button.                                                                                                                       
 
-![What we do - bottom](/assets/readme-pictures/whatwedo-bottom-readme.PNG)
+![Game over screen](/assets/readme-pictures/whatwedo-bottom-readme.PNG)
 
 * __Victory screen__
     * 
     * 
 
-![Contact](/assets/readme-pictures/contact-readme.PNG)
+![Victory screen](/assets/readme-pictures/contact-readme.PNG)
 
 ### Future features to implement
 * In the game after a win I am considering a screen that introduces the next opponent, some context to the character, and the HP damage the character does.

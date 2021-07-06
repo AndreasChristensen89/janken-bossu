@@ -332,9 +332,9 @@ h2 {
 #restart-button {
     background: #3a9432;
     color: white;
-    width: 175px;
-    height: 175px;
-    font-size: 28pt;
+    width: 18vh;
+    height: 18vh;
+    font-size: 5vh;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: black 0px 1px 20px 0px;
@@ -377,9 +377,9 @@ h2 {
 }
 
 #win-message {
-    margin: 200px auto 100px;
-    width: 500px;
-    font-size: 75pt;
+    margin: 50px auto;
+    width: 57vh;
+    font-size: 10vh;
     color: white;
     box-shadow: none;
 }
@@ -552,22 +552,23 @@ form {
 
     #win-message {
         margin: 50px auto;
-        width: 400px;
-        font-size: 40pt;
+        width: 37vh;
+        font-size: 7vh;
     }
 
     #win-text {
-        font-size: 24pt;
-        line-height: 35pt;
-        margin: 20px auto 35px;
-        width: 400px;
-        height: 140px;
+        font-size: 4vh;
+        line-height: 4vh;
+        margin: 20px auto;
+        width: 33vh;
+        height: 21vh;
+        padding: 36px;
     }
 
     #restart-button {
-        width: 125px;
-        height: 125px;
-        font-size: 24pt;
+        width: 13vh;
+        height: 13vh;
+        font-size: 3vh;
     }
 
     #result-area p {
@@ -708,9 +709,9 @@ form {
     }
 
     #restart-button {
-        width: 75px;
-        height: 75px;
-        font-size: 14pt;
+        width: 12vh;
+        height: 12vh;
+        font-size: 3vh;
     }
 
     #biggu-bossu {
@@ -718,6 +719,18 @@ form {
         width: 41vh;
         position: absolute;
         top: 58%;
+    }
+
+    #win-message {
+        width: 33vh;
+        font-size: 7vh;
+    }
+
+    #win-text {
+        font-size: 4vh;
+        margin: 20px auto 10px;
+        width: 28vh;
+        height: 24vh;
     }
 }
 
@@ -843,30 +856,35 @@ form {
 
     #win-message {
         margin: 50px auto;
-        width: 35vh;
-        font-size: 6vh;
+        width: 24vh;
+        font-size: 5vh;
     }
 
     #win-text {
         font-size: 2vh;
-        line-height: 5vh;
+        line-height: 3vh;
         margin: 10px auto 20px;
-        width: 22vh;
-        height: 18vh;
+        width: 18vh;
+        height: 14vh;
+        padding: 10px;
     }
 
     #restart-button {
-        width: 60px;
-        height: 60px;
-        font-size: 12pt;
+        width: 8vh;
+        height: 8vh;
+        font-size: 2vh;
     }
 
 }
 
 @media screen and (max-width: 320px) {
     .button {
-        height: 6vh;
-        width: 3vh;
-        margin: 9vh 17px 3vh;
+        height: 5vh;
+        width: 5vh;
+        margin: 9vh 10px 3vh;
+    }
+
+    #opponent-pic {
+        top: 62%;
     }
 }
