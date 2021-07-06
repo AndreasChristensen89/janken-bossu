@@ -78,6 +78,7 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
 ![Victory screen](/assets/readme-pictures/contact-readme.PNG)
 
 ### Future features to implement
+* I thought it would be helpful to add and shortly after remove a text-box when losing HP. It would show the damage taken.
 * In the game after a win I am considering a screen that introduces the next opponent, some context to the character, and the HP damage the character does.
 * On the game screen the opponent should have stats: Health and HP damage - this would change the game so that a single win would not necesarily be enough to beat the current opponent
 * A 10% chance of a critical hit/power up (e.g. double damage) could be implemented - this would only work if opponent stats are implemented
@@ -89,17 +90,24 @@ text, pictures, and boxes all adapt well to the breakpoints for different screen
 
 __Breakpoints are set to the following and are all tested to work:__
 * __1100px__
+   * **Start screen:** All elements' styles change into responsive text-size, height, and width to accomodate tablets with flip options. Max height is 1800px before elements start to drift, which I estimate to work at this width.
+   * **Introduction screen:** Font size of text box is lowered
+   * **Game screen:** 
+   * 
    * 
    * 
 * __800px__
-   * 
-   * 
+   * **Start screen:** Background-size is changed from contain to cover in order to avoid picture strething with floor too long. X and Y coordinates are set differently to adapt to new setting
+   * **Introduction screen:** Font size and line-height of text box are lowered, start-button's margin slightly decreased.
+   * **Game screen:** Player choice is slightly scaled down, go button's height, width, font-size, and margins are lowered.
 * __600px__
-   * 
-   * 
+   * **Start screen:** All elements' responsive values are changed. Max height is 1300px, which I estimate to work at this width.
+   * **Introduction screen:** text box's padding and line-height lowered. Works until 1300px.
+   * **Game screen:** Buttons are slightly smaller, margins are changed. Player choice has 
 * __320px__
-   * 
-   * 
+   * **Start screen:** Element's responsiveness work until 1200px which I estimate to work.
+   * **Introduction screen:** Elements work until 1200px.
+   * **Game screen:** 
 
 
 ### Browser testing 

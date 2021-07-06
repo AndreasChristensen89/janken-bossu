@@ -48,20 +48,20 @@ h1 {
 
 #main-intro h1 {
     font-weight: bold;
-    font-size: 60pt;
+    font-size: 7vh;
     background: #455d66;
     border-radius: 20px;
     color: #c7ebf2;
     margin: 125px auto 100px;
-    width: 600px;
+    width: 50vh;
     box-shadow: black 0px 1px 20px 0px;
 }
 
 h2 {
     margin: 30px auto;
-    font-size: 25pt;
+    font-size: 3vh;
     background: #6f9fc3;
-    width: 550px;
+    width: 32vh;
     color: white;
 }
 
@@ -83,12 +83,12 @@ h2 {
 }
 
 #opponent {
-    font-size: 5vw;
+    font-size: 5vh;
     margin: 0 auto;
     font-weight: 900;
     color: white;
     background: #77acb2;
-    width: 50%;
+    width: 50vh;
     margin-top: 31px;
     box-shadow: black 0px 1px 20px 0px;
     display: block;
@@ -96,9 +96,9 @@ h2 {
 
 #play-button {
     margin: 30px auto;
-    font-size: 30pt;
-    height: 50px;
-    width: 125px;
+    font-size: 4vh;
+    height: 6vh;
+    width: 13vh;
     background-color: rgb(19 154 60);
     border-radius: 20px;
     box-shadow: black 0px 1px 20px 0px;
@@ -113,11 +113,11 @@ h2 {
 
 #start-button {
     color: white;
-    width: 24vw;
+    width: 24vh;
     margin: 40px auto;
     background-color: rgb(19 154 60);
     font-weight: 600;
-    font-size: 3vw;
+    font-size: 3vh;
     cursor: pointer;
     box-shadow: black 0px 1px 20px 0px;
     border-radius: 10%;
@@ -137,7 +137,7 @@ h2 {
 .button {
     margin: 30px 33px 0;
     height: 7vh;
-    width: 7vw;
+    width: 7vh;
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -546,8 +546,34 @@ form {
 
 /* ======================================= media queries ============================================================= */
 @media screen and (max-width: 1100px) {
-    body {
+    /* body {
         background-position-y: 35%;
+    } */
+
+    #main-intro h1 {
+        font-size: 6vh;
+        width: 44vh;
+    }
+
+    h2 {
+        font-size: 3vh;
+        width: 40vh;
+    }
+
+    #play-button {
+        font-size: 4vh;
+        height: 6vh;
+        width: 13vh;
+    }
+
+    #player-choice {
+        height: 9vh;
+        width: 6vh;
+    }
+
+    #comp-hand {
+        height: 9vh;
+        width: 6vh;
     }
 
     #win-message {
@@ -577,28 +603,23 @@ form {
     }
 
     #go-button {
-        font-size: 20pt;
-        width: 100px;
-        height: 50px;
+        font-size: 3vh;
+        width: 9vh;
+        height: 6vh;
+        margin: 5px auto;
     }
 
     #intro-text p {
         font-size: 3vh;
     }
+
+    #outcome {
+        font-size: 3vh;
+        width: 26vh;
+    }
 }
 
 @media screen and (max-width: 800px) {
-    #main-intro h1 {
-        margin: 125px auto 75px;
-        font-size: 45pt;
-        width: 400px;
-    }
-
-    h2 {
-        font-size: 25pt;
-        width: 350px;
-    }
-
     body {
         background-size: cover;
         background-position-y: 107%;
@@ -607,9 +628,6 @@ form {
 
     #start-button {
         margin: 30px auto;
-        font-size: 3vh;
-        height: 4vh;
-        width: 13vh;
     }
 
     #opponent-pic {
@@ -628,7 +646,6 @@ form {
     #intro-text p {
         font-size: 2vh;
         line-height: 5vh;
-        width: 350px;
     }
 
     #player-choice {
@@ -738,27 +755,25 @@ form {
     #main-intro h1 {
         margin: 50px auto;
         font-size: 6vh;
-        width: 62vw;
+        width: 22vh;
     }
 
     h2 {
         font-size: 3vh;
-        width: 180px;
+        width: 19vh;
         padding: 10px;
     }
 
     #play-button {
         margin: 30px auto;
         font-size: 3vh;
-        height: 4vh;
-        width: 100px;
+        height: 5vh;
+        width: 10vh;
     }
 
     #intro-text p {
-        font-size: 2vh;
-        line-height: 5vh;
-        width: 80%;
-        padding: 10px;
+        padding: 20px;
+        line-height: 4vh;
     }
 
 
