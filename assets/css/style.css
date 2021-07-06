@@ -124,7 +124,7 @@ h2 {
 }
 
 #intro-text p {
-    font-size: 4vh;
+    font-size: 3vh;
     line-height: 6vh;
     width: 60vw;
     background: #58a8c3;
@@ -336,7 +336,7 @@ h2 {
     color: white;
     width: 18vh;
     height: 18vh;
-    font-size: 5vh;
+    font-size: 4vh;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: black 0px 1px 20px 0px;
@@ -345,8 +345,8 @@ h2 {
 #over-message {
     background: black;
     box-shadow: black 0px 1px 20px 0px;
-    font-size: 10vh;
-    width: 650px;
+    font-size: 6vh;
+    width: 43vh;
     margin: 50px auto;
 
     animation-name: game-over;
@@ -366,16 +366,15 @@ h2 {
 }
 
 #gameover-text {
-    margin: 80px auto 20px;
-    font-size: 4vh;
-    line-height: 4vw;
-    width: 40vw;
-    height: 21vh;
+    margin: 50px auto;
+    font-size: 3vh;
+    line-height: 5vh;
+    width: 44vh;
     font-weight: 600;
     color: white;
     background-color: #808385;
     border-radius: 10%;
-    padding: 30px;
+    padding: 20px;
 }
 
 #win-message {
@@ -391,17 +390,16 @@ h2 {
     line-height: 4vh;
     margin: 70px auto 35px;
     width: 44vh;
-    height: 15vh;
     padding: 30px;
 }
 
-#win-text-two {
+/* #win-text-two {
     margin: 30px auto;
     font-size: 30pt;
     font-weight: 700;
     background: #7e7ec1;
     width: 787px;
-}
+} */
 
 #biggu-bossu {
     background-repeat: no-repeat;
@@ -569,18 +567,13 @@ form {
     }
 
     #win-message {
-        margin: 50px auto;
         width: 37vh;
         font-size: 7vh;
     }
 
     #win-text {
-        font-size: 4vh;
-        line-height: 4vh;
         margin: 20px auto;
         width: 33vh;
-        height: 21vh;
-        padding: 36px;
     }
 
     #restart-button {
@@ -596,6 +589,15 @@ form {
 
     #intro-text p {
         font-size: 3vh;
+    }
+
+    #over-message {
+        font-size: 4vh;
+        width: 34vh;
+    }
+
+    #gameover-text {
+        width: 34vh;
     }
 }
 
@@ -662,23 +664,18 @@ form {
     }
 
     #over-message {
-        font-size: 6vw;
-        width: 350px;
-        margin: 50px auto;
+        width: 26vh;
     }
 
     #gameover-text {
-        margin: 20px auto 20px;
-        font-size: 12pt;
-        line-height: 22pt;
-        width: 300px;
-        height: 100px;
+        font-size: 2vh;
+        line-height: 4vh;
+        width: 26vh;
     }
 
     #restart-button {
-        width: 12vh;
-        height: 12vh;
-        font-size: 3vh;
+        width: 10vh;
+        height: 10vh;
     }
 
     #biggu-bossu {
@@ -690,14 +687,10 @@ form {
 
     #win-message {
         width: 33vh;
-        font-size: 7vh;
     }
 
     #win-text {
-        font-size: 4vh;
-        margin: 20px auto 10px;
         width: 28vh;
-        height: 24vh;
     }
 }
 
@@ -787,22 +780,15 @@ form {
     }
 
     #over-message {
-        font-size: 5vh;
-        width: 30vh;
-        margin: 50px auto;
+        width: 25vh;
     }
 
     #gameover-text {
-        margin: 20px auto 20px;
-        font-size: 2vh;
-        line-height: 7vh;
-        width: 37vh;
-        height: 23vh;
+        width: 24vh;
         padding: 10px;
     }
 
     #win-message {
-        margin: 50px auto;
         width: 24vh;
         font-size: 5vh;
     }
@@ -810,9 +796,7 @@ form {
     #win-text {
         font-size: 2vh;
         line-height: 3vh;
-        margin: 10px auto 20px;
         width: 18vh;
-        height: 14vh;
         padding: 10px;
     }
 

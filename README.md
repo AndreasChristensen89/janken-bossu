@@ -77,6 +77,12 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
 
 ![Victory screen](/assets/readme-pictures/contact-readme.PNG)
 
+* __Rules page__
+    * 
+    * 
+
+![Rules page](/assets/readme-pictures/contact-readme.PNG)
+
 ### Future features to implement
 * I thought it would be helpful to add and shortly after remove a text-box when losing HP. It would show the damage taken.
 * In the game after a win I am considering a screen that introduces the next opponent, some context to the character, and the HP damage the character does.
@@ -93,6 +99,8 @@ __Breakpoints are set to the following and are all tested to work:__
    * **Start screen:**
    * **Introduction screen:** Font size of text box is lowered 
    * **Win screen** winning text-box's width and font-size are decreased.
+   * **Victory screen** Win title's width and front-size are decreased. Win-text's width and margin are decreased. Restart button's height, width, and font-size are decreased.
+   * **Game over screen** Game over message's font size and width are decreased. Game over text's width is decreased. Restart button is similar to victory screen.
 
 * __800px__
    * **Start screen:** Background-size is changed from contain to cover in order to avoid picture strething with floor too long. X and Y coordinates are set differently to adapt to new setting
@@ -101,6 +109,8 @@ __Breakpoints are set to the following and are all tested to work:__
    * **Loosing screen** For computer choice the margin is decreased.
    * **Draw screen** The "draw" message's margin is set to 0 auto.
    * **Win screen** Player's pick's width is decreased, margins are changed - same changes for computer choice. Next button's margin is decreased.
+   **Victory screen** Win title's width is decreased. Win-text's width is decreased. Restart button's height and width are decreased.
+   * **Game over screen** Game over message's width is decreased. Game over text's font-size, line-height, and width are decreased. Restart button is similar to victory screen.
 
 * __600px__
    * **Start screen:** All elements' responsive values are changed. Max height is 1300px, which I estimate to work at this width.
@@ -108,12 +118,13 @@ __Breakpoints are set to the following and are all tested to work:__
    * **Game screen:** Buttons' width are increased, margins are changed. Opponent-title's width and font-size are lowered. Restart button's height, width, and font-size have increased. Player choice's margin lowered. Opponent-picture's top% has increased, height is lowered, width has increased. Loose message's font-size and width is lowered, margin is increased. Max height 720px
    * **Loosing screen** Computer choice's margin is increased. Loose message's font-size and width decreased, margin increased.
    * **Win screen** Winning text-box's margin is increased, line-height, width, and font-size are decreased. Next-button's margin is increased.
+   * **Victory screen** Win title's width and front-size are decreased. Win-text's font-size, line-height, width, and padding are decreased. Restart button's height, width, and font-size are decreased.
+   * **Game over screen** Over message's width is decreased. Game over text's width and padding are decreased. Restart button is similar to victory screen.
 
 * __320px__
    * **Start screen:** Element's responsiveness work until 1200px which I estimate to work.
    * **Introduction screen:** Elements work until 1200px.
    * **Game screen:** Buttons' height, width and margins are lowered. Opponent-title's width has been lowered. Opponent-picture's top% has increased. Max height is 720px.
-   * **Win screen**
 
 
 ### Browser testing 
@@ -129,14 +140,10 @@ I believe the game is set up so that it's intuitive, and users have an easy time
 
 ### Bugs discovered during testing:
 * I found the Google Developer Tool to not be stable in showing if the website responded correctly to different screensizes. Many times it would show 
-that everything worked fine and smoothly only to display something different the next time it was opened. Similarly, it would show that something was off 
-(footer not showing, lines out of bounds etc) only to show them correctly after closing and opening.
-Also, some tests of media queries would succeed every time on Google Developer, but fail when manipulating actual browser window.
+that everything worked fine and smoothly only to display something different the next time it was opened. Similarly, it would show that something was off (lines out of bounds etc) only to show them correctly after closing and opening.
 * Firefox did not show the Google font during testing.
-* Firefox did not display certain margins as chrome (e.g. for navbar), and they had to be changed
-* Safari did not show contact form buttons as Chrome, and I had to change margins.
-* Markup validation service gave errors when using aria-label on css backgrounds. This was handled by adding a span in the div with role="img" and aria-label.
-* Error for favicon.ico in browser, favicon.ico not implemented
+* Safari...
+* Markup validation service...
 
 
 ### Validator testing:
@@ -145,7 +152,6 @@ Also, some tests of media queries would succeed every time on Google Developer, 
 
 ### Unfixed bugs:
 * Testing in Firefox went well with functionality, but the Google Font Lato was not loaded.
-* Favicon.ico not included
 
 ## Deployment
 The site was deployed to GitHub pages, and goes as follows:
@@ -158,31 +164,10 @@ The live link can be found here - https://andreaschristensen89.github.io/cleanco
 ## Credits:
 ### Pictures
 Images were compressed using the webpage https://tinypng.com/
-All images were taken from https://www.freepik.com/, which requires attributions. The following are the code snippets the website provides when downloading.
-
-* Hero-image:
-    `<a href="https://www.freepik.com/photos/summer">Summer photo created by onlyyouqj - www.freepik.com</a>`
-
-* Meetuptimes:
-    * Kongens Have
-        `<a href="https://www.freepik.com/photos/tree">Tree photo created by freepik - www.freepik.com</a>`
-    * Fælledparken
-        `<a href="https://www.freepik.com/photos/hand">Hand photo created by prostooleh - www.freepik.com</a>`
-    * Søndermarken
-        `<a href="https://www.freepik.com/photos/kids">Kids photo created by prostooleh - www.freepik.com</a>`
-    * Utterslev Mose
-        `<a href="https://www.freepik.com/photos/kids">Kids photo created by prostooleh - www.freepik.com</a>`
-
-* About us
-    `<a href='https://www.freepik.com/photos/kids'>Kids photo created by prostooleh - www.freepik.com</a>`
-
-* What we do
-    `<a href='https://www.freepik.com/photos/hand'>Hand photo created by prostooleh - www.freepik.com</a>`
-
+All characters, hands, and backgrounds were drawn by myself in Adobe Illustrator.
 
 ### Text content
-Content was all formulated by myself, but I took inspiration from another site with a similar focus:
-https://www.doinggoodtogether.org/bhf/clean-up-your-neighborhood
+Content was all formulated by myself, but I took inspiration from video games I have played throughout my life.
 
 
 ### Icons
@@ -190,32 +175,34 @@ Icons and script were taken from https://fontawesome.com/
 
 
 ### Coding help
-* For help with varius issues with animations, sticky navigation bar, css background manipulation etc. I often resorted to https://stackoverflow.com/
-* Code Institute Slack Community for additional help with details (aria-label, general requirements, deployment)
+* For help with varius issues with animations, css background manipulation etc. I often resorted to https://stackoverflow.com/
 
 ### Design
-* For design of the different pages I took inspiration from other students of Code Institute that request reviews of their projects. Also, I looked at various websites of professionals, e.g. https://www.wimhofmethod.com/
-* For color schemes I used a blog on Visme that had 50 examples of good color combinations: https://visme.co/blog/website-color-schemes/
+* For design of the different pages I didn't use other sources of information.
+* For color schemes...
 
 ## User Experience Considerations:
 
 ### The User
 * What are the goals for a first time visitor
-   * Quickly understand what the group is doing, and where and when it is operating
+   * Quickly understand that this is a game and how to start it
    * Be captivated by the content and the imagery
    * Be able to navigate effortless through the pages
-   * Easily reach the contact page and understand how to contact the group
+   * Easily reach the rules page and understand how to play the game
+   * Understand how to advance after a loss/defeat/draw
 * What are the goals for a returning visitor
    * Instantly/easily remember how to navigate the content
-   * Find meetup times to confirm times and places in seconds
-   * Quickly find contact page to ask questions/inquiries/give comments/recommendations
+   * Easily remember how to play the game
 
 ## Design choices
-* Overview: The aim is to provide easy-to-navigate pages that make it easy and clear to navigate around, with many links to the contact/join page.
-    Information should not be detailed but fast to read and understand, and straight to the point.
+* Overview: The aim is to provide easy-to-navigate pages that make it easy and clear to navigate around. 
+* The game should be easy for the eyes, meaning that there should be no overlapping animations that confuse players.
+* It should be clear to the player what should be clicked in order to advance.
+* Losses/wins/draws should be clear to understand and should have animations that demonstrate what happened.
+* Information should not be detailed but fast to read and understand, and straight to the point.
 
 ### Color Scheme 
-Colors are chosen to represent a "natural" scenery that hint of being in a park/forest, 
+Colors are chosen to represent a bright cartoony world, 
 which hopefully leads users to envision being outside in nature.
 * Background color: **#EAE7DC**
 * Logo, titles, navbar elements, top of call-to-action divs, top of form: **#61892F**
