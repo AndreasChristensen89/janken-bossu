@@ -144,8 +144,8 @@ that everything worked fine and smoothly only to display something different the
 * Firefox did not show the Google font during testing.
 * Safari...
 * Markup validation service...
-* During first Jshint testing there were many warnings regarding template literals. This was unnecesarily used by me many times, and I corrected them; e.g. xx = `${variable}`; would be corrected to xx = variable;
-* The addButtons() function was given a warning on Jshint due to a function being declared in a variable
+* During first Jshint testing there were many warnings regarding template literals. This was unnecesarily used by me many times, and I corrected them; e.g. "xx = `${variable}`;" would be corrected to xx = variable;
+* The addButtons() function was given a warning on Jshint due to "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics." I saw in the teaching material Love Maths that a function was declared in a variable, so I decided to keep it the same way.
 
 
 ### Validator testing:
