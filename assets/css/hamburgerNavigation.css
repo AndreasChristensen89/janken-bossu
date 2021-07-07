@@ -59,7 +59,7 @@ li {
 }
 
 @media screen and (max-width: 600px) {
-    .ham {
+    .hamburger {
         width: 8vw;
         height: 8vw;
     }

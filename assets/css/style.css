@@ -63,6 +63,8 @@ h2 {
     background: #6f9fc3;
     width: 32vh;
     color: white;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 #button-area {
@@ -132,10 +134,11 @@ h2 {
     line-height: 6vh;
     width: 60vw;
     background: #58a8c3;
-    border-radius: 10%;
+    border-radius: 20px;
     color: white;
     margin: 60px auto 30px;
     padding: 45px;
+    box-shadow: black 0px 1px 20px 0px;
 }
 
 .button {
@@ -338,8 +341,8 @@ h2 {
 #restart-button {
     background: rgb(19 154 60);
     color: white;
-    width: 18vh;
-    height: 18vh;
+    width: 15vh;
+    height: 15vh;
     font-size: 4vh;
     border-radius: 50%;
     cursor: pointer;
@@ -377,7 +380,7 @@ h2 {
     font-weight: 600;
     color: white;
     background-color: #808385;
-    border-radius: 10%;
+    border-radius: 20px;
     padding: 20px;
 }
 
@@ -397,14 +400,6 @@ h2 {
     padding: 30px;
 }
 
-/* #win-text-two {
-    margin: 30px auto;
-    font-size: 30pt;
-    font-weight: 700;
-    background: #7e7ec1;
-    width: 787px;
-} */
-
 #biggu-bossu {
     background-repeat: no-repeat;
     height: 50vh;
@@ -422,7 +417,7 @@ h2 {
     width: 40vh;
     margin: 10px auto;
     background-color: #505050;
-    border-radius: 10%;
+    border-radius: 20px;
     padding: 10px;
     color: white;
 
@@ -472,7 +467,7 @@ h2 {
 
 /* ================================== contact ========================================= */
 
-#form-section {
+/* #form-section {
     text-align: center;
 }
 
@@ -546,7 +541,7 @@ form {
 .formbutton:hover {
     background-color: #fafafa;
     color: #836225;
-}
+} */
 
 /* ======================================= media queries ============================================================= */
 @media screen and (max-width: 1100px) {

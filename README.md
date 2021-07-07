@@ -71,13 +71,24 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
 * __Victory screen__
     * A green centered text-box with the content "You Win!" is at the top. It scales up and down continuously. 
     * Underneath is a light-blue text-box that declares that the player managed to rise to the top and has won the game.
-    * Underneath is a green button try-again button, which is also used in the game over screen.
+    * Underneath is a green button restart button, which is also used in the game over screen.
+    * The scaling of the win title draws the users' eyes to it, which aims to make sure that what is going on is clear. The green color gives a positive feeling. The text-box underneath is in a light color with congratulative text, which is most often expected after winning a game. Lastly, the try again button is similar in style to the one on the gameover screen, but with the text "restart" instead of "try again", which differs in tone.
 
 ![Victory screen](/assets/images/readme-pictures/victory-screen.webp)
 
 * __Rules page__
-    * 
-    * 
+    * Dark centered heading with "how to play"
+    * Underneath short introduction of the game in a grey-blue background text-box.
+    * Underneath a green text-box with the title "What beats what?"
+    * Underneath are five boxes side by side. Each has the name of a hand that players can choose, and underneath each is a picture of how the hand looks. Below the picture are two statements about what the hand in question beats in a game.
+    * Below is a title similar in style to "what beats what", with the content "Setting of the game".
+    * Underneath is a larger text box with an explanation of how the game Janken works in Japanese culture. Same color as the boxes further up.
+    * Underneath is another large text box with an explanation of the back-story/setting of the game on this webpage. Same color as above.
+    * There are three main colors - dark at the top, green for h2 titles, and lighter blue/gray for text. They are chosen to fit with the background blue, and the bonsai tree. 
+    * The introduction is valuable as players may not be familiar with the extended for of rock paper scissors.
+    * Explanation of what beats what is valuable as players want to be clear about the rules. The pictures complement well since people may not know all the hand signals, and that they only have the visual representation when playing the game.
+    * Explanation of how rock paper scissors work on Japanese culture is valuable as it adds some context to why a Japanese setting was chosen.
+    * Setting of the game is valuable as it may not be clear to the player in the beginning what the bigger purpose of the game is. Also, it adds a slight humorous twist.
 
 ![Rules page](/assets/images/readme-pictures/rules.webp)
 
@@ -155,11 +166,22 @@ that everything worked fine and smoothly only to display something different the
 * Testing in Firefox went well with functionality, but the Google Font Lato was not loaded.
 
 ## Deployment
-The site was deployed to GitHub pages, and goes as follows:
+### Deployment to GitHub Pages
+The site was deployed to GitHub Pages, and goes as follows:
 In the GitHub repository, go to the Settings tab
 From the source section drop-down menu, select the Master Branch
 After selecting the master branch, the page will automatically be refreshed with a ribbon display to indicate the successful deployment.
-The live link can be found here - https://andreaschristensen89.github.io/cleancopenhagen/
+The live link can be found here - https://andreaschristensen89.github.io/janken-bossu/
+
+### Create a local clone
+1.	Open GitHub and navigate to repository here (https://github.com/AndreasChristensen89/janken-bossu).
+2.	Click the Code drop-down menu.
+3.	Options:
+•	Download the ZIP file, unpack locally and open with IDE.
+•	Copy git URL from HTTPS dialogue box.
+4.	Open your chosen IDE and open the terminal in a directory.
+5.	Use the "git clone" command with the copied git URL after.
+6.	Clone of the project is created locally on your machine.
 
 
 ## Credits:

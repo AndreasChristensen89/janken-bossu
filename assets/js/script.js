@@ -523,7 +523,7 @@ function beatGame() {
 
     createElement("h2", "win-text", "game-area", "You managed to rise through the coorporate ladder to claim your place on top");
 
-    createElement("button", "restart-button", "game-area", "Try Again!");
+    createElement("button", "restart-button", "game-area", "Restart");
     document.getElementById("restart-button").addEventListener('click', restart);
 
     document.body.style.backgroundImage = "url(assets/images/game-pictures/background-new.webp)";

@@ -28,21 +28,23 @@ body {
     text-align: center;
 }
 
-#rules-intro h1 {
+#rules-intro h1 { 
     margin: 50px auto;
-    width: 34vw;
-    font-size: 5vw;
+    width: 350px;
+    font-size: 40pt;
     background: #455d66;
     box-shadow: black 0px 1px 20px 0px;
+    border-radius: 20px;
 }
 
 #rules-intro p {
-    font-size: 2vw;
+    font-size: 16pt;
+    width: 500px;
     margin: 30px auto;
     background: #68acb9;
-    width: 60%;
     padding: 20px;
     box-shadow: black 0px 1px 5px 0px;
+    border-radius: 20px;
 }
 
 #how-to-play {
@@ -51,18 +53,19 @@ body {
 }
 
 #how-to-play h2 {
+    font-size: 22pt;
+    width: 350px;
     margin: 70px auto 20px;
     background: #3a9432;
     box-shadow: black 0px 1px 20px 0px;
-    font-size: 3vw;
-    width: 27vw;
+    border-radius: 20px;
 }
 
 .rule-div {
+    height: 350px; 
     width: 18%;
     margin: 50px 5px 20px;
-    height: 375px;
-    border-radius: 10%;
+    border-radius: 20px;
     background-color: #69acb9;
     display: inline-block;
     box-shadow: black 0px 1px 5px 0px;
@@ -70,12 +73,11 @@ body {
 }
 
 .rule-div h3 {
-    font-size: 30pt;
+    font-size: 20pt;
 }
 
 .rule-div p {
-    font-size: 18pt;
-    margin: 25px auto;
+    font-size: 16pt;
 }
 
 #how-to-play img {
@@ -88,19 +90,20 @@ body {
 }
 
 #game-setting h2 {
-    margin: 30px auto;
-    width: 30vw;
-    font-size: 3vw;
+    margin: 0px auto 30px;
+    width: 350px;
+    font-size: 22pt;
     background: #3a9432;
     box-shadow: black 0px 1px 20px 0px;
+    border-radius: 20px;
 }
 
 #game-setting p {
+    font-size: 20pt;
+    padding: 30px;
     margin: 30px 10%;
-    font-size: 23pt;
     background-color: #68acb9;
-    padding: 3%;
-    border-radius: 10%;
+    border-radius: 20px;
     box-shadow: black 0px 1px 5px 0px;
 }
 
@@ -157,6 +160,22 @@ body {
 /* ============================ media queries ======================================= */
 
 @media screen and (max-width: 800px) {
+    #rules-intro h1 {
+        width: 300px;
+        font-size: 30pt;
+    }
+
+    #rules-intro p {
+        font-size: 14pt;
+        width: 380px;
+        padding: 20px;
+    }
+
+    #how-to-play h2 {
+        font-size: 20pt;
+        width: 250px;
+    }
+
     .rule-div {
         margin: 20px 2px;
         height: 300px;
@@ -176,14 +195,21 @@ body {
 
     #game-setting p {
         font-size: 14pt;
+        padding: 20px;
+    }
+
+    #game-setting h2 {
+        margin: 30px auto;
+        width: 250px;
+        font-size: 20pt;
     }
 }
 
 @media screen and (max-width: 600px) {
     #rules-intro h1 {
         margin: 25px auto;
-        width: 50vw;
-        font-size: 8vw;
+        width: 200px;
+        font-size: 24pt;
     }
 
     #main-intro h1 {
@@ -221,14 +247,14 @@ body {
 
     #rules-intro h1 {
         margin: 25px auto;
-        width: 50vw;
-        font-size: 8vw;
+        width: 250px;
+        font-size: 26pt;
     }
 
     #rules-intro p {
-        font-size: 5vw;
+        font-size: 14pt;
         margin: 30px auto;
-        width: 60vw;
+        width: 200px;
     }
 
     #how-to-play {
@@ -237,68 +263,119 @@ body {
 
     #how-to-play h2 {
         margin: 20px auto;
-        font-size: 6vw;
-        width: 46vw;
+        font-size: 16pt;
+        width: 180px;
     }
 
     .rule-div {
         margin: 10px auto;
-        height: 58vw;
-        width: 71%;
+        height: 200px;
+        width: 220px;
         border-radius: 10%;
+        display: block;
     }
 
     .rule-div h3 {
-        font-size: 8vw;
+        font-size: 18pt;
         padding-top: 10px;
         margin: 5px auto 10px;
     }
 
     #show-rock {
-        width: 14vw;
-        height: 14vw;
+        width: 50px;
+        height: 50px;
         margin: 20px auto;
     }
 
     #show-paper {
-        width: 14vw;
-        height: 14vw;
+        width: 50px;
+        height: 50px;
         margin: 20px auto;
     }
 
     #show-scissors {
-        width: 14vw;
-        height: 14vw;
+        width: 50px;
+        height: 50px;
         margin: 20px auto;
     }
 
     #show-lizard {
-        width: 14vw;
-        height: 14vw;
+        width: 50px;
+        height: 50px;
         margin: 20px auto;
     }
 
     #show-spock {
-        width: 14vw;
-        height: 14vw;
+        width: 50px;
+        height: 50px;
         margin: 20px auto;
     }
 
     .rule-div p {
-        font-size: 5vw;
+        font-size: 12pt;
         display: inline-block;
-        margin: 15px;
+        margin: 0 15px 15px;
         font-weight: 900;
     }
 
     #game-setting h2 {
         margin: 30px auto;
-        width: 51vw;
-        font-size: 6vw;
+        width: 180px;
+        font-size: 14pt;
     }
 
     #game-setting p {
-        font-size: 6vw;
-        width: 70vw;
+        font-size: 14pt;
+        width: 249px;
+        padding: 15px;
+        margin: 20px auto;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #rules-intro h1 {
+        margin: 25px auto;
+        width: 200px;
+        font-size: 22pt;
+    }
+    
+    #rules-intro p {
+        font-size: 14pt;
+        margin: 30px auto 50px;
+        width: 185px;
+    }
+
+    #how-to-play h2 {
+        margin: 20px auto;
+        font-size: 14pt;
+        width: 150px;
+    }
+
+    .rule-div {
+        width: 62%;
+    }
+
+    .rule-div h3 {
+        font-size: 18pt;
+        padding-top: 10px;
+        margin: 5px auto 10px;
+    }
+
+    .rule-div p {
+        font-size: 12pt;
+        margin: 0 8px 15px;
+    }
+
+    #game-setting h2 {
+        margin: 50px auto 30px;
+        width: 180px;
+        font-size: 14pt;
+    }
+
+    #game-setting p {
+        font-size: 12pt;
+        width: 200px;
+        padding: 18px;
+        margin: 20px auto;
     }
 }
