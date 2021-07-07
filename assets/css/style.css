@@ -97,7 +97,6 @@ h2 {
 #play-button {
     margin: 30px auto;
     font-size: 4vh;
-    height: 6vh;
     width: 13vh;
     background-color: rgb(19 154 60);
     border-radius: 20px;
@@ -113,14 +112,19 @@ h2 {
 
 #start-button {
     color: white;
-    width: 24vh;
+    width: 13vh;
     margin: 40px auto;
     background-color: rgb(19 154 60);
     font-weight: 600;
     font-size: 3vh;
     cursor: pointer;
     box-shadow: black 0px 1px 20px 0px;
-    border-radius: 10%;
+    border-radius: 20px;
+
+    animation-name: element-move;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
 
 #intro-text p {
@@ -163,6 +167,11 @@ h2 {
 
 .button:hover {
     transform: scale(1.4);
+    transition: all 0.3s ease 0s;
+}
+
+.button:not(:hover) {
+    transform: scale(1.0);
     transition: all 0.3s ease 0s;
 }
 
