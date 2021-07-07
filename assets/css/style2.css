@@ -237,7 +237,7 @@ form {
 
 .formbutton:hover {
     background-color: #fafafa;
-    color: #836225;
+    color: black;
 }
 
 /* ============================ media queries ======================================= */
@@ -439,6 +439,7 @@ form {
     .formbutton {
         padding: 15px 20px 15px 20px;
         font-size: 100%;
+    }
 }
 
 @media screen and (max-width: 320px) {
