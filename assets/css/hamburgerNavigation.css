@@ -1,6 +1,6 @@
 /* create in order to not have the styling twice for the two pages */
 
-.ham {
+.hamburger {
     position: fixed;
     z-index: 100;
     top: 1rem;
@@ -24,7 +24,7 @@
     right: 0;
     bottom: 0;
     width: 12vw;
-    height: 100vh;
+    height: 100%;
     background: rgb(111, 159, 195, 0.8);
     color: white;
     transform: translateY(-100%);
@@ -35,7 +35,7 @@
     z-index: 1;
 }
 
-.showMenu {
+.menuDown {
     transform: translateY(0);
 }
 

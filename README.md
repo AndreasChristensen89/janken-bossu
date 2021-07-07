@@ -1,6 +1,3 @@
-For hamburger nagivation I used the code from this site, but I changed the location, animation and the contents to fit my site:
-https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0 
-
 # Janken Bossu
 
 The idea behind this project is to create a simple single-player game of rock paper scissors lizard spock which takes place in a cartoony setting.
@@ -72,8 +69,9 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
 ![Game over screen](/assets/images/readme-pictures/game-over-screen.webp)
 
 * __Victory screen__
-    * 
-    * 
+    * A green centered text-box with the content "You Win!" is at the top. It scales up and down continuously. 
+    * Underneath is a light-blue text-box that declares that the player managed to rise to the top and has won the game.
+    * Underneath is a green button try-again button, which is also used in the game over screen.
 
 ![Victory screen](/assets/images/readme-pictures/victory-screen.webp)
 
@@ -169,19 +167,23 @@ The live link can be found here - https://andreaschristensen89.github.io/cleanco
 Images were compressed using the webpage https://tinypng.com/
 All characters, hands, and backgrounds were drawn by myself in Adobe Illustrator.
 
-### Text content
-Content was all formulated by myself, but I took inspiration from video games I have played throughout my life.
+### Navigation
+For hamburger nagivation I used the code from this site, but I changed the location, animation/CSS, names, parts of the JS code, and the contents to fit my site:
+https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0
 
+
+### Text content
+Content was all formulated by myself, but I took inspiration from video/board games I have played throughout my life, as well as my own experiences living in Japan.
 
 ### Icons
-Icons and script were taken from https://fontawesome.com/ 
+Icons and script were taken from https://fontawesome.com/, as well as Google's fonts: https://fonts.google.com/icons?selected=Material+Icons.
 
 
 ### Coding help
 * For help with varius issues with animations, css background manipulation etc. I often resorted to https://stackoverflow.com/
 
 ### Design
-* For design of the different pages I didn't use other sources of information.
+* For design of the different pages I didn't use other sources of information. For backgrounds and character I took inspiration from https://www.pinterest.com/, but none are copies.
 * For color schemes...
 
 ## User Experience Considerations:
