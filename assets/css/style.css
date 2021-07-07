@@ -465,6 +465,40 @@ h2 {
     }
 }
 
+/* ===================================== 404 page ========================================= */
+
+#error-h1 {
+    font-weight: bold;
+    font-size: 38pt;
+    background-color: rgb(74 145 89);
+    border-radius: 20px;
+    color: white;
+    margin: 30px auto;
+    width: 522px;
+    box-shadow: black 0px 1px 20px 0px;
+    padding: 10px;
+    text-align: center;
+}
+
+#error-h2 {
+    font-size: 3vh;
+    width: 40vh;
+    text-align: center;
+    margin: 30px auto;
+    background: #6f9fc3;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#error-p {
+    background: green;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 2vh;
+    width: 40vh;
+}
+
 /* ================================== contact ========================================= */
 
 /* #form-section {
@@ -545,10 +579,6 @@ form {
 
 /* ======================================= media queries ============================================================= */
 @media screen and (max-width: 1100px) {
-    /* body {
-        background-position-y: 35%;
-    } */
-
     #main-intro h1 {
         font-size: 6vh;
         width: 44vh;
