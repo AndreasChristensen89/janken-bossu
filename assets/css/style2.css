@@ -157,7 +157,97 @@ body {
     margin: 0 auto;
 }
 
+/* ================================== contact ========================================= */
+
+#form-section {
+    text-align: center;
+}
+
+#form-section h1 {
+    margin: 50px auto;
+    width: 375px;
+    font-size: 40pt;
+    background: #455d66;
+    box-shadow: black 0px 1px 20px 0px;
+    border-radius: 20px;
+    color: white;
+}
+
+form {
+    font-size: 12pt;
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+
+#form-div-back h2 {
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+
+#form-div-front {
+    background-color: #68acb9;
+    border-radius: 20px;
+    width: 400px;
+    margin: 0 auto;
+    box-shadow: black 0px 1px 20px 0px;
+}
+
+
+.contactus-form {
+    padding: 30px;
+}
+
+
+.label {
+    margin: 0px;
+    width: 100%;
+    float: left;
+    font-size: 16pt;
+    color: white;
+    font-weight: 300;
+}
+
+
+#fname,
+#lname,
+#email,
+#message {
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 20px;
+    width: 75%;
+    padding: 2px 0px 0px 10px;
+    margin: 10px 10%;
+}
+
+.formbutton {
+    border-radius: 10px;
+    padding: 15px 32px 15px 32px;
+    font-size: 100%;
+    background-color: #3a9432;
+    color: #fafafa;
+    cursor: pointer;
+    font-size: 14pt;
+}
+
+
+.formbutton:hover {
+    background-color: #fafafa;
+    color: #836225;
+}
+
 /* ============================ media queries ======================================= */
+
+@media screen and (max-width: 950px) {
+    #form-div-back {
+        width: 50%;
+    }
+}
+
 
 @media screen and (max-width: 800px) {
     #rules-intro h1 {
@@ -330,6 +420,25 @@ body {
         padding: 15px;
         margin: 20px auto;
     }
+}
+
+@media screen and (max-width: 550px) {
+    #form-div-back {
+        width: 80%;
+    }
+
+    #form-section h1 {
+        width: 200px;
+        font-size: 20pt;
+    }
+
+    #form-div-front {
+        width: 250px;
+    }
+
+    .formbutton {
+        padding: 15px 20px 15px 20px;
+        font-size: 100%;
 }
 
 @media screen and (max-width: 320px) {

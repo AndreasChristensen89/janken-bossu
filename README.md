@@ -208,7 +208,7 @@ Icons and script were taken from https://fontawesome.com/, as well as Google's f
 * For design of the different pages I didn't use other sources of information. For backgrounds and character I took inspiration from https://www.pinterest.com/, but none are copies.
 * For color schemes...
 
-## User Experience Considerations:
+## User Stories:
 
 ### The User
 * What are the goals for a first time visitor
@@ -247,20 +247,35 @@ Colors are chosen to represent a bright cartoony world, which aims to give users
     * Dirt: rgb(99 55 29)
     * Tree: rgb(128 81 55)
     * Leafs: rgb(58 148 50)
-
 * Green color of play button, start button, and try again button **#61892F**
-* Font of call-to-action divs: **rgb(211, 203, 161)**
-* Cover text hero-image, Call-to-action divs headings: **standard white**
-* Call-to-action icons: **standard green**
-* Footer background color: **rgb(177, 142, 96)**
-* Footer icons and text: **#EEE2DC**
+* Landing page:
+    * H1: #455d66
+    * H2: #6f9fc3
+* Introduction page:
+    * P: #58a8c3
+* Main game page:
+    * Opponent-title: #77acb2
+    * Health-meter: #079607
+    * Hand-butons: #f2d09b
+* Lose-screen:
+    * P: #505050
+* Draw-screen:
+    * Div: #5f5c5c
+* Win screen:
+    * P: #3da6a3
+    * Button: #3a9432
+* Game over screen
+    * H1: black
+    * P: #808385
+* Victory screen
+    * H1: rgb(74 145 89)
+    * H2: #6f9fc3
 
 ### Choice of text
-For text choice I leaned towards the Love Running project, which used Lato and Oswald. After testing with other fonts (Roboto, Open Sans, Raleway)
-I found Lato to work quite well with both text and headings.
+I found Lato to work quite well with all text. I think it complements the cartoony style a lot.
 
-### Pictures:
-Sunny, bright and green pictures from parks were targeted to with the aim of thinking of nice weather, as the activity would be outside. Pictures with families/children were favored to give a family friendly atmosphere.
+### Pictures/characters:
+Bright and colorful colors are chosen to give a positive feeling. It's meant for the user to think of it as light-hearted. The background was designed to be spacy, simple, and with only a few major variations of colors. The characters were drawn as simple and with a hint of humour - they're meant to be stereotypical Japanese office workers as depicted in manga/movies.
 
 ### Languages used
 * HTML
@@ -270,3 +285,7 @@ Sunny, bright and green pictures from parks were targeted to with the aim of thi
 
 ### Accesibility
 All non-text elements are marked with labels, and the contrast between background and foreground colors were implemented in color scheme.
+
+### Additional comments on setup
+* CSS was split into two files due to a design choice of having no scrolling on the main page which affected the rules page. Styling for the hamburger navigation was also separated due to both pages needing CSS from it.
+* JavaScript was split into two files due to eventlistener on load in one sheet that is not needed in the other.
