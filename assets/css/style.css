@@ -492,11 +492,20 @@ h2 {
 }
 
 #error-p {
-    background: green;
+    background: #5d7e8a;
     text-align: center;
     margin: 0 auto;
-    font-size: 2vh;
-    width: 40vh;
+    font-size: 3vh;
+    width: 32vh;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+#error-link {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* ================================== contact ========================================= */
