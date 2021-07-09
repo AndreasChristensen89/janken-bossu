@@ -51,7 +51,7 @@ h1 {
     font-size: 40pt;
     background: #455d66;
     border-radius: 20px;
-    color: #c7ebf2;
+    color: white;
     margin: 50px auto 75px;
     width: 400px;
     box-shadow: black 0px 1px 20px 0px;
@@ -770,13 +770,18 @@ h2 {
 }
 
 /* For phones in landscape mode */
-@media (max-height: 400px) and (max-width: 700px) {
+@media (max-height: 400px) and (max-width: 700px) {    
     #main-intro h1 {
         margin: 25px auto;
     }
     
     h2 {
         margin: 20px auto 10px;
+        width: 200px;
+    }
+
+    #intro-text p {
+        width: 350px;
     }
 
     #player-choice {
@@ -784,11 +789,23 @@ h2 {
     }
 
     #player-pick {
-        margin: 30px 40px 20px;
+        margin: 30px 30px 20px;
+    }
+
+    #lose-message {
+        margin: 10px auto 0px;
+    }
+
+    #comp-hand {
+        margin: 20px auto 30px;
     }
 
     #comp-lose {
-        margin: 30px 40px 20px;
+        margin: 30px 30px 20px;
+    }
+
+    #game-area {
+        height: 29vh;
     }
 
     #result-area p {
@@ -800,13 +817,14 @@ h2 {
     }
 
     #win-message {
-        font-size: 24pt;
+        font-size: 22pt;
         margin: 20px auto;
     }
 
     #win-text {
         font-size: 15pt;
         margin: 20px auto 10px;
+        width: 300px;
     }
 
     #restart-button {

@@ -166,7 +166,7 @@ body {
 #form-section h1 {
     margin: 50px auto;
     width: 375px;
-    font-size: 40pt;
+    font-size: 30pt;
     background: #455d66;
     box-shadow: black 0px 1px 20px 0px;
     border-radius: 20px;
@@ -428,8 +428,8 @@ form {
     }
 
     #form-section h1 {
-        width: 200px;
-        font-size: 20pt;
+        width: 250px;
+        font-size: 26pt;
     }
 
     #form-div-front {
@@ -443,6 +443,10 @@ form {
 }
 
 @media screen and (max-width: 320px) {
+    #form-section h1 {
+        font-size: 22pt;
+    }
+    
     #rules-intro h1 {
         margin: 25px auto;
         width: 200px;

@@ -78,3 +78,9 @@ li {
         font-size: 5vw;
     }
 }
+
+@media (max-height: 400px) and (max-width: 700px) {
+    .menu {
+        padding-top: 15vw;
+    }
+}
