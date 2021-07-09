@@ -769,6 +769,64 @@ h2 {
 
 }
 
+/* For phones in landscape mode */
+@media (max-height: 400px) and (max-width: 700px) {
+    #main-intro h1 {
+        margin: 25px auto;
+    }
+    
+    h2 {
+        margin: 20px auto 10px;
+    }
+
+    #player-choice {
+        margin: 20px auto 0px;
+    }
+
+    #player-pick {
+        margin: 30px 40px 20px;
+    }
+
+    #comp-lose {
+        margin: 30px 40px 20px;
+    }
+
+    #result-area p {
+        margin: 0px auto 10px;
+    }
+
+    #biggu-bossu {
+        right: 22%;
+    }
+
+    #win-message {
+        font-size: 24pt;
+        margin: 20px auto;
+    }
+
+    #win-text {
+        font-size: 15pt;
+        margin: 20px auto 10px;
+    }
+
+    #restart-button {
+        width: 75px;
+        height: 75px;
+        font-size: 14pt;
+    }
+
+    #over-message {
+        font-size: 20pt;
+        margin: 20px auto;
+    }
+
+    #gameover-text {
+        font-size: 15pt;
+        margin: 20px auto 10px;
+        width: 350px;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .button {
         height: 5vh;

@@ -135,6 +135,9 @@ __Breakpoints are set to the following and are all tested to work:__
    * **Introduction screen:** Elements work until 1200px.
    * **Game screen:** Buttons' height, width and margins are lowered. Opponent-title's width has been lowered. Opponent-picture's top% has increased. Max height is 720px.
 
+* __Height 320px, Width 700px__
+    * Media query did not work fully on Galaxy Fold in folded mode (653 x 280), so this media query was made specifically for that.
+
 
 ### Browser testing 
 * Test on Firefox
