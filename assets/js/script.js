@@ -29,7 +29,7 @@ function play() {
     document.getElementById('play-button').remove();
 
     let mainIntro = document.getElementById('main-intro');
-    mainIntro.innerHTML = "unset";
+    mainIntro.innerHTML = "";
     mainIntro.style.height = "unset";
 }
 
