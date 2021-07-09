@@ -48,6 +48,7 @@ function start() {
     addButtons();
 
     createElementTarget("div", "opponent-pic", "player-choice");
+    document.getElementById("opponent-pic").setAttribute("aria-label", "Cartoon man with black hair, shirt, and tie");
 
     createElementTarget("button", "head-restart", "opponent");
     document.getElementById('head-restart').innerHTML = '<i class="fas fa-sync-alt"></i>';
@@ -79,6 +80,7 @@ function addButtons() {
     let buttons = [rock, paper, scissors, lizard, spock];
     let dataType = ["rock", "paper", "scissors", "lizard", "spock"];
     let buttonPics = ["url(assets/images/game-pictures/rock.webp)", "url(assets/images/game-pictures/paper.webp)", "url(assets/images/game-pictures/scissors.webp)", "url(assets/images/game-pictures/lizard.webp)", "url(assets/images/game-pictures/spock.webp)"];
+    let ariaLabelsHand = ["Cartoon hand clenched into a fist to form rock", "Cartoon hand with flat palm and fingers streched to form paper", "Cartoon hand clenched with index and middle fingers streched to form scissors", "Cartoon hand with all fingers stretched to connect in one point to form lizard", "Cartoon hand with flat palm and fingers streched, but with a space between ringer and middle finger to form spock"];
 
     // Runs throught the buttons from the button-array and sets the datatype, class, and background image.
     // Each button gets a different picture from the buttonPics array and a different dataType from the dataType array
@@ -473,13 +475,15 @@ function nextOpponent() {
     document.getElementById('comp-choice').innerText = "";
     document.getElementById('outcome').innerText = "";
 
-    var backgrounds = ["url(assets/images/game-pictures/intern.webp)", "url(assets/images/game-pictures/salaryman.webp)", "url(assets/images/game-pictures/manager.webp)", "url(assets/images/game-pictures/yakuza.webp)", "url(assets/images/game-pictures/biggu-bossu.webp)"];
+    let backgrounds = ["url(assets/images/game-pictures/intern.webp)", "url(assets/images/game-pictures/salaryman.webp)", "url(assets/images/game-pictures/manager.webp)", "url(assets/images/game-pictures/yakuza.webp)", "url(assets/images/game-pictures/biggu-bossu.webp)"];
+    let ariaLabels = ["Cartoon man with black hair, shirt, and tie", "Cartoon man with suit, tie, and a suitcase", "Cartoon serious-looking elderly man in suit and tie with arms crossed", "Cartoon serious-looking muscular man wearing wife-beater and with tattoos on arms", "Cartoon elderly serious-looking shirtless muscular man sitting on platform"];
 
     let currentOpponent = document.getElementById('opponent').innerText;
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     if (currentOpponent === opponents[3]) {
         document.getElementById('opponent-pic').setAttribute("id", "biggu-bossu");
         document.getElementById('biggu-bossu').style.backgroundImage = backgrounds[4];
+        document.getElementById('biggu-bossu').setAttribute("aria-label", ariaLabels[4]);
         document.getElementById('opponent').textContent = opponents[4];
         document.getElementById('health').textContent = 100;
     }
@@ -489,6 +493,7 @@ function nextOpponent() {
             document.getElementById('opponent').textContent = opponents[i + 1];
             document.getElementById('health').textContent = 100;
             document.getElementById('opponent-pic').style.backgroundImage = backgrounds[i + 1];
+            document.getElementById('opponent-pic').setAttribute("aria-label", ariaLabels[i+1]);
         }
     }
 
