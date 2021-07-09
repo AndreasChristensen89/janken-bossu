@@ -77,10 +77,4 @@ li {
     .menuLink {
         font-size: 5vw;
     }
-
-    #main-intro h1 {
-        margin: 50px auto;
-        font-size: 6vh;
-        width: 200px;
-    }
 }
