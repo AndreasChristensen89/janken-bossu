@@ -80,7 +80,7 @@ function addButtons() {
     let buttons = [rock, paper, scissors, lizard, spock];
     let dataType = ["rock", "paper", "scissors", "lizard", "spock"];
     let buttonPics = ["url(assets/images/game-pictures/rock.webp)", "url(assets/images/game-pictures/paper.webp)", "url(assets/images/game-pictures/scissors.webp)", "url(assets/images/game-pictures/lizard.webp)", "url(assets/images/game-pictures/spock.webp)"];
-    let ariaLabelsHand = ["Cartoon hand clenched into a fist to form rock", "Cartoon hand with flat palm and fingers streched to form paper", "Cartoon hand clenched with index and middle fingers streched to form scissors", "Cartoon hand with all fingers stretched to connect in one point to form lizard", "Cartoon hand with flat palm and fingers streched, but with a space between ringer and middle finger to form spock"];
+    // var ariaLabelsHand = ["Cartoon hand clenched into a fist to form rock", "Cartoon hand with flat palm and fingers streched to form paper", "Cartoon hand clenched with index and middle fingers streched to form scissors", "Cartoon hand with all fingers stretched to connect in one point to form lizard", "Cartoon hand with flat palm and fingers streched, but with a space between ringer and middle finger to form spock"];
 
     // Runs throught the buttons from the button-array and sets the datatype, class, and background image.
     // Each button gets a different picture from the buttonPics array and a different dataType from the dataType array
@@ -89,27 +89,48 @@ function addButtons() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].setAttribute("data-type", dataType[i]);
         buttons[i].setAttribute("class", "button");
+        buttons[i].setAttribute("aria-label", addAriaLabel(i));
         buttons[i].style.backgroundImage = buttonPics[i];
         document.getElementById('button-area').appendChild(buttons[i]);
         buttons[i].addEventListener('click', function () {
-            let playerChoice = this.getAttribute("data-type");
-            choice(playerChoice);
+            let playerChoiceData = this.getAttribute("data-type");
+            let playerChoiceAria = this.getAttribute("aria-label");
+            choice(playerChoiceData, playerChoiceAria);
         });
+    }
+}
+
+/**
+ * Checks if parameter is number - if not then returns value that contains parameter - if yes then uses the number as index.
+ */
+function addAriaLabel(stringOrNumber) {
+    var ariaLabelsHand = ["Cartoon hand clenched into a fist to form rock", "Cartoon hand with flat palm and fingers streched to form paper", "Cartoon hand clenched with index and middle fingers streched to form scissors", "Cartoon hand with all fingers stretched to connect in one point to form lizard", "Cartoon hand with flat palm and fingers streched, but with a space between ringer and middle finger to form spock"];
+
+    if(isNaN(stringOrNumber)) {
+        for(let i = 0; i<ariaLabelsHand.length; i++) {
+            if(ariaLabelsHand[i].includes(stringOrNumber)) {
+                return ariaLabelsHand[i];
+            } 
+        }
+    }
+    else {
+        return ariaLabelsHand[stringOrNumber];
     }
 }
 
 /**
  * Inserts picture of chosen hand via parameter. Checks for lack of go-button to clear content from a draw/loss.
  */
-function choice(playerChoice) {
+function choice(playerChoiceData, playerChoiceAria) {
     let chosenPic = document.getElementById('player-choice');
     let chosenPicStyles = {
-        "background-image": "url(assets/images/game-pictures/" + playerChoice + ".webp)",
+        "background-image": "url(assets/images/game-pictures/" + playerChoiceData + ".webp)",
         "background-size": "contain",
         "background-repeat": "no-repeat",
     };
     Object.assign(chosenPic.style, chosenPicStyles);
-    chosenPic.setAttribute("data-type", playerChoice);
+    chosenPic.setAttribute("data-type", playerChoiceData);
+    chosenPic.setAttribute("aria-label", playerChoiceAria);
 
     document.getElementById('comp-choice').textContent = "";
     document.getElementById('outcome').textContent = "";
@@ -146,6 +167,7 @@ function generateComputerChoice() {
         "background-repeat": "no-repeat",
     };
     Object.assign(compChoice.style, compChoiceStyle);
+    compChoice.setAttribute("aria-label", addAriaLabel(randomNumber));
 
     calculateWinner(compResult);
 }
@@ -185,7 +207,7 @@ function calculateWinner(compResult) {
         },
     ];
 
-    // loop with a draw, loss, and win outcome.
+    // loop that matches the outcomes with fail criteria - draw, loss, and win outcome.
     // Draw sets text in outcome field, animates the two hands via a function, and calls another function to animate hands-buttons.
     // Loss randomly selects phrase to insert before target value. Stops button animation, drops hp with animation, animates comp winning hand.
     // Win calls function with two parameters: the currentopponent and dataType of chosen hand
@@ -264,7 +286,7 @@ function calculateWinner(compResult) {
                 }
 
             } else {
-                beatOpponent(currentOpponent, playerChoice);
+                beatOpponent(currentOpponent, playerChoice, compResult);
             }
         }
     }
@@ -347,6 +369,7 @@ function decreaseScore(currentOpponent) {
 
     for (let i = 0; i < damage.length; i++) {
         if (currentOpponent === damage[i].value) {
+            let newScore;
             newScore = health - damage[i].points;
             document.getElementById('health').innerHTML = newScore;
             if (newScore < 75 && newScore >= 50) {
@@ -391,7 +414,7 @@ function restart() {
  * and fetch name of the next. Next button is added, calls nextOpponent().
  * If current opponent is last boss beatGame() is called.
  */
-function beatOpponent(currentOpponent, playerChoice) {
+function beatOpponent(currentOpponent, playerChoice, compResult) {
     document.getElementById('player-choice').style.height = "0";
     document.getElementById('player-choice').style.width = "0";
     document.getElementById('player-choice').style.margin = "0";
@@ -408,6 +431,7 @@ function beatOpponent(currentOpponent, playerChoice) {
         "background-repeat": "no-repeat",
     };
     Object.assign(playerPick.style, pickStyle);
+    playerPick.setAttribute("aria-label", addAriaLabel(playerChoice));
 
     createElementTarget("div", "comp-lose", "outcome");
     let compLose = document.getElementById('comp-lose');
@@ -417,6 +441,7 @@ function beatOpponent(currentOpponent, playerChoice) {
         "background-repeat": "no-repeat",
     };
     Object.assign(compLose.style, compStyle);
+    compLose.setAttribute("aria-label", addAriaLabel(compResult));
 
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
