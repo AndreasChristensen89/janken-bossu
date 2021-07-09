@@ -80,7 +80,10 @@ function addButtons() {
     let dataType = ["rock", "paper", "scissors", "lizard", "spock"];
     let buttonPics = ["url(assets/images/game-pictures/rock.webp)", "url(assets/images/game-pictures/paper.webp)", "url(assets/images/game-pictures/scissors.webp)", "url(assets/images/game-pictures/lizard.webp)", "url(assets/images/game-pictures/spock.webp)"];
 
-
+    // Runs throught the buttons from the button-array and sets the datatype, class, and background image.
+    // Each button gets a different picture from the buttonPics array and a different dataType from the dataType array
+    // Buttons are inserted in the button-area
+    // Each button is given an eventlistener that calls a function + calls another function and passes their datatype as a parameter
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].setAttribute("data-type", dataType[i]);
         buttons[i].setAttribute("class", "button");
@@ -99,7 +102,7 @@ function addButtons() {
 function choice(playerChoice) {
     let chosenPic = document.getElementById('player-choice');
     let chosenPicStyles = {
-        "background-image": "url(assets/images/game-pictures/"+playerChoice+".webp)",
+        "background-image": "url(assets/images/game-pictures/" + playerChoice + ".webp)",
         "background-size": "contain",
         "background-repeat": "no-repeat",
     };
@@ -117,7 +120,7 @@ function choice(playerChoice) {
         document.getElementById("go-button").addEventListener('click', generateComputerChoice);
     }
 
-    if(chosenPic.style.animationName === "none") {
+    if (chosenPic.style.animationName === "none") {
         chosenPic.style.animationName = "chosen-hand";
     }
 }
@@ -136,7 +139,7 @@ function generateComputerChoice() {
     createElement("div", "comp-hand", "comp-choice", "");
     let compChoice = document.getElementById('comp-hand');
     let compChoiceStyle = {
-        "background-image": "url(assets/images/game-pictures/"+compResult+".webp)",
+        "background-image": "url(assets/images/game-pictures/" + compResult + ".webp)",
         "background-size": "contain",
         "background-repeat": "no-repeat",
     };
@@ -180,6 +183,10 @@ function calculateWinner(compResult) {
         },
     ];
 
+    // loop with a draw, loss, and win outcome.
+    // Draw sets text in outcome field, animates the two hands via a function, and calls another function to animate hands-buttons.
+    // Loss randomly selects phrase to insert before target value. Stops button animation, drops hp with animation, animates comp winning hand.
+    // Win calls function with two parameters: the currentopponent and dataType of chosen hand
     for (let i = 0; i < failEvents.length; i++) {
         if (playerChoice === compResult) {
             document.getElementById('outcome').textContent = "Draw! Try again";
@@ -209,10 +216,10 @@ function calculateWinner(compResult) {
                 target.parentNode.insertBefore(loseMessage, target);
                 decreaseScore(currentOpponent);
 
-                if(document.getElementById('player-choice') !== null) {
+                if (document.getElementById('player-choice') !== null) {
                     document.getElementById('player-choice').style.animationName = "none";
                 }
-                
+
 
                 if (document.getElementById('health') !== null) {
                     let compHand = document.getElementById('comp-hand');
@@ -294,7 +301,7 @@ function animateDraw(id, pixels) {
             transform: 'translateY(0px)'
         },
         {
-            transform: "translateY("+pixels+")"
+            transform: "translateY(" + pixels + ")"
         },
         {
             transform: 'translateY(0px)'
@@ -394,7 +401,7 @@ function beatOpponent(currentOpponent, playerChoice) {
     createElementTarget("div", "player-pick", "outcome");
     let playerPick = document.getElementById('player-pick');
     let pickStyle = {
-        "background-image": "url(assets/images/game-pictures/"+playerChoice+".webp)",
+        "background-image": "url(assets/images/game-pictures/" + playerChoice + ".webp)",
         "background-size": "contain",
         "background-repeat": "no-repeat",
     };
@@ -412,7 +419,7 @@ function beatOpponent(currentOpponent, playerChoice) {
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
 
-    document.getElementById('result-area').innerHTML = "<p>You beat "+currentOpponent+".<br> Gear up for the next opponent,<br> "+opponents[nextIndex+1]+"!</p>";
+    document.getElementById('result-area').innerHTML = "<p>You beat " + currentOpponent + ".<br> Gear up for the next opponent,<br> " + opponents[nextIndex + 1] + "!</p>";
 
     createElement("button", "next-button", "result-area", "Next Opponent");
     document.getElementById("next-button").addEventListener('click', nextOpponent);
