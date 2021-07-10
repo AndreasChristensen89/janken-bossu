@@ -99,7 +99,15 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
     * The colors chosen are in line with the other pages.
     * It is valuable for the player to be able to contact the developers. The setup is very simple and straight to the point.
 
-![Contact page](/assets/images/readme-pictures/contact-page-webp)
+![Contact page](/assets/images/readme-pictures/contact-page.webp)
+
+* __404 page__
+    * Centered h1 with green background that states that this page does not exist
+    * Underneath is a smaller grey-blue text-box that asks "were you looking for another page?"
+    * Below is a darker text-box with a link to the landing page
+    * This has value in case users manually type in the address but types it wrong
+
+![404 page](/assets/images/readme-pictures/404-screen.webp)
 
 ### Future features to implement
 * I thought it would be helpful to add and shortly after remove a text-box when losing HP. It would show the damage taken.
@@ -114,8 +122,12 @@ Also, developer tools was used to manipulate CSS to see direct outcomes. All pag
 __Breakpoints are set to the following and are all tested to work:__
 
 * __Max width 800px__
-   * **Start screen:** Background-size is changed from contain to cover in order to avoid picture strething with floor too long. X and Y coordinates are set differently to adapt to new setting. Margins of the h1 and h2 are changed.
-   * **Introduction screen:** P element's width, font-size, and padding are lowered. Font-size and width of start button lowered.
+   * **Start screen:** 
+        * Background-size is changed from contain to cover in order to avoid picture strething with floor too long. X and Y coordinates are set differently to adapt to new setting. 
+        * Margins of the h1 and h2 are changed.
+   * **Introduction screen:** 
+        * P element's width, font-size, and padding are lowered. 
+        * Font-size and width of start button lowered.
    * **Game screen:** 
         * Opponent-title's font-size and width lowered.
         * Margin for buttons changed.
@@ -123,7 +135,8 @@ __Breakpoints are set to the following and are all tested to work:__
         * Go-button margin lowered.
    * **Loosing screen**
         * Computer hand's margins changed.
-   * **Draw screen** The "draw" message's margin is set to 0 auto.
+   * **Draw screen** 
+        * The "draw" message's margin is set to 0 auto.
    * **Win screen**
         * Player pick's margins changed, width lowered.
         * Computer losing hand's width lowered, margins changed.
@@ -258,12 +271,26 @@ Icons and script were taken from https://fontawesome.com/, as well as Google's f
    * Be captivated by the content and the imagery
    * Be able to navigate effortless through the pages
    * Easily reach the rules page and understand how to play the game
+   * Easily understand the goal of the game
    * Understand how to advance after a loss/defeat/draw
+   * Have the game work on all devices, both horizontally and vertically
 * What are the goals for a returning visitor
    * Instantly/easily remember how to navigate the content
    * Easily remember how to play the game
 
-## Design choices
+## Strategy
+The purpose of this site is to create a simple to play game that entertains visually and which does not require strategy to play. The goal for design was to create a simple play-interface as well as making it easy to access information with simple and clear design.
+
+## Scope
+The scope is within beginner boundaries. Features are limited, but should be smooth and completely functional. No more than three pages: game, rules, and contact.
+
+## Structure
+The features have been laid out previously. The flow of the website is simple and should be intuitive for most anyone. Game, rules, contact. Players are guides through the game with animated/colored elements that signal to press them. When accesing the webpage the user lands directly on the game page and can start immediately. In case there is some confusion / if the player wishes to know more about the background or rules of the game / wishes to contact the developer the nagivation bar makes it simple to access all pages from anywhere and from any stage of the game. A restart button is also available when the game has started.
+
+
+## Surface
+
+### Design choices
 * Overview: The aim is to provide easy-to-navigate pages that make it easy and clear to navigate around. 
 * The game should be easy for the eyes, meaning that there should be no overlapping animations that confuse players.
 * It should be clear to the player what should be clicked in order to advance.
@@ -314,12 +341,12 @@ Colors are chosen to represent a bright cartoony world, which aims to give users
     * H2: #6f9fc3
 
 ### Choice of text
-I found Lato to work quite well with all text. I think it complements the cartoony style a lot.
+I found Lato to work quite well with all text. I think it complements the cartoony style.
 
 ### Pictures/characters:
 Bright and colorful colors are chosen to give a positive feeling. It's meant for the user to think of it as light-hearted. The background was designed to be spacy, simple, and with only a few major variations of colors. The characters were drawn as simple and with a hint of humour - they're meant to be stereotypical Japanese office workers as depicted in manga/movies.
 
-The background is set to repeat in order to allow for stretching of the image.
+The background is designed and set to repeat in order to allow for stretching of the image.
 
 ### Languages used
 * HTML
@@ -328,8 +355,9 @@ The background is set to repeat in order to allow for stretching of the image.
 * Markdown language for readme file
 
 ### Accesibility
-All non-text elements are marked with labels, and the contrast between background and foreground colors were implemented in color scheme.
+All non-text elements are marked with aria-labels, and the contrast between background and foreground colors were implemented in color scheme.
 
 ### Additional comments on setup
 * CSS was split into two files due to a design choice of having no scrolling on the main page which affected the rules page. Styling for the hamburger navigation was also separated due to both pages needing CSS from it.
-* JavaScript was split into two files due to eventlistener on load in one sheet that is not needed in the other.
+* JavaScript was split into two files (game-script and hamburgerNavigation) due to eventlistener on load in one sheet that is not needed in the other.
+* Aria-labels turned out a bit tricky since elements come, go, and change during the game. Therefore, I implemented functions to add appropiate labels in JavaScript. 

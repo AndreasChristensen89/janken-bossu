@@ -34,7 +34,7 @@ function play() {
 }
 
 /**
- * Removes elements from pre-play screen. Adds hand-buttons, opponent picture+title, health bar, and restart button
+ * Removes elements from introduction screen. Adds hand-buttons, opponent picture+title, health bar, and restart button
  */
 function start() {
     document.getElementById('start-button').remove();
@@ -80,12 +80,11 @@ function addButtons() {
     let buttons = [rock, paper, scissors, lizard, spock];
     let dataType = ["rock", "paper", "scissors", "lizard", "spock"];
     let buttonPics = ["url(assets/images/game-pictures/rock.webp)", "url(assets/images/game-pictures/paper.webp)", "url(assets/images/game-pictures/scissors.webp)", "url(assets/images/game-pictures/lizard.webp)", "url(assets/images/game-pictures/spock.webp)"];
-    // var ariaLabelsHand = ["Cartoon hand clenched into a fist to form rock", "Cartoon hand with flat palm and fingers streched to form paper", "Cartoon hand clenched with index and middle fingers streched to form scissors", "Cartoon hand with all fingers stretched to connect in one point to form lizard", "Cartoon hand with flat palm and fingers streched, but with a space between ringer and middle finger to form spock"];
-
+    
     // Runs throught the buttons from the button-array and sets the datatype, class, and background image.
     // Each button gets a different picture from the buttonPics array and a different dataType from the dataType array
     // Buttons are inserted in the button-area
-    // Each button is given an eventlistener that calls a function + calls another function and passes their datatype as a parameter
+    // Each button is given an eventlistener that calls a function + calls another function and passes their datatype and aria-label as a parameter
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].setAttribute("data-type", dataType[i]);
         buttons[i].setAttribute("class", "button");
@@ -101,10 +100,10 @@ function addButtons() {
 }
 
 /**
- * Checks if parameter is number - if not then returns value that contains parameter - if yes then uses the number as index.
+ * Checks if parameter is number - if not then returns the value that contains parameter - if yes then uses the number as index for return value
  */
 function addAriaLabel(stringOrNumber) {
-    var ariaLabelsHand = ["Cartoon hand clenched into a fist to form rock", "Cartoon hand with flat palm and fingers streched to form paper", "Cartoon hand clenched with index and middle fingers streched to form scissors", "Cartoon hand with all fingers stretched to connect in one point to form lizard", "Cartoon hand with flat palm and fingers streched, but with a space between ringer and middle finger to form spock"];
+    var ariaLabelsHand = ["Button to choose rock", "Button to choose paper", "Button to choose scissors", "Button to choose lizard", "Button to choose spock"];
 
     if(isNaN(stringOrNumber)) {
         for(let i = 0; i<ariaLabelsHand.length; i++) {
@@ -119,8 +118,9 @@ function addAriaLabel(stringOrNumber) {
 }
 
 /**
- * Inserts picture of chosen hand via parameter. Checks for lack of go-button to clear content from a draw/loss.
- */
+ * Inserts picture of chosen hand via parameter, which matches a file name, and styles it. Checks for lack of go-button to clear content from a draw/loss.
+ * Reinserts animation link if animation was stopped (after draw/loss) 
+*/
 function choice(playerChoiceData, playerChoiceAria) {
     let chosenPic = document.getElementById('player-choice');
     let chosenPicStyles = {
@@ -130,7 +130,7 @@ function choice(playerChoiceData, playerChoiceAria) {
     };
     Object.assign(chosenPic.style, chosenPicStyles);
     chosenPic.setAttribute("data-type", playerChoiceData);
-    chosenPic.setAttribute("aria-label", playerChoiceAria);
+    chosenPic.setAttribute("aria-hidden", "true");
 
     document.getElementById('comp-choice').textContent = "";
     document.getElementById('outcome').textContent = "";
@@ -150,7 +150,7 @@ function choice(playerChoiceData, playerChoiceAria) {
 
 /**
  * Uses a random number to generate a computer-choice from array -> value is used to generate background picture, basic style is given to picture.
- * Calls calculateWinner()
+ * Removes go-button, calls calculateWinner() and passes dataType of computer choice as parameter
  */
 function generateComputerChoice() {
     var dataType = ["rock", "paper", "scissors", "lizard", "spock"];
@@ -167,7 +167,7 @@ function generateComputerChoice() {
         "background-repeat": "no-repeat",
     };
     Object.assign(compChoice.style, compChoiceStyle);
-    compChoice.setAttribute("aria-label", addAriaLabel(randomNumber));
+    compChoice.setAttribute("aria-hidden", "true");
 
     calculateWinner(compResult);
 }
@@ -364,13 +364,14 @@ function decreaseScore(currentOpponent) {
         }
     ];
 
+    // gets the integer value of hp, matches opponent to value, subtracts the points connected to value from hp into a variable
+    // If/else if statement that checks which range of numbers the new score is in, changes color accordingly
 
     let health = parseInt(document.getElementById('health').innerText);
 
     for (let i = 0; i < damage.length; i++) {
         if (currentOpponent === damage[i].value) {
-            let newScore;
-            newScore = health - damage[i].points;
+            let newScore = health - damage[i].points;
             document.getElementById('health').innerHTML = newScore;
             if (newScore < 75 && newScore >= 50) {
                 document.getElementById('health').style.backgroundColor = "#ea8426"; //orange
@@ -431,7 +432,7 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
         "background-repeat": "no-repeat",
     };
     Object.assign(playerPick.style, pickStyle);
-    playerPick.setAttribute("aria-label", addAriaLabel(playerChoice));
+    playerPick.setAttribute("aria-hidden", "true");
 
     createElementTarget("div", "comp-lose", "outcome");
     let compLose = document.getElementById('comp-lose');
@@ -441,7 +442,7 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
         "background-repeat": "no-repeat",
     };
     Object.assign(compLose.style, compStyle);
-    compLose.setAttribute("aria-label", addAriaLabel(compResult));
+    compLose.setAttribute("aria-hidden", "true");
 
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
