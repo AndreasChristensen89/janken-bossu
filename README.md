@@ -113,7 +113,7 @@ Also, developer tools was used to manipulate CSS to see direct outcomes. All pag
 
 __Breakpoints are set to the following and are all tested to work:__
 
-* __800px__
+* __Max width 800px__
    * **Start screen:** Background-size is changed from contain to cover in order to avoid picture strething with floor too long. X and Y coordinates are set differently to adapt to new setting. Margins of the h1 and h2 are changed.
    * **Introduction screen:** P element's width, font-size, and padding are lowered. Font-size and width of start button lowered.
    * **Game screen:** 
@@ -129,12 +129,8 @@ __Breakpoints are set to the following and are all tested to work:__
         * Computer losing hand's width lowered, margins changed.
         * Result text-box's margins lowered.
         * Next button's margins lowered.
-   **Victory screen**
-        * 
-   * **Game over screen**
-        * 
 
-* __600px__
+* __Max width 600px__
    * **Start screen:** 
         * widths and font-sizes of h1 and h2 are lowerd
         * Width and height of hamburger icon increased. Font-size increased.
@@ -159,7 +155,7 @@ __Breakpoints are set to the following and are all tested to work:__
         * Game over title's width and font-size lowered.
         * Game over text's width and font-size lowered.
 
-* __320px__
+* __Max width 320px__
    * **Start screen:** Element's responsiveness work until 1200px which I estimate to work.
    * **Introduction screen:** Elements work until 1200px.
    * **Game screen:** 
@@ -167,7 +163,7 @@ __Breakpoints are set to the following and are all tested to work:__
         * Hand-buttons height and width lowered, margins changed.
         * Opponent-picture's top% increased.
 
-* __Height 320px, Width 700px__
+* __Max height 320px, Max width 700px__
     * **Game screen**
         * Hand-buttons margins changed.
         * Player-choice margins changed.
@@ -186,33 +182,29 @@ __Breakpoints are set to the following and are all tested to work:__
 
 
 ### Browser testing 
-* Test on Firefox
-* Microsoft Edge
-* Media query tested on my own phone, Samsung Galaxy S9 using Chrome, no issues
-* Media query tested on my own tablet, Ipad pro 2018 using Safari+Chrome
-* General testing with my own laptop, Asus 13 inch using Chrome
+* Test on Firefox, no problems detected.
+* Microsoft Edge, no problems detected.
+* Media query tested on my own phone, Samsung Galaxy S9 using Chrome and Firefox, no issues.
+* Media query tested on my own tablet, Ipad pro 2018 11" using Safari+Chrome, no issues.
+* General testing with my own laptop, Asus 13 inch using Chrome, no issues.
 
 All links were tested. The links connecting to external sources all work as intended. There are links on each site. 
 
 I believe the game is set up so that it's intuitive, and users have an easy time navigating and understanding the next steps in the game. After a loss it's easy to restart, and it's also possible to restart during any point in the game.
 
 ### Bugs discovered during testing:
-* I found the Google Developer Tool to not be stable in showing if the website responded correctly to different screensizes. Many times it would show 
-that everything worked fine and smoothly only to display something different the next time it was opened. Similarly, it would show that something was off (lines out of bounds etc) only to show them correctly after closing and opening.
-* Firefox did not show the Google font during testing.
-* Safari...
-* Markup validation service...
-* During first Jshint testing there were many warnings regarding template literals. This was unnecesarily used by me many times, and I corrected them; e.g. "xx = `${variable}`;" would be corrected to xx = variable;
-* The addButtons() function was given a warning on Jshint due to "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics." I saw in the teaching material Love Maths that a function was declared in a variable, so I decided to keep it the same way.
+* I found the Google Developer Tool to not be stable in showing if the website responded correctly to different screensizes, particularly the phone settings as my own phone would show different outcomes.
+* JShint gave an error regarding a function where a loop sets an eventlistener to trigger a function. This was just a warning, and after consulting with my mentor I was told to let it be. A similar usage is also used in the Love Maths learning project.
+* During the first Jshint testing there were many warnings regarding template literals. This was unnecesarily used by me many times, and I corrected them; e.g. "xx = `${variable}`;" would be corrected to xx = variable;
 
 
 ### Validator testing:
 * W3 Markup Validation Service completed for all HTML pages with no errors.
 * Jigsaw test for CSS completed with no errors.
-* Jshint completed with many errors regarding "let" keywords only available in ES6
+* Jshint completed with one warning, but as described above it could be ignored.
 
 ### Unfixed bugs:
-* Testing in Firefox went well with functionality, but the Google Font Lato was not loaded.
+* 
 
 ## Deployment
 ### Deployment to GitHub Pages
@@ -239,7 +231,7 @@ Images were compressed using the webpage https://tinypng.com/
 All characters, hands, and backgrounds were drawn by myself in Adobe Illustrator.
 
 ### Navigation
-For hamburger nagivation I used the code from this site, but I changed the location, animation/CSS, names, parts of the JS code, and the contents to fit my site:
+For hamburger nagivation I took inspiration from the code from this site, but I changed the location, animation/CSS, names, parts of the JS code, and the contents to fit my site:
 https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0
 
 
@@ -252,9 +244,10 @@ Icons and script were taken from https://fontawesome.com/, as well as Google's f
 
 ### Coding help
 * For help with varius issues with animations, css background manipulation etc. I often resorted to https://stackoverflow.com/
+* For general best practice I used Code Institute's Slack community.
 
 ### Design
-* For design of the different pages I didn't use other sources of information. For backgrounds and character I took inspiration from https://www.pinterest.com/, but none are copies.
+* For design of the different pages I didn't use other sources of information. For backgrounds and character I took inspiration from https://www.pinterest.com/ - no pictures are copies however.
 * For color schemes...
 
 ## User Stories:
