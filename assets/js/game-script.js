@@ -93,13 +93,13 @@ function addButtons() {
         document.getElementById('button-area').appendChild(buttons[i]);
         buttons[i].addEventListener('click', function () {
             let playerChoiceData = this.getAttribute("data-type");
-            let playerChoiceAria = this.getAttribute("aria-label");
-            choice(playerChoiceData, playerChoiceAria);
+            choice(playerChoiceData);
         });
     }
 }
 
 /**
+ * Adds aria-labels to use for buttons
  * Checks if parameter is number - if not then returns the value that contains parameter - if yes then uses the number as index for return value
  */
 function addAriaLabel(stringOrNumber) {
@@ -118,6 +118,19 @@ function addAriaLabel(stringOrNumber) {
 }
 
 /**
+ * Returns aria-label to use for pictures
+ * Matches parameter to array to find match to return.
+ */
+function addAriaLabelPicture(dataType) {
+    let ariaPics = ["Cartoon hand forming rock", "Cartoon hand forming paper", "Cartoon hand forming scissors", "Cartoon hand forming lizard", "Cartoon hand forming spock"];
+    for(let i = 0; i< ariaPics.length; i++) {
+        if(ariaPics[i].includes(dataType)) {
+            return ariaPics[i];
+        }
+    }
+}
+
+/**
  * Inserts picture of chosen hand via parameter, which matches a file name, and styles it. Checks for lack of go-button to clear content from a draw/loss.
  * Reinserts animation link if animation was stopped (after draw/loss) 
 */
@@ -130,7 +143,10 @@ function choice(playerChoiceData, playerChoiceAria) {
     };
     Object.assign(chosenPic.style, chosenPicStyles);
     chosenPic.setAttribute("data-type", playerChoiceData);
-    chosenPic.setAttribute("aria-hidden", "true");
+    let choiceSpan = document.createElement("span");
+    choiceSpan.setAttribute("role", "img");
+    choiceSpan.setAttribute("aria-label", addAriaLabelPicture(playerChoiceData))
+    chosenPic.appendChild(choiceSpan);
 
     document.getElementById('comp-choice').textContent = "";
     document.getElementById('outcome').textContent = "";
@@ -167,7 +183,10 @@ function generateComputerChoice() {
         "background-repeat": "no-repeat",
     };
     Object.assign(compChoice.style, compChoiceStyle);
-    compChoice.setAttribute("aria-hidden", "true");
+    let compSpan = document.createElement("span");
+    compSpan.setAttribute("role", "img");
+    compSpan.setAttribute("aria-label", addAriaLabelPicture(compResult))
+    compChoice.appendChild(compSpan);
 
     calculateWinner(compResult);
 }
@@ -432,7 +451,12 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
         "background-repeat": "no-repeat",
     };
     Object.assign(playerPick.style, pickStyle);
-    playerPick.setAttribute("aria-hidden", "true");
+    
+    //giving player pick an aria label via function
+    let spanPicPlayer = document.createElement("span");
+    spanPicPlayer.setAttribute("role", "img");
+    spanPicPlayer.setAttribute("aria-label", addAriaLabelPicture(playerChoice));
+    playerPick.appendChild(spanPicPlayer);
 
     createElementTarget("div", "comp-lose", "outcome");
     let compLose = document.getElementById('comp-lose');
@@ -442,7 +466,12 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
         "background-repeat": "no-repeat",
     };
     Object.assign(compLose.style, compStyle);
-    compLose.setAttribute("aria-hidden", "true");
+
+    //giving computer pick an aria label via function
+    let spanPicComp = document.createElement("span");
+    spanPicComp.setAttribute("role", "img");
+    spanPicComp.setAttribute("aria-label", addAriaLabelPicture(compResult));
+    compLose.appendChild(spanPicComp);
 
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
