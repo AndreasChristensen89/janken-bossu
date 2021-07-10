@@ -504,8 +504,8 @@ function removeButtons() {
 
 
 /**
- * Removes all content from beatOpponent screen. Inserts all content from game, health bar is set to full and color=green, current opponent is checked and
- * updated accordingly (normal or boss) + animated to appear
+ * Removes all content from beatOpponent screen. Inserts all content from game, health bar is set to full and color=green. 
+ * Current opponent is checked and updated accordingly (normal or boss) + animated to appear.
  */
 function nextOpponent() {
     document.getElementById('player-choice').style = "";
@@ -566,7 +566,7 @@ function nextOpponent() {
 }
 
 /**
- * Removes all content from game. Inserts animated winning text and adds restart buttons that calls restart().
+ * Removes all content from game. Inserts winning text and adds restart button that calls restart().
  */
 function beatGame() {
     document.getElementById('button-area').innerHTML = "";
@@ -579,18 +579,4 @@ function beatGame() {
 
     createElement("button", "restart-button", "game-area", "Restart");
     document.getElementById("restart-button").addEventListener('click', restart);
-
-    document.body.style.backgroundImage = "url(assets/images/game-pictures/background-new.webp)";
-
-    document.getElementById("win-message").animate([{
-            transform: "scale(1.0)"
-        },
-        {
-            transform: "scale(1.2)"
-        }
-    ], {
-        duration: 800,
-        iterations: Infinity,
-        direction: "alternate-reverse"
-    });
 }
