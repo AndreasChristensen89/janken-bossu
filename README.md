@@ -158,8 +158,9 @@ __Breakpoints are set to the following and are all tested to work:__
         * Lose-message's font-size and width are lowered, margins changed.
         * Computer hand's margins increased.
    * **Win screen**
-        * * Result text-box's margins, line-height, width, font-size lowered, 
-        * * Result text-box's margins increased.
+        * Result text-box's margins, line-height, width, font-size lowered, 
+        * Result text-box's margins increased.
+        * Game-area's height lowered
    * **Victory screen**
         * Win-title's width and font-size lowered.
         * Win-text's width and font-size lowered.
@@ -169,10 +170,8 @@ __Breakpoints are set to the following and are all tested to work:__
         * Game over text's width and font-size lowered.
 
 * __Max width 320px__
-   * **Start screen:** Element's responsiveness work until 1200px which I estimate to work.
-   * **Introduction screen:** Elements work until 1200px.
    * **Game screen:** 
-        * Opponent-title's font-size lowered.
+        * Opponent-title's width lowered.
         * Hand-buttons height and width lowered, margins changed.
         * Opponent-picture's top% increased.
 
@@ -187,6 +186,7 @@ __Breakpoints are set to the following and are all tested to work:__
         * Player pick margins lowered
         * Computer losing hand's margin lowered.
         * Result text-box's margins lowered.
+        * Game-area's height lowered
     * **Victory screen**
         * Win-text's width increased, margins lowered.
     * **Game over screen**

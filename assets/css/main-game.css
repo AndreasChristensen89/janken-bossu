@@ -7,6 +7,7 @@
     border: none;
 }
 
+/* To prevent scrolling */
 html,
 body {
     height: 100%;
@@ -93,7 +94,6 @@ h2 {
     width: 50vh;
     margin-top: 31px;
     box-shadow: black 0px 1px 20px 0px;
-    display: block;
 }
 
 #play-button {
@@ -150,7 +150,6 @@ h2 {
     cursor: pointer;
     z-index: 99;
 
-    /* animation-name: element-signal; */
     animation-duration: 1.0s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
@@ -176,8 +175,6 @@ h2 {
     transform: scale(1.0);
     transition: all 0.3s ease 0s;
 }
-
-
 
 #head-restart {
     position: fixed;
@@ -408,7 +405,7 @@ h2 {
     z-index: -1;
 }
 
-/* animation for losing hand */
+/* animation for losing message */
 #lose-message {
     font-size: 3vh;
     width: 40vh;
@@ -439,7 +436,6 @@ h2 {
 }
 
 /* animation for winning hand */
-
 #player-pick {
     margin: 25px 50px;
     height: 10vh;

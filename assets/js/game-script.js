@@ -103,19 +103,10 @@ function addButtons() {
  * Adds aria-labels to use for buttons
  * Checks if parameter is number - if not then returns the value that contains parameter - if yes then uses the number as index for return value
  */
-function addAriaLabel(stringOrNumber) {
-    var ariaLabelsHand = ["Button to choose rock", "Button to choose paper", "Button to choose scissors", "Button to choose lizard", "Button to choose spock"];
+function addAriaLabel(number) {
+    let ariaLabelsHand = ["Button to choose rock", "Button to choose paper", "Button to choose scissors", "Button to choose lizard", "Button to choose spock"];
 
-    if(isNaN(stringOrNumber)) {
-        for(let i = 0; i<ariaLabelsHand.length; i++) {
-            if(ariaLabelsHand[i].includes(stringOrNumber)) {
-                return ariaLabelsHand[i];
-            } 
-        }
-    }
-    else {
-        return ariaLabelsHand[stringOrNumber];
-    }
+    return ariaLabelsHand[number];
 }
 
 /**
@@ -133,9 +124,11 @@ function addAriaLabelPicture(dataType) {
 
 /**
  * Inserts picture of chosen hand via parameter, which matches a file name, and styles it. Checks for lack of go-button to clear content from a draw/loss.
- * Reinserts animation link if animation was stopped (after draw/loss) 
+ * Adds aria label via span element
+ * Reinserts animation link to player choice if animation was stopped (after draw/loss)
+ * Stops button animation
 */
-function choice(playerChoiceData, playerChoiceAria) {
+function choice(playerChoiceData) {
     let chosenPic = document.getElementById('player-choice');
     let chosenPicStyles = {
         "background-image": "url(assets/images/game-pictures/" + playerChoiceData + ".webp)",
@@ -163,11 +156,18 @@ function choice(playerChoiceData, playerChoiceAria) {
     if (chosenPic.style.animationName === "none") {
         chosenPic.style.animationName = "chosen-hand";
     }
+    
+    let buttons = document.getElementsByClassName("button");
+    for(button of buttons) {
+            button.style.animationName = "";
+    }
+
 }
 
 /**
  * Uses a random number to generate a computer-choice from array -> value is used to generate background picture, basic style is given to picture.
- * Removes go-button, calls calculateWinner() and passes dataType of computer choice as parameter
+ * Removes go-button, aria-label added via span element 
+ * Calls calculateWinner() and passes dataType of computer choice as parameter
  */
 function generateComputerChoice() {
     var dataType = ["rock", "paper", "scissors", "lizard", "spock"];
@@ -264,6 +264,8 @@ function calculateWinner(compResult) {
                     document.getElementById('player-choice').style.animationName = "none";
                 }
 
+                animateButtons();
+
 
                 if (document.getElementById('health') !== null) {
                     let compHand = document.getElementById('comp-hand');
@@ -287,7 +289,6 @@ function calculateWinner(compResult) {
                         duration: 1500,
                         iterations: 1
                     });
-                    animateButtons();
 
                     document.getElementById("health").animate([{
                             backgroundColor: 'black'
@@ -313,27 +314,12 @@ function calculateWinner(compResult) {
 }
 
 /**
- * Adds scale up - scale down animation to buttons to hint players to click them again.
+ * Adds link to css animation. Done to signal players to click buttons to try again.
  */
 function animateButtons() {
-    let buttons = document.querySelectorAll('.button');
-    for (let i = 0; i < buttons.length; i++) {
-        let button = buttons[i];
-
-        button.animate([{
-                transform: 'scale(1.0)'
-            },
-            {
-                transform: 'scale(1.2)'
-            },
-            {
-                transform: 'scale(1.0)'
-            }
-        ], {
-            delay: 2500,
-            duration: 1000,
-            iterations: 2
-        });
+    let buttons = document.getElementsByClassName("button");
+    for(button of buttons) {
+        button.style.animationName = "element-signal";
     }
 }
 

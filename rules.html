@@ -15,21 +15,20 @@
 <body id="body-rules">
     <!-- ======================== hamburger nav bar ======================   -->
     <button class="hamburger">
-        <!-- X and menu icon SVGs from material icons https://material.io/resources/icons/ -->
-        <span class="menuIcon material-icons">
+        <span class="menuIcon material-icons" aria-label='Open the menu'>
             menu
         </span>
-        <span class="xIcon material-icons">
+        <span class="xIcon material-icons" aria-label="close the menu">
             close
         </span>
     </button>
     <ul class="menu">
-        <li><a class="menuLink" href="index.html" aria-label="Jump to Home page">Home</a></li>
-        <li><a class="menuLink" id="active" href="rules.html" aria-label="Jump to Rules page">Rules</a></li>
-        <li><a class="menuLink" href="contact.html" aria-label="Jump to Contact page">Contact</a></li>
+        <li><a class="menuLink" href="index.html" aria-label="Go to Home page">Home</a></li>
+        <li><a class="menuLink" id="active" href="rules.html" aria-label="Go to Rules page">Rules</a></li>
+        <li><a class="menuLink" href="contact.html" aria-label="Go to Contact page">Contact</a></li>
     </ul>
 
-    <!-- ====================== game area =============================== -->
+    <!-- ====================== rules area =============================== -->
     <div id="rules-intro">
         <h1>How to play</h1>
         <p>Rock Paper Scissors Lizard Spock is an extended form of Rock Paper Scissors which retains the core concept
@@ -40,41 +39,47 @@
         <h2>What beats what?</h2>
         <div class="rule-div">
             <h3>Rock</h3>
-            <div id="show-rock"></div>
-            <span role="img" aria-label="Cartoon hand forming rock"></span>
+            <div id="show-rock">
+                <span role="img" aria-label="Cartoon hand forming rock"></span>
+            </div>
             <p>Crushes<br>lizard</p>
             <p>Crushes<br>scissors</p>
         </div>
         <div class="rule-div">
             <h3>Paper</h3>
-            <div id="show-paper"></div>
-            <span role="img" aria-label="Cartoon hand forming paper"></span>
+            <div id="show-paper">
+                <span role="img" aria-label="Cartoon hand forming paper"></span>
+            </div>
             <p>Covers<br>Rock</p>
             <p>Disproves<br>Spock</p>
         </div>
         <div class="rule-div">
             <h3>Scissors</h3>
-            <div id="show-scissors"></div>
-            <span role="img" aria-label="Cartoon hand forming scissors"></span>
+            <div id="show-scissors">
+                <span role="img" aria-label="Cartoon hand forming scissors"></span>
+            </div>
             <p>Decapitates<br>Lizard</p>
             <p>Cuts<br>Paper</p>
         </div>
         <div class="rule-div">
             <h3>Lizard</h3>
-            <div id="show-lizard"></div>
-            <span role="img" aria-label="Cartoon hand forming lizard"></span>
+            <div id="show-lizard">
+                <span role="img" aria-label="Cartoon hand forming lizard"></span>
+            </div>
             <p>Poisons<br>Spock</p>
             <p>Eats<br>Paper</p>
         </div>
         <div class="rule-div">
             <h3>Spock</h3>
-            <div id="show-spock"></div>
-            <span role="img" aria-label="Cartoon hand forming spock"></span>
+            <div id="show-spock">
+                <span role="img" aria-label="Cartoon hand forming spock"></span>
+            </div>
             <p>Smashes<br>Scissors</p>
             <p>Vaporizes<br>Rock</p>
         </div>
     </div>
 
+    <!-- ====================== description area =============================== -->
     <div id="game-setting">
         <h2>Setting of the game</h2>
         <p>In Japan, Rock Paper Scissors, or <em>Janken</em>(じゃん拳) as it is known, is a game frequently used to
