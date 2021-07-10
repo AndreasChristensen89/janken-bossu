@@ -53,6 +53,7 @@ function start() {
     createElementTarget("button", "head-restart", "opponent");
     document.getElementById('head-restart').innerHTML = '<i class="fas fa-sync-alt"></i>';
     document.getElementById('head-restart').addEventListener('click', restart);
+    document.getElementById('head-restart').setAttribute("aria-label", "button to restart game");
 }
 
 /**
