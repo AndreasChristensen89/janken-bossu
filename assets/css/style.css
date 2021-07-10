@@ -778,15 +778,27 @@ h2 {
 @media (max-height: 400px) and (max-width: 700px) {    
     #main-intro h1 {
         margin: 25px auto;
+        font-size: 18pt;
+        width: 250px;
     }
     
     h2 {
         margin: 20px auto 10px;
-        width: 200px;
+        width: 225px;
+        font-size: 16pt;
     }
 
     #intro-text p {
         width: 350px;
+        font-size: 12pt;
+    }
+
+    .button {
+        margin: 4vh 20px 3vh;
+    }
+    
+    #opponent-pic {
+        top: 50%;
     }
 
     #player-choice {
@@ -794,23 +806,24 @@ h2 {
     }
 
     #player-pick {
-        margin: 30px 30px 20px;
+        margin: 10px 30px 20px;
     }
 
     #lose-message {
         margin: 10px auto 0px;
+        width: 130px;
     }
 
     #comp-hand {
-        margin: 20px auto 30px;
+        margin: 15px auto 0px;
     }
 
     #comp-lose {
-        margin: 30px 30px 20px;
+        margin: 10px 30px 20px;
     }
 
     #game-area {
-        height: 29vh;
+        height: 21vh;
     }
 
     #result-area p {
@@ -822,12 +835,12 @@ h2 {
     }
 
     #win-message {
-        font-size: 22pt;
+        font-size: 18pt;
         margin: 20px auto;
     }
 
     #win-text {
-        font-size: 15pt;
+        font-size: 12pt;
         margin: 20px auto 10px;
         width: 300px;
     }
@@ -835,16 +848,17 @@ h2 {
     #restart-button {
         width: 75px;
         height: 75px;
-        font-size: 14pt;
+        font-size: 12pt;
     }
 
     #over-message {
-        font-size: 20pt;
+        width: 250px;
+        font-size: 18pt;
         margin: 20px auto;
     }
 
     #gameover-text {
-        font-size: 15pt;
+        font-size: 12pt;
         margin: 20px auto 10px;
         width: 350px;
     }
