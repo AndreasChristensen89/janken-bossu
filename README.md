@@ -11,20 +11,20 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
 ### Existing features:
 * __Navigation bar__
     * The navigation bar is on all pages. It has links to the Home page, the Rules page, and the Contact page.
-    Visually, it is identical on each page but with a bottom border under the current page. It is a hamburger-style bar, and appears and dissapears when clicking the round icon. It appears by sliding down from the top and covers a small chunk in the left side of the page and dissapears by sliding up.
+    Visually, it is identical on each page but with a bottom border under the current page. It is a hamburger-style bar, and appears and dissapears when clicking the round icon. It appears by sliding down from the top and covers a small area in the left side of the page and dissapears by sliding up.
     * This section allows the user to always be able to navigate to all parts of the website without going back to the home page, or scrolling to the top. The hamburger style allows the bar to be hidden in the top corner when not opened, thus creating more space for the game.
 
 ![Nav Bar](/assets/images/readme-pictures/navigation-bar.webp)
 
 * __Landing page image / start page__
-    * The landing page has a centered heading with the title of the game at the top. Underneath is a centered sub-heading which acts as the subtitle. Finally, underneath the subtitle is the play button which has an animation on it, which scales the size up and down. The background is a cartoony bright colored open office space with a bonsai tree (trees - depending on screen resolution) close to the window. The windows show buildings outside.
+    * The landing page has a centered heading with the title of the game at the top. Underneath is a centered sub-heading which acts as the subtitle. Finally, underneath the subtitle is the play button which has an animation on it to scale the size up and down. The background is a cartoony bright colored open office space with a bonsai tree close to the window. The windows show buildings outside.
     * The titles and play button are shown to indicate that this is the start of the game. The play button animation is used to indicate that this button should be noticed and interacted with. The background is displayed to show the setting of the game,
 
 ![Landing page](/assets/images/readme-pictures/landing-page.webp)
 
 * __Introduction__
     * This section appears after clicking play. It has a centered text-box with a quick tutorial of how to play, and underneath is a centered green start button.
-    * The quick tutorial gives players the information they need to play the game. The start button is green and sticks out in order to invite users to click it to start the game.
+    * The quick tutorial gives players the information they need to play the game. The start button is green and animated and sticks out to invite users to click it to start the game.
 
 ![Introduction](/assets/images/readme-pictures/introduction.webp)
 
@@ -32,18 +32,18 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
     * At the top of the screen the name of the current opponent is displayed as a title. 
     * Underneath is a green oval-shaped element with "100" written in it - this is the health meter. 
     * Underneath the health meter are five buttons with pictures of the different choices players can make.
-    * Under the buttons is the opponent element with a picture of the current opponent - if this is the first opponent then the element is not animated, but if it is then the opponent is animated with an opacity going from 0.0 to 1.0 over a second.
-    * When a button is clicked the player choice appears in the middle of the screen, meaning that the picture of the button is copied to this new element. The new element is animate to scale up and down and a green "go" button is generated and appears under the player choice.
+    * Under the buttons is the opponent element with a picture of the current opponent - if this is the first opponent then the element is not animated, but if it isn't the opponent is animated with an opacity going from 0.0 to 1.0 over a second.
+    * When a button is clicked the player choice appears in the middle of the screen, meaning that the picture of the button is copied to this new element. The new element is animated to scale up and down and a green "go" button is generated and appears under the player choice.
     * Lastly, in the right corner is a restart button.
-    * The opponent title changes according to the opponent and tells the players who they are versing. The green health meter changes numbers and colors according to how much health is left (green, orange, yellow, and red). The color code helps players easily understand how close they are to a loss. The five buttons clearly show the hand signals that are attached to them and they scale up when a mouse hovers over them. The player choice animation signals to the player that this displayed hand is ready to be played. The opponent element is animated in order to draw attention to the new opponent.
+    * The opponent title changes according to the opponent and tells the players who they are versing. The green health meter changes numbers and colors according to how much health is left (green, orange, yellow, and red). The color code helps players easily understand how close they are to a loss. The five buttons clearly show the hand signals that are attached to them and they scale up when a mouse hovers over them, and scale down when mouse is off. The player choice animation signals to the player that this displayed hand is ready to be played. The opponent element is animated to appear in order to draw attention to the new opponent.
 
 ![Main game](/assets/images/readme-pictures/main-game-screen.webp)
 
 * __Loosing screen__
-    * When a loss is registered the computer choice is displayed in a new element. The hand is animated to scale up a lot, and then scales down to land underneath a newly generated grey text-box which gives players a short comment on the loss.
+    * When a loss is registered the computer choice is displayed in a new element. The computer hand is animated to scale up a lot, and then scales down to land underneath a newly generated grey text-box which gives players a short comment on the loss.
     * The player choice animation from before is set to stop.
-    * The health bar is animated to blink red and black, and the health number drops while to color changes according to the value.
-    * After two seconds, the buttons slightly scale up and down two times.
+    * The health bar is animated to blink red and black, and the health number drops while the color changes according to the value.
+    * After two seconds, the hand-buttons slightly scale up and down two times.
     * The computer winning hand is scaled up in order to give the player a sense of defeat. It also draws their attention to the hand that beat them. The comments in the text box are randomly picked and they are encouraging and energetic which signals to the players to have another go. The health bar blinks in order to signal that damage has been taken. Just after these animations the player might wonder what to do next, which is why the buttons scale up and down in order to signal the player to click them again.
 
 ![Loosing screen](/assets/images/readme-pictures/losing-screen.webp)
@@ -64,7 +64,7 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
     * All previous game elements are removed and a large black text box is inserted at the top center with the text "Game Over!". This box is animated to scale up and down.
     * Underneath is a centered grey text box with text that explains that the player lost and which also encourages players to try again.
     * Underneath is a green round button with the text "Try again"
-    * The black color of the game over text is a clear opposite to all previous colors, which are light a bright, which is meant to invoke a negative sensation. The animation is there in order to draw the player's eyes to it. The losing message from the grey box is not harsh but instead reminds the player that this is game of chance "Looks like the odds were against you". It also encourages players to try again. The "try again" button is large and clear, and the green color is meant to give a "go" feeling similar to the play button and and start button.                                                                                                                       
+    * The black color of the game over text is a clear opposite to all previous colors, which are light a bright, which is meant to invoke a negative sensation. The animation is there in order to draw the player's eyes to it. The losing message from the grey box is not harsh but instead reminds the player that this is game of chance "Looks like the odds were against you". It also encourages players to try again. The "try again" button is large and clear, and the green color is meant to give a "go" feeling similar to the play button and the start button.                                                                                                                       
 
 ![Game over screen](/assets/images/readme-pictures/game-over-screen.webp)
 
@@ -85,12 +85,21 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
     * Underneath is a larger text box with an explanation of how the game Janken works in Japanese culture. Same color as the boxes further up.
     * Underneath is another large text box with an explanation of the back-story/setting of the game on this webpage. Same color as above.
     * There are three main colors - dark at the top, green for h2 titles, and lighter blue/gray for text. They are chosen to fit with the background blue, and the bonsai tree. 
-    * The introduction is valuable as players may not be familiar with the extended for of rock paper scissors.
+    * The introduction is valuable as players may not be familiar with the extended version of rock paper scissors.
     * Explanation of what beats what is valuable as players want to be clear about the rules. The pictures complement well since people may not know all the hand signals, and that they only have the visual representation when playing the game.
     * Explanation of how rock paper scissors work on Japanese culture is valuable as it adds some context to why a Japanese setting was chosen.
     * Setting of the game is valuable as it may not be clear to the player in the beginning what the bigger purpose of the game is. Also, it adds a slight humorous twist.
 
 ![Rules page](/assets/images/readme-pictures/rules.webp)
+
+* __Contact Page__
+    * Dark centered heading with "contact" written. Same style as on rules page.
+    * Underneath is a box with four input fields: First name, Last name, Email Address, and Message. The message field is larger that the other fields.
+    * Below the fields are two green buttons: "clear" and "send". They both individually change to white when hovering over them.
+    * The colors chosen are in line with the other pages.
+    * It is valuable for the player to be able to contact the developers. The setup is very simple and straight to the point.
+
+![Contact page](/assets/images/readme-pictures/contact-page-webp)
 
 ### Future features to implement
 * I thought it would be helpful to add and shortly after remove a text-box when losing HP. It would show the damage taken.
@@ -100,43 +109,80 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
 
 ## Testing
 * Chrome Developer Tools was used for testing all media queries down to 280px to fit the smallest devide available on the Google device list.
-Also, developer tools was used to manipulate CSS to see direct outcomes. All pages have been tested with chrome developer tools to verify that
-text, pictures, and boxes all adapt well to the breakpoints for different screens. 
+Also, developer tools was used to manipulate CSS to see direct outcomes. All pages have been tested with chrome developer tools to verify that text, pictures, and boxes all adapt well to the breakpoints for different screens. 
 
 __Breakpoints are set to the following and are all tested to work:__
-* __1100px__
-   * **Start screen:**
-   * **Introduction screen:** Font size of text box is lowered 
-   * **Win screen** winning text-box's width and font-size are decreased.
-   * **Victory screen** Win title's width and front-size are decreased. Win-text's width and margin are decreased. Restart button's height, width, and font-size are decreased.
-   * **Game over screen** Game over message's font size and width are decreased. Game over text's width is decreased. Restart button is similar to victory screen.
 
 * __800px__
-   * **Start screen:** Background-size is changed from contain to cover in order to avoid picture strething with floor too long. X and Y coordinates are set differently to adapt to new setting
-   * **Introduction screen:** Font size and line-height of text box are lowered. Start-button's margin slightly decreased.
-   * **Game screen:** Go button's margins are lowered. Hand buttons' margin is lowered. Opponent-title's width and font-size are lowered. Go button's margin increased. Opponent-picture top% is increased, right% decreased, height lowered, width increased. Max height is 1152px.
-   * **Loosing screen** For computer choice the margin is decreased.
+   * **Start screen:** Background-size is changed from contain to cover in order to avoid picture strething with floor too long. X and Y coordinates are set differently to adapt to new setting. Margins of the h1 and h2 are changed.
+   * **Introduction screen:** P element's width, font-size, and padding are lowered. Font-size and width of start button lowered.
+   * **Game screen:** 
+        * Opponent-title's font-size and width lowered.
+        * Margin for buttons changed.
+        * Opponent-picture's height lowered, width increased. Top% increased, right% lowered.
+        * Go-button margin lowered.
+   * **Loosing screen**
+        * Computer hand's margins changed.
    * **Draw screen** The "draw" message's margin is set to 0 auto.
-   * **Win screen** Player's pick's width is decreased, margins are changed - same changes for computer choice. Next button's margin is decreased.
-   **Victory screen** Win title's width is decreased. Win-text's width is decreased. Restart button's height and width are decreased.
-   * **Game over screen** Game over message's width is decreased. Game over text's font-size, line-height, and width are decreased. Restart button is similar to victory screen.
+   * **Win screen**
+        * Player pick's margins changed, width lowered.
+        * Computer losing hand's width lowered, margins changed.
+        * Result text-box's margins lowered.
+        * Next button's margins lowered.
+   **Victory screen**
+        * 
+   * **Game over screen**
+        * 
 
 * __600px__
-   * **Start screen:** All elements' responsive values are changed. Max height is 1300px, which I estimate to work at this width.
-   * **Introduction screen:** text box's padding and line-height lowered. Works until 1300px.
-   * **Game screen:** Buttons' width are increased, margins are changed. Opponent-title's width and font-size are lowered. Restart button's height, width, and font-size have increased. Player choice's margin lowered. Opponent-picture's top% has increased, height is lowered, width has increased. Loose message's font-size and width is lowered, margin is increased. Max height 720px
-   * **Loosing screen** Computer choice's margin is increased. Loose message's font-size and width decreased, margin increased.
-   * **Win screen** Winning text-box's margin is increased, line-height, width, and font-size are decreased. Next-button's margin is increased.
-   * **Victory screen** Win title's width and front-size are decreased. Win-text's font-size, line-height, width, and padding are decreased. Restart button's height, width, and font-size are decreased.
-   * **Game over screen** Over message's width is decreased. Game over text's width and padding are decreased. Restart button is similar to victory screen.
+   * **Start screen:** 
+        * widths and font-sizes of h1 and h2 are lowerd
+        * Width and height of hamburger icon increased. Font-size increased.
+   * **Introduction screen:** P element's width and font-size are lowered.
+   * **Game screen:** 
+        * Opponent-title's font-size and width lowered.
+        * Hand-buttons widths increased, margins changed.
+        * Opponent-picture's top% increased. Height lowered, width increased.
+        * Player-choice margins changed.
+        * Restart button's width, height, and font-size increased.
+   * **Loosing screen**
+        * Lose-message's font-size and width are lowered, margins changed.
+        * Computer hand's margins increased.
+   * **Win screen**
+        * * Result text-box's margins, line-height, width, font-size lowered, 
+        * * Result text-box's margins increased.
+   * **Victory screen**
+        * Win-title's width and font-size lowered.
+        * Win-text's width and font-size lowered.
+        * Restart button's font-size lowered.
+   * **Game over screen**
+        * Game over title's width and font-size lowered.
+        * Game over text's width and font-size lowered.
 
 * __320px__
    * **Start screen:** Element's responsiveness work until 1200px which I estimate to work.
    * **Introduction screen:** Elements work until 1200px.
-   * **Game screen:** Buttons' height, width and margins are lowered. Opponent-title's width has been lowered. Opponent-picture's top% has increased. Max height is 720px.
+   * **Game screen:** 
+        * Opponent-title's font-size lowered.
+        * Hand-buttons height and width lowered, margins changed.
+        * Opponent-picture's top% increased.
 
 * __Height 320px, Width 700px__
-    * Media query did not work fully on Galaxy Fold in folded mode (653 x 280), so this media query was made specifically for that.
+    * **Game screen**
+        * Hand-buttons margins changed.
+        * Player-choice margins changed.
+    * **Lose screen**
+        * Lose-message margin lowered, width increased.
+        * Computer hand's margins lowered.
+    * **Win screen**
+        * Player pick margins lowered
+        * Computer losing hand's margin lowered.
+        * Result text-box's margins lowered.
+    * **Victory screen**
+        * Win-text's width increased, margins lowered.
+    * **Game over screen**
+        * Game over title's width increased.
+        * Game over text's margins lowered, width increased.
 
 
 ### Browser testing 
@@ -279,6 +325,8 @@ I found Lato to work quite well with all text. I think it complements the cartoo
 
 ### Pictures/characters:
 Bright and colorful colors are chosen to give a positive feeling. It's meant for the user to think of it as light-hearted. The background was designed to be spacy, simple, and with only a few major variations of colors. The characters were drawn as simple and with a hint of humour - they're meant to be stereotypical Japanese office workers as depicted in manga/movies.
+
+The background is set to repeat in order to allow for stretching of the image.
 
 ### Languages used
 * HTML

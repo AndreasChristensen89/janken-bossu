@@ -505,57 +505,6 @@ h2 {
 }
 
 /* ======================================= media queries ============================================================= */
-@media screen and (max-width: 1100px) {
-    #main-intro h1 {
-        /* font-size: 6vh;
-        width: 44vh; */
-    }
-
-    h2 {
-        /* font-size: 3vh;
-        width: 40vh; */
-    }
-
-    #play-button {
-        /* font-size: 4vh;
-        height: 6vh;
-        width: 13vh; */
-    }
-
-    #win-message {
-        /* width: 37vh;
-        font-size: 7vh; */
-    }
-
-    #win-text {
-        /* margin: 20px auto;
-        width: 33vh; */
-    }
-
-    #restart-button {
-        /* width: 13vh;
-        height: 13vh;
-        font-size: 3vh; */
-    }
-
-    #result-area p {
-        width: 50vh;
-        font-size: 3vh;
-    }
-
-    #intro-text p {
-        /* font-size: 3vh; */
-    }
-
-    #over-message {
-        /* font-size: 4vh;
-        width: 34vh; */
-    }
-
-    #gameover-text {
-        /* width: 34vh; */
-    }
-}
 
 @media screen and (max-width: 800px) {
     body {
@@ -573,7 +522,6 @@ h2 {
     }
 
     #start-button {
-        margin: 10px auto;
         font-size: 12pt;
         width: 100px;
     }
@@ -630,34 +578,11 @@ h2 {
         margin: 0px auto;
     }
 
-    #over-message {
-        /* width: 26vh; */
-    }
-
-    #gameover-text {
-        /* font-size: 2vh;
-        line-height: 4vh;
-        width: 26vh; */
-    }
-
-    #restart-button {
-        /* width: 10vh;
-        height: 10vh; */
-    }
-
     #biggu-bossu {
         height: 40vh;
         width: 41vh;
         position: absolute;
         top: 58%;
-    }
-
-    #win-message {
-        /* width: 33vh; */
-    }
-
-    #win-text {
-        /* width: 28vh; */
     }
 
     #result-area p {
@@ -723,7 +648,6 @@ h2 {
         line-height: 5vh;
         width: 32vh;
         font-size: 2vh;
-        padding: 10px;
     }
 
     #next-button {
@@ -836,30 +760,23 @@ h2 {
     }
 
     #win-message {
-        font-size: 18pt;
         margin: 20px auto;
     }
 
     #win-text {
-        font-size: 12pt;
         margin: 20px auto 10px;
         width: 300px;
     }
 
     #restart-button {
-        width: 75px;
-        height: 75px;
         font-size: 12pt;
     }
 
     #over-message {
         width: 250px;
-        font-size: 18pt;
-        margin: 20px auto;
     }
 
     #gameover-text {
-        font-size: 12pt;
         margin: 20px auto 10px;
         width: 350px;
     }
