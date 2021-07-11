@@ -206,7 +206,7 @@ All links were tested. The links connecting to external sources all work as inte
 I believe the game is set up so that it's intuitive, and users have an easy time navigating and understanding the next steps in the game. After a loss it's easy to restart, and it's also possible to restart during any point in the game.
 
 ### Bugs discovered during testing:
-* I found the Google Developer Tool to not be stable in showing if the website responded correctly to different screensizes, particularly the phone settings as my own phone would show different outcomes.
+* I found the Google Developer Tool to not be stable in showing if the website responded correctly to different screensizes, particularly the phone settings as my own phone would show a smaller outcome.
 * JShint gave an error regarding a function where a loop sets an eventlistener to trigger a function. This was just a warning, and after consulting with my mentor I was told to let it be. A similar usage is also used in the Love Maths learning project.
 * During the first Jshint testing there were many warnings regarding template literals. This was unnecesarily used by me many times, and I corrected them; e.g. "xx = `${variable}`;" would be corrected to xx = variable;
 
@@ -214,7 +214,7 @@ I believe the game is set up so that it's intuitive, and users have an easy time
 ### Validator testing:
 * W3 Markup Validation Service completed for all HTML pages with no errors.
 * Jigsaw test for CSS completed with no errors.
-* Jshint completed with one warning, but as described above it could be ignored.
+* Jshint completed with one warning, but as described in "bugs discobered during testing" it could be ignored.
 
 ### Unfixed bugs:
 * 
@@ -298,8 +298,11 @@ The features have been laid out previously. The flow of the website is simple an
 * Information should not be detailed but fast to read and understand, and straight to the point.
 
 ### Color Scheme 
-Colors are chosen to represent a bright cartoony world, which aims to give users a positive and light-hearted feeling.
-* Background color: **rgb(116 158 173)** - this is the same color as the background picture's floor, allowing for extensions of the picture.
+Colors are chosen to represent a generally bright cartoony world, which aims to give users a positive and light-hearted feeling.
+In all stages of the game and on all pages there is always a play between green and blue. Blue is the general color while green is always present but more scarcely found, and it used to represent something positive. There is at all times at least one green element on the screen, which is meant to attract the users' eyes. 
+
+Color names are found via https://www.htmlcsscolor.com/hex/749EAD.
+
 * Background picture:
     * Main blue of window: rgb(114 217 237)
     * Darkest building: rgb(113 175 188)
@@ -316,29 +319,42 @@ Colors are chosen to represent a bright cartoony world, which aims to give users
     * Dirt: rgb(99 55 29)
     * Tree: rgb(128 81 55)
     * Leafs: rgb(58 148 50)
-* Green color of play button, start button, and try again button **#61892F**
-* Landing page:
-    * H1: #455d66
-    * H2: #6f9fc3
-* Introduction page:
-    * P: #58a8c3
-* Main game page:
-    * Opponent-title: #77acb2
-    * Health-meter: #079607
-    * Hand-butons: #f2d09b
-* Lose-screen:
-    * P: #505050
-* Draw-screen:
-    * Div: #5f5c5c
-* Win screen:
-    * P: #3da6a3
-    * Button: #3a9432
-* Game over screen
-    * H1: black
-    * P: #808385
-* Victory screen
-    * H1: rgb(74 145 89)
-    * H2: #6f9fc3
+* **White**
+    * All text on all pages
+    * Background color of hamburger icon
+* **rgb(116 158 173)** Bali Hai
+    * Background color: this is the same color as the background picture's floor, allowing for extensions of the picture.
+* **rgb(58 148 50)** La Palma - Green color of bonsai tree
+    * Play button
+    * Start button
+    * Go-button
+    * Health-meter
+    * Try again button
+    * H2 headings on rules page
+    * Clear and send buttons on contact page
+* **#455d66** San Juan - Dark grey
+    * H1 on landing page 
+    * H1 rules page
+    * H1 contact page
+* **#68acb9** Fountain blue
+    * H2 landing page 
+    * Text-box on intro-screen
+    * Text-box on win screen
+    * Text-box on victory screen
+    * Intro text-box on rules page
+    * Divs on rules page
+    * Larger text boxes on rules page
+    * Form color on contact page
+* **#77acb2** Neptune
+    * Opponent title
+* **#ea8426** Carrot orange
+    * Color when health drops below 75
+* **#c7be33** Old Gold
+    * Color when health drops below 50
+* **#d01414** Free speech red
+    * Color when color drops below 25
+* **#989191** Nobel - grey
+    * Color of corner restart button
 
 ### Choice of text
 I found Lato to work quite well with all text. I think it complements the cartoony style.

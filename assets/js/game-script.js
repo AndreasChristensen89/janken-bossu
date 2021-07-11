@@ -139,7 +139,7 @@ function choice(playerChoiceData) {
     chosenPic.setAttribute("data-type", playerChoiceData);
     let choiceSpan = document.createElement("span");
     choiceSpan.setAttribute("role", "img");
-    choiceSpan.setAttribute("aria-label", addAriaLabelPicture(playerChoiceData))
+    choiceSpan.setAttribute("aria-label", addAriaLabelPicture(playerChoiceData));
     chosenPic.appendChild(choiceSpan);
 
     document.getElementById('comp-choice').textContent = "";
@@ -186,7 +186,7 @@ function generateComputerChoice() {
     Object.assign(compChoice.style, compChoiceStyle);
     let compSpan = document.createElement("span");
     compSpan.setAttribute("role", "img");
-    compSpan.setAttribute("aria-label", addAriaLabelPicture(compResult))
+    compSpan.setAttribute("aria-label", addAriaLabelPicture(compResult));
     compChoice.appendChild(compSpan);
 
     calculateWinner(compResult);
@@ -318,8 +318,8 @@ function calculateWinner(compResult) {
  */
 function animateButtons() {
     let buttons = document.getElementsByClassName("button");
-    for(button of buttons) {
-        button.style.animationName = "element-signal";
+    for(let i = 0; i<buttons.length; i++) {
+        buttons[i].style.animationName = "element-signal";
     }
 }
 
