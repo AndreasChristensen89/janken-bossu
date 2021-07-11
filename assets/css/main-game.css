@@ -38,7 +38,7 @@ body {
 h1 {
     font-weight: bold;
     font-size: 60pt;
-    background-color: rgb(74 145 89);
+    background-color: rgb(58 148 50);
     border-radius: 20px;
     color: white;
     margin: 30px auto;
@@ -61,11 +61,12 @@ h1 {
 h2 {
     margin: 30px auto;
     font-size: 18pt;
-    background: #6f9fc3;
+    background: #68acb9;
     width: 300px;
     color: white;
     padding: 10px;
     border-radius: 20px;
+    box-shadow: black 0px 1px 20px 0px;
 }
 
 #button-area {
@@ -100,7 +101,7 @@ h2 {
     margin: 30px auto;
     font-size: 18pt;
     width: 150px;
-    background-color: rgb(19 154 60);
+    background-color: rgb(58 148 50);
     border-radius: 20px;
     box-shadow: black 0px 1px 20px 0px;
     cursor: pointer;
@@ -116,9 +117,9 @@ h2 {
     color: white;
     width: 200px;
     margin: 10px auto;
-    background-color: rgb(19 154 60);
+    background-color: rgb(58 148 50);
     font-weight: 600;
-    font-size: 22pt;
+    font-size: 18pt;
     cursor: pointer;
     box-shadow: black 0px 1px 20px 0px;
     border-radius: 20px;
@@ -132,7 +133,7 @@ h2 {
 #intro-text p {
     font-size: 17pt;
     width: 500px;
-    background: #58a8c3;
+    background: #68acb9;
     border-radius: 20px;
     color: white;
     margin: 50px auto 30px;
@@ -239,14 +240,14 @@ h2 {
     cursor: pointer;
     box-shadow: black 0px 1px 20px 0px;
     color: white;
-    background: #3a9432;
+    background: rgb(58 148 50);
     margin: 30px auto;
 }
 
 #health {
     display: block;
     font-size: 3vh;
-    background: #079607;
+    background: rgb(58 148 50);
     width: 9vh;
     height: 4vh;
     margin: 10px auto 0;
@@ -308,7 +309,7 @@ h2 {
     width: 25vh;
     cursor: pointer;
     color: white;
-    background: #3a9432;
+    background: rgb(58 148 50);
     box-shadow: black 0px 1px 20px 0px;
 
     animation-name: element-move;
@@ -325,7 +326,7 @@ h2 {
 #result-area p {
     margin: 30px auto;
     box-shadow: black 0px 1px 20px 0px;
-    background: #3da6a3;
+    background: #68acb9;
     line-height: 6vh;
     width: 50vh;
     border-radius: 10%;
@@ -335,7 +336,7 @@ h2 {
 }
 
 #restart-button {
-    background: rgb(19 154 60);
+    background: rgb(58 148 50);
     color: white;
     width: 100px;
     height: 100px;
