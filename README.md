@@ -113,12 +113,14 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
 
 ### Future features to implement
 * I thought it would be helpful to add and shortly after remove a textbox when losing HP. It would show the damage taken.
-* In the game after a win I am considering a screen that introduces the next opponent, some context to the character, and the HP damage the character does.
+* In the game before versing any opponent I am considering a screen that introduces the next opponent, some context to the character, and the HP damage the character does.
 * On the game screen the opponent should have stats: Health and HP damage - this would change the game so that a single win would not necesarily be enough to beat the current opponent
 * A 10% chance of a critical hit/power up (e.g., double damage) could be implemented - this would only work if opponent stats are implemented
+* Add potions/special moves: e.g. coffee that boosts health, HR department that works as shield, ability that allow players one more chance to get it right etc.
+* Add weaknesses and strenghts for each opponent
 
 ## Testing
-* Chrome Developer Tools was used for testing all media queries down to 280px to fit the smallest devide available on the Google device list.
+* Chrome Developer Tools was used for testing all media queries down to width 280px to fit the smallest device available on the Google device list.
 Also, Developer Tools was used to manipulate CSS to see direct outcomes. All pages have been tested with chrome developer tools to verify that text, pictures, and boxes all adapt well to the breakpoints for different screens. 
 
 __Breakpoints are set to the following and are all tested to work:__
@@ -177,7 +179,7 @@ __Breakpoints are set to the following and are all tested to work:__
         * Hand-buttons height and width lowered, margins changed.
         * Opponent-picture's top% increased.
 
-* __Max height 320px, Max width 700px__
+* __Max height 400px, Max width 700px__
     * **Game screen**
         * Hand-buttons margins changed.
         * Player-choice margins changed.
@@ -203,7 +205,7 @@ __Breakpoints are set to the following and are all tested to work:__
 * Media query tested on my own tablet, Ipad pro 2018 11" using Safari+Chrome, no issues.
 * General testing with my own laptop, Asus 13 inch using Chrome, no issues.
 
-All links were tested. The links connecting to external sources all work as intended. There are links on each site. 
+All links were tested. There are no external links, but all internal links work. 
 
 I believe the game is set up so that it's intuitive, and users have an easy time navigating and understanding the next steps in the game. After a loss it's easy to restart, and it's also possible to restart during any point in the game.
 
@@ -212,14 +214,14 @@ I believe the game is set up so that it's intuitive, and users have an easy time
 * JShint gave an error regarding a function where a loop sets an eventlistener to trigger a function. This was just a warning, and after consulting with my mentor I was told to let it be. A similar usage is also used in the Love Maths learning project.
 * During the first Jshint testing there were many warnings regarding template literals. This was unnecesarily used by me many times so I corrected them, e.g. "xx = `${variable}`;" would be corrected to xx = variable;
 
+### Unfixed bugs
+* "Interest-Cohort Error" on console after deployment. I was not able to fix this error, and I can understand that it's a recent feature where Github blocks FLoC https://www.techradar.com/uk/news/github-is-blocking-floc.
+
 
 ### Validator testing:
 * W3 Markup Validation Service completed for all HTML pages with no errors.
 * Jigsaw test for all CSS files completed with no errors.
 * Jshint completed with one warning, but as described in "bugs discovered during testing" it could be ignored.
-
-### Unfixed bugs:
-* 
 
 ## Deployment
 ### Deployment to GitHub Pages
@@ -243,6 +245,7 @@ The live link can be found here - https://andreaschristensen89.github.io/janken-
 ## Credits:
 ### Pictures
 Images were compressed using the webpage https://tinypng.com/
+Afterwards they were converted to webp using https://cloudconvert.com/png-to-webp
 All characters, hands, and backgrounds were drawn by myself in Adobe Illustrator.
 
 ### Navigation
@@ -251,7 +254,7 @@ https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0
 
 
 ### Text content
-Content was all formulated by myself, but I took inspiration from video/board games I have played throughout my life, as well as my own experiences living in Japan.
+Content was all formulated by myself, but I took inspiration from video/board games I have played throughout my life, comic books I have read, as well as my own experiences living in Japan.
 
 ### Icons
 Icons and script were taken from https://fontawesome.com/, as well as Google's fonts: https://fonts.google.com/icons?selected=Material+Icons.
@@ -262,23 +265,34 @@ Icons and script were taken from https://fontawesome.com/, as well as Google's f
 * For general best practice I used Code Institute's Slack community.
 
 ### Design
-* For design of the different pages I didn't use other sources of information. For backgrounds and characters I took inspiration from https://www.pinterest.com/ - no pictures are copies however.
-* For color schemes...
+* For design of the different pages I didn't use other sources of information. For hand-buttons, parts of the background, and tattoos of one character I took inspiration from https://www.pinterest.com/ - only tattoos are partly copies.
+* No wireframes were used
 
 ## User Stories:
 
 ### The User
 * What are the goals for a first-time visitor
    * Quickly understand that this is a game and how to start it
+        * This is indicated by the play button, which is animated to attract attention
    * Be captivated by the content and the imagery
+        * Bright positive colors are used with contrast
    * Be able to navigate effortless through the pages
+        * Hamburger navigation is always available, and there are only three pages.
    * Easily reach the rules page and understand how to play the game
+        * Navigation is easy, and rules are explained right away.
    * Easily understand the goal of the game
+        * Rules are written simple and with visuals to help. Introduction also gives additional help.
    * Understand how to advance after a loss/defeat/draw
+        * Buttons are set to animated to attract the user
    * Have the game work on all devices, both horizontally and vertically
+        * The website works on all devices
 * What are the goals for a returning visitor
    * Instantly/easily remember how to navigate the content
+        * I estimate this to be intuitive
    * Easily remember how to play the game
+        * Hint is given when pressing play, and navigation to the rules page is easy
+   * Easily be able to contact the developer with questions, feedback, any other inquiries
+        * Navigation to contact page is easy via hamburger, and contact form is simple to use
 
 ## Strategy
 The purpose of this site is to create a simple to play game that entertains visually, and which does not require strategy to play. The goal for design was to create a simple play-interface as well as making it easy to access information with simple and clear design.

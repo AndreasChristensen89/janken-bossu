@@ -411,7 +411,6 @@ h2 {
     z-index: -1;
 }
 
-/* animation for losing message */
 #lose-message {
     font-size: 3vh;
     width: 40vh;
@@ -441,7 +440,6 @@ h2 {
     }
 }
 
-/* animation for winning hand */
 #player-pick {
     margin: 25px 50px;
     height: 10vh;

@@ -1,4 +1,4 @@
-/* create in order to not have the styling twice for the two pages */
+/* create in order to not have the styling twice for the two pages, and to separate for clarity */
 
 .hamburger {
     position: fixed;
