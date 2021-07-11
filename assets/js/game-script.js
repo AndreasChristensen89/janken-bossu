@@ -110,15 +110,21 @@ function addAriaLabel(number) {
 }
 
 /**
- * Returns aria-label to use for pictures
- * Matches parameter to array to find match to return.
+ * Removes span element in case users have pressed another button beforehand
+ * Creates span element, sets the attributes for aria-label, finds the right label and adds to span
+ * Inserts element into div element from parameter
  */
 function addAriaLabelPicture(dataType, id) {
+    let container = document.getElementById(id);
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+
     let ariaPics = ["Cartoon hand forming rock", "Cartoon hand forming paper", "Cartoon hand forming scissors", "Cartoon hand forming lizard", "Cartoon hand forming spock"];
     
     let addSpan = document.createElement("span");
     addSpan.setAttribute("role", "img");
-    var ariaToAdd;
+    let ariaToAdd;
    
     for (let i = 0; i < ariaPics.length; i++) {
         if (ariaPics[i].includes(dataType)) {
@@ -145,10 +151,11 @@ function choice(playerChoiceData) {
     };
     Object.assign(chosenPic.style, chosenPicStyles);
     chosenPic.setAttribute("data-type", playerChoiceData);
-    let choiceSpan = document.createElement("span");
-    choiceSpan.setAttribute("role", "img");
-    choiceSpan.setAttribute("aria-label", addAriaLabelPicture(playerChoiceData));
-    chosenPic.appendChild(choiceSpan);
+    addAriaLabelPicture(playerChoiceData, "player-choice");
+    // let choiceSpan = document.createElement("span");
+    // choiceSpan.setAttribute("role", "img");
+    // choiceSpan.setAttribute("aria-label", addAriaLabelPicture(playerChoiceData));
+    // chosenPic.appendChild(choiceSpan);
 
     document.getElementById('comp-choice').textContent = "";
     document.getElementById('outcome').textContent = "";
@@ -193,11 +200,7 @@ function generateComputerChoice() {
     };
     Object.assign(compChoice.style, compChoiceStyle);
     
-    addAriaLabelPicture(compChoice, "comp-chand");
-    // let compSpan = document.createElement("span");
-    // compSpan.setAttribute("role", "img");
-    // compSpan.setAttribute("aria-label", addAriaLabelPicture(compResult));
-    // compChoice.appendChild(compSpan);
+    addAriaLabelPicture(compResult, "comp-hand");
 
     calculateWinner(compResult);
 }
@@ -426,7 +429,7 @@ function restart() {
 }
 
 /**
- * Player choice style values are set to 0 to ease other styling + opponent is animated to dissapear. Game content is removed. Computer and player choice pictures are 
+ * Player choice style values are set to 0 to ease other styling, aria-label span is removed + opponent is animated to dissapear. Game content is removed. Computer and player choice pictures are 
  * copied to new elements with loss animation. Text is generated, using current opponent and playerchoice, to highlight defeated opponent 
  * and fetch name of the next. Aria labels are added. Next button is added, calls nextOpponent().
  * If current opponent is last boss beatGame() is called.
@@ -436,6 +439,11 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
     document.getElementById('player-choice').style.width = "0";
     document.getElementById('player-choice').style.margin = "0";
     document.getElementById('outcome').style.margin = "0";
+
+    let container = document.getElementById("player-choice");
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
 
     let backgroudImg = document.getElementById('comp-hand').style.backgroundImage;
     document.getElementById('comp-hand').remove();
@@ -449,11 +457,7 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
     };
     Object.assign(playerPick.style, pickStyle);
 
-    //giving player pick an aria label via function
-    let spanPicPlayer = document.createElement("span");
-    spanPicPlayer.setAttribute("role", "img");
-    spanPicPlayer.setAttribute("aria-label", addAriaLabelPicture(playerChoice));
-    playerPick.appendChild(spanPicPlayer);
+    addAriaLabelPicture(playerChoice, "player-pick");
 
     createElementTarget("div", "comp-lose", "outcome");
     let compLose = document.getElementById('comp-lose');
@@ -464,11 +468,12 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
     };
     Object.assign(compLose.style, compStyle);
 
-    //giving computer pick an aria label via function
-    let spanPicComp = document.createElement("span");
-    spanPicComp.setAttribute("role", "img");
-    spanPicComp.setAttribute("aria-label", addAriaLabelPicture(compResult));
-    compLose.appendChild(spanPicComp);
+    addAriaLabelPicture(compResult, "comp-lose");
+
+    // let spanPicComp = document.createElement("span");
+    // spanPicComp.setAttribute("role", "img");
+    // spanPicComp.setAttribute("aria-label", addAriaLabelPicture(compResult));
+    // compLose.appendChild(spanPicComp);
 
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
