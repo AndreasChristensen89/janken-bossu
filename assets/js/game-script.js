@@ -121,11 +121,11 @@ function addAriaLabelPicture(dataType, id) {
     }
 
     let ariaPics = ["Cartoon hand forming rock", "Cartoon hand forming paper", "Cartoon hand forming scissors", "Cartoon hand forming lizard", "Cartoon hand forming spock"];
-    
+
     let addSpan = document.createElement("span");
     addSpan.setAttribute("role", "img");
     let ariaToAdd;
-   
+
     for (let i = 0; i < ariaPics.length; i++) {
         if (ariaPics[i].includes(dataType)) {
             ariaToAdd = ariaPics[i];
@@ -136,6 +136,11 @@ function addAriaLabelPicture(dataType, id) {
     elementChild.appendChild(addSpan);
 }
 
+/**
+ * Removes span element from previous span add
+ * Creates span element, sets the attributes for aria-label, add the right label via number from parameter
+ * Inserts element into id element from parameter
+ */
 function addAriaLabelOpponent(id, number) {
     let opponentPic = document.getElementById(id);
     while (opponentPic.firstChild) {
@@ -166,10 +171,6 @@ function choice(playerChoiceData) {
     Object.assign(chosenPic.style, chosenPicStyles);
     chosenPic.setAttribute("data-type", playerChoiceData);
     addAriaLabelPicture(playerChoiceData, "player-choice");
-    // let choiceSpan = document.createElement("span");
-    // choiceSpan.setAttribute("role", "img");
-    // choiceSpan.setAttribute("aria-label", addAriaLabelPicture(playerChoiceData));
-    // chosenPic.appendChild(choiceSpan);
 
     document.getElementById('comp-choice').textContent = "";
     document.getElementById('outcome').textContent = "";
@@ -213,7 +214,7 @@ function generateComputerChoice() {
         "background-repeat": "no-repeat",
     };
     Object.assign(compChoice.style, compChoiceStyle);
-    
+
     addAriaLabelPicture(compResult, "comp-hand");
 
     calculateWinner(compResult);
@@ -399,9 +400,7 @@ function decreaseScore(currentOpponent) {
 
     // gets the integer value of hp, matches opponent to value, subtracts the points connected to value from hp into a variable
     // If/else if statement that checks which range of numbers the new score is in, changes color accordingly
-
     let health = parseInt(document.getElementById('health').innerText);
-
     for (let i = 0; i < damage.length; i++) {
         if (currentOpponent === damage[i].value) {
             let newScore = health - damage[i].points;
@@ -544,7 +543,6 @@ function nextOpponent() {
     document.getElementById('outcome').innerText = "";
 
     let backgrounds = ["url(assets/images/game-pictures/intern.webp)", "url(assets/images/game-pictures/salaryman.webp)", "url(assets/images/game-pictures/manager.webp)", "url(assets/images/game-pictures/yakuza.webp)", "url(assets/images/game-pictures/biggu-bossu.webp)"];
-    // let ariaLabels = ["Cartoon man with black hair, shirt, and tie", "Cartoon man with suit, tie, and a suitcase", "Cartoon serious-looking elderly man in suit and tie with arms crossed", "Cartoon serious-looking muscular man wearing wife-beater and with tattoos on arms", "Cartoon elderly serious-looking shirtless muscular man sitting on platform"];
 
     let currentOpponent = document.getElementById('opponent').innerText;
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
@@ -561,7 +559,7 @@ function nextOpponent() {
             document.getElementById('opponent').textContent = opponents[i + 1];
             document.getElementById('health').textContent = 100;
             document.getElementById('opponent-pic').style.backgroundImage = backgrounds[i + 1];
-            addAriaLabelOpponent("opponent-pic", i+1);
+            addAriaLabelOpponent("opponent-pic", i + 1);
         }
     }
 
