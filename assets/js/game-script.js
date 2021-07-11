@@ -48,7 +48,7 @@ function start() {
     addButtons();
 
     createElementTarget("div", "opponent-pic", "player-choice");
-    document.getElementById("opponent-pic").setAttribute("aria-label", "Cartoon man with black hair, shirt, and tie");
+    addAriaLabelOpponent("opponent-pic", 0);
 
     createElementTarget("button", "head-restart", "opponent");
     document.getElementById('head-restart').innerHTML = '<i class="fas fa-sync-alt"></i>';
@@ -89,7 +89,7 @@ function addButtons() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].setAttribute("data-type", dataType[i]);
         buttons[i].setAttribute("class", "button");
-        buttons[i].setAttribute("aria-label", addAriaLabel(i));
+        buttons[i].setAttribute("aria-label", addAriaLabelButton(i));
         buttons[i].style.backgroundImage = buttonPics[i];
         document.getElementById('button-area').appendChild(buttons[i]);
         buttons[i].addEventListener('click', function () {
@@ -103,7 +103,7 @@ function addButtons() {
  * Adds aria-labels to use for buttons
  * Checks if parameter is number - if not then returns the value that contains parameter - if yes then uses the number as index for return value
  */
-function addAriaLabel(number) {
+function addAriaLabelButton(number) {
     let ariaLabelsHand = ["Button to choose rock", "Button to choose paper", "Button to choose scissors", "Button to choose lizard", "Button to choose spock"];
 
     return ariaLabelsHand[number];
@@ -134,6 +134,20 @@ function addAriaLabelPicture(dataType, id) {
     addSpan.setAttribute("aria-label", ariaToAdd);
     let elementChild = document.getElementById(id);
     elementChild.appendChild(addSpan);
+}
+
+function addAriaLabelOpponent(id, number) {
+    let opponentPic = document.getElementById(id);
+    while (opponentPic.firstChild) {
+        opponentPic.removeChild(opponentPic.firstChild);
+    }
+
+    let ariaOpponents = ["Cartoon man with black hair, shirt, and tie", "Cartoon man with suit, tie, and a suitcase", "Cartoon serious-looking elderly man in suit and tie with arms crossed", "Cartoon serious-looking muscular man wearing wife-beater and with tattoos on arms", "Cartoon elderly serious-looking shirtless muscular man sitting on platform"];
+
+    let addSpan = document.createElement("span");
+    addSpan.setAttribute("role", "img");
+    addSpan.setAttribute("aria-label", ariaOpponents[number]);
+    opponentPic.appendChild(addSpan);
 }
 
 /**
@@ -429,7 +443,7 @@ function restart() {
 }
 
 /**
- * Player choice style values are set to 0 to ease other styling, aria-label span is removed + opponent is animated to dissapear. Game content is removed. Computer and player choice pictures are 
+ * Player choice style values are set to 0 to ease other styling, aria-label spans are removed + opponent is animated to dissapear. Game content is removed. Computer and player choice pictures are 
  * copied to new elements with loss animation. Text is generated, using current opponent and playerchoice, to highlight defeated opponent 
  * and fetch name of the next. Aria labels are added. Next button is added, calls nextOpponent().
  * If current opponent is last boss beatGame() is called.
@@ -440,9 +454,11 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
     document.getElementById('player-choice').style.margin = "0";
     document.getElementById('outcome').style.margin = "0";
 
-    let container = document.getElementById("player-choice");
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
+    let containerPlayer = document.getElementById("player-choice");
+    let containerOpponent = document.getElementById("opponent-pic");
+    while (containerPlayer.firstChild && containerOpponent.firstChild) {
+        containerPlayer.removeChild(containerPlayer.firstChild);
+        containerOpponent.removeChild(containerOpponent.firstChild);
     }
 
     let backgroudImg = document.getElementById('comp-hand').style.backgroundImage;
@@ -469,11 +485,6 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
     Object.assign(compLose.style, compStyle);
 
     addAriaLabelPicture(compResult, "comp-lose");
-
-    // let spanPicComp = document.createElement("span");
-    // spanPicComp.setAttribute("role", "img");
-    // spanPicComp.setAttribute("aria-label", addAriaLabelPicture(compResult));
-    // compLose.appendChild(spanPicComp);
 
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
@@ -533,14 +544,14 @@ function nextOpponent() {
     document.getElementById('outcome').innerText = "";
 
     let backgrounds = ["url(assets/images/game-pictures/intern.webp)", "url(assets/images/game-pictures/salaryman.webp)", "url(assets/images/game-pictures/manager.webp)", "url(assets/images/game-pictures/yakuza.webp)", "url(assets/images/game-pictures/biggu-bossu.webp)"];
-    let ariaLabels = ["Cartoon man with black hair, shirt, and tie", "Cartoon man with suit, tie, and a suitcase", "Cartoon serious-looking elderly man in suit and tie with arms crossed", "Cartoon serious-looking muscular man wearing wife-beater and with tattoos on arms", "Cartoon elderly serious-looking shirtless muscular man sitting on platform"];
+    // let ariaLabels = ["Cartoon man with black hair, shirt, and tie", "Cartoon man with suit, tie, and a suitcase", "Cartoon serious-looking elderly man in suit and tie with arms crossed", "Cartoon serious-looking muscular man wearing wife-beater and with tattoos on arms", "Cartoon elderly serious-looking shirtless muscular man sitting on platform"];
 
     let currentOpponent = document.getElementById('opponent').innerText;
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     if (currentOpponent === opponents[3]) {
         document.getElementById('opponent-pic').setAttribute("id", "biggu-bossu");
         document.getElementById('biggu-bossu').style.backgroundImage = backgrounds[4];
-        document.getElementById('biggu-bossu').setAttribute("aria-label", ariaLabels[4]);
+        addAriaLabelOpponent("biggu-bossu", 4);
         document.getElementById('opponent').textContent = opponents[4];
         document.getElementById('health').textContent = 100;
     }
@@ -550,7 +561,7 @@ function nextOpponent() {
             document.getElementById('opponent').textContent = opponents[i + 1];
             document.getElementById('health').textContent = 100;
             document.getElementById('opponent-pic').style.backgroundImage = backgrounds[i + 1];
-            document.getElementById('opponent-pic').setAttribute("aria-label", ariaLabels[i + 1]);
+            addAriaLabelOpponent("opponent-pic", i+1);
         }
     }
 
