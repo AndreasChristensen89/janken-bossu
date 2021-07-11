@@ -81,7 +81,7 @@ function addButtons() {
     let buttons = [rock, paper, scissors, lizard, spock];
     let dataType = ["rock", "paper", "scissors", "lizard", "spock"];
     let buttonPics = ["url(assets/images/game-pictures/rock.webp)", "url(assets/images/game-pictures/paper.webp)", "url(assets/images/game-pictures/scissors.webp)", "url(assets/images/game-pictures/lizard.webp)", "url(assets/images/game-pictures/spock.webp)"];
-    
+
     // Runs throught the buttons from the button-array and sets the datatype, class, and background image.
     // Each button gets a different picture from the buttonPics array and a different dataType from the dataType array
     // Buttons are inserted in the button-area
@@ -113,13 +113,21 @@ function addAriaLabel(number) {
  * Returns aria-label to use for pictures
  * Matches parameter to array to find match to return.
  */
-function addAriaLabelPicture(dataType) {
+function addAriaLabelPicture(dataType, id) {
     let ariaPics = ["Cartoon hand forming rock", "Cartoon hand forming paper", "Cartoon hand forming scissors", "Cartoon hand forming lizard", "Cartoon hand forming spock"];
-    for(let i = 0; i< ariaPics.length; i++) {
-        if(ariaPics[i].includes(dataType)) {
-            return ariaPics[i];
+    
+    let addSpan = document.createElement("span");
+    addSpan.setAttribute("role", "img");
+    var ariaToAdd;
+   
+    for (let i = 0; i < ariaPics.length; i++) {
+        if (ariaPics[i].includes(dataType)) {
+            ariaToAdd = ariaPics[i];
         }
     }
+    addSpan.setAttribute("aria-label", ariaToAdd);
+    let elementChild = document.getElementById(id);
+    elementChild.appendChild(addSpan);
 }
 
 /**
@@ -127,7 +135,7 @@ function addAriaLabelPicture(dataType) {
  * Adds aria label via span element
  * Reinserts animation link to player choice if animation was stopped (after draw/loss)
  * Stops button animation
-*/
+ */
 function choice(playerChoiceData) {
     let chosenPic = document.getElementById('player-choice');
     let chosenPicStyles = {
@@ -156,10 +164,10 @@ function choice(playerChoiceData) {
     if (chosenPic.style.animationName === "none") {
         chosenPic.style.animationName = "chosen-hand";
     }
-    
+
     let buttons = document.getElementsByClassName("button");
-    for(button of buttons) {
-            button.style.animationName = "";
+    for (button of buttons) {
+        button.style.animationName = "";
     }
 
 }
@@ -184,10 +192,12 @@ function generateComputerChoice() {
         "background-repeat": "no-repeat",
     };
     Object.assign(compChoice.style, compChoiceStyle);
-    let compSpan = document.createElement("span");
-    compSpan.setAttribute("role", "img");
-    compSpan.setAttribute("aria-label", addAriaLabelPicture(compResult));
-    compChoice.appendChild(compSpan);
+    
+    addAriaLabelPicture(compChoice, "comp-chand");
+    // let compSpan = document.createElement("span");
+    // compSpan.setAttribute("role", "img");
+    // compSpan.setAttribute("aria-label", addAriaLabelPicture(compResult));
+    // compChoice.appendChild(compSpan);
 
     calculateWinner(compResult);
 }
@@ -230,7 +240,7 @@ function calculateWinner(compResult) {
     // loop that matches the outcomes with fail criteria - draw, loss, and win outcome.
     // Draw sets text in outcome field, animates the two hands via a function, and calls another function to animate hands-buttons.
     // Loss randomly selects phrase to insert before target value. Stops button animation, drops hp with animation, animates comp winning hand.
-    // Win calls function with two parameters: the currentopponent and dataType of chosen hand
+    // Win calls function with three parameters: the currentopponent and dataType of chosen hand and computer hand
     for (let i = 0; i < failEvents.length; i++) {
         if (playerChoice === compResult) {
             document.getElementById('outcome').textContent = "Draw! Try again";
@@ -318,7 +328,7 @@ function calculateWinner(compResult) {
  */
 function animateButtons() {
     let buttons = document.getElementsByClassName("button");
-    for(let i = 0; i<buttons.length; i++) {
+    for (let i = 0; i < buttons.length; i++) {
         buttons[i].style.animationName = "element-signal";
     }
 }
@@ -418,7 +428,7 @@ function restart() {
 /**
  * Player choice style values are set to 0 to ease other styling + opponent is animated to dissapear. Game content is removed. Computer and player choice pictures are 
  * copied to new elements with loss animation. Text is generated, using current opponent and playerchoice, to highlight defeated opponent 
- * and fetch name of the next. Next button is added, calls nextOpponent().
+ * and fetch name of the next. Aria labels are added. Next button is added, calls nextOpponent().
  * If current opponent is last boss beatGame() is called.
  */
 function beatOpponent(currentOpponent, playerChoice, compResult) {
@@ -438,7 +448,7 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
         "background-repeat": "no-repeat",
     };
     Object.assign(playerPick.style, pickStyle);
-    
+
     //giving player pick an aria label via function
     let spanPicPlayer = document.createElement("span");
     spanPicPlayer.setAttribute("role", "img");
@@ -504,7 +514,7 @@ function removeButtons() {
 
 
 /**
- * Removes all content from beatOpponent screen. Inserts all content from game, health bar is set to full and color=green. 
+ * Removes all content from beatOpponent screen. Inserts all content from game, health bar is set to full and green color. 
  * Current opponent is checked and updated accordingly (normal or boss) + animated to appear.
  */
 function nextOpponent() {
@@ -535,7 +545,7 @@ function nextOpponent() {
             document.getElementById('opponent').textContent = opponents[i + 1];
             document.getElementById('health').textContent = 100;
             document.getElementById('opponent-pic').style.backgroundImage = backgrounds[i + 1];
-            document.getElementById('opponent-pic').setAttribute("aria-label", ariaLabels[i+1]);
+            document.getElementById('opponent-pic').setAttribute("aria-label", ariaLabels[i + 1]);
         }
     }
 
