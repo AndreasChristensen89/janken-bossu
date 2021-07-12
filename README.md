@@ -239,6 +239,13 @@ The live link can be found here - https://andreaschristensen89.github.io/janken-
 5.	Use the "git clone" command with the copied git URL after.
 6.	Clone of the project is created locally on your machine.
 
+## Technologies used
+### Icons
+Icons and script were taken from https://fontawesome.com/, as well as Google's fonts: https://fonts.google.com/icons?selected=Material+Icons.
+
+### Hosting and Development
+GitHub was used to host the repository, GitPot was used for development and version control, and GitHub Pages was used to deply site
+
 
 ## Credits:
 ### Pictures
@@ -249,10 +256,6 @@ All characters, hands, and backgrounds were drawn by myself in Adobe Illustrator
 
 ### Text content
 Content was all formulated by myself, but I took inspiration from video/board games I have played throughout my life, comic books I have read, as well as my own experiences living in Japan.
-
-### Icons
-Icons and script were taken from https://fontawesome.com/, as well as Google's fonts: https://fonts.google.com/icons?selected=Material+Icons.
-
 
 ### Coding help
 * For help with varius issues with animations, css background manipulation etc. I often resorted to https://stackoverflow.com/
