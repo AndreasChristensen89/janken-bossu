@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("play-button").addEventListener('click', play);
 });
 
-// ==================================== game area ====================================
+// ==================================== functions to shorten /simplify code ==============================================
 
 /**
- * Creates element with id and inserts it. InnerHTML is optional.
+ * Creates element with id and inserts it.
  * Takes four parameters; type of element, id name, the id of element to appendChild, and innerHTML
  */
 function createElement(type, id, append, html) {
@@ -14,46 +14,6 @@ function createElement(type, id, append, html) {
     newElement.setAttribute("id", id);
     document.getElementById(append).appendChild(newElement);
     newElement.innerHTML = html;
-}
-
-/**
- * Removes elements from start screen. Adds intro-text and start button
- */
-function play() {
-    createElement("div", "intro-text", "button-area", "<p>To play simply pick a hand and press the GO button.<br> Opponents' hit-power will increase for each round, so watch your health bar. <br>You only need to beat each opponent once to advance to the next level.</p>");
-
-    createElement("button", "start-button", "button-area", "START");
-    document.getElementById("start-button").setAttribute("data-type", "start");
-    document.getElementById('start-button').addEventListener('click', start);
-
-    document.getElementById('play-button').remove();
-
-    let mainIntro = document.getElementById('main-intro');
-    mainIntro.innerHTML = "";
-    mainIntro.style.height = "unset";
-}
-
-/**
- * Removes elements from introduction screen. Adds hand-buttons, opponent picture+title, health bar, and restart button
- */
-function start() {
-    document.getElementById('start-button').remove();
-    document.getElementById('main-intro').remove();
-    document.getElementById('intro-text').remove();
-
-    createElement("div", "opponent", "button-area", "The Intern");
-
-    createElement("div", "health", "button-area", "100");
-
-    addButtons();
-
-    createElementTarget("div", "opponent-pic", "player-choice");
-    addAriaLabelOpponent("opponent-pic", 0);
-
-    createElementTarget("button", "head-restart", "opponent");
-    document.getElementById('head-restart').innerHTML = '<i class="fas fa-sync-alt"></i>';
-    document.getElementById('head-restart').addEventListener('click', restart);
-    document.getElementById('head-restart').setAttribute("aria-label", "button to restart game");
 }
 
 /**
@@ -100,6 +60,17 @@ function addButtons() {
 }
 
 /**
+ * Removes all class="buttons" on the screen.
+ */
+function removeButtons() {
+    let numOfButtons = document.getElementsByClassName('button');
+
+    for (let i = numOfButtons.length - 1; i >= 0; i--) {
+        numOfButtons[i].remove();
+    }
+}
+
+/**
  * Adds aria-labels to use for buttons
  * Checks if parameter is number - if not then returns the value that contains parameter - if yes then uses the number as index for return value
  */
@@ -137,6 +108,7 @@ function addAriaLabelPicture(dataType, id) {
 }
 
 /**
+ * Gives opponent picture an arial label in a span
  * Removes span element from previous span add
  * Creates span element, sets the attributes for aria-label, add the right label via number from parameter
  * Inserts element into id element from parameter
@@ -153,6 +125,78 @@ function addAriaLabelOpponent(id, number) {
     addSpan.setAttribute("role", "img");
     addSpan.setAttribute("aria-label", ariaOpponents[number]);
     opponentPic.appendChild(addSpan);
+}
+
+/**
+ * Adds link to css animation for all hand-buttons
+ */
+function animateButtons() {
+    let buttons = document.getElementsByClassName("button");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].style.animationName = "element-signal";
+    }
+}
+
+/**
+ * Adds draw animation to both hands. Takes id and pixes(move y-direction) parameters.
+ */
+function animateDraw(id, pixels) {
+    document.getElementById(id).animate([{
+            transform: 'translateY(0px)'
+        },
+        {
+            transform: "translateY(" + pixels + ")"
+        },
+        {
+            transform: 'translateY(0px)'
+        }
+    ], {
+        duration: 500,
+        iterations: 2
+    });
+}
+
+// =============================================== game progression functions =================================================
+
+
+/**
+ * Removes elements from start screen. Adds intro-text and start button
+ */
+function play() {
+    createElement("div", "intro-text", "button-area", "<p>To play simply pick a hand and press the GO button.<br> Opponents' hit-power will increase for each round, so watch your health bar. <br>You only need to beat each opponent once to advance to the next level.</p>");
+
+    createElement("button", "start-button", "button-area", "START");
+    document.getElementById("start-button").setAttribute("data-type", "start");
+    document.getElementById('start-button').addEventListener('click', start);
+
+    document.getElementById('play-button').remove();
+
+    let mainIntro = document.getElementById('main-intro');
+    mainIntro.innerHTML = "";
+    mainIntro.style.height = "unset";
+}
+
+/**
+ * Removes elements from introduction screen. Adds hand-buttons, opponent picture+title, health bar, and restart button
+ */
+function start() {
+    document.getElementById('start-button').remove();
+    document.getElementById('main-intro').remove();
+    document.getElementById('intro-text').remove();
+
+    createElement("div", "opponent", "button-area", "The Intern");
+
+    createElement("div", "health", "button-area", "100");
+
+    addButtons();
+
+    createElementTarget("div", "opponent-pic", "player-choice");
+    addAriaLabelOpponent("opponent-pic", 0);
+
+    createElementTarget("button", "head-restart", "opponent");
+    document.getElementById('head-restart').innerHTML = '<i class="fas fa-sync-alt"></i>';
+    document.getElementById('head-restart').addEventListener('click', restart);
+    document.getElementById('head-restart').setAttribute("aria-label", "button to restart game");
 }
 
 /**
@@ -342,35 +386,6 @@ function calculateWinner(compResult) {
 }
 
 /**
- * Adds link to css animation. Done to signal players to click buttons to try again.
- */
-function animateButtons() {
-    let buttons = document.getElementsByClassName("button");
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].style.animationName = "element-signal";
-    }
-}
-
-/**
- * Adds draw animation to both hands. Takes id and pixes(move y-direction) parameters.
- */
-function animateDraw(id, pixels) {
-    document.getElementById(id).animate([{
-            transform: 'translateY(0px)'
-        },
-        {
-            transform: "translateY(" + pixels + ")"
-        },
-        {
-            transform: 'translateY(0px)'
-        }
-    ], {
-        duration: 500,
-        iterations: 2
-    });
-}
-
-/**
  * Uses array with objects of opponents+their damage values.
  * Current opponent is checked to calculate how much health is decreased. Color is changed according to value after decrease.
  * If value>20 (min damage) gameOver() is called
@@ -419,22 +434,6 @@ function decreaseScore(currentOpponent) {
 }
 
 /**
- * Button and game areas content are removed to clear screen of game.
- * Gameover text and restart button are inserted. Button calls restart()
- */
-function gameOver() {
-    document.getElementById('button-area').innerHTML = "";
-    document.getElementById('game-area').innerHTML = "";
-
-    createElement("h1", "over-message", "button-area", "Game Over!");
-
-    createElement("p", "gameover-text", "button-area", "Looks like the odds were against you. Have another go and see if you can reach the top of the coorporate ladder!");
-
-    createElement("button", "restart-button", "game-area", "Try Again");
-
-    document.getElementById("restart-button").addEventListener('click', restart);
-}
-/**
  * Reloads page
  */
 function restart() {
@@ -455,10 +454,16 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
 
     let containerPlayer = document.getElementById("player-choice");
     let containerOpponent = document.getElementById("opponent-pic");
-    while (containerPlayer.firstChild && containerOpponent.firstChild) {
-        containerPlayer.removeChild(containerPlayer.firstChild);
-        containerOpponent.removeChild(containerOpponent.firstChild);
+    let containerBossu = document.getElementById("biggu-bossu");
+    if(containerPlayer!==null && containerOpponent!==null) {
+        while (containerPlayer.firstChild && containerOpponent.firstChild) {
+            containerPlayer.removeChild(containerPlayer.firstChild);
+            containerOpponent.removeChild(containerOpponent.firstChild);
+            }
+    } else {
+        containerBossu.removeChild(containerBossu.firstChild);
     }
+    
 
     let backgroudImg = document.getElementById('comp-hand').style.backgroundImage;
     document.getElementById('comp-hand').remove();
@@ -513,17 +518,6 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
             iterations: 1,
             fill: "forwards"
         });
-    }
-}
-
-/**
- * Removes all class="buttons" on the screen.
- */
-function removeButtons() {
-    let numOfButtons = document.getElementsByClassName('button');
-
-    for (let i = numOfButtons.length - 1; i >= 0; i--) {
-        numOfButtons[i].remove();
     }
 }
 
@@ -602,5 +596,22 @@ function beatGame() {
     createElement("h2", "win-text", "game-area", "You managed to rise through the coorporate ladder to claim your place on top");
 
     createElement("button", "restart-button", "game-area", "Restart");
+    document.getElementById("restart-button").addEventListener('click', restart);
+}
+
+/**
+ * Button and game areas content are removed to clear screen of game.
+ * Gameover text and restart button are inserted. Button calls restart()
+ */
+function gameOver() {
+    document.getElementById('button-area').innerHTML = "";
+    document.getElementById('game-area').innerHTML = "";
+
+    createElement("h1", "over-message", "button-area", "Game Over!");
+
+    createElement("p", "gameover-text", "button-area", "Looks like the odds were against you. Have another go and see if you can reach the top of the coorporate ladder!");
+
+    createElement("button", "restart-button", "game-area", "Try Again");
+
     document.getElementById("restart-button").addEventListener('click', restart);
 }
