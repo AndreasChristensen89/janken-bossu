@@ -43,7 +43,6 @@ The name Janken Bossu is taken from the name of rock paper scissors in Japanese,
     * When a loss is registered the computer choice is displayed in a new element. The computer hand is animated to scale up a lot, and then scales down to land underneath a newly generated grey textbox which gives players a short comment on the loss.
     * The player choice animation from before is set to stop.
     * The health bar is animated to blink red and black, and the health number drops while the color changes according to the value.
-    * After two seconds, the hand-buttons slightly scale up and down two times.
     * The hand-buttons are animated to scale up and down, which stops when a hand is clicked.
     * The computer winning hand is scaled up in order to give the player a sense of defeat. It also draws their attention to the hand that beat them. The comments in the text box are randomly picked and they are encouraging and energetic which signals to the players to have another go. The health bar blinks in order to signal that damage has been taken. The hand-buttons start to scale in order to let players know that they should be interacted with in order to continue.
 
