@@ -81,6 +81,7 @@ function addAriaLabelButton(number) {
 }
 
 /**
+ * Adds an aria-label to pictures via span element
  * Removes span element in case users have pressed another button beforehand
  * Creates span element, sets the attributes for aria-label, finds the right label and adds to span
  * Inserts element into div element from parameter
@@ -200,7 +201,7 @@ function start() {
 }
 
 /**
- * Inserts picture of chosen hand via parameter, which matches a file name, and styles it. Checks for lack of go-button to clear content from a draw/loss.
+ * Inserts picture of chosen hand via parameter, which matches a file name, and styles it. Checks for go-button to clear content from a draw/loss.
  * Adds aria label via span element
  * Reinserts animation link to player choice if animation was stopped (after draw/loss)
  * Stops button animation
@@ -248,8 +249,6 @@ function generateComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 5);
     let compResult = dataType[randomNumber];
 
-    document.getElementById('go-button').remove();
-
     createElement("div", "comp-hand", "comp-choice", "");
     let compChoice = document.getElementById('comp-hand');
     let compChoiceStyle = {
@@ -258,8 +257,9 @@ function generateComputerChoice() {
         "background-repeat": "no-repeat",
     };
     Object.assign(compChoice.style, compChoiceStyle);
-
     addAriaLabelPicture(compResult, "comp-hand");
+
+    document.getElementById('go-button').remove();
 
     calculateWinner(compResult);
 }
@@ -301,7 +301,7 @@ function calculateWinner(compResult) {
 
     // loop that matches the outcomes with fail criteria - draw, loss, and win outcome.
     // Draw sets text in outcome field, animates the two hands via a function, and calls another function to animate hands-buttons.
-    // Loss randomly selects phrase to insert before target value. Stops button animation, drops hp with animation, animates comp winning hand.
+    // Loss randomly selects phrase to insert before target value. Stops button animation, animates comp winning hand, drops hp with animation.
     // Win calls function with three parameters: the currentopponent and dataType of chosen hand and computer hand
     for (let i = 0; i < failEvents.length; i++) {
         if (playerChoice === compResult) {
@@ -338,25 +338,20 @@ function calculateWinner(compResult) {
 
                 animateButtons();
 
-
                 if (document.getElementById('health') !== null) {
                     let compHand = document.getElementById('comp-hand');
                     compHand.animate([{
                             transform: 'translateY(-100px)'
-
                         },
                         {
                             transform: 'scale(5.0)'
-
                         },
                         {
                             transform: 'scale(1.0)'
-
                         },
                         {
                             transform: 'translateY(0px)'
                         },
-
                     ], {
                         duration: 1500,
                         iterations: 1
@@ -386,9 +381,9 @@ function calculateWinner(compResult) {
 }
 
 /**
- * Uses array with objects of opponents+their damage values.
- * Current opponent is checked to calculate how much health is decreased. Color is changed according to value after decrease.
- * If value>20 (min damage) gameOver() is called
+ * Uses array with objects of opponents and their damage values.
+ * Current opponent is checked to calculate how much health is subtracted. Color is changed according to value after decrease.
+ * If value>20 (min damage possible) gameOver() is called
  */
 function decreaseScore(currentOpponent) {
     let damage = [{
@@ -414,7 +409,7 @@ function decreaseScore(currentOpponent) {
     ];
 
     // gets the integer value of hp, matches opponent to value, subtracts the points connected to value from hp into a variable
-    // If/else if statement that checks which range of numbers the new score is in, changes color accordingly
+    // If/else if statement that checks which range of numbers the new score is in, changes background color accordingly
     let health = parseInt(document.getElementById('health').innerText);
     for (let i = 0; i < damage.length; i++) {
         if (currentOpponent === damage[i].value) {
@@ -455,15 +450,14 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
     let containerPlayer = document.getElementById("player-choice");
     let containerOpponent = document.getElementById("opponent-pic");
     let containerBossu = document.getElementById("biggu-bossu");
-    if(containerPlayer!==null && containerOpponent!==null) {
+    if (containerPlayer !== null && containerOpponent !== null) {
         while (containerPlayer.firstChild && containerOpponent.firstChild) {
             containerPlayer.removeChild(containerPlayer.firstChild);
             containerOpponent.removeChild(containerOpponent.firstChild);
-            }
+        }
     } else {
         containerBossu.removeChild(containerBossu.firstChild);
     }
-    
 
     let backgroudImg = document.getElementById('comp-hand').style.backgroundImage;
     document.getElementById('comp-hand').remove();
@@ -476,7 +470,6 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
         "background-repeat": "no-repeat",
     };
     Object.assign(playerPick.style, pickStyle);
-
     addAriaLabelPicture(playerChoice, "player-pick");
 
     createElementTarget("div", "comp-lose", "outcome");
@@ -487,12 +480,10 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
         "background-repeat": "no-repeat",
     };
     Object.assign(compLose.style, compStyle);
-
     addAriaLabelPicture(compResult, "comp-lose");
 
     let opponents = ["The Intern", "The Salary Man", "The Manager", "The Yakuza Henchman", "The Biggu Bossu"];
     let nextIndex = opponents.indexOf(currentOpponent);
-
     document.getElementById('result-area').innerHTML = "<p>You beat " + currentOpponent + ".<br> Gear up for the next opponent,<br> " + opponents[nextIndex + 1] + "!</p>";
 
     createElement("button", "next-button", "result-area", "Next Opponent");
@@ -524,7 +515,7 @@ function beatOpponent(currentOpponent, playerChoice, compResult) {
 
 /**
  * Removes all content from beatOpponent screen. Inserts all content from game, health bar is set to full and green color. 
- * Current opponent is checked and updated accordingly (normal or boss) + animated to appear.
+ * Current opponent is checked and updated accordingly (normal or boss) + opponent ID is confirmed and animated to appear.
  */
 function nextOpponent() {
     document.getElementById('player-choice').style = "";
@@ -562,7 +553,7 @@ function nextOpponent() {
     document.getElementById('health').style.backgroundColor = "#079607";
 
     let compCome;
-    if (document.getElementById('opponent-pic') != null) {
+    if (document.getElementById('opponent-pic') !== null) {
         compCome = document.getElementById('opponent-pic');
     } else {
         compCome = document.getElementById('biggu-bossu');
