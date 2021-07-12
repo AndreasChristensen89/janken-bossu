@@ -150,7 +150,8 @@ __Breakpoints are set to the following and are all tested to work:__
    * **Start screen:** 
         * widths and font-sizes of h1 and h2 are lowered
         * Width and height of hamburger icon increased. Font-size increased.
-   * **Introduction screen:** P element's width and font-size are lowered.
+   * **Introduction screen:** 
+        * P element's width and font-size are lowered.
    * **Game screen:** 
         * Opponent-title's font-size and width lowered.
         * Hand-buttons widths increased, margins changed.
@@ -178,7 +179,7 @@ __Breakpoints are set to the following and are all tested to work:__
         * Hand-buttons height and width lowered, margins changed.
         * Opponent-picture's top% increased.
 
-* __Max height 400px, Max width 700px__
+* __Max height 400px, Max width 700px - meant for phones in landscape mode__
     * **Game screen**
         * Hand-buttons margins changed.
         * Player-choice margins changed.
@@ -206,11 +207,9 @@ __Breakpoints are set to the following and are all tested to work:__
 
 All links were tested. There are no external links, but all internal links work. 
 
-I believe the game is set up so that it's intuitive, and users have an easy time navigating and understanding the next steps in the game. After a loss it's easy to restart, and it's also possible to restart during any point in the game.
-
 ### Bugs discovered during testing:
 * I found the Google Developer Tool to not be stable in showing if the website responded correctly to different screensizes, particularly the phone settings as my own phone would show a smaller outcome.
-* JShint gave an error regarding a function where a loop sets an eventlistener to trigger a function. This was just a warning, and after consulting with my mentor I was told to let it be. A similar usage is also used in the Love Maths learning project.
+* JShint gave an error (Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (choice)) regarding a function where a loop sets an eventlistener to trigger a function. This was just a warning, and after consulting with my mentor I was told to let it be. A similar usage is also used in the Love Maths learning project.
 * During the first Jshint testing there were many warnings regarding template literals. This was unnecesarily used by me many times so I corrected them, e.g. "xx = `${variable}`;" would be corrected to xx = variable;
 
 ### Unfixed bugs
@@ -247,10 +246,6 @@ Images were compressed using the webpage https://tinypng.com/
 Afterwards they were converted to webp using https://cloudconvert.com/png-to-webp
 All characters, hands, and backgrounds were drawn by myself in Adobe Illustrator.
 
-### Navigation
-For hamburger nagivation I took inspiration from the code from this site, but I changed the location, animation/CSS, names, parts of the JS code, and the contents to fit my site:
-https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0
-
 
 ### Text content
 Content was all formulated by myself, but I took inspiration from video/board games I have played throughout my life, comic books I have read, as well as my own experiences living in Japan.
@@ -261,7 +256,11 @@ Icons and script were taken from https://fontawesome.com/, as well as Google's f
 
 ### Coding help
 * For help with varius issues with animations, css background manipulation etc. I often resorted to https://stackoverflow.com/
+* For help with syntax reminders I often used https://www.w3schools.com/ 
 * For general best practice I used Code Institute's Slack community.
+* For hamburger nagivation I took inspiration from the code from this site, but I changed the location, animation/CSS, names, parts of the JS code, and the contents to fit my site:
+https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0
+* General comments from family and peers for what CSS looked the best, and what was most intuitive for the JS game design.
 
 ### Design
 * For design of the different pages I didn't use other sources of information. For hand-buttons, parts of the background, and tattoos of one character I took inspiration from https://www.pinterest.com/ - only tattoos are partly copies.
@@ -282,7 +281,7 @@ Icons and script were taken from https://fontawesome.com/, as well as Google's f
    * Easily understand the goal of the game
         * Rules are written simple and with visuals to help. Introduction also gives additional help.
    * Understand how to advance after a loss/defeat/draw
-        * Buttons are set to animated to attract the user
+        * Buttons are set to animate to attract the user
    * Have the game work on all devices, both horizontally and vertically
         * The website works on all devices
 * What are the goals for a returning visitor
@@ -291,7 +290,7 @@ Icons and script were taken from https://fontawesome.com/, as well as Google's f
    * Easily remember how to play the game
         * Hint is given when pressing play, and navigation to the rules page is easy
    * Easily be able to contact the developer with questions, feedback, any other inquiries
-        * Navigation to contact page is easy via hamburger, and contact form is simple to use
+        * Navigation to contact page is easy via hamburger, and contact form is simple to use with few input fields
 
 ## Strategy
 The purpose of this site is to create a simple to play game that entertains visually, and which does not require strategy to play. The goal for design was to create a simple play-interface as well as making it easy to access information with simple and clear design.
@@ -300,7 +299,7 @@ The purpose of this site is to create a simple to play game that entertains visu
 The scope is within beginner boundaries. Features are limited but should be smooth and completely functional. No more than three pages: game, rules, and contact.
 
 ## Structure
-The features have been laid out previously. The flow of the website is simple and should be intuitive for most anyone. Game, rules, contact. Players are guides through the game with animated/colored elements that signal to press them. When accesing the webpage the user lands directly on the game page and can start immediately. In case there is some confusion / if the player wishes to know more about the background or rules of the game / wishes to contact the developer the nagivation bar makes it simple to access all pages from anywhere and from any stage of the game. A restart button is also available when the game has started.
+The features have been laid out previously. The flow of the website is simple and should be intuitive for most anyone. Game, rules, contact. Players are guides through the game with animated/colored elements that signal to press them. When accesing the webpage the user lands directly on the game page and can start immediately. In case there is some confusion / if the player wishes to know more about the background or rules of the game / wishes to contact the developer the navigation bar makes it simple to access all pages from anywhere and from any stage of the game. A restart button is also available when the game has started.
 
 
 ## Surface
@@ -314,26 +313,26 @@ The features have been laid out previously. The flow of the website is simple an
 
 ### Color Scheme 
 Colors are chosen to represent a generally bright cartoony world, which aims to give users a positive and light-hearted feeling.
-In all stages of the game, and on all pages, there is always a play between green and blue. Blue is the general color while green is always present but more scarcely found, and it used to represent something positive. There is at all times at least one green element on the screen, which is meant to attract the users' eyes. 
+In all stages of the game, and on all pages, there is always a play between green and blue. Blue is the general color while green is always present but more scarcely found, and it used to represent something positive/progression. There is at all times at least one green element on the screen, which is meant to attract the users' eyes. 
 
 Color names are found via https://www.htmlcsscolor.com/hex/749EAD.
 
 * Background picture:
-    * Main blue of window: rgb(114 217 237)
-    * Darkest building: rgb(113 175 188)
-    * Lighter building: rgb(129 193 206)
-    * Lightest building: rgb(146 212 225)
-    * Window bars: rgb(123 137 138)
-    * Bottom and top bars: rgb(84 76 73)
-    * Floor: rgb(116 158 173)
-    * Bonsai box: rgb(120 73 46)
-    * Bonsai box-lines: rgb(45 27 17)
-    * Bonsai bottom-pot: rgb(189 137 109)
-    * Bonsai top-pot: rgb(168 116 86)
-    * Bonsai top-pot-circle: rgb(147 91 59)
-    * Dirt: rgb(99 55 29)
-    * Tree: rgb(128 81 55)
-    * Leaves: rgb(58 148 50)
+    * Main blue of window: rgb(114 217 237) - Turquoise Blue
+    * Darkest building: rgb(113 175 188) - Glacier
+    * Lighter building: rgb(129 193 206) - Seagull
+    * Lightest building: rgb(146 212 225) - Anakiwa
+    * Window bars: rgb(123 137 138) - Oslo Grey
+    * Bottom and top bars: rgb(84 76 73) - Saddle
+    * Floor: rgb(116 158 173) - Bali Hai
+    * Bonsai box: rgb(120 73 46) - Cape Palliser
+    * Bonsai box-lines: rgb(45 27 17) - Wood Bark
+    * Bonsai bottom-pot: rgb(189 137 109) - Brandy Rose
+    * Bonsai top-pot: rgb(168 116 86) - Sante Fe
+    * Bonsai top-pot-circle: rgb(147 91 59) - Rope
+    * Dirt: rgb(99 55 29) - Baker's Chocolate
+    * Tree: rgb(128 81 55) - Cigar
+    * Leaves: rgb(58 148 50) - La Palma
 * **White**
     * All text on all pages
     * Background color of hamburger icon
@@ -390,5 +389,5 @@ All non-text elements are marked with aria-labels, and the contrast between back
 
 ### Additional comments on setup
 * CSS was split into two files due to a design choice of having no scrolling on the main page which affected the rules page. Styling for the hamburger navigation was also separated due to both pages needing CSS from it.
-* JavaScript was split into two files (game-script and hamburgerNavigation) due to eventlistener on load in one sheet that is not needed in the other.
+* JavaScript was split into two files (game-script and hamburgerNavigation) due to eventlistener on load in one sheet that is not needed in the other and also to separate as the hamburger code is not completely my own.
 * Aria-labels turned out a bit tricky since elements come, go, and change during the game. Therefore, I implemented functions to add appropiate labels in JavaScript. 
