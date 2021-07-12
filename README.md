@@ -211,6 +211,8 @@ All links were tested. There are no external links, but all internal links work.
 * I found the Google Developer Tool to not be stable in showing if the website responded correctly to different screensizes, particularly the phone settings as my own phone would show a smaller outcome.
 * JShint gave an error (Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (choice)) regarding a function where a loop sets an eventlistener to trigger a function. This was just a warning, and after consulting with my mentor I was told to let it be. A similar usage is also used in the Love Maths learning project.
 * During the first Jshint testing there were many warnings regarding template literals. This was unnecesarily used by me many times so I corrected them, e.g. "xx = `${variable}`;" would be corrected to xx = variable;
+* As I wanted a game page that didn't allow scrolling I had many issues with setting up the right CSS to have the opponent picture staying on the floor of the background. Initially I set up many breakpoints, however this turned out to be too extensive. In the end I changed the height and width of the elements to correspond to the height of the screen, which worked across devices, and was miles shorter to code. This was only used for the game, for the other pages I resorted to "normal" breakpoints which had set values for each breakpoint.
+* With the game CSS setup it was very difficult to fit it to phones in landscape mode, so I ended up using a different media query section using two inputs; max-height and max-width.
 
 ### Unfixed bugs
 * "Interest-Cohort Error" on console after deployment. I was not able to fix this error, and I can understand that it's a recent feature where Github blocks FLoC https://www.techradar.com/uk/news/github-is-blocking-floc.
@@ -244,8 +246,7 @@ The live link can be found here - https://andreaschristensen89.github.io/janken-
 Icons and script were taken from https://fontawesome.com/, as well as Google's fonts: https://fonts.google.com/icons?selected=Material+Icons.
 
 ### Hosting and Development
-GitHub was used to host the repository, GitPot was used for development and version control, and GitHub Pages was used to deply site
-
+GitHub was used to host the repository, GitPot was used for development and version control, and GitHub Pages was used to deploy site.
 
 ## Credits:
 ### Pictures
