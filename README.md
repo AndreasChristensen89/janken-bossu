@@ -392,6 +392,6 @@ The background is designed and set to repeat in order to allow for stretching of
 All non-text elements are marked with aria-labels, and the contrast between background and foreground colors were implemented in color scheme.
 
 ### Additional comments on setup
-* CSS was split into two files due to a design choice of having no scrolling on the main page which affected the rules page. Styling for the hamburger navigation was also separated due to both pages needing CSS from it.
-* JavaScript was split into two files (game-script and hamburgerNavigation) due to eventlistener on load in one sheet that is not needed in the other and also to separate as the hamburger code is not completely my own.
+* CSS was split into two files due to a design choice of having no scrolling on the main page which affected the other pages. Styling for the hamburger navigation was also separated due to both pages needing CSS from it (no-repeat), and also to separate it from the other CSS as much of the styling comes from a site I used.
+* JavaScript was split into two files (game-script and hamburger-navigation) due to eventlistener on load in one sheet that gives an error in the other, and also to separate as the hamburger code is not completely my own.
 * Aria-labels turned out a bit tricky since elements come, go, and change during the game. Therefore, I implemented functions to add appropiate labels in JavaScript. 
